@@ -46,7 +46,7 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
 }
 
 # Args list for testing:
-# opt = list(args = c('hmmsearch2classification.00.d/GRX.ncbi_nr.test.domtblout', 'hmmsearch2classification.00.d/GRX.ncbi_nr.test.tblout', 'hmmsearch2classification.00.d/NrdAe.tblout','hmmsearch2classification.00.d/NrdAg.tblout','hmmsearch2classification.00.d/NrdAh.tblout','hmmsearch2classification.00.d/NrdAi.tblout','hmmsearch2classification.00.d/NrdAk.tblout','hmmsearch2classification.00.d/NrdAm.tblout','hmmsearch2classification.00.d/NrdAn.tblout','hmmsearch2classification.00.d/NrdAq.tblout','hmmsearch2classification.00.d/NrdA.tblout','hmmsearch2classification.00.d/NrdAz3.tblout','hmmsearch2classification.00.d/NrdAz4.tblout','hmmsearch2classification.00.d/NrdAz.tblout','hmmsearch2classification.00.d/NrdAe.domtblout','hmmsearch2classification.00.d/NrdAg.domtblout','hmmsearch2classification.00.d/NrdAh.domtblout','hmmsearch2classification.00.d/NrdAi.domtblout','hmmsearch2classification.00.d/NrdAk.domtblout','hmmsearch2classification.00.d/NrdAm.domtblout','hmmsearch2classification.00.d/NrdAn.domtblout','hmmsearch2classification.00.d/NrdAq.domtblout','hmmsearch2classification.00.d/NrdA.domtblout','hmmsearch2classification.00.d/NrdAz3.domtblout','hmmsearch2classification.00.d/NrdAz4.domtblout','hmmsearch2classification.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', profilehierarchies='hmmsearch2classification.00.phier.tsv', taxflat='hmmsearch2classification.taxflat.tsv', sqlitedb='testdb.sqlite3'))
+# opt = list(args = c('hmmsearch2classification.00.d/GRX.ncbi_nr.test.domtblout', 'hmmsearch2classification.00.d/GRX.ncbi_nr.test.tblout', 'hmmsearch2classification.00.d/NrdAe.tblout','hmmsearch2classification.00.d/NrdAg.tblout','hmmsearch2classification.00.d/NrdAh.tblout','hmmsearch2classification.00.d/NrdAi.tblout','hmmsearch2classification.00.d/NrdAk.tblout','hmmsearch2classification.00.d/NrdAm.tblout','hmmsearch2classification.00.d/NrdAn.tblout','hmmsearch2classification.00.d/NrdAq.tblout','hmmsearch2classification.00.d/NrdA.tblout','hmmsearch2classification.00.d/NrdAz3.tblout','hmmsearch2classification.00.d/NrdAz4.tblout','hmmsearch2classification.00.d/NrdAz.tblout','hmmsearch2classification.00.d/NrdAe.domtblout','hmmsearch2classification.00.d/NrdAg.domtblout','hmmsearch2classification.00.d/NrdAh.domtblout','hmmsearch2classification.00.d/NrdAi.domtblout','hmmsearch2classification.00.d/NrdAk.domtblout','hmmsearch2classification.00.d/NrdAm.domtblout','hmmsearch2classification.00.d/NrdAn.domtblout','hmmsearch2classification.00.d/NrdAq.domtblout','hmmsearch2classification.00.d/NrdA.domtblout','hmmsearch2classification.00.d/NrdAz3.domtblout','hmmsearch2classification.00.d/NrdAz4.domtblout','hmmsearch2classification.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', profilehierarchies='hmmsearch2classification.00.phier.tsv', taxflat='hmmsearch2classification.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212'))
 
 logmsg = function(msg, llevel='INFO') {
   if ( opt$options$verbose ) {
@@ -154,63 +154,108 @@ for ( domtbloutfile in grep('\\.domtblout', opt$args, value=TRUE) ) {
   )
 }
 
-# Calculate lengths by summing the ali_from and ali_to fields
+# Calculate lengths:
+# This is long-winded because we have three lengths (hmm, ali and env) which
+# have to be calculated separately after getting rid of overlapping rows in
+# domtblout.
 
-# First check if there are overlaps...
-domtblout.no_overlaps = domtblout %>%
-  select(accno, profile, tlen, qlen, i, n, ali_from, ali_to)
+# Define a temporary table that will be filled with lengths
+lengths <- tibble(
+  accno = character(), profile = character(), lentype = character(), len = integer()
+)
 
-calc_overlaps = function(dt) {
-  o = dt %>% filter(n > 1) %>%
-    select(accno, profile, ali_from, ali_to, i, n) %>%
-    inner_join(
-      domtblout %>% transmute(accno, profile, next_ali_from = ali_from, next_ali_to = ali_to, next_i = i, i = i - 1),
+# Function that joins all with n > 1 with the next row and not occurring in the second
+# table in the call.
+do_nextjoin <- function(dt, no) {
+  dt %>% 
+    filter(n > 1) %>%
+    left_join(
+      domt %>% transmute(accno, profile, i = i - 1, next_row = TRUE, next_from = from, next_to = to), 
       by = c('accno', 'profile', 'i')
-    ) %>% filter(next_ali_from <= ali_to) %>%
-    mutate(new_ali_from = ali_from, new_ali_to = next_ali_to, new_n = n - 1)
-  return(o)
+    ) %>%
+    replace_na(list('next_row' = FALSE)) %>%
+    return()
 }
 
-overlaps = calc_overlaps(domtblout.no_overlaps)
+# FOR EACH FROM-TO PAIR:
+for ( fs in list(
+  c('hmm_from', 'hmm_to', 'hmmlen'),
+  c('ali_from', 'ali_to', 'alilen'),
+  c('env_from', 'env_to', 'envlen')
+)) {
+  logmsg(sprintf("Calculating %s", fs[3]))
 
-while ( overlaps %>% nrow() > 0 ) {
-  logmsg(sprintf("Handling overlaps, %d rows remaning", overlaps %>% nrow()))
+  # 1. Set from and to to current pair, and calculate i (rownumber) and n (total domains) for each combination of accno and profile
+  domt <- domtblout %>% transmute(accno, profile, from = .data[[fs[1]]], to = .data[[fs[2]]]) %>% 
+    distinct() %>% arrange(accno, profile, from, to) %>%
+    group_by(accno, profile) %>% mutate(i = row_number(from), n = n()) %>% ungroup()
 
-  domtblout.no_overlaps = domtblout.no_overlaps %>% 
-    # 1. Join in overlaps and set new ali_from and ali_to for matching rows
-    left_join(
-      overlaps %>% select(accno, profile, i, new_ali_from, new_ali_to), 
-      by=c('accno', 'profile', 'i')
-    ) %>%
-    mutate(
-      ali_from = ifelse(! is.na(new_ali_from), new_ali_from, ali_from),
-      ali_to = ifelse(! is.na(new_ali_to), new_ali_to, ali_to)
-    ) %>%
-    # 2. Join in overlaps with i + 1 to get rid of the replaced row
-    left_join(
-      overlaps %>% transmute(accno, profile, i = next_i, new_n),
-      by=c('accno', 'profile', 'i')
-    ) %>%
-    filter(is.na(new_n)) %>% select(-new_ali_from, -new_ali_to, -new_n) %>%
-    # 3. Join in overlaps on only accno and profile to set new n for matching rows
-    left_join(
-      overlaps %>% select(accno, profile, new_n), by = c('accno', 'profile')
-    ) %>%
-    mutate(n = ifelse(!is.na(new_n), new_n, n)) %>% select(-new_n) %>%
-    distinct(accno, profile, tlen, qlen, n, ali_from, ali_to) %>%
-    # 4. Calculate new i
-    group_by(accno, profile, tlen, qlen) %>% mutate(i = rank(ali_from)) %>% ungroup() %>%
-    arrange(accno, profile, i)
+  # This is where non-overlapping rows will be stored
+  nooverlaps <- tibble(
+    accno = character(), profile = character(),
+    from = integer(), to = integer()
+  )
 
-  overlaps = calc_overlaps(domtblout.no_overlaps)
+  while ( domt %>% nrow() > 0 ) {
+    logmsg(sprintf("Working on overlaps, nrow: %d", domt %>% nrow()))
+    
+    # 2. Move rows with n == 1 to nooverlaps
+    nooverlaps <- nooverlaps %>%
+      union(domt %>% filter(n == 1) %>% select(accno, profile, from, to))
+    domt <- domt %>% filter(n > 1)
+    
+    nextjoin <- do_nextjoin(domt, nooverlaps)
+  
+    # 3. Move rows that do not overlap with the next row
+    nooverlaps <- nooverlaps %>%
+      union(nextjoin %>% filter(to < next_from) %>% select(accno, profile, from, to))
+    nextjoin <- nextjoin %>%
+      anti_join(
+        nextjoin %>% filter(to < next_from) %>% select(accno, profile, from, to),
+        by = c('accno', 'profile', 'from', 'to')
+      )
+    
+    # 4. Delete rows which are contained in the earlier row
+    nextjoin <- nextjoin %>%
+      anti_join(
+        nextjoin %>% filter(from < next_from, to > next_to) %>%
+          transmute(accno, profile, from = next_from, to = next_to),
+        by = c('accno', 'profile', 'from', 'to')
+      )
+    
+    # 5. Set a new "to" for those that overlap with the next row
+    nextjoin <- nextjoin %>%
+      mutate(to = ifelse(! is.na(next_from) & to >= next_from, next_to, to))
+    
+    # 6. Delete rows that are the last in their group of overlaps, they now have
+    #   the same "to" as the previous row.
+    nextjoin <- nextjoin %>%
+      anti_join(
+        nextjoin %>% select(accno, profile, from, to) %>% 
+          inner_join(nextjoin %>% select(accno, profile, from, to), by = c('accno', 'profile', 'to')) %>% 
+          filter(from.x != from.y) %>% 
+          group_by(accno, profile, to) %>% summarise(from = max(from.x)) %>% ungroup(),
+        by = c('accno', 'profile', 'from', 'to')
+      )
+
+    # 5. Calculate a new domt from nextjoin
+    domt <- nextjoin %>% distinct(accno, profile, from, to) %>%
+      group_by(accno, profile) %>% mutate(i = rank(from), n = n()) %>% ungroup()
+  }
+  
+  lengths <- lengths %>%
+    union(
+      nooverlaps %>% mutate(len = to - from + 1) %>%
+        group_by(accno, profile) %>% summarise(len = sum(len)) %>% ungroup() %>%
+        mutate(lentype = fs[3])
+    )
+
+  logmsg(sprintf("%d rows in lengths for %s", lengths %>% filter(lentype == fs[3]) %>% nrow(), fs[1]), 'DEBUG')
 }
 
-logmsg("Overlaps done, calculating lengths")
-
-# Now, we can calculate lengths
-align_lengths = domtblout.no_overlaps %>%
-  mutate(alilen = ali_to - ali_from + 1) %>%
-  group_by(accno, profile, tlen, qlen) %>% summarise(alilen = sum(alilen)) %>% ungroup()
+# Join in the above results with tlen and qlen from domtblout
+align_lengths = domtblout %>% distinct(accno, profile, tlen, qlen) %>%
+  inner_join(lengths %>% spread(lentype, len, fill = 0), by = c('accno', 'profile'))
 
 logmsg("Calculated lengths, inferring source databases from accession numbers")
 
@@ -276,7 +321,7 @@ if ( length(grep('singletable', names(opt$options), value = TRUE)) > 0 ) {
   logmsg(sprintf("Writing single table %s, nrows: %d", opt$options$singletable, singletable %>% nrow()))
   write_tsv(
     singletable %>% 
-      select(db, accno, taxon, score, evalue, profile, psuperfamily:pgroup, ncbi_taxon_id, tlen:alilen) %>%
+      select(db, accno, taxon, score, evalue, profile, psuperfamily:pgroup, ncbi_taxon_id, tlen, qlen, alilen, hmmlen,envlen) %>%
       arrange(accno, profile),
     opt$options$singletable
   )
