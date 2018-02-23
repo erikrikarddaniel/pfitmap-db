@@ -1,0 +1,17 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+NP_001024.1          -          NrdAe                -                  0 1272.8   0.4         0 1272.4   0.4   1.1   1   0   0   1   1   1   1 ribonucleoside-diphosphate reductase large subunit isoform 1 [Homo sapiens]P23921.1 RecName: Full=Ribonucleoside-diphosphate reductase large subunit; AltName: Full=Ribonucleoside-diphosphate reductase subunit M1; AltName: Full=Ribonucleotide reductase large subunit3HNC_A Chain A, Crystal Structure Of Human Ribonucleotide Reductase 1 Bound To The Effector Ttp3HNC_B Chain B, Crystal Structure Of Human Ribonucleotide Reductase 1 Bound To The Effector Ttp3HND_A Chain A, Crystal Structure Of Human Ribonucleotide Reductase 1 Bound To The Effector Ttp And Substrate Gdp3HND_B Chain B, Crystal Structure Of Human Ribonucleotide Reductase 1 Bound To The Effector Ttp And Substrate Gdp3HNE_A Chain A, Crystal Structure Of Human Ribonucleotide Reductase 1 Bound To The Effectors Ttp And Atp3HNE_B Chain B, Crystal Structure Of Human Ribonucleotide Reductase 1 Bound To The Effectors Ttp And Atp3HNF_A Chain A, Crystal Structure Of Human Ribonucleotide Reductase 1 Bound To The Effectors Ttp And Datp3HNF_B Chain B, Crystal Structure Of Human Ribonucleotide Reductase 1 Bound To The Effectors Ttp And Datp4X3V_A Chain A, Crystal Structure Of Human Ribonucleotide Reductase 1 Bound To Inhibitor4X3V_B Chain B, Crystal Structure Of Human Ribonucleotide Reductase 1 Bound To InhibitorCAA42118.1 M1 subunit of ribonucleotide reductase [Homo sapiens]CAA42180.1 large subunit ribonucleotide reductase [Homo sapiens]AAH06498.1 Ribonucleotide reductase M1 [Homo sapiens]EAX02583.1 ribonucleotide reductase M1 polypeptide [Homo sapiens]ABM83954.1 ribonucleotide reductase M1 polypeptide [synthetic construct]ABM87271.1 ribonucleotide reductase M1 polypeptide, partial [synthetic construct]AIC55076.1 RRM1, partial [synthetic construct]
+NP_001304993.1       -          NrdAe                -                  0 1267.4   0.4         0 1267.1   0.4   1.1   1   0   0   1   1   1   1 ribonucleoside-diphosphate reductase large subunit isoform 2 [Homo sapiens]
+NP_001317122.1       -          NrdAe                -                  0 1056.5   0.4         0 1056.1   0.4   1.2   1   0   0   1   1   1   1 ribonucleoside-diphosphate reductase large subunit isoform 4 [Homo sapiens]
+NP_001304994.1       -          NrdAe                -           3.9e-237  801.5   2.6  5.3e-237  801.1   2.6   1.2   1   0   0   1   1   1   1 ribonucleoside-diphosphate reductase large subunit isoform 3 [Homo sapiens]
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      NrdAe.hmm
+# Target file:     /data/ncbi/nr.faa
+# Option settings: hmmsearch -o NrdAe.ncbi_nr.hmmout --tblout NrdAe.ncbi_nr.tblout --domtblout NrdAe.ncbi_nr.domtblout --cpu 4 NrdAe.hmm /data/ncbi/nr.faa 
+# Current dir:     /home/dl/projects/profiles/profiles
+# Date:            Thu Feb 23 13:00:48 2017
+# [ok]

@@ -1,0 +1,12 @@
+Nrd.test.tar.gz
+*.test.tblout
+*.test.domtblout
+test.out.tsv
+*.out
+*.sqlite3
+hmmsearch2classification.large_tc.phier.tsv
+hmmsearch2classification.large_tc.d/
+taxflat.tsv
+hmmsearch2classification.large_tc.tar.gz
+err
+*.nb.html

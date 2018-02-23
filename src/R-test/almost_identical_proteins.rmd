@@ -1,0 +1,42 @@
+---
+title: "Almost identical entries"
+output: html_notebook
+---
+
+```{r libraries}
+library(tidyverse)
+```
+
+```{r connect-db}
+con <- DBI::dbConnect(RSQLite::SQLite(), 'hmmsearch2classification.sqlite3')
+```
+
+```{r select-pseudomonas}
+accessions   <- con %>% tbl('accessions')
+proteins     <- con %>% tbl('proteins')
+hmm_profiles <- con %>% tbl('hmm_profiles')
+taxa         <- con %>% tbl('taxa')
+
+p.monas <- taxa %>% filter(taxon == 'Pseudomonas aeruginosa') %>%
+  inner_join(accessions %>% filter(db == 'refseq'), by = 'taxon') %>%
+  inner_join(proteins, by = 'accno') %>%
+  inner_join(hmm_profiles %>% filter(pclass == 'NrdA'), by = 'profile') %>%
+  transmute(ncbi_taxon_id, taxon, accno, accto, profile, score, tlen, qlen, alilen, plength = length) %>%
+  mutate(pcover = alilen/plength) %>%
+  arrange(profile, desc(alilen), desc(score)) %>%
+  collect()
+```
+
+Testing:
+
+```{r}
+d03 <- DBI::dbConnect(RSQLite::SQLite(), 'hmmsearch2classification.03.sqlite3')
+m03 <- d03 %>% tbl('proteins') %>% inner_join(d03 %>% tbl('domtblout') %>% filter(n > 1), by = c('accno', 'profile')) %>% collect()
+View(d03 %>% tbl('tblout') %>% filter(accno == 'WP_013019775.1') %>% collect())
+View(d03 %>% tbl('domtblout') %>% filter(accno == 'WP_013019775.1') %>% collect())
+```
+
+```{r}
+con %>% DBI::dbDisconnect()
+```
+
