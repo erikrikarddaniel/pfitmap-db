@@ -9,7 +9,7 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "1.1.0"
+SCRIPT_VERSION = "1.1.2"
 
 # Get arguments
 option_list = list(
@@ -159,9 +159,10 @@ for ( domtbloutfile in grep('\\.domtblout', opt$args, value=TRUE) ) {
 # have to be calculated separately after getting rid of overlapping rows in
 # domtblout.
 
-# Define a temporary table that will be filled with lengths
+# Define a temporary table that will be filled with lengths, minimum from and maximum
+# to values.
 lengths <- tibble(
-  accno = character(), profile = character(), lentype = character(), len = integer()
+  accno = character(), profile = character(), type = character(), val = integer()
 )
 
 # Function that joins all with n > 1 with the next row and not occurring in the second
@@ -185,9 +186,15 @@ for ( fs in list(
 )) {
   logmsg(sprintf("Calculating %s", fs[3]))
 
-  # 1. Set from and to to current pair, and calculate i (rownumber) and n (total domains) for each combination of accno and profile
-  domt <- domtblout %>% transmute(accno, profile, from = .data[[fs[1]]], to = .data[[fs[2]]]) %>% 
-    distinct() %>% arrange(accno, profile, from, to) %>%
+  # 1. Set from and to to current pair, delete shorter rows with the same start and 
+  # calculate i (rownumber) and n (total domains) for each combination of accno and profile
+  domt <- domtblout %>% transmute(accno, profile, from = .data[[fs[1]]], to = .data[[fs[2]]]) 
+  domt <- domt %>% distinct() %>%
+    semi_join(
+      domt %>% group_by(accno, profile, from) %>% filter(to == max(to)) %>% ungroup,
+      by = c('accno', 'profile', 'from', 'to')
+    ) %>% 
+    arrange(accno, profile, from, to) %>%
     group_by(accno, profile) %>% mutate(i = row_number(from), n = n()) %>% ungroup()
 
   # This is where non-overlapping rows will be stored
@@ -205,6 +212,10 @@ for ( fs in list(
     domt <- domt %>% filter(n > 1)
     
     nextjoin <- do_nextjoin(domt, nooverlaps)
+
+    # As a debug aid, save the domt and nextjoin data sets
+    write_tsv(domt, 'domt.tsv.gz')
+    write_tsv(nextjoin, 'nextjoin.tsv.gz')
   
     # 3. Move rows that do not overlap with the next row
     nooverlaps <- nooverlaps %>%
@@ -225,7 +236,7 @@ for ( fs in list(
     
     # 5. Set a new "to" for those that overlap with the next row
     nextjoin <- nextjoin %>%
-      mutate(to = ifelse(! is.na(next_from) & to >= next_from, next_to, to))
+      mutate(to = ifelse(! is.na(next_from) & to >= next_from & next_to > to, next_to, to))
     
     # 6. Delete rows that are the last in their group of overlaps, they now have
     #   the same "to" as the previous row.
@@ -246,16 +257,21 @@ for ( fs in list(
   lengths <- lengths %>%
     union(
       nooverlaps %>% mutate(len = to - from + 1) %>%
-        group_by(accno, profile) %>% summarise(len = sum(len)) %>% ungroup() %>%
-        mutate(lentype = fs[3])
+        group_by(accno, profile) %>% summarise(len = sum(len), from = min(from), to = max(to)) %>% ungroup() %>%
+        gather(type, val, len, from, to) %>%
+        mutate(
+          type = case_when(
+            type == 'len' ~ fs[3],
+            type == 'from' ~ fs[1],
+            type == 'to'   ~ fs[2]
+          )
+        )
     )
-
-  logmsg(sprintf("%d rows in lengths for %s", lengths %>% filter(lentype == fs[3]) %>% nrow(), fs[1]), 'DEBUG')
 }
 
 # Join in the above results with tlen and qlen from domtblout
 align_lengths = domtblout %>% distinct(accno, profile, tlen, qlen) %>%
-  inner_join(lengths %>% spread(lentype, len, fill = 0), by = c('accno', 'profile'))
+  inner_join(lengths %>% spread(type, val, fill = 0), by = c('accno', 'profile'))
 
 logmsg("Calculated lengths, inferring source databases from accession numbers")
 

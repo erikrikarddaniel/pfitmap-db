@@ -9,11 +9,15 @@ pdb	3HNF_A	unknown	1272.8	0	NrdAe	NrdGRE	NrdAJ	NrdA	NrdAe	NA	NA	792	684	681	678	
 pdb	3HNF_B	unknown	1272.8	0	NrdAe	NrdGRE	NrdAJ	NrdA	NrdAe	NA	NA	792	684	681	678	700
 pdb	4X3V_A	unknown	1272.8	0	NrdAe	NrdGRE	NrdAJ	NrdA	NrdAe	NA	NA	792	684	681	678	700
 pdb	4X3V_B	unknown	1272.8	0	NrdAe	NrdGRE	NrdAJ	NrdA	NrdAe	NA	NA	792	684	681	678	700
+genbank	AAA39907.1	Mus musculus	325	4.5e-95	Thioredoxin	NA	NA	NA	NA	NA	NA	638	104	311	103	319
 genbank	AAH06498.1	Homo sapiens	1272.8	0	NrdAe	NrdGRE	NrdAJ	NrdA	NrdAe	NA	9606	792	684	681	678	700
+genbank	AAI41079.1	Mus musculus	325	4.5e-95	Thioredoxin	NA	NA	NA	NA	NA	NA	638	104	311	103	319
 genbank	ABM83954.1	synthetic construct	1272.8	0	NrdAe	NrdGRE	NrdAJ	NrdA	NrdAe	NA	NA	792	684	681	678	700
 genbank	ABM87271.1	synthetic construct	1272.8	0	NrdAe	NrdGRE	NrdAJ	NrdA	NrdAe	NA	NA	792	684	681	678	700
+genbank	ABN77368.1	Rhodobacter sphaeroides ATCC 17029	29.2	0.004	Peptidase_M27	NA	NA	NA	NA	NA	NA	1225	419	551	78	581
 genbank	ADD44204.1	Stackebrandtia nassauensis DSM 44728	218.9	5.7e-61	NrdA	NrdGRE	NrdAJ	NrdA	NA	NA	446470	946	467	496	447	552
 genbank	AIC55076.1	synthetic construct	1272.8	0	NrdAe	NrdGRE	NrdAJ	NrdA	NrdAe	NA	NA	792	684	681	678	700
+dbj	BAE27045.1	Mus musculus	325	4.5e-95	Thioredoxin	NA	NA	NA	NA	NA	NA	638	104	311	103	319
 embl	CAA42118.1	Homo sapiens	1272.8	0	NrdAe	NrdGRE	NrdAJ	NrdA	NrdAe	NA	9606	792	684	681	678	700
 embl	CAA42180.1	Homo sapiens	1272.8	0	NrdAe	NrdGRE	NrdAJ	NrdA	NrdAe	NA	9606	792	684	681	678	700
 genbank	EAX02583.1	Homo sapiens	1272.8	0	NrdAe	NrdGRE	NrdAJ	NrdA	NrdAe	NA	9606	792	684	681	678	700
