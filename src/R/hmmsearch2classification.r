@@ -300,14 +300,13 @@ logmsg("Calculated best scoring profiles, creating domains")
 
 # Create table of domains as those that match domains specified in hmm_profiles
 domains <- domtblout %>%
-  semi_join(hmm_profiles %>% filter(prank == 'domain'), by = 'profile') %>%
   transmute(
-   accno, profile, i, n,
-   dom_c_evalue, dom_i_evalue, dom_score,
-   hmm_from, hmm_to,
-   ali_from, ali_to,
-   env_from, env_to
-)
+    accno, profile, i, n,
+    dom_c_evalue, dom_i_evalue, dom_score,
+    hmm_from, hmm_to,
+    ali_from, ali_to,
+    env_from, env_to
+  ) 
 
 # Join in lengths
 logmsg(sprintf("Joining in lengths from domtblout, nrows before: %d", proteins %>% nrow()))
