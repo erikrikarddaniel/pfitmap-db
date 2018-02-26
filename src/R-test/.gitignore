@@ -10,3 +10,5 @@ taxflat.tsv
 hmmsearch2classification.large_tc.tar.gz
 err
 *.nb.html
+!hmmsearch2classification.*.d/*.domtblout
+!hmmsearch2classification.*.d/*.tblout
