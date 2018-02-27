@@ -1,4 +1,6 @@
-AAS77241.1|AAS77241.1,AAS77244.1|uncultured bacterium|genbank
+--> accessions <--
+AAS77241.1|AAS77241.1|uncultured bacterium|genbank
+AAS77241.1|AAS77244.1|uncultured bacterium|genbank
 AGE95459.1|AGE95459.1|Encephalitozoon cuniculi|genbank
 AKU44832.1|AKU44832.1|Klebsiella phage Miro|genbank
 CCA19224.1|CCA19224.1|Albugo laibachii Nc14|embl
@@ -8,10 +10,23 @@ CEG37520.1|CEG37520.1|Plasmopara halstedii|embl
 EKD41788.1|EKD41788.1|uncultured bacterium|genbank
 KDR75122.1|KDR75122.1|Galerina marginata CBS 339.88|genbank
 KPQ34288.1|KPQ34288.1|Phormidesmis priestleyi Ana|genbank
-NP_001024.1|3HNC_A,3HNC_B,3HND_A,3HND_B,3HNE_A,3HNE_B,3HNF_A,3HNF_B,4X3V_A,4X3V_B|unknown|pdb
-NP_001024.1|AAH06498.1,EAX02583.1|Homo sapiens|genbank
-NP_001024.1|ABM83954.1,ABM87271.1,AIC55076.1|synthetic construct|genbank
-NP_001024.1|CAA42118.1,CAA42180.1|Homo sapiens|embl
+NP_001024.1|3HNC_A|unknown|pdb
+NP_001024.1|3HNC_B|unknown|pdb
+NP_001024.1|3HND_A|unknown|pdb
+NP_001024.1|3HND_B|unknown|pdb
+NP_001024.1|3HNE_A|unknown|pdb
+NP_001024.1|3HNE_B|unknown|pdb
+NP_001024.1|3HNF_A|unknown|pdb
+NP_001024.1|3HNF_B|unknown|pdb
+NP_001024.1|4X3V_A|unknown|pdb
+NP_001024.1|4X3V_B|unknown|pdb
+NP_001024.1|AAH06498.1|Homo sapiens|genbank
+NP_001024.1|ABM83954.1|synthetic construct|genbank
+NP_001024.1|ABM87271.1|synthetic construct|genbank
+NP_001024.1|AIC55076.1|synthetic construct|genbank
+NP_001024.1|CAA42118.1|Homo sapiens|embl
+NP_001024.1|CAA42180.1|Homo sapiens|embl
+NP_001024.1|EAX02583.1|Homo sapiens|genbank
 NP_001024.1|NP_001024.1|Homo sapiens|refseq
 NP_001024.1|P23921.1|unknown|uniprot
 NP_001040892.1|CCD71619.1|Caenorhabditis elegans|embl
@@ -19,7 +34,9 @@ NP_001040892.1|NP_001040892.1|Caenorhabditis elegans|refseq
 NP_001304993.1|NP_001304993.1|Homo sapiens|refseq
 NP_001304994.1|NP_001304994.1|Homo sapiens|refseq
 NP_001317122.1|NP_001317122.1|Homo sapiens|refseq
-NP_568962.1|AAL91146.1,AAM47884.1,AED97688.1|Arabidopsis thaliana|genbank
+NP_568962.1|AAL91146.1|Arabidopsis thaliana|genbank
+NP_568962.1|AAM47884.1|Arabidopsis thaliana|genbank
+NP_568962.1|AED97688.1|Arabidopsis thaliana|genbank
 NP_568962.1|NP_568962.1|Arabidopsis thaliana|refseq
 NP_568962.1|Q8L8T2.2|unknown|
 OGP67976.1|OGP67976.1|Deltaproteobacteria bacterium RBG_16_44_11|genbank
@@ -40,7 +57,9 @@ WP_000864958.1|WP_000864958.1|Bacillus|refseq
 WP_001273797.1|CAQ91076.1|Escherichia fergusonii ATCC 35469|embl
 WP_001273797.1|EGC05920.1|Escherichia fergusonii B253|genbank
 WP_001273797.1|EGC97018.1|Escherichia fergusonii ECD227|genbank
-WP_001273797.1|KWV99425.1,KWW00685.1,KWW00729.1|Escherichia fergusonii|genbank
+WP_001273797.1|KWV99425.1|Escherichia fergusonii|genbank
+WP_001273797.1|KWW00685.1|Escherichia fergusonii|genbank
+WP_001273797.1|KWW00729.1|Escherichia fergusonii|genbank
 WP_001273797.1|WP_001273797.1|Escherichia fergusonii|refseq
 WP_002751870.1|CCH95656.1|Microcystis aeruginosa PCC 9432|embl
 WP_002751870.1|WP_002751870.1|Microcystis aeruginosa|refseq
@@ -54,7 +73,8 @@ WP_002781085.1|CCI15092.1|Microcystis aeruginosa PCC 9806|embl
 WP_002781085.1|WP_002781085.1|Microcystis aeruginosa|refseq
 WP_002786750.1|CCI16073.1|Microcystis aeruginosa PCC 9807|embl
 WP_002786750.1|WP_002786750.1|Microcystis aeruginosa|refseq
-WP_003082358.1|5IM3_A,5IM3_B|unknown|pdb
+WP_003082358.1|5IM3_A|unknown|pdb
+WP_003082358.1|5IM3_B|unknown|pdb
 WP_003082358.1|AAG04545.1|Pseudomonas aeruginosa PAO1|genbank
 WP_003082358.1|ABJ10324.1|Pseudomonas aeruginosa UCBPP-PA14|genbank
 WP_003082358.1|AEO76358.1|Pseudomonas aeruginosa M18|genbank
@@ -80,20 +100,154 @@ WP_003082358.1|AHL14759.1|Pseudomonas aeruginosa LESlike4|genbank
 WP_003082358.1|AHW72381.1|Pseudomonas aeruginosa PA96|genbank
 WP_003082358.1|AID72371.1|Pseudomonas aeruginosa PAO1H2O|genbank
 WP_003082358.1|AID83939.1|Pseudomonas aeruginosa VRFPA04|genbank
-WP_003082358.1|AJD59340.1,AJF54332.1,AKE71151.1,AKG00560.1,AKQ14694.1,ALE49711.1,ALP59192.1,ALU51359.1,ALV77094.1,ALY41251.1,ALY46606.1,ALY54286.1,ALY62422.1,ALY68663.1,ALY71346.1,ALY80294.1,ALY84657.1,ALY87866.1,ALY98854.1,ALZ00188.1,ALZ12342.1,ALZ24555.1,ALZ33316.1,ALZ38108.1,ALZ92548.1,AMU02271.1,AMX86494.1,ANA74506.1,ANP58245.1,AON08246.1,AON14234.1,AON20219.1,AON23455.1,AON32214.1,AON38216.1,AON44200.1,AON50211.1,AON73525.1,AOP59285.1,AOT36094.1,AOX28280.1,APB66563.1,APC74174.1,APJ42666.1,APJ48285.1,APJ51651.1,KDR47760.1,KEF93724.1,KEI27825.1,KFL11640.1,KHE36566.1,KHE56807.1,KHE58366.1,KJC20975.1,KJC24661.1,KLI78083.1,KMN07251.1,KPE39947.1,KQC52280.1,KQC57860.1,KQC59178.1,KQC72738.1,KQC73636.1,KQJ58827.1,KQJ60932.1,KQJ67098.1,KQJ78322.1,KQJ80551.1,KRU57184.1,KRU61994.1,KRU71513.1,KRU81847.1,KRU85992.1,KRV08636.1,KRV11498.1,KRV13758.1,KRV17922.1,KRV26011.1,KRV29268.1,KRV30615.1,KRV37445.1,KSB96378.1,KSB96753.1,KSC08624.1,KSC11426.1,KSC16581.1,KSC19151.1,KSC27413.1,KSC36335.1,KSC42777.1,KSC56300.1,KSC64931.1,KSC66576.1,KSC69013.1,KSC83742.1,KSC97137.1,KSC99261.1,KSD06672.1,KSD21203.1,KSD25085.1,KSD43668.1,KSD44314.1,KSD46190.1,KSD51791.1,KSD69545.1,KSD84583.1,KSD84812.1,KSD85628.1,KSD92507.1,KSE01599.1,KSE16289.1,KSE17799.1,KSE30936.1,KSE31194.1,KSE35934.1,KSE37009.1,KSE40386.1,KSE52919.1,KSE63114.1,KSE67752.1,KSE69165.1,KSE90173.1,KSF03879.1,KSF05492.1,KSF15456.1,KSF19625.1,KSF28776.1,KSF33259.1,KSF37689.1,KSF50083.1,KSF50473.1,KSF53821.1,KSF65186.1,KSF71242.1,KSF84238.1,KSF90741.1,KSF97844.1,KSF98207.1,KSG11341.1,KSG38184.1,KSG41896.1,KSG46689.1,KSG56157.1,KSG60202.1,KSG63957.1,KSG64822.1,KSG81297.1,KSG90602.1,KSG94915.1,KSG99360.1,KSH15791.1,KSH20583.1,KSH31722.1,KSH35292.1,KSH45522.1,KSH50553.1,KSH56880.1,KSH66291.1,KSH68077.1,KSH72386.1,KSH72954.1,KSH89556.1,KSH90141.1,KSI00709.1,KSI04841.1,KSI05117.1,KSI13532.1,KSI25509.1,KSI31273.1,KSI41882.1,KSI58856.1,KSI62011.1,KSI75441.1,KSI78105.1,KSI80992.1,KSI87516.1,KSI89562.1,KSI92009.1,KSJ18196.1,KSJ20278.1,KSJ21607.1,KSJ28074.1,KSJ39843.1,KSJ47773.1,KSJ51074.1,KSJ51543.1,KSJ63141.1,KSJ67621.1,KSJ74194.1,KSJ80432.1,KSJ88097.1,KSJ90403.1,KSJ95471.1,KSJ99230.1,KSJ99519.1,KSK16611.1,KSK38294.1,KSK40389.1,KSK42630.1,KSK58291.1,KSK58737.1,KSK68362.1,KSK71894.1,KSK74079.1,KSK75758.1,KSK94624.1,KSK96118.1,KSL02429.1,KSL08525.1,KSL18024.1,KSL27350.1,KSL40030.1,KSL43605.1,KSL44793.1,KSL47496.1,KSL58384.1,KSL64233.1,KSL74048.1,KSL95502.1,KSL98832.1,KSM03243.1,KSM10126.1,KSM19669.1,KSM21545.1,KSM34457.1,KSM39896.1,KSM43651.1,KSM45320.1,KSM51377.1,KSM52150.1,KSM68790.1,KSM73408.1,KSM83170.1,KSM96443.1,KSM98308.1,KSN13073.1,KSN17975.1,KSN20233.1,KSN28005.1,KSN46536.1,KSN54374.1,KSN54671.1,KSN58482.1,KSN68502.1,KSN75707.1,KSN83426.1,KSN95696.1,KSO04460.1,KSO14934.1,KSO26890.1,KSO30616.1,KSO36756.1,KSO43631.1,KSO49557.1,KSO50079.1,KSO54589.1,KSO63624.1,KSO64679.1,KSO70026.1,KSO85229.1,KSO88300.1,KSO91564.1,KSO97256.1,KSP17036.1,KSP22540.1,KSP32526.1,KSP37548.1,KSP39401.1,KSP39898.1,KSP52754.1,KSP60012.1,KSP68965.1,KSP75523.1,KSP82191.1,KSP96565.1,KSQ03572.1,KSQ19600.1,KSQ23074.1,KSQ34969.1,KSQ45396.1,KSQ46368.1,KSQ65604.1,KSQ67696.1,KSQ75068.1,KSQ78040.1,KSQ84975.1,KSQ87078.1,KSQ89934.1,KSR00250.1,KSR15669.1,KSR19611.1,KSR30765.1,KSR36552.1,KSR42930.1,KSR46435.1,KSR51883.1,KSR53492.1,KSR80801.1,KSR84493.1,KSR85376.1,KSR97105.1,KSS00002.1,KSS10286.1,KSS16690.1,KSS22217.1,KSS28006.1,KSS31904.1,KSS50423.1,KSS57144.1,KSS62102.1,KSS62875.1,KSS64551.1,KSS83406.1,KSS86973.1,KSS99861.1,KSS99882.1,KST02571.1,KTF48658.1,KUG33961.1,KUI83766.1,KWZ71346.1,KXC39384.1,KXC53691.1,KXC54624.1,KXC65910.1,KXC74042.1,KXC77522.1,KXD17840.1,KXD20451.1,KXD26962.1,KXD29096.1,KXD29355.1,KXD42634.1,KXD45214.1,KXD48958.1,KXD65045.1,KXD68191.1,KXD72992.1,KXD76090.1,KXD77769.1,KXD95875.1,KXD98785.1,KXE05694.1,KXE10106.1,KXE13723.1,KXE23586.1,KXE26830.1,KXE37243.1,KXE41060.1,KXE43555.1,KXE47912.1,KXE56138.1,KXE64410.1,KXE68620.1,KXE71213.1,KXE81316.1,KXF21875.1,KXF22472.1,KXG17438.1,KYO76561.1,KYO81610.1,KYO89343.1,KYO98142.1,KZE19320.1,KZM02654.1,KZM08867.1,KZM15411.1,OBY23032.1,OBY47167.1,OES63035.1,OFB70396.1,OFB77335.1,OFB85894.1,OFB90039.1,OFB96995.1,OFC11781.1,OFC15295.1,OFC19372.1,OFC28071.1,OGX62935.1,OGX70903.1,OKN77697.1,OKN82947.1,OKN95318.1,OKN96589.1,OKO07043.1,OKO13890.1,OKO20206.1,OKQ85919.1,OKQ90455.1,OKQ95672.1,OKR06767.1,OKR17990.1,OKR20285.1,OKR24869.1,OKR38992.1,OKR63534.1,OKR68461.1,OKR77059.1,OKR77196.1,OKR77672.1,OKR91144.1,OKR92779.1,OKS19280.1,OKS19461.1,OKS23757.1,OKS29893.1,OKS32281.1,OKS41998.1,ONM72884.1,ONM78714.1,ONM91977.1,ONM96723.1,ONN14847.1,ONN20121.1,ONN26135.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AJD59340.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AJF54332.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AKE71151.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AKG00560.1|Pseudomonas aeruginosa|genbank
 WP_003082358.1|AKO87950.1|Pseudomonas aeruginosa DSM 50071|genbank
+WP_003082358.1|AKQ14694.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALE49711.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALP59192.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALU51359.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALV77094.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALY41251.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALY46606.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALY54286.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALY62422.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALY68663.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALY71346.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALY80294.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALY84657.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALY87866.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALY98854.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALZ00188.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALZ12342.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALZ24555.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALZ33316.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALZ38108.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ALZ92548.1|Pseudomonas aeruginosa|genbank
 WP_003082358.1|AMA38664.1|Pseudomonas aeruginosa DHS01|genbank
+WP_003082358.1|AMU02271.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AMX86494.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ANA74506.1|Pseudomonas aeruginosa|genbank
 WP_003082358.1|ANI09522.1|Pseudomonas aeruginosa SJTD-1|genbank
+WP_003082358.1|ANP58245.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AON08246.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AON14234.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AON20219.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AON23455.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AON32214.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AON38216.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AON44200.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AON50211.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AON73525.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AOP59285.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AOT36094.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|AOX28280.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|APB66563.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|APC74174.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|APJ42666.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|APJ48285.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|APJ51651.1|Pseudomonas aeruginosa|genbank
 WP_003082358.1|BAK88888.1|Pseudomonas aeruginosa NCGM2.S1|dbj
-WP_003082358.1|BAP20560.1,BAP52140.1,BAR69092.1|Pseudomonas aeruginosa|dbj
+WP_003082358.1|BAP20560.1|Pseudomonas aeruginosa|dbj
+WP_003082358.1|BAP52140.1|Pseudomonas aeruginosa|dbj
+WP_003082358.1|BAR69092.1|Pseudomonas aeruginosa|dbj
 WP_003082358.1|CAW28920.1|Pseudomonas aeruginosa LESB58|embl
 WP_003082358.1|CCQ87871.1|Pseudomonas aeruginosa 18A|embl
 WP_003082358.1|CDH78559.1|Pseudomonas aeruginosa MH27|embl
 WP_003082358.1|CDI89299.1|Pseudomonas aeruginosa PA38182|embl
 WP_003082358.1|CDM47096.1|Pseudomonas aeruginosa WS136|embl
 WP_003082358.1|CDM53108.1|Pseudomonas aeruginosa WS394|embl
-WP_003082358.1|CDO80201.1,CEI79261.1,CFU87216.1,CKH91102.1,CRN27093.1,CRN46729.1,CRN61125.1,CRN64765.1,CRN74798.1,CRN89779.1,CRN90471.1,CRN90806.1,CRN93455.1,CRN99489.1,CRO02510.1,CRO02900.1,CRO18652.1,CRO25076.1,CRO26542.1,CRO55842.1,CRO68033.1,CRO72609.1,CRO76763.1,CRO79164.1,CRO79871.1,CRO82757.1,CRO95615.1,CRP06209.1,CRP13534.1,CRP21766.1,CRP33108.1,CRP34369.1,CRP42741.1,CRP45525.1,CRP45654.1,CRP49055.1,CRP54510.1,CRP56193.1,CRP56423.1,CRP58545.1,CRP59011.1,CRP63243.1,CRP68091.1,CRP96126.1,CRP97644.1,CRP99251.1,CRQ03288.1,CRQ12530.1,CRQ15442.1,CRQ17514.1,CRQ28052.1,CRQ28796.1,CRQ37276.1,CRQ38314.1,CRQ42797.1,CRQ48324.1,CRQ49681.1,CRQ68463.1,CRQ81597.1,CRR03392.1,CRR17627.1,CRR19168.1,CRR39869.1,CRR41714.1,CRR60809.1,CRR67515.1,CRR73341.1,CRR90678.1,CRR90691.1,CRS04275.1,CRS05471.1,CRS05699.1,CRS07650.1,CRS10001.1,CRS11535.1,CRS21456.1,CRS24180.1,CRS68354.1,CRW75588.1,CRW75599.1,CRW77672.1,CRW81261.1,CRX12739.1,CRX13311.1,CRX17323.1,CRX25034.1,CRX36054.1,CTQ38740.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CDO80201.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CEI79261.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CFU87216.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CKH91102.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRN27093.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRN46729.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRN61125.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRN64765.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRN74798.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRN89779.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRN90471.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRN90806.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRN93455.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRN99489.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO02510.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO02900.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO18652.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO25076.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO26542.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO55842.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO68033.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO72609.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO76763.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO79164.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO79871.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO82757.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRO95615.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP06209.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP13534.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP21766.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP33108.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP34369.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP42741.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP45525.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP45654.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP49055.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP54510.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP56193.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP56423.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP58545.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP59011.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP63243.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP68091.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP96126.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP97644.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRP99251.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ03288.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ12530.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ15442.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ17514.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ28052.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ28796.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ37276.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ38314.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ42797.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ48324.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ49681.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ68463.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRQ81597.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRR03392.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRR17627.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRR19168.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRR39869.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRR41714.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRR60809.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRR67515.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRR73341.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRR90678.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRR90691.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRS04275.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRS05471.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRS05699.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRS07650.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRS10001.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRS11535.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRS21456.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRS24180.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRS68354.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRW75588.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRW75599.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRW77672.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRW81261.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRX12739.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRX13311.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRX17323.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRX25034.1|Pseudomonas aeruginosa|embl
+WP_003082358.1|CRX36054.1|Pseudomonas aeruginosa|embl
 WP_003082358.1|CRZ31423.1|Pseudomonas aeruginosa DK1|embl
+WP_003082358.1|CTQ38740.1|Pseudomonas aeruginosa|embl
 WP_003082358.1|EAZ51732.1|Pseudomonas aeruginosa C3719|genbank
 WP_003082358.1|EFQ37478.1|Pseudomonas aeruginosa 39016|genbank
 WP_003082358.1|EHS35642.1|Pseudomonas aeruginosa MPAO1/P2|genbank
@@ -105,13 +259,13 @@ WP_003082358.1|EKA31391.1|Pseudomonas aeruginosa ATCC 14886|genbank
 WP_003082358.1|EKA36772.1|Pseudomonas aeruginosa ATCC 700888|genbank
 WP_003082358.1|EKA41508.1|Pseudomonas aeruginosa CI27|genbank
 WP_003082358.1|EKA46595.1|Pseudomonas aeruginosa ATCC 25324|genbank
-WP_003082358.1|EKA52422.1,ERX75254.1|Pseudomonas aeruginosa E2|genbank
+WP_003082358.1|EKA52422.1|Pseudomonas aeruginosa E2|genbank
 WP_003082358.1|EME96018.1|Pseudomonas aeruginosa PA21_ST175|genbank
 WP_003082358.1|EMZ48379.1|Pseudomonas sp. P179|genbank
 WP_003082358.1|EMZ53225.1|Pseudomonas aeruginosa str. Stone 130|genbank
 WP_003082358.1|ENH95386.1|Pseudomonas aeruginosa PA45|genbank
 WP_003082358.1|EOT12343.1|Pseudomonas aeruginosa MSH-10|genbank
-WP_003082358.1|EOT13515.1,KAJ88887.1|Pseudomonas aeruginosa PAK|genbank
+WP_003082358.1|EOT13515.1|Pseudomonas aeruginosa PAK|genbank
 WP_003082358.1|EOT20882.1|Pseudomonas aeruginosa PA14|genbank
 WP_003082358.1|ERF08085.1|Pseudomonas aeruginosa HB13|genbank
 WP_003082358.1|ERU33213.1|Pseudomonas aeruginosa CF77|genbank
@@ -160,6 +314,7 @@ WP_003082358.1|ERX37875.1|Pseudomonas aeruginosa 6077|genbank
 WP_003082358.1|ERX51384.1|Pseudomonas aeruginosa CF18|genbank
 WP_003082358.1|ERX61146.1|Pseudomonas aeruginosa UDL|genbank
 WP_003082358.1|ERX70209.1|Pseudomonas aeruginosa MSH3|genbank
+WP_003082358.1|ERX75254.1|Pseudomonas aeruginosa E2|genbank
 WP_003082358.1|ERX79958.1|Pseudomonas aeruginosa 62|genbank
 WP_003082358.1|ERX94856.1|Pseudomonas aeruginosa BL25|genbank
 WP_003082358.1|ERY01198.1|Pseudomonas aeruginosa BL23|genbank
@@ -231,13 +386,347 @@ WP_003082358.1|GAJ52445.1|Pseudomonas aeruginosa RB|dbj
 WP_003082358.1|KAJ14197.1|Pseudomonas aeruginosa ID4365|genbank
 WP_003082358.1|KAJ19363.1|Pseudomonas aeruginosa M10|genbank
 WP_003082358.1|KAJ22277.1|Pseudomonas aeruginosa 148|genbank
+WP_003082358.1|KAJ88887.1|Pseudomonas aeruginosa PAK|genbank
+WP_003082358.1|KDR47760.1|Pseudomonas aeruginosa|genbank
 WP_003082358.1|KEA15979.1|Pseudomonas aeruginosa C2159M|genbank
 WP_003082358.1|KEA25152.1|Pseudomonas aeruginosa C2773C|genbank
+WP_003082358.1|KEF93724.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KEI27825.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KFL11640.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KHE36566.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KHE56807.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KHE58366.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KJC20975.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KJC24661.1|Pseudomonas aeruginosa|genbank
 WP_003082358.1|KJJ21858.1|Pseudomonas sp. HMSC05H02|genbank
 WP_003082358.1|KKJ49821.1|Pseudomonas aeruginosa MRSN 321|genbank
 WP_003082358.1|KKJ53486.1|Pseudomonas aeruginosa MRSN 317|genbank
+WP_003082358.1|KLI78083.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KMN07251.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KPE39947.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KQC52280.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KQC57860.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KQC59178.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KQC72738.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KQC73636.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KQJ58827.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KQJ60932.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KQJ67098.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KQJ78322.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KQJ80551.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRU57184.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRU61994.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRU71513.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRU81847.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRU85992.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRV08636.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRV11498.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRV13758.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRV17922.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRV26011.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRV29268.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRV30615.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KRV37445.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSB96378.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSB96753.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC08624.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC11426.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC16581.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC19151.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC27413.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC36335.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC42777.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC56300.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC64931.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC66576.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC69013.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC83742.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC97137.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSC99261.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSD06672.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSD21203.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSD25085.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSD43668.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSD44314.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSD46190.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSD51791.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSD69545.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSD84583.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSD84812.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSD85628.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSD92507.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE01599.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE16289.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE17799.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE30936.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE31194.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE35934.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE37009.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE40386.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE52919.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE63114.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE67752.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE69165.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSE90173.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF03879.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF05492.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF15456.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF19625.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF28776.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF33259.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF37689.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF50083.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF50473.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF53821.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF65186.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF71242.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF84238.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF90741.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF97844.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSF98207.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSG11341.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSG38184.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSG41896.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSG46689.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSG56157.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSG60202.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSG63957.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSG64822.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSG81297.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSG90602.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSG94915.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSG99360.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH15791.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH20583.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH31722.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH35292.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH45522.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH50553.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH56880.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH66291.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH68077.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH72386.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH72954.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH89556.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSH90141.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI00709.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI04841.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI05117.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI13532.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI25509.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI31273.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI41882.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI58856.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI62011.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI75441.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI78105.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI80992.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI87516.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI89562.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSI92009.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ18196.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ20278.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ21607.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ28074.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ39843.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ47773.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ51074.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ51543.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ63141.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ67621.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ74194.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ80432.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ88097.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ90403.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ95471.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ99230.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSJ99519.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSK16611.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSK38294.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSK40389.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSK42630.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSK58291.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSK58737.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSK68362.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSK71894.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSK74079.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSK75758.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSK94624.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSK96118.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL02429.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL08525.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL18024.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL27350.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL40030.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL43605.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL44793.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL47496.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL58384.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL64233.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL74048.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL95502.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSL98832.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM03243.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM10126.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM19669.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM21545.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM34457.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM39896.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM43651.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM45320.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM51377.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM52150.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM68790.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM73408.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM83170.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM96443.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSM98308.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSN13073.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSN17975.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSN20233.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSN28005.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSN46536.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSN54374.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSN54671.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSN58482.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSN68502.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSN75707.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSN83426.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSN95696.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO04460.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO14934.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO26890.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO30616.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO36756.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO43631.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO49557.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO50079.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO54589.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO63624.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO64679.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO70026.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO85229.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO88300.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO91564.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSO97256.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSP17036.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSP22540.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSP32526.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSP37548.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSP39401.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSP39898.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSP52754.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSP60012.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSP68965.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSP75523.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSP82191.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSP96565.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ03572.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ19600.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ23074.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ34969.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ45396.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ46368.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ65604.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ67696.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ75068.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ78040.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ84975.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ87078.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSQ89934.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR00250.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR15669.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR19611.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR30765.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR36552.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR42930.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR46435.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR51883.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR53492.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR80801.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR84493.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR85376.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSR97105.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS00002.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS10286.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS16690.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS22217.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS28006.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS31904.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS50423.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS57144.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS62102.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS62875.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS64551.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS83406.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS86973.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS99861.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KSS99882.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KST02571.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KTF48658.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KUG33961.1|Pseudomonas aeruginosa|genbank
 WP_003082358.1|KUI79190.1|Pseudomonas aeruginosa 0C2E|genbank
+WP_003082358.1|KUI83766.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KWZ71346.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXC39384.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXC53691.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXC54624.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXC65910.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXC74042.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXC77522.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD17840.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD20451.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD26962.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD29096.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD29355.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD42634.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD45214.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD48958.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD65045.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD68191.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD72992.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD76090.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD77769.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD95875.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXD98785.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE05694.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE10106.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE13723.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE23586.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE26830.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE37243.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE41060.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE43555.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE47912.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE56138.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE64410.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE68620.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE71213.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXE81316.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXF21875.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXF22472.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KXG17438.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KYO76561.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KYO81610.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KYO89343.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KYO98142.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KZE19320.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KZM02654.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KZM08867.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|KZM15411.1|Pseudomonas aeruginosa|genbank
 WP_003082358.1|NP_249847.1|Pseudomonas aeruginosa PAO1|refseq
+WP_003082358.1|OBY23032.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OBY47167.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OES63035.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OFB70396.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OFB77335.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OFB85894.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OFB90039.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OFB96995.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OFC11781.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OFC15295.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OFC19372.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OFC28071.1|Pseudomonas aeruginosa|genbank
 WP_003082358.1|OFJ90142.1|Pseudomonas sp. HMSC067F09|genbank
 WP_003082358.1|OFJ90678.1|Pseudomonas sp. HMSC076A12|genbank
 WP_003082358.1|OFK14441.1|Pseudomonas sp. HMSC066B03|genbank
@@ -255,6 +744,8 @@ WP_003082358.1|OFR42196.1|Pseudomonas sp. HMSC066A08|genbank
 WP_003082358.1|OFS66491.1|Pseudomonas sp. HMSC075A08|genbank
 WP_003082358.1|OFT00382.1|Pseudomonas sp. HMSC16B01|genbank
 WP_003082358.1|OFU96758.1|Pseudomonas sp. HMSC11A05|genbank
+WP_003082358.1|OGX62935.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OGX70903.1|Pseudomonas aeruginosa|genbank
 WP_003082358.1|OHO97783.1|Pseudomonas sp. HMSC057H01|genbank
 WP_003082358.1|OHP17963.1|Pseudomonas sp. HMSC059F05|genbank
 WP_003082358.1|OHP28427.1|Pseudomonas sp. HMSC060F12|genbank
@@ -263,9 +754,45 @@ WP_003082358.1|OHP42104.1|Pseudomonas sp. HMSC060G01|genbank
 WP_003082358.1|OHP43881.1|Pseudomonas sp. HMSC061A10|genbank
 WP_003082358.1|OHQ45271.1|Pseudomonas sp. HMSC070B12|genbank
 WP_003082358.1|OHQ69554.1|Pseudomonas sp. HMSC071F02|genbank
+WP_003082358.1|OKN77697.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKN82947.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKN95318.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKN96589.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKO07043.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKO13890.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKO20206.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKQ85919.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKQ90455.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKQ95672.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKR06767.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKR17990.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKR20285.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKR24869.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKR38992.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKR63534.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKR68461.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKR77059.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKR77196.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKR77672.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKR91144.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKR92779.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKS19280.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKS19461.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKS23757.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKS29893.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKS32281.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|OKS41998.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ONM72884.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ONM78714.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ONM91977.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ONM96723.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ONN14847.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ONN20121.1|Pseudomonas aeruginosa|genbank
+WP_003082358.1|ONN26135.1|Pseudomonas aeruginosa|genbank
 WP_003082358.1|SAJ31246.1|Enterobacter cloacae|
-WP_003082358.1|SCM63887.1,SIP54160.1|Pseudomonas aeruginosa|
+WP_003082358.1|SCM63887.1|Pseudomonas aeruginosa|
 WP_003082358.1|SCZ01305.1|Acinetobacter baumannii|
+WP_003082358.1|SIP54160.1|Pseudomonas aeruginosa|
 WP_003082358.1|WP_003082358.1|Pseudomonas|refseq
 WP_003099736.1|AFM68106.1|Pseudomonas aeruginosa DK2|genbank
 WP_003099736.1|AGI84685.1|Pseudomonas aeruginosa B136-33|genbank
@@ -277,17 +804,202 @@ WP_003099736.1|AHK98633.1|Pseudomonas aeruginosa LES400|genbank
 WP_003099736.1|AHL04600.1|Pseudomonas aeruginosa LESB65|genbank
 WP_003099736.1|AHL10523.1|Pseudomonas aeruginosa LESlike1|genbank
 WP_003099736.1|AHL16479.1|Pseudomonas aeruginosa LESlike4|genbank
-WP_003099736.1|AJF54692.1,AKE73543.1,AKG02995.1,AKQ18555.1,ALS15288.1,AMX91522.1,ANP62914.1,AON10329.1,AON16316.1,AON22324.1,AON28310.1,AON34317.1,AON40302.1,AON46313.1,AON52314.1,KFL09021.1,KLI79731.1,KPE27075.1,KPE48272.1,KQC64462.1,KQJ65099.1,KQK62569.1,KQK66620.1,KRU59936.1,KRU67762.1,KRU80734.1,KRU90614.1,KRV01383.1,KRV08158.1,KRV10706.1,KRV32681.1,KRV42088.1,KSC04671.1,KSC10158.1,KSC28740.1,KSC33975.1,KSC34642.1,KSC63819.1,KSC67911.1,KSD56171.1,KSD65126.1,KSD66184.1,KSD94868.1,KSE03544.1,KSE05494.1,KSE28367.1,KSE62414.1,KSE67029.1,KSE74006.1,KSE94493.1,KSF25084.1,KSF28261.1,KSF34994.1,KSF49532.1,KSF64570.1,KSF71071.1,KSF81222.1,KSG02792.1,KSG23003.1,KSG36482.1,KSG58167.1,KSG79012.1,KSG84122.1,KSH04774.1,KSH45179.1,KSH49226.1,KSH55346.1,KSH85080.1,KSI02219.1,KSI12057.1,KSI18597.1,KSI33834.1,KSI59245.1,KSI61367.1,KSI63490.1,KSI86321.1,KSI98747.1,KSJ02817.1,KSJ05557.1,KSJ12898.1,KSJ22427.1,KSJ49084.1,KSJ66586.1,KSJ77993.1,KSJ86279.1,KSJ87730.1,KSK11009.1,KSK54559.1,KSK72976.1,KSK83619.1,KSK97897.1,KSL24016.1,KSL38312.1,KSL45613.1,KSL58202.1,KSM01991.1,KSM07006.1,KSM10681.1,KSM13064.1,KSM33034.1,KSM47785.1,KSM77727.1,KSM86908.1,KSN11248.1,KSN15278.1,KSN24136.1,KSN31384.1,KSN35719.1,KSN37972.1,KSN39770.1,KSN47715.1,KSN65210.1,KSN80203.1,KSN94476.1,KSO19815.1,KSO22489.1,KSO76254.1,KSO78865.1,KSO98978.1,KSP08327.1,KSP30414.1,KSP31088.1,KSP56216.1,KSP79758.1,KSQ07231.1,KSQ18597.1,KSQ23317.1,KSQ38959.1,KSQ43232.1,KSQ62630.1,KSQ63749.1,KSQ96125.1,KSQ97965.1,KSR01657.1,KSR12646.1,KSR34774.1,KSR65544.1,KSR81919.1,KSR96724.1,KSS13120.1,KSS29957.1,KSS30159.1,KSS35611.1,KSS45087.1,KSS58681.1,KSS60580.1,KSS75743.1,KSS79324.1,KSS89756.1,KSS91536.1,KSS97671.1,KST14050.1,KST24365.1,KTF53469.1,KWS01989.1,KXC68607.1,KXC78782.1,KXC81809.1,KXD21096.1,KXD26660.1,KXD44300.1,KXD55734.1,KXD94525.1,KXE02752.1,KXE19746.1,KXE26364.1,KXE27913.1,KXE41629.1,KXE46846.1,KXE50861.1,KXE53289.1,KXE78188.1,KXE88866.1,KXE92023.1,KXE95333.1,KXF00257.1,KXF22969.1,KXF29840.1,KXF36118.1,KZE25199.1,OFB74503.1,OFB88822.1,OFB95419.1,OFC25366.1,OFC28905.1,OFC33815.1,OHW56897.1,OKQ85224.1,OKQ87272.1,OKQ99024.1,OKR07192.1,OKR28962.1,OKR30673.1,OKR39898.1,OKR68664.1,OKR84605.1,OKR92288.1,OKS12482.1,OKS26285.1,OKS39818.1,OKS45063.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|AJF54692.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|AKE73543.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|AKG02995.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|AKQ18555.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|ALS15288.1|Pseudomonas aeruginosa|genbank
 WP_003099736.1|ALT75786.1|Pseudomonas aeruginosa AES-1R|genbank
 WP_003099736.1|AMA40963.1|Pseudomonas aeruginosa DHS01|genbank
+WP_003099736.1|AMX91522.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|ANP62914.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|AON10329.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|AON16316.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|AON22324.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|AON28310.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|AON34317.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|AON40302.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|AON46313.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|AON52314.1|Pseudomonas aeruginosa|genbank
 WP_003099736.1|CCQ84529.1|Pseudomonas aeruginosa 18A|embl
 WP_003099736.1|EME92517.1|Pseudomonas aeruginosa PA21_ST175|genbank
 WP_003099736.1|EYU04201.1|Pseudomonas aeruginosa PA103|genbank
 WP_003099736.1|GAA20024.1|Pseudomonas aeruginosa NCMG1179|dbj
+WP_003099736.1|KFL09021.1|Pseudomonas aeruginosa|genbank
 WP_003099736.1|KJJ14594.1|Pseudomonas sp. HMSC05H02|genbank
 WP_003099736.1|KKJ54410.1|Pseudomonas aeruginosa MRSN 317|genbank
+WP_003099736.1|KLI79731.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KPE27075.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KPE48272.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KQC64462.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KQJ65099.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KQK62569.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KQK66620.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KRU59936.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KRU67762.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KRU80734.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KRU90614.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KRV01383.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KRV08158.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KRV10706.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KRV32681.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KRV42088.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSC04671.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSC10158.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSC28740.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSC33975.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSC34642.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSC63819.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSC67911.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSD56171.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSD65126.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSD66184.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSD94868.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSE03544.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSE05494.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSE28367.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSE62414.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSE67029.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSE74006.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSE94493.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSF25084.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSF28261.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSF34994.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSF49532.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSF64570.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSF71071.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSF81222.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSG02792.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSG23003.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSG36482.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSG58167.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSG79012.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSG84122.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSH04774.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSH45179.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSH49226.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSH55346.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSH85080.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSI02219.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSI12057.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSI18597.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSI33834.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSI59245.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSI61367.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSI63490.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSI86321.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSI98747.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSJ02817.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSJ05557.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSJ12898.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSJ22427.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSJ49084.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSJ66586.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSJ77993.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSJ86279.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSJ87730.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSK11009.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSK54559.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSK72976.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSK83619.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSK97897.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSL24016.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSL38312.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSL45613.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSL58202.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSM01991.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSM07006.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSM10681.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSM13064.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSM33034.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSM47785.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSM77727.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSM86908.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSN11248.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSN15278.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSN24136.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSN31384.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSN35719.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSN37972.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSN39770.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSN47715.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSN65210.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSN80203.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSN94476.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSO19815.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSO22489.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSO76254.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSO78865.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSO98978.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSP08327.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSP30414.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSP31088.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSP56216.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSP79758.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSQ07231.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSQ18597.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSQ23317.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSQ38959.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSQ43232.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSQ62630.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSQ63749.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSQ96125.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSQ97965.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSR01657.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSR12646.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSR34774.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSR65544.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSR81919.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSR96724.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSS13120.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSS29957.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSS30159.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSS35611.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSS45087.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSS58681.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSS60580.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSS75743.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSS79324.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSS89756.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSS91536.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KSS97671.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KST14050.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KST24365.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KTF53469.1|Pseudomonas aeruginosa|genbank
 WP_003099736.1|KTK90360.1|Pseudomonas putida|genbank
 WP_003099736.1|KUI90340.1|Pseudomonas aeruginosa 0C2E|genbank
+WP_003099736.1|KWS01989.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXC68607.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXC78782.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXC81809.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXD21096.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXD26660.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXD44300.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXD55734.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXD94525.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXE02752.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXE19746.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXE26364.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXE27913.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXE41629.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXE46846.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXE50861.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXE53289.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXE78188.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXE88866.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXE92023.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXE95333.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXF00257.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXF22969.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXF29840.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KXF36118.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|KZE25199.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OFB74503.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OFB88822.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OFB95419.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OFC25366.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OFC28905.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OFC33815.1|Pseudomonas aeruginosa|genbank
 WP_003099736.1|OFJ95590.1|Pseudomonas sp. HMSC076A12|genbank
 WP_003099736.1|OFL02256.1|Pseudomonas sp. HMSC066B11|genbank
 WP_003099736.1|OFM00933.1|Pseudomonas sp. HMSC064G05|genbank
@@ -303,23 +1015,145 @@ WP_003099736.1|OFS93118.1|Pseudomonas sp. HMSC16B01|genbank
 WP_003099736.1|OHO93460.1|Pseudomonas sp. HMSC057H01|genbank
 WP_003099736.1|OHP01810.1|Pseudomonas sp. HMSC058B07|genbank
 WP_003099736.1|OHP45546.1|Pseudomonas sp. HMSC060G02|genbank
+WP_003099736.1|OHW56897.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKQ85224.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKQ87272.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKQ99024.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKR07192.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKR28962.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKR30673.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKR39898.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKR68664.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKR84605.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKR92288.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKS12482.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKS26285.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKS39818.1|Pseudomonas aeruginosa|genbank
+WP_003099736.1|OKS45063.1|Pseudomonas aeruginosa|genbank
 WP_003099736.1|WP_003099736.1|Pseudomonas|refseq
-WP_003111665.1|KSG40384.1,KSG57266.1,KSR33479.1,KXD91106.1,KXD97966.1,KXE08226.1|Pseudomonas aeruginosa|genbank
+WP_003111665.1|KSG40384.1|Pseudomonas aeruginosa|genbank
+WP_003111665.1|KSG57266.1|Pseudomonas aeruginosa|genbank
+WP_003111665.1|KSR33479.1|Pseudomonas aeruginosa|genbank
+WP_003111665.1|KXD91106.1|Pseudomonas aeruginosa|genbank
+WP_003111665.1|KXD97966.1|Pseudomonas aeruginosa|genbank
+WP_003111665.1|KXE08226.1|Pseudomonas aeruginosa|genbank
 WP_003111665.1|WP_003111665.1|Pseudomonas aeruginosa|refseq
-WP_003114125.1|AOP61205.1,KQJ76734.1,KSP68119.1|Pseudomonas aeruginosa|genbank
+WP_003114125.1|AOP61205.1|Pseudomonas aeruginosa|genbank
 WP_003114125.1|EHS35382.1|Pseudomonas aeruginosa MPAO1/P1|genbank
 WP_003114125.1|EHS42087.1|Pseudomonas aeruginosa MPAO1/P2|genbank
 WP_003114125.1|EJZ72341.1|Pseudomonas aeruginosa PAO579|genbank
+WP_003114125.1|KQJ76734.1|Pseudomonas aeruginosa|genbank
+WP_003114125.1|KSP68119.1|Pseudomonas aeruginosa|genbank
 WP_003114125.1|WP_003114125.1|Pseudomonas aeruginosa|refseq
 WP_003122328.1|ABJ14883.1|Pseudomonas aeruginosa UCBPP-PA14|genbank
 WP_003122328.1|AGV64964.1|Pseudomonas aeruginosa c7447m|genbank
 WP_003122328.1|AID76705.1|Pseudomonas aeruginosa PAO1H2O|genbank
-WP_003122328.1|ALV75175.1,ALY58467.1,ALY66829.1,ALY73394.1,ALY78241.1,ALY89946.1,ALY96889.1,ALZ01873.1,ALZ36191.1,AMU04090.1,APC75942.1,APJ44390.1,APJ50009.1,APJ55629.1,KEA42267.1,KGB88981.1,KYO88010.1,KYO97994.1,OKN70758.1,OKN89826.1,OKO05543.1,OKO18217.1,ONM68589.1,ONM74229.1,ONM76371.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|ALV75175.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|ALY58467.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|ALY66829.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|ALY73394.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|ALY78241.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|ALY89946.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|ALY96889.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|ALZ01873.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|ALZ36191.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|AMU04090.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|APC75942.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|APJ44390.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|APJ50009.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|APJ55629.1|Pseudomonas aeruginosa|genbank
 WP_003122328.1|BAT68869.1|Pseudomonas aeruginosa|dbj
 WP_003122328.1|CAW30647.1|Pseudomonas aeruginosa LESB58|embl
 WP_003122328.1|CDH74262.1|Pseudomonas aeruginosa MH38|embl
 WP_003122328.1|CDI94120.1|Pseudomonas aeruginosa PA38182|embl
-WP_003122328.1|CEI14390.1,CEI76586.1,CRN14920.1,CRN14921.1,CRN23355.1,CRN30795.1,CRN50905.1,CRN55744.1,CRN64889.1,CRN66948.1,CRN67730.1,CRN81337.1,CRN98336.1,CRO11418.1,CRO29315.1,CRO33130.1,CRO37265.1,CRO39426.1,CRO44218.1,CRO55191.1,CRO56242.1,CRO63655.1,CRO64859.1,CRO65148.1,CRO75328.1,CRO98436.1,CRO99342.1,CRP00313.1,CRP02136.1,CRP02235.1,CRP17366.1,CRP19864.1,CRP23717.1,CRP43463.1,CRP52088.1,CRP69702.1,CRP70699.1,CRP72845.1,CRP75983.1,CRP76834.1,CRP77397.1,CRP80038.1,CRP85918.1,CRP86376.1,CRP93658.1,CRP94193.1,CRP95979.1,CRP96444.1,CRQ16960.1,CRQ17473.1,CRQ28780.1,CRQ33506.1,CRQ47514.1,CRQ47564.1,CRQ47986.1,CRQ64450.1,CRQ66147.1,CRQ66996.1,CRQ83316.1,CRQ91132.1,CRR00362.1,CRR13578.1,CRR28029.1,CRR45988.1,CRR51318.1,CRR53435.1,CRR55513.1,CRR62477.1,CRR68386.1,CRR69494.1,CRR77964.1,CRR78740.1,CRR81602.1,CRR82462.1,CRR83315.1,CRS20062.1,CRS22413.1,CRS59494.1,CRW65521.1,CRW82822.1,CRW92693.1,CRW96690.1,CRW97742.1,CRX02177.1,CRX05197.1,CRX07758.1,CRX08576.1,CRX33016.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CEI14390.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CEI76586.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRN14920.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRN14921.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRN23355.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRN30795.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRN50905.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRN55744.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRN64889.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRN66948.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRN67730.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRN81337.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRN98336.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO11418.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO29315.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO33130.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO37265.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO39426.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO44218.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO55191.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO56242.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO63655.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO64859.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO65148.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO75328.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO98436.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRO99342.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP00313.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP02136.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP02235.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP17366.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP19864.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP23717.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP43463.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP52088.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP69702.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP70699.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP72845.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP75983.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP76834.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP77397.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP80038.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP85918.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP86376.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP93658.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP94193.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP95979.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRP96444.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRQ16960.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRQ17473.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRQ28780.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRQ33506.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRQ47514.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRQ47564.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRQ47986.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRQ64450.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRQ66147.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRQ66996.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRQ83316.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRQ91132.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR00362.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR13578.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR28029.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR45988.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR51318.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR53435.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR55513.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR62477.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR68386.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR69494.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR77964.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR78740.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR81602.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR82462.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRR83315.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRS20062.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRS22413.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRS59494.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRW65521.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRW82822.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRW92693.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRW96690.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRW97742.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRX02177.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRX05197.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRX07758.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRX08576.1|Pseudomonas aeruginosa|embl
+WP_003122328.1|CRX33016.1|Pseudomonas aeruginosa|embl
 WP_003122328.1|CRZ33149.1|Pseudomonas aeruginosa DK1|embl
 WP_003122328.1|EAZ55265.1|Pseudomonas aeruginosa C3719|genbank
 WP_003122328.1|EKA34485.1|Pseudomonas aeruginosa ATCC 14886|genbank
@@ -366,7 +1200,8 @@ WP_003122328.1|ETV12553.1|Pseudomonas aeruginosa BWHPSA044|genbank
 WP_003122328.1|ETV22454.1|Pseudomonas aeruginosa BWHPSA042|genbank
 WP_003122328.1|ETV34705.1|Pseudomonas aeruginosa BWHPSA040|genbank
 WP_003122328.1|ETV40489.1|Pseudomonas aeruginosa BWHPSA039|genbank
-WP_003122328.1|ETV52359.1,ETV52993.1|Pseudomonas aeruginosa BWHPSA037|genbank
+WP_003122328.1|ETV52359.1|Pseudomonas aeruginosa BWHPSA037|genbank
+WP_003122328.1|ETV52993.1|Pseudomonas aeruginosa BWHPSA037|genbank
 WP_003122328.1|EYT98139.1|Pseudomonas aeruginosa PA99|genbank
 WP_003122328.1|EZN60581.1|Pseudomonas aeruginosa BWH032|genbank
 WP_003122328.1|EZN85208.1|Pseudomonas aeruginosa 3580|genbank
@@ -382,11 +1217,22 @@ WP_003122328.1|EZO91984.1|Pseudomonas aeruginosa BWH053|genbank
 WP_003122328.1|KAJ20524.1|Pseudomonas aeruginosa IGB83|genbank
 WP_003122328.1|KAJ25720.1|Pseudomonas aeruginosa 148|genbank
 WP_003122328.1|KEA23615.1|Pseudomonas aeruginosa C0324C|genbank
+WP_003122328.1|KEA42267.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|KGB88981.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|KYO88010.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|KYO97994.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|OKN70758.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|OKN89826.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|OKO05543.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|OKO18217.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|ONM68589.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|ONM74229.1|Pseudomonas aeruginosa|genbank
+WP_003122328.1|ONM76371.1|Pseudomonas aeruginosa|genbank
 WP_003122328.1|SAJ17295.1|Enterobacter cloacae|
 WP_003122328.1|SCM65754.1|Pseudomonas aeruginosa|
 WP_003122328.1|SCZ08005.1|Acinetobacter baumannii|
 WP_003122328.1|WP_003122328.1|Pseudomonas aeruginosa|refseq
-WP_003136457.1|ALY86228.1,ONN22845.1|Pseudomonas aeruginosa|genbank
+WP_003136457.1|ALY86228.1|Pseudomonas aeruginosa|genbank
 WP_003136457.1|EKA30534.1|Pseudomonas aeruginosa ATCC 700888|genbank
 WP_003136457.1|EQL44064.1|Pseudomonas aeruginosa VRFPA03|genbank
 WP_003136457.1|ERV07507.1|Pseudomonas aeruginosa BL18|genbank
@@ -401,16 +1247,25 @@ WP_003136457.1|EZN46402.1|Pseudomonas aeruginosa BWH035|genbank
 WP_003136457.1|EZO19561.1|Pseudomonas aeruginosa 3575|genbank
 WP_003136457.1|EZP09493.1|Pseudomonas aeruginosa BWH049|genbank
 WP_003136457.1|EZP17017.1|Pseudomonas aeruginosa BWH050|genbank
+WP_003136457.1|ONN22845.1|Pseudomonas aeruginosa|genbank
 WP_003136457.1|WP_003136457.1|Pseudomonas aeruginosa|refseq
 WP_003146829.1|AGO42946.1|Pseudomonas aeruginosa RP73|genbank
 WP_003146829.1|AHW74249.1|Pseudomonas aeruginosa PA96|genbank
-WP_003146829.1|AJD61216.1,ALY36173.1,ALY50709.1,ALY52567.1,ALZ16492.1,ALZ22481.1,ALZ28593.1,ALZ29420.1,KDR45322.1,KEI26045.1,KXG14145.1,KYO85407.1,ONM84336.1,ONM88315.1,ONM98611.1,ONN04914.1,ONN11405.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|AJD61216.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|ALY36173.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|ALY50709.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|ALY52567.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|ALZ16492.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|ALZ22481.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|ALZ28593.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|ALZ29420.1|Pseudomonas aeruginosa|genbank
 WP_003146829.1|BAR70995.1|Pseudomonas aeruginosa|dbj
 WP_003146829.1|CDM48944.1|Pseudomonas aeruginosa WS136|embl
-WP_003146829.1|CDO84633.1,CKI30330.1|Pseudomonas aeruginosa|embl
-WP_003146829.1|EKA49166.1,ERX66182.1|Pseudomonas aeruginosa E2|genbank
+WP_003146829.1|CDO84633.1|Pseudomonas aeruginosa|embl
+WP_003146829.1|CKI30330.1|Pseudomonas aeruginosa|embl
+WP_003146829.1|EKA49166.1|Pseudomonas aeruginosa E2|genbank
 WP_003146829.1|EMZ52440.1|Pseudomonas sp. P179|genbank
-WP_003146829.1|EOT24893.1,KAJ87659.1|Pseudomonas aeruginosa PAK|genbank
+WP_003146829.1|EOT24893.1|Pseudomonas aeruginosa PAK|genbank
 WP_003146829.1|ERU49915.1|Pseudomonas aeruginosa C48|genbank
 WP_003146829.1|ERU72844.1|Pseudomonas aeruginosa C23|genbank
 WP_003146829.1|ERU74222.1|Pseudomonas aeruginosa C20|genbank
@@ -425,6 +1280,7 @@ WP_003146829.1|ERW71883.1|Pseudomonas aeruginosa BWHPSA011|genbank
 WP_003146829.1|ERW78372.1|Pseudomonas aeruginosa BWHPSA005|genbank
 WP_003146829.1|ERX01367.1|Pseudomonas aeruginosa BWHPSA001|genbank
 WP_003146829.1|ERX47563.1|Pseudomonas aeruginosa X24509|genbank
+WP_003146829.1|ERX66182.1|Pseudomonas aeruginosa E2|genbank
 WP_003146829.1|ERX73691.1|Pseudomonas aeruginosa 62|genbank
 WP_003146829.1|ERX83649.1|Pseudomonas aeruginosa M8A.4|genbank
 WP_003146829.1|ERY40519.1|Pseudomonas aeruginosa BL05|genbank
@@ -449,28 +1305,134 @@ WP_003146829.1|EZO72723.1|Pseudomonas aeruginosa BWH056|genbank
 WP_003146829.1|EZO79142.1|Pseudomonas aeruginosa BWH055|genbank
 WP_003146829.1|EZO91514.1|Pseudomonas aeruginosa BWH052|genbank
 WP_003146829.1|EZP04734.1|Pseudomonas aeruginosa BWH051|genbank
+WP_003146829.1|KAJ87659.1|Pseudomonas aeruginosa PAK|genbank
+WP_003146829.1|KDR45322.1|Pseudomonas aeruginosa|genbank
 WP_003146829.1|KEA12392.1|Pseudomonas aeruginosa C1913C|genbank
 WP_003146829.1|KEA15689.1|Pseudomonas aeruginosa C2773C|genbank
 WP_003146829.1|KEA19247.1|Pseudomonas aeruginosa C2159M|genbank
+WP_003146829.1|KEI26045.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|KXG14145.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|KYO85407.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|ONM84336.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|ONM88315.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|ONM98611.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|ONN04914.1|Pseudomonas aeruginosa|genbank
+WP_003146829.1|ONN11405.1|Pseudomonas aeruginosa|genbank
 WP_003146829.1|SIP55923.1|Pseudomonas aeruginosa|
 WP_003146829.1|WP_003146829.1|Pseudomonas aeruginosa|refseq
-WP_003155297.1|KPD28010.1,KQB28170.1,KSC50562.1,KSD73832.1,KSL16733.1,KSP83541.1,KSR37709.1,OKR53457.1|Pseudomonas aeruginosa|genbank
+WP_003155297.1|KPD28010.1|Pseudomonas aeruginosa|genbank
+WP_003155297.1|KQB28170.1|Pseudomonas aeruginosa|genbank
+WP_003155297.1|KSC50562.1|Pseudomonas aeruginosa|genbank
+WP_003155297.1|KSD73832.1|Pseudomonas aeruginosa|genbank
+WP_003155297.1|KSL16733.1|Pseudomonas aeruginosa|genbank
+WP_003155297.1|KSP83541.1|Pseudomonas aeruginosa|genbank
+WP_003155297.1|KSR37709.1|Pseudomonas aeruginosa|genbank
+WP_003155297.1|OKR53457.1|Pseudomonas aeruginosa|genbank
 WP_003155297.1|WP_003155297.1|Pseudomonas aeruginosa|refseq
 WP_003159790.1|ALT70333.1|Pseudomonas aeruginosa AES-1R|genbank
 WP_003159790.1|ERY30237.1|Pseudomonas aeruginosa BL12|genbank
 WP_003159790.1|GAA16693.1|Pseudomonas aeruginosa NCMG1179|dbj
 WP_003159790.1|KAJ19171.1|Pseudomonas aeruginosa IGB83|genbank
-WP_003159790.1|KPE29070.1,KPE32371.1,KPE43300.1,KSG25055.1,KSM99588.1,KSN92609.1|Pseudomonas aeruginosa|genbank
+WP_003159790.1|KPE29070.1|Pseudomonas aeruginosa|genbank
+WP_003159790.1|KPE32371.1|Pseudomonas aeruginosa|genbank
+WP_003159790.1|KPE43300.1|Pseudomonas aeruginosa|genbank
+WP_003159790.1|KSG25055.1|Pseudomonas aeruginosa|genbank
+WP_003159790.1|KSM99588.1|Pseudomonas aeruginosa|genbank
+WP_003159790.1|KSN92609.1|Pseudomonas aeruginosa|genbank
 WP_003159790.1|WP_003159790.1|Pseudomonas aeruginosa|refseq
 WP_003458373.1|AEO78095.1|Pseudomonas aeruginosa M18|genbank
 WP_003458373.1|AHA19351.1|Pseudomonas aeruginosa PA1|genbank
 WP_003458373.1|AHA25150.1|Pseudomonas aeruginosa PA1R|genbank
 WP_003458373.1|AKO89918.1|Pseudomonas aeruginosa DSM 50071|genbank
-WP_003458373.1|ALE51777.1,ALP57430.1,ALU51852.1,ALZ94480.1,AOT41675.1,KHE63192.1,KJC16533.1,KMN06643.1,KPE42366.1,KPE42979.1,KQC64070.1,KQC65420.1,KQC75474.1,KQJ80377.1,KRU59251.1,KRU83712.1,KSC07117.1,KSC22777.1,KSC55716.1,KSC60258.1,KSC88493.1,KSC96885.1,KSD09547.1,KSD27084.1,KSE23954.1,KSE38488.1,KSE91418.1,KSF18282.1,KSF23621.1,KSF39967.1,KSF43886.1,KSF74198.1,KSG01093.1,KSG59780.1,KSH02505.1,KSH19744.1,KSH29439.1,KSI35254.1,KSI59356.1,KSI78496.1,KSI96283.1,KSJ46851.1,KSJ70922.1,KSK02305.1,KSK33717.1,KSK36421.1,KSK70355.1,KSK99544.1,KSL00091.1,KSL79584.1,KSM42472.1,KSN03905.1,KSN40020.1,KSN76195.1,KSN97303.1,KSO47123.1,KSO57228.1,KSP04170.1,KSP25858.1,KSP87110.1,KSQ08803.1,KSQ26448.1,KSR65144.1,KSR68058.1,KSS03446.1,KSS50164.1,KSS56457.1,KTK56445.1,KUG36265.1,KUI80335.1,KWZ63688.1,KXC72074.1,KXC84085.1,KXC96140.1,KXD03011.1,KXE69045.1,KXE71713.1,KXE77798.1,KXE84581.1,KXF24620.1,KXF34034.1,KXF48209.1,OFB69747.1,OFB94001.1,OFC12261.1,OKR52609.1,OKR77463.1,OLQ28446.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|ALE51777.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|ALP57430.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|ALU51852.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|ALZ94480.1|Pseudomonas aeruginosa|genbank
 WP_003458373.1|ANI12332.1|Pseudomonas aeruginosa SJTD-1|genbank
+WP_003458373.1|AOT41675.1|Pseudomonas aeruginosa|genbank
 WP_003458373.1|ENH90101.1|Pseudomonas aeruginosa PA45|genbank
 WP_003458373.1|KGD91666.1|Pseudomonas sp. YS-1p|genbank
+WP_003458373.1|KHE63192.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KJC16533.1|Pseudomonas aeruginosa|genbank
 WP_003458373.1|KKJ47292.1|Pseudomonas aeruginosa MRSN 321|genbank
+WP_003458373.1|KMN06643.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KPE42366.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KPE42979.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KQC64070.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KQC65420.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KQC75474.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KQJ80377.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KRU59251.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KRU83712.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSC07117.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSC22777.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSC55716.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSC60258.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSC88493.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSC96885.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSD09547.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSD27084.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSE23954.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSE38488.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSE91418.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSF18282.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSF23621.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSF39967.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSF43886.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSF74198.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSG01093.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSG59780.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSH02505.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSH19744.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSH29439.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSI35254.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSI59356.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSI78496.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSI96283.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSJ46851.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSJ70922.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSK02305.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSK33717.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSK36421.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSK70355.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSK99544.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSL00091.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSL79584.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSM42472.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSN03905.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSN40020.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSN76195.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSN97303.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSO47123.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSO57228.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSP04170.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSP25858.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSP87110.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSQ08803.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSQ26448.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSR65144.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSR68058.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSS03446.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSS50164.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KSS56457.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KTK56445.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KUG36265.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KUI80335.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KWZ63688.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KXC72074.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KXC84085.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KXC96140.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KXD03011.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KXE69045.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KXE71713.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KXE77798.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KXE84581.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KXF24620.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KXF34034.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|KXF48209.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|OFB69747.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|OFB94001.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|OFC12261.1|Pseudomonas aeruginosa|genbank
 WP_003458373.1|OFJ96494.1|Pseudomonas sp. HMSC067F09|genbank
 WP_003458373.1|OFK21574.1|Pseudomonas sp. HMSC066B03|genbank
 WP_003458373.1|OFL10045.1|Pseudomonas sp. HMSC067D05|genbank
@@ -482,6 +1444,9 @@ WP_003458373.1|OHP37343.1|Pseudomonas sp. HMSC060F12|genbank
 WP_003458373.1|OHP45586.1|Pseudomonas sp. HMSC060G01|genbank
 WP_003458373.1|OHP53734.1|Pseudomonas sp. HMSC061A10|genbank
 WP_003458373.1|OHQ68254.1|Pseudomonas sp. HMSC071F02|genbank
+WP_003458373.1|OKR52609.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|OKR77463.1|Pseudomonas aeruginosa|genbank
+WP_003458373.1|OLQ28446.1|Pseudomonas aeruginosa|genbank
 WP_003458373.1|WP_003458373.1|Pseudomonas|refseq
 WP_004162066.1|CCI21380.1|Microcystis aeruginosa PCC 9808|embl
 WP_004162066.1|WP_004162066.1|Microcystis aeruginosa|refseq
@@ -521,10 +1486,19 @@ WP_010895708.1|NP_254184.1|Pseudomonas aeruginosa PAO1|refseq
 WP_010895708.1|WP_010895708.1|Pseudomonas aeruginosa|refseq
 WP_012076682.1|ABR85228.1|Pseudomonas aeruginosa PA7|genbank
 WP_012076682.1|KFF33871.1|Pseudomonas aeruginosa VRFPA01|genbank
-WP_012076682.1|KSC52948.1,KSC94656.1,KSD28960.1,KSG49817.1,KSL20430.1,OKR41569.1|Pseudomonas aeruginosa|genbank
+WP_012076682.1|KSC52948.1|Pseudomonas aeruginosa|genbank
+WP_012076682.1|KSC94656.1|Pseudomonas aeruginosa|genbank
+WP_012076682.1|KSD28960.1|Pseudomonas aeruginosa|genbank
+WP_012076682.1|KSG49817.1|Pseudomonas aeruginosa|genbank
+WP_012076682.1|KSL20430.1|Pseudomonas aeruginosa|genbank
+WP_012076682.1|OKR41569.1|Pseudomonas aeruginosa|genbank
 WP_012076682.1|WP_012076682.1|Pseudomonas aeruginosa|refseq
 WP_012078060.1|ABR82466.1|Pseudomonas aeruginosa PA7|genbank
-WP_012078060.1|KRU83106.1,KSC80518.1,KSD09642.1,KSF81598.1,KSG40079.1|Pseudomonas aeruginosa|genbank
+WP_012078060.1|KRU83106.1|Pseudomonas aeruginosa|genbank
+WP_012078060.1|KSC80518.1|Pseudomonas aeruginosa|genbank
+WP_012078060.1|KSD09642.1|Pseudomonas aeruginosa|genbank
+WP_012078060.1|KSF81598.1|Pseudomonas aeruginosa|genbank
+WP_012078060.1|KSG40079.1|Pseudomonas aeruginosa|genbank
 WP_012078060.1|WP_012078060.1|Pseudomonas aeruginosa|refseq
 WP_013019775.1|ADD44204.1|Stackebrandtia nassauensis DSM 44728|genbank
 WP_013019775.1|WP_013019775.1|Stackebrandtia nassauensis|refseq
@@ -534,7 +1508,8 @@ WP_013171274.1|WP_013171274.1|[Bacillus] selenitireducens|refseq
 WP_014103883.1|AEP10660.1|Micavibrio aeruginosavorus ARL-13|genbank
 WP_014103883.1|WP_014103883.1|Micavibrio aeruginosavorus|refseq
 WP_014604136.1|BAK93080.1|Pseudomonas aeruginosa NCGM2.S1|dbj
-WP_014604136.1|BAP25410.1,BAP54208.1|Pseudomonas aeruginosa|dbj
+WP_014604136.1|BAP25410.1|Pseudomonas aeruginosa|dbj
+WP_014604136.1|BAP54208.1|Pseudomonas aeruginosa|dbj
 WP_014604136.1|CDH80611.1|Pseudomonas aeruginosa MH27|embl
 WP_014604136.1|CDM55092.1|Pseudomonas aeruginosa WS394|embl
 WP_014604136.1|ERV04560.1|Pseudomonas aeruginosa BL17|genbank
@@ -545,7 +1520,9 @@ WP_014604136.1|ERX27476.1|Pseudomonas aeruginosa 6077|genbank
 WP_014604136.1|ERX31532.1|Pseudomonas aeruginosa U2504|genbank
 WP_014604136.1|ERZ06989.1|Pseudomonas aeruginosa JJ692|genbank
 WP_014604136.1|EZN70463.1|Pseudomonas aeruginosa BWH030|genbank
-WP_014604136.1|OKN84956.1,OKO02977.1,OKO12705.1|Pseudomonas aeruginosa|genbank
+WP_014604136.1|OKN84956.1|Pseudomonas aeruginosa|genbank
+WP_014604136.1|OKO02977.1|Pseudomonas aeruginosa|genbank
+WP_014604136.1|OKO12705.1|Pseudomonas aeruginosa|genbank
 WP_014604136.1|WP_014604136.1|Pseudomonas aeruginosa|refseq
 WP_015468603.1|AGH99094.1|Micavibrio aeruginosavorus EPB|genbank
 WP_015468603.1|WP_015468603.1|Micavibrio aeruginosavorus|refseq
@@ -560,7 +1537,8 @@ WP_017529549.1|WP_017529549.1|Pseudomonas|refseq
 WP_017849930.1|KMT55969.1|Pseudomonas sp. KG01|genbank
 WP_017849930.1|SBW78280.1|Pseudomonas veronii 1YdBTEX2|
 WP_017849930.1|WP_017849930.1|Pseudomonas|refseq
-WP_019372026.1|ALY38021.1,ALZ20619.1,KSG07115.1,KSH42073.1,KSK30349.1,KSL78067.1,KSN51297.1,KSQ18771.1,KSQ37979.1,KSR78017.1,KXC71069.1,KXC86660.1,KXC94827.1,KXD12197.1,KXD16585.1,KXF24932.1,KXF38928.1,KXF44888.1,ONN03759.1,ONN07765.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|ALY38021.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|ALZ20619.1|Pseudomonas aeruginosa|genbank
 WP_019372026.1|ERU77279.1|Pseudomonas aeruginosa C23|genbank
 WP_019372026.1|ERU78980.1|Pseudomonas aeruginosa C20|genbank
 WP_019372026.1|ERW09614.1|Pseudomonas aeruginosa BWHPSA024|genbank
@@ -574,8 +1552,26 @@ WP_019372026.1|EZN51079.1|Pseudomonas aeruginosa BWH036|genbank
 WP_019372026.1|EZN74793.1|Pseudomonas aeruginosa BWH031|genbank
 WP_019372026.1|EZP12048.1|Pseudomonas aeruginosa BWH051|genbank
 WP_019372026.1|KGD94930.1|Pseudomonas sp. YS-1p|genbank
+WP_019372026.1|KSG07115.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KSH42073.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KSK30349.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KSL78067.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KSN51297.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KSQ18771.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KSQ37979.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KSR78017.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KXC71069.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KXC86660.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KXC94827.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KXD12197.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KXD16585.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KXF24932.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KXF38928.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|KXF44888.1|Pseudomonas aeruginosa|genbank
 WP_019372026.1|OFO90422.1|Pseudomonas sp. HMSC065H01|genbank
 WP_019372026.1|OFR09495.1|Pseudomonas sp. HMSC065H02|genbank
+WP_019372026.1|ONN03759.1|Pseudomonas aeruginosa|genbank
+WP_019372026.1|ONN07765.1|Pseudomonas aeruginosa|genbank
 WP_019372026.1|WP_019372026.1|Pseudomonas|refseq
 WP_019396078.1|WP_019396078.1|Pseudomonas aeruginosa|refseq
 WP_019402145.1|ALA17276.1|Chelatococcus sp. CO-6|genbank
@@ -596,12 +1592,14 @@ WP_023103349.1|WP_023103349.1|Pseudomonas aeruginosa|refseq
 WP_023107465.1|ERV75418.1|Pseudomonas aeruginosa BL04|genbank
 WP_023107465.1|WP_023107465.1|Pseudomonas aeruginosa|refseq
 WP_023110280.1|ERY67093.1|Pseudomonas aeruginosa BL01|genbank
-WP_023110280.1|KQK56370.1,KQK57996.1|Pseudomonas aeruginosa|genbank
+WP_023110280.1|KQK56370.1|Pseudomonas aeruginosa|genbank
+WP_023110280.1|KQK57996.1|Pseudomonas aeruginosa|genbank
 WP_023110280.1|WP_023110280.1|Pseudomonas aeruginosa|refseq
 WP_023112238.1|BAT66907.1|Pseudomonas aeruginosa|dbj
 WP_023112238.1|ERV88801.1|Pseudomonas aeruginosa BWHPSA026|genbank
 WP_023112238.1|ETU75272.1|Pseudomonas aeruginosa PS50|genbank
-WP_023112238.1|KRU63530.1,OHW58885.1|Pseudomonas aeruginosa|genbank
+WP_023112238.1|KRU63530.1|Pseudomonas aeruginosa|genbank
+WP_023112238.1|OHW58885.1|Pseudomonas aeruginosa|genbank
 WP_023112238.1|WP_023112238.1|Pseudomonas aeruginosa|refseq
 WP_023130113.1|ERZ24773.1|Pseudomonas aeruginosa CF5|genbank
 WP_023130113.1|WP_023130113.1|Pseudomonas aeruginosa|refseq
@@ -615,19 +1613,113 @@ WP_024915177.1|KSD32090.1|Pseudomonas aeruginosa|genbank
 WP_024915177.1|WP_024915177.1|Pseudomonas aeruginosa|refseq
 WP_024968826.1|WP_024968826.1|Microcystis aeruginosa|refseq
 WP_027115138.1|WP_027115138.1|Lachnospiraceae bacterium P6B14|refseq
-WP_031628058.1|ANA74793.1,AON75606.1,APB68830.1,KHE58646.1,KJC16161.1,KQJ68916.1,KRV28942.1,KSD24511.1,KSD26810.1,KSD61362.1,KSE12663.1,KSE87093.1,KSF73914.1,KSF98718.1,KSH14145.1,KSH32991.1,KSI30921.1,KSI63690.1,KSJ16180.1,KSK27794.1,KSM18779.1,KSM53453.1,KSN69478.1,KSO04242.1,KSO63974.1,KSO82127.1,KSP19866.1,KSP50658.1,KSP70716.1,KSQ04261.1,KSQ76768.1,KSR12887.1,KSR55078.1,KSR72119.1,KSR91273.1,KXC27441.1,KXC27919.1,KXC31371.1,KXC44133.1,KXC44830.1,KXC93161.1,KYQ67636.1,OBY18459.1,OES47143.1,OES59317.1,OKR50285.1,OKR89633.1,OKS12825.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|ANA74793.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|AON75606.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|APB68830.1|Pseudomonas aeruginosa|genbank
 WP_031628058.1|BAQ43448.1|Pseudomonas aeruginosa|dbj
 WP_031628058.1|EVT83599.1|Pseudomonas aeruginosa VRFPA09|genbank
 WP_031628058.1|GAJ54891.1|Pseudomonas aeruginosa RB|dbj
+WP_031628058.1|KHE58646.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KJC16161.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KQJ68916.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KRV28942.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSD24511.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSD26810.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSD61362.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSE12663.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSE87093.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSF73914.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSF98718.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSH14145.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSH32991.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSI30921.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSI63690.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSJ16180.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSK27794.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSM18779.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSM53453.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSN69478.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSO04242.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSO63974.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSO82127.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSP19866.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSP50658.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSP70716.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSQ04261.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSQ76768.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSR12887.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSR55078.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSR72119.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KSR91273.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KXC27441.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KXC27919.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KXC31371.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KXC44133.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KXC44830.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KXC93161.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|KYQ67636.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|OBY18459.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|OES47143.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|OES59317.1|Pseudomonas aeruginosa|genbank
 WP_031628058.1|OFQ85605.1|Pseudomonas sp. HMSC063H08|genbank
 WP_031628058.1|OFQ97905.1|Pseudomonas sp. HMSC067G02|genbank
+WP_031628058.1|OKR50285.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|OKR89633.1|Pseudomonas aeruginosa|genbank
+WP_031628058.1|OKS12825.1|Pseudomonas aeruginosa|genbank
 WP_031628058.1|WP_031628058.1|Pseudomonas|refseq
 WP_031628973.1|WP_031628973.1|Pseudomonas aeruginosa|refseq
-WP_031630455.1|KSD82919.1,KSD96788.1,KSE55543.1,KSE81745.1,KSH34284.1,KSH67417.1,KSH82687.1,KSJ32112.1,KSJ66376.1,KSK06188.1,KSK13197.1,KSK38005.1,KSK59511.1,KSL20912.1,KSL40213.1,KSL55256.1,KSL67381.1,KSL76485.1,KSL83346.1,KSM37624.1,KSM69779.1,KSM93963.1,KSN70355.1,KSO14116.1,KSO30870.1,KSO35508.1,KSP37877.1,KSQ87233.1,KSR16815.1,KSR85150.1,KZM04410.1,KZM10755.1,KZM17108.1,OBY42397.1,OFC08880.1,OKR17658.1,OKR20881.1,OKR46447.1,OKR96626.1,OKR99450.1,OKS42431.1,OLF02862.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSD82919.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSD96788.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSE55543.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSE81745.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSH34284.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSH67417.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSH82687.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSJ32112.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSJ66376.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSK06188.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSK13197.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSK38005.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSK59511.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSL20912.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSL40213.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSL55256.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSL67381.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSL76485.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSL83346.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSM37624.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSM69779.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSM93963.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSN70355.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSO14116.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSO30870.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSO35508.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSP37877.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSQ87233.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSR16815.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KSR85150.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KZM04410.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KZM10755.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|KZM17108.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|OBY42397.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|OFC08880.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|OKR17658.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|OKR20881.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|OKR46447.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|OKR96626.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|OKR99450.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|OKS42431.1|Pseudomonas aeruginosa|genbank
+WP_031630455.1|OLF02862.1|Pseudomonas aeruginosa|genbank
 WP_031630455.1|WP_031630455.1|Pseudomonas|refseq
-WP_031631753.1|KSD46680.1,KSE20378.1,KSE84684.1|Pseudomonas aeruginosa|genbank
+WP_031631753.1|KSD46680.1|Pseudomonas aeruginosa|genbank
+WP_031631753.1|KSE20378.1|Pseudomonas aeruginosa|genbank
+WP_031631753.1|KSE84684.1|Pseudomonas aeruginosa|genbank
 WP_031631753.1|WP_031631753.1|Pseudomonas|refseq
-WP_031633309.1|KRV34813.1,KSJ53706.1,KSM21725.1,KSM55455.1,KSS36134.1|Pseudomonas aeruginosa|genbank
+WP_031633309.1|KRV34813.1|Pseudomonas aeruginosa|genbank
+WP_031633309.1|KSJ53706.1|Pseudomonas aeruginosa|genbank
+WP_031633309.1|KSM21725.1|Pseudomonas aeruginosa|genbank
+WP_031633309.1|KSM55455.1|Pseudomonas aeruginosa|genbank
+WP_031633309.1|KSS36134.1|Pseudomonas aeruginosa|genbank
 WP_031633309.1|WP_031633309.1|Pseudomonas aeruginosa|refseq
 WP_031635653.1|KSC76412.1|Pseudomonas aeruginosa|genbank
 WP_031635653.1|WP_031635653.1|Pseudomonas aeruginosa|refseq
@@ -638,14 +1730,36 @@ WP_031638565.1|WP_031638565.1|Pseudomonas aeruginosa|refseq
 WP_031642808.1|WP_031642808.1|Pseudomonas aeruginosa|refseq
 WP_031642887.1|EZO40243.1|Pseudomonas aeruginosa 3574|genbank
 WP_031642887.1|WP_031642887.1|Pseudomonas aeruginosa|refseq
-WP_031643650.1|KRU68497.1,KSK78239.1,KSQ27195.1|Pseudomonas aeruginosa|genbank
+WP_031643650.1|KRU68497.1|Pseudomonas aeruginosa|genbank
+WP_031643650.1|KSK78239.1|Pseudomonas aeruginosa|genbank
+WP_031643650.1|KSQ27195.1|Pseudomonas aeruginosa|genbank
 WP_031643650.1|WP_031643650.1|Pseudomonas aeruginosa|refseq
 WP_031653443.1|WP_031653443.1|Pseudomonas aeruginosa|refseq
 WP_031656017.1|WP_031656017.1|Pseudomonas aeruginosa|refseq
 WP_031673900.1|WP_031673900.1|Pseudomonas aeruginosa|refseq
 WP_031675824.1|WP_031675824.1|Pseudomonas aeruginosa|refseq
 WP_031676177.1|WP_031676177.1|Pseudomonas aeruginosa|refseq
-WP_031684060.1|KSC07405.1,KSF07279.1,KSF96508.1,KSG53023.1,KSG82995.1,KSG95651.1,KSH69128.1,KSH79967.1,KSH97887.1,KSI38745.1,KSO51181.1,KSO90082.1,KSO99137.1,KSP80149.1,KSQ63392.1,KXD57988.1,KXD63143.1,KXD69880.1,KXD73624.1,KXD84420.1,KXD86373.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSC07405.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSF07279.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSF96508.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSG53023.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSG82995.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSG95651.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSH69128.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSH79967.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSH97887.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSI38745.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSO51181.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSO90082.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSO99137.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSP80149.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KSQ63392.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KXD57988.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KXD63143.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KXD69880.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KXD73624.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KXD84420.1|Pseudomonas aeruginosa|genbank
+WP_031684060.1|KXD86373.1|Pseudomonas aeruginosa|genbank
 WP_031684060.1|WP_031684060.1|Pseudomonas aeruginosa|refseq
 WP_031753490.1|WP_031753490.1|Pseudomonas aeruginosa|refseq
 WP_031753818.1|WP_031753818.1|Pseudomonas aeruginosa|refseq
@@ -658,13 +1772,19 @@ WP_033864665.1|WP_033864665.1|Pseudomonas aeruginosa|refseq
 WP_033879951.1|WP_033879951.1|Pseudomonas aeruginosa|refseq
 WP_033895804.1|CDH72289.1|Pseudomonas aeruginosa MH38|embl
 WP_033895804.1|WP_033895804.1|Pseudomonas aeruginosa|refseq
-WP_033940363.1|AOX34653.1,AOX41255.1,APB58712.1,OKN80320.1|Pseudomonas aeruginosa|genbank
+WP_033940363.1|AOX34653.1|Pseudomonas aeruginosa|genbank
+WP_033940363.1|AOX41255.1|Pseudomonas aeruginosa|genbank
+WP_033940363.1|APB58712.1|Pseudomonas aeruginosa|genbank
+WP_033940363.1|OKN80320.1|Pseudomonas aeruginosa|genbank
 WP_033940363.1|WP_033940363.1|Pseudomonas aeruginosa|refseq
 WP_033944998.1|WP_033944998.1|Pseudomonas aeruginosa|refseq
 WP_033955947.1|WP_033955947.1|Pseudomonas aeruginosa|refseq
 WP_033961040.1|WP_033961040.1|Pseudomonas aeruginosa|refseq
 WP_033968730.1|ETV62270.1|Pseudomonas aeruginosa BWHPSA037|genbank
-WP_033968730.1|KSL34852.1,KSN17061.1,KSO05563.1,OFC18935.1|Pseudomonas aeruginosa|genbank
+WP_033968730.1|KSL34852.1|Pseudomonas aeruginosa|genbank
+WP_033968730.1|KSN17061.1|Pseudomonas aeruginosa|genbank
+WP_033968730.1|KSO05563.1|Pseudomonas aeruginosa|genbank
+WP_033968730.1|OFC18935.1|Pseudomonas aeruginosa|genbank
 WP_033968730.1|OFL98229.1|Pseudomonas sp. HMSC064G05|genbank
 WP_033968730.1|WP_033968730.1|Pseudomonas|refseq
 WP_033982023.1|KSG33704.1|Pseudomonas aeruginosa|genbank
@@ -672,7 +1792,11 @@ WP_033982023.1|WP_033982023.1|Pseudomonas aeruginosa|refseq
 WP_033983162.1|WP_033983162.1|Pseudomonas aeruginosa|refseq
 WP_033990246.1|BAQ41238.1|Pseudomonas aeruginosa|dbj
 WP_033990246.1|EVT86807.1|Pseudomonas aeruginosa VRFPA09|genbank
-WP_033990246.1|KSD52196.1,KSF94413.1,KSH08248.1,KSJ08447.1,OKR42335.1|Pseudomonas aeruginosa|genbank
+WP_033990246.1|KSD52196.1|Pseudomonas aeruginosa|genbank
+WP_033990246.1|KSF94413.1|Pseudomonas aeruginosa|genbank
+WP_033990246.1|KSH08248.1|Pseudomonas aeruginosa|genbank
+WP_033990246.1|KSJ08447.1|Pseudomonas aeruginosa|genbank
+WP_033990246.1|OKR42335.1|Pseudomonas aeruginosa|genbank
 WP_033990246.1|WP_033990246.1|Pseudomonas aeruginosa|refseq
 WP_033993553.1|KSK50959.1|Pseudomonas aeruginosa|genbank
 WP_033993553.1|WP_033993553.1|Pseudomonas aeruginosa|refseq
@@ -681,10 +1805,12 @@ WP_034002904.1|WP_034002904.1|Pseudomonas aeruginosa|refseq
 WP_034006601.1|WP_034006601.1|Pseudomonas aeruginosa|refseq
 WP_034014620.1|KSJ73660.1|Pseudomonas aeruginosa|genbank
 WP_034014620.1|WP_034014620.1|Pseudomonas aeruginosa|refseq
-WP_034018306.1|KSC11908.1,KSE44473.1|Pseudomonas aeruginosa|genbank
+WP_034018306.1|KSC11908.1|Pseudomonas aeruginosa|genbank
+WP_034018306.1|KSE44473.1|Pseudomonas aeruginosa|genbank
 WP_034018306.1|WP_034018306.1|Pseudomonas aeruginosa|refseq
 WP_034019202.1|WP_034019202.1|Pseudomonas aeruginosa|refseq
-WP_034019701.1|ALZ10573.1,KSR25963.1|Pseudomonas aeruginosa|genbank
+WP_034019701.1|ALZ10573.1|Pseudomonas aeruginosa|genbank
+WP_034019701.1|KSR25963.1|Pseudomonas aeruginosa|genbank
 WP_034019701.1|WP_034019701.1|Pseudomonas aeruginosa|refseq
 WP_034020563.1|KSR27893.1|Pseudomonas aeruginosa|genbank
 WP_034020563.1|WP_034020563.1|Pseudomonas aeruginosa|refseq
@@ -701,11 +1827,18 @@ WP_034048234.1|WP_034048234.1|Pseudomonas aeruginosa|refseq
 WP_034052466.1|WP_034052466.1|Pseudomonas aeruginosa|refseq
 WP_034052672.1|WP_034052672.1|Pseudomonas aeruginosa|refseq
 WP_034053909.1|WP_034053909.1|Pseudomonas aeruginosa|refseq
-WP_034063248.1|KSP71815.1,KSQ07991.1,KSR56628.1|Pseudomonas aeruginosa|genbank
+WP_034063248.1|KSP71815.1|Pseudomonas aeruginosa|genbank
+WP_034063248.1|KSQ07991.1|Pseudomonas aeruginosa|genbank
+WP_034063248.1|KSR56628.1|Pseudomonas aeruginosa|genbank
 WP_034063248.1|WP_034063248.1|Pseudomonas aeruginosa|refseq
 WP_034077395.1|KQJ57109.1|Pseudomonas aeruginosa|genbank
 WP_034077395.1|WP_034077395.1|Pseudomonas aeruginosa|refseq
-WP_034079532.1|KPD30498.1,KQB33042.1,KRU84512.1,KSD68626.1,KSP94040.1,KSR46010.1|Pseudomonas aeruginosa|genbank
+WP_034079532.1|KPD30498.1|Pseudomonas aeruginosa|genbank
+WP_034079532.1|KQB33042.1|Pseudomonas aeruginosa|genbank
+WP_034079532.1|KRU84512.1|Pseudomonas aeruginosa|genbank
+WP_034079532.1|KSD68626.1|Pseudomonas aeruginosa|genbank
+WP_034079532.1|KSP94040.1|Pseudomonas aeruginosa|genbank
+WP_034079532.1|KSR46010.1|Pseudomonas aeruginosa|genbank
 WP_034079532.1|WP_034079532.1|Pseudomonas aeruginosa|refseq
 WP_034080795.1|WP_034080795.1|Pseudomonas aeruginosa|refseq
 WP_036402729.1|CAO91262.1|Microcystis aeruginosa PCC 7806|embl
@@ -737,10 +1870,14 @@ WP_043510910.1|WP_043510910.1|Pseudomonas aeruginosa|refseq
 WP_043550613.1|WP_043550613.1|Pseudomonas aeruginosa|refseq
 WP_043550825.1|WP_043550825.1|Pseudomonas aeruginosa|refseq
 WP_043553210.1|WP_043553210.1|Pseudomonas aeruginosa|refseq
-WP_045123803.1|KJG90328.1,KPE01158.1,KPE17137.1|Yersinia pestis subsp. microtus bv. Ulegeica|genbank
+WP_045123803.1|KJG90328.1|Yersinia pestis subsp. microtus bv. Ulegeica|genbank
+WP_045123803.1|KPE01158.1|Yersinia pestis subsp. microtus bv. Ulegeica|genbank
+WP_045123803.1|KPE17137.1|Yersinia pestis subsp. microtus bv. Ulegeica|genbank
 WP_045123803.1|WP_045123803.1|Yersinia pestis|refseq
 WP_045361327.1|WP_045361327.1|Microcystis aeruginosa|refseq
-WP_046357020.1|AOT07025.1,AOT11943.1,AOT16855.1|Pseudoalteromonas luteoviolacea|genbank
+WP_046357020.1|AOT07025.1|Pseudoalteromonas luteoviolacea|genbank
+WP_046357020.1|AOT11943.1|Pseudoalteromonas luteoviolacea|genbank
+WP_046357020.1|AOT16855.1|Pseudoalteromonas luteoviolacea|genbank
 WP_046357020.1|KKE82566.1|Pseudoalteromonas luteoviolacea S4054|genbank
 WP_046357020.1|KZN69899.1|Pseudoalteromonas luteoviolacea S4047-1|genbank
 WP_046357020.1|WP_046357020.1|Pseudoalteromonas luteoviolacea|refseq
@@ -750,7 +1887,8 @@ WP_046801873.1|KKX24419.1|Agrobacterium sp. LC34|genbank
 WP_046801873.1|KRA69028.1|Rhizobium sp. Root651|genbank
 WP_046801873.1|WP_046801873.1|Rhizobium/Agrobacterium group|refseq
 WP_046879664.1|WP_046879664.1|Pseudomonas aeruginosa|refseq
-WP_047688485.1|KGB89243.1,KSS38776.1|Pseudomonas aeruginosa|genbank
+WP_047688485.1|KGB89243.1|Pseudomonas aeruginosa|genbank
+WP_047688485.1|KSS38776.1|Pseudomonas aeruginosa|genbank
 WP_047688485.1|WP_047688485.1|Pseudomonas aeruginosa|refseq
 WP_047704581.1|WP_047704581.1|Pseudomonas aeruginosa|refseq
 WP_048296521.1|WP_048296521.1|Pseudomonas aeruginosa|refseq
@@ -774,13 +1912,16 @@ WP_058139644.1|KSD38419.1|Pseudomonas aeruginosa|genbank
 WP_058139644.1|WP_058139644.1|Pseudomonas aeruginosa|refseq
 WP_058144112.1|KSQ21507.1|Pseudomonas aeruginosa|genbank
 WP_058144112.1|WP_058144112.1|Pseudomonas aeruginosa|refseq
-WP_058157787.1|KSE88702.1,KSI33438.1|Pseudomonas aeruginosa|genbank
+WP_058157787.1|KSE88702.1|Pseudomonas aeruginosa|genbank
+WP_058157787.1|KSI33438.1|Pseudomonas aeruginosa|genbank
 WP_058157787.1|WP_058157787.1|Pseudomonas aeruginosa|refseq
 WP_058159449.1|KSE98519.1|Pseudomonas aeruginosa|genbank
 WP_058159449.1|WP_058159449.1|Pseudomonas aeruginosa|refseq
-WP_058166600.1|KSL73796.1,KSM72463.1|Pseudomonas aeruginosa|genbank
+WP_058166600.1|KSL73796.1|Pseudomonas aeruginosa|genbank
+WP_058166600.1|KSM72463.1|Pseudomonas aeruginosa|genbank
 WP_058166600.1|WP_058166600.1|Pseudomonas aeruginosa|refseq
-WP_058167067.1|KSL68830.1,KSM79480.1|Pseudomonas aeruginosa|genbank
+WP_058167067.1|KSL68830.1|Pseudomonas aeruginosa|genbank
+WP_058167067.1|KSM79480.1|Pseudomonas aeruginosa|genbank
 WP_058167067.1|WP_058167067.1|Pseudomonas aeruginosa|refseq
 WP_058169918.1|KSQ80926.1|Pseudomonas aeruginosa|genbank
 WP_058169918.1|WP_058169918.1|Pseudomonas aeruginosa|refseq
@@ -790,7 +1931,13 @@ WP_058174057.1|KSS53373.1|Pseudomonas aeruginosa|genbank
 WP_058174057.1|WP_058174057.1|Pseudomonas aeruginosa|refseq
 WP_058175167.1|KSF73369.1|Pseudomonas aeruginosa|genbank
 WP_058175167.1|WP_058175167.1|Pseudomonas aeruginosa|refseq
-WP_058176699.1|KSP08201.1,KXC15625.1,KXC18722.1,KXC21982.1,KXC35890.1,KXC45437.1,KXD00897.1|Pseudomonas aeruginosa|genbank
+WP_058176699.1|KSP08201.1|Pseudomonas aeruginosa|genbank
+WP_058176699.1|KXC15625.1|Pseudomonas aeruginosa|genbank
+WP_058176699.1|KXC18722.1|Pseudomonas aeruginosa|genbank
+WP_058176699.1|KXC21982.1|Pseudomonas aeruginosa|genbank
+WP_058176699.1|KXC35890.1|Pseudomonas aeruginosa|genbank
+WP_058176699.1|KXC45437.1|Pseudomonas aeruginosa|genbank
+WP_058176699.1|KXD00897.1|Pseudomonas aeruginosa|genbank
 WP_058176699.1|WP_058176699.1|Pseudomonas aeruginosa|refseq
 WP_058177417.1|KSR37586.1|Pseudomonas aeruginosa|genbank
 WP_058177417.1|WP_058177417.1|Pseudomonas aeruginosa|refseq
@@ -801,19 +1948,33 @@ WP_058180439.1|OHQ49270.1|Pseudomonas sp. HMSC070B12|genbank
 WP_058180439.1|WP_058180439.1|Pseudomonas|refseq
 WP_058876623.1|WP_058876623.1|Pseudomonas aeruginosa|refseq
 WP_058882919.1|WP_058882919.1|Oscillatoriales cyanobacterium MTP1|refseq
-WP_060961679.1|KXE91209.1,KXE91745.1,KXF04994.1,KXF05600.1,KXF07113.1|Pseudomonas aeruginosa|genbank
+WP_060961679.1|KXE91209.1|Pseudomonas aeruginosa|genbank
+WP_060961679.1|KXE91745.1|Pseudomonas aeruginosa|genbank
+WP_060961679.1|KXF04994.1|Pseudomonas aeruginosa|genbank
+WP_060961679.1|KXF05600.1|Pseudomonas aeruginosa|genbank
+WP_060961679.1|KXF07113.1|Pseudomonas aeruginosa|genbank
 WP_060961679.1|WP_060961679.1|Pseudomonas aeruginosa|refseq
-WP_061115267.1|KWX30856.1,KWX40989.1,KWX52659.1,KWX54225.1|Pseudomonas aeruginosa|genbank
+WP_061115267.1|KWX30856.1|Pseudomonas aeruginosa|genbank
+WP_061115267.1|KWX40989.1|Pseudomonas aeruginosa|genbank
+WP_061115267.1|KWX52659.1|Pseudomonas aeruginosa|genbank
+WP_061115267.1|KWX54225.1|Pseudomonas aeruginosa|genbank
 WP_061115267.1|WP_061115267.1|Pseudomonas aeruginosa|refseq
-WP_061180665.1|KWX27123.1,KWX40312.1,KWX43390.1,KWX52006.1|Pseudomonas aeruginosa|genbank
+WP_061180665.1|KWX27123.1|Pseudomonas aeruginosa|genbank
+WP_061180665.1|KWX40312.1|Pseudomonas aeruginosa|genbank
+WP_061180665.1|KWX43390.1|Pseudomonas aeruginosa|genbank
+WP_061180665.1|KWX52006.1|Pseudomonas aeruginosa|genbank
 WP_061180665.1|WP_061180665.1|Pseudomonas aeruginosa|refseq
 WP_061188774.1|KWX41969.1|Pseudomonas aeruginosa|genbank
 WP_061188774.1|WP_061188774.1|Pseudomonas aeruginosa|refseq
 WP_061189277.1|KWX28051.1|Pseudomonas aeruginosa|genbank
 WP_061189277.1|WP_061189277.1|Pseudomonas aeruginosa|refseq
-WP_061189330.1|KXC34785.1,KXC61140.1,KXC64946.1|Pseudomonas aeruginosa|genbank
+WP_061189330.1|KXC34785.1|Pseudomonas aeruginosa|genbank
+WP_061189330.1|KXC61140.1|Pseudomonas aeruginosa|genbank
+WP_061189330.1|KXC64946.1|Pseudomonas aeruginosa|genbank
 WP_061189330.1|WP_061189330.1|Pseudomonas aeruginosa|refseq
-WP_061191015.1|KXC86317.1,KXD24711.1,KXD28101.1|Pseudomonas aeruginosa|genbank
+WP_061191015.1|KXC86317.1|Pseudomonas aeruginosa|genbank
+WP_061191015.1|KXD24711.1|Pseudomonas aeruginosa|genbank
+WP_061191015.1|KXD28101.1|Pseudomonas aeruginosa|genbank
 WP_061191015.1|WP_061191015.1|Pseudomonas aeruginosa|refseq
 WP_061196092.1|KXE10629.1|Pseudomonas aeruginosa|genbank
 WP_061196092.1|WP_061196092.1|Pseudomonas aeruginosa|refseq
@@ -916,11 +2077,13 @@ XP_021876068.1|ORZ00027.1|Lobosporangium transversale|genbank
 XP_021876068.1|XP_021876068.1|Lobosporangium transversale|refseq
 XP_022142239.1|XP_022142239.1|Momordica charantia|refseq
 XP_022925807.1|XP_022925807.1|Cucurbita moschata|refseq
-YP_851020.1|BAE79255.1,BAF36097.1|Microcystis aeruginosa phage Ma-LMM01|dbj
+YP_851020.1|BAE79255.1|Microcystis aeruginosa phage Ma-LMM01|dbj
+YP_851020.1|BAF36097.1|Microcystis aeruginosa phage Ma-LMM01|dbj
 YP_851020.1|BAF45773.1|Cyanophage Ma-LMM02|dbj
 YP_851020.1|BAF45774.1|Cyanophage Ma-LMM03|dbj
 YP_851020.1|BAF45775.1|Cyanophage Ma-HPM05|dbj
 YP_851020.1|YP_851020.1|Microcystis aeruginosa phage Ma-LMM01|refseq
+--> proteins <--
 NP_001024.1|NrdAe|1272.8|0.0|792|684|678.0|681.0|700.0|2.0|679.0|94.0|774.0|93.0|792.0
 NP_001304993.1|NrdAe|1267.4|0.0|695|684|674.0|677.0|695.0|6.0|679.0|1.0|677.0|1.0|695.0
 NP_001304994.1|NrdAe|801.5|3.9e-237|454|684|433.0|436.0|454.0|247.0|679.0|1.0|436.0|1.0|454.0
@@ -1141,6 +2304,57 @@ WP_075604347.1|NrdAq|227.8|1.3e-63|734|704|600.0|621.0|671.0|52.0|651.0|48.0|668
 WP_077144507.1|NrdAz3|1342.6|0.0|963|700|699.0|718.0|719.0|2.0|700.0|246.0|963.0|245.0|963.0
 WP_077150057.1|NrdAq|228.5|7.7e-64|734|704|600.0|621.0|671.0|52.0|651.0|48.0|668.0|38.0|708.0
 YP_851020.1|NrdAm|1091.0|0.0|742|722|722.0|739.0|739.0|1.0|722.0|4.0|742.0|4.0|742.0
+--> dupfree_proteins <--
+NP_001024.1|NrdAe|1272.8|0.0|792|684|678.0|681.0|700.0|2.0|679.0|94.0|774.0|93.0|792.0
+NP_001304993.1|NrdAe|1267.4|0.0|695|684|674.0|677.0|695.0|6.0|679.0|1.0|677.0|1.0|695.0
+NP_001304994.1|NrdAe|801.5|3.9e-237|454|684|433.0|436.0|454.0|247.0|679.0|1.0|436.0|1.0|454.0
+NP_001317122.1|NrdAe|1056.5|0.0|570|684|549.0|552.0|570.0|131.0|679.0|1.0|552.0|1.0|570.0
+WP_000626116.1|NrdF|416.0|6.3e-121|342|303|303.0|319.0|319.0|1.0|303.0|14.0|332.0|14.0|332.0
+WP_000864955.1|NrdF|161.9|1.5e-43|133|303|123.0|127.0|129.0|181.0|303.0|3.0|129.0|1.0|129.0
+WP_002751870.1|NrdAm|1215.9|0.0|770|722|722.0|736.0|736.0|1.0|722.0|35.0|770.0|35.0|770.0
+WP_002757163.1|NrdAm|1202.9|0.0|1119|722|722.0|760.0|782.0|1.0|722.0|35.0|1119.0|35.0|1119.0
+WP_003082358.1|NrdAz3|1343.9|0.0|963|700|699.0|718.0|719.0|2.0|700.0|246.0|963.0|245.0|963.0
+WP_003099736.1|NrdAq|229.0|5.5e-64|714|704|600.0|621.0|671.0|52.0|651.0|28.0|648.0|18.0|688.0
+WP_003111665.1|NrdAq|230.4|1.9e-64|714|704|600.0|621.0|671.0|52.0|651.0|28.0|648.0|18.0|688.0
+WP_003159790.1|NrdAz3|1344.0|0.0|963|700|699.0|718.0|719.0|2.0|700.0|246.0|963.0|245.0|963.0
+WP_013019775.1|NrdA|218.9|5.7e-61|946|467|447.0|496.0|552.0|5.0|451.0|133.0|694.0|130.0|704.0
+WP_013020768.1|NrdAn|1214.5|0.0|771|682|682.0|687.0|687.0|1.0|682.0|85.0|771.0|85.0|771.0
+WP_013171274.1|NrdB|192.5|4.9e-53|347|261|259.0|304.0|306.0|2.0|260.0|37.0|340.0|36.0|341.0
+WP_014103883.1|NrdAk|1100.1|0.0|610|578|566.0|566.0|576.0|2.0|567.0|13.0|578.0|12.0|587.0
+WP_031753818.1|NrdAz3|818.1|3.4e-242|646|700|401.0|401.0|402.0|2.0|402.0|246.0|646.0|245.0|646.0
+WP_031805067.1|NrdAq|162.6|6.4e-44|545|704|464.0|478.0|517.0|188.0|651.0|2.0|479.0|1.0|517.0
+WP_033961040.1|NrdAq|228.7|6.6e-64|714|704|600.0|621.0|664.0|52.0|651.0|28.0|648.0|23.0|686.0
+WP_034019202.1|NrdAz3|1345.9|0.0|961|700|699.0|716.0|717.0|2.0|700.0|246.0|961.0|245.0|961.0
+WP_034022432.1|NrdAq|228.9|5.6e-64|714|704|600.0|621.0|670.0|52.0|651.0|28.0|648.0|18.0|687.0
+WP_034028328.1|NrdAq|229.5|3.7e-64|714|704|600.0|621.0|672.0|52.0|651.0|28.0|648.0|17.0|688.0
+WP_034052466.1|NrdAq|225.0|8.9e-63|714|704|600.0|621.0|668.0|52.0|651.0|28.0|648.0|18.0|685.0
+WP_042933907.1|NrdAq|183.1|4.2e-50|578|704|497.0|511.0|549.0|155.0|651.0|2.0|512.0|1.0|549.0
+WP_042949924.1|NrdAq|182.8|4.9e-50|573|704|491.0|505.0|548.0|161.0|651.0|3.0|507.0|1.0|548.0
+WP_042951059.1|NrdAz3|1115.6|0.0|816|700|570.0|570.0|572.0|2.0|571.0|246.0|815.0|245.0|816.0
+WP_043510910.1|NrdAz3|1340.6|0.0|936|700|684.0|684.0|689.0|2.0|685.0|246.0|929.0|245.0|933.0
+WP_043550613.1|NrdAq|165.2|1.1e-44|559|704|475.0|489.0|527.0|176.0|650.0|4.0|492.0|2.0|528.0
+WP_043550825.1|NrdAq|44.5|3.5e-08|200|704|130.0|137.0|162.0|52.0|181.0|48.0|184.0|37.0|198.0
+WP_046660842.1|NrdAm|1203.1|0.0|1119|722|722.0|760.0|786.0|1.0|722.0|35.0|1119.0|35.0|1119.0
+WP_046879664.1|NrdAq|165.3|1.0e-44|551|704|470.0|484.0|520.0|181.0|650.0|1.0|484.0|1.0|520.0
+WP_047704581.1|NrdAz3|1341.0|0.0|961|700|685.0|685.0|697.0|2.0|686.0|246.0|930.0|245.0|941.0
+WP_049288398.1|NrdAz3|1304.7|0.0|907|700|662.0|662.0|663.0|2.0|663.0|246.0|907.0|245.0|907.0
+WP_049302082.1|NrdAz3|959.7|4.7e-285|723|700|478.0|478.0|479.0|2.0|479.0|246.0|723.0|245.0|723.0
+WP_050397533.1|NrdAz3|1340.7|0.0|949|700|684.0|684.0|693.0|2.0|685.0|246.0|929.0|245.0|937.0
+WP_050410341.1|NrdAz3|1340.6|0.0|935|700|684.0|684.0|688.0|2.0|685.0|246.0|929.0|245.0|932.0
+WP_058144112.1|NrdA|233.3|2.5e-65|952|467|438.0|500.0|528.0|13.0|450.0|63.0|573.0|53.0|580.0
+WP_061189330.1|NrdAq|226.4|3.3e-63|714|704|582.0|602.0|662.0|70.0|651.0|47.0|648.0|27.0|688.0
+WP_066166540.1|NrdF|396.7|4.8e-115|326|303|303.0|311.0|311.0|1.0|303.0|9.0|319.0|9.0|319.0
+WP_069953529.1|NrdAz3|724.7|5.9e-214|599|700|354.0|354.0|355.0|2.0|355.0|246.0|599.0|245.0|599.0
+WP_069953530.1|NrdAz3|594.4|1.6e-174|367|700|346.0|365.0|367.0|355.0|700.0|3.0|367.0|1.0|367.0
+WP_069954463.1|NrdAz3|661.8|6.4e-195|392|700|373.0|392.0|392.0|328.0|700.0|1.0|392.0|1.0|392.0
+WP_070330859.1|NrdAq|228.9|5.7e-64|714|704|599.0|620.0|668.0|53.0|651.0|29.0|648.0|21.0|688.0
+WP_070331765.1|NrdAq|229.0|5.5e-64|714|704|599.0|620.0|671.0|53.0|651.0|29.0|648.0|21.0|691.0
+WP_070331775.1|NrdAq|229.0|5.4e-64|714|704|599.0|620.0|672.0|53.0|651.0|29.0|648.0|21.0|692.0
+WP_072018056.1|NrdAq|233.0|3.3e-65|814|704|599.0|620.0|666.0|52.0|650.0|48.0|667.0|38.0|703.0
+WP_073674604.1|NrdA|235.9|4.0e-66|965|467|444.0|505.0|529.0|7.0|450.0|69.0|586.0|63.0|591.0
+WP_074203122.1|NrdAz3|1327.2|0.0|922|700|677.0|677.0|678.0|2.0|678.0|246.0|922.0|245.0|922.0
+YP_851020.1|NrdAm|1091.0|0.0|742|722|722.0|739.0|739.0|1.0|722.0|4.0|742.0|4.0|742.0
+--> hmm_profiles <--
 Glutaredoxin||||||domain|0.1|60
 NrdA|NrdGRE|NrdAJ|NrdA|||pclass|0.1|467
 NrdAe|NrdGRE|NrdAJ|NrdA|NrdAe||psubclass|0.1|684
@@ -1156,6 +2370,7 @@ NrdAz3|NrdGRE|NrdAJ|NrdA|NrdAz|NrdAz3|pgroup|0.1|750
 NrdAz4|NrdGRE|NrdAJ|NrdA|NrdAz|NrdAz4|pgroup|0.1|750
 NrdB|Ferritin-like|NrdBR2lox|NrdB|||pclass|0.1|261
 NrdF|Ferritin-like|NrdBR2lox|NrdB|NrdF||psubclass|0.1|303
+--> taxa <--
 286|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas||Pseudomonas|genus
 287|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas aeruginosa|Pseudomonas aeruginosa|species
 303|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas putida|Pseudomonas putida|species
@@ -1453,7 +2668,9 @@ NrdF|Ferritin-like|NrdBR2lox|NrdB|NrdF||psubclass|0.1|303
 1844093|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. 22 E 5|Pseudomonas sp. 22 E 5|species
 1844099|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. 31 E 5|Pseudomonas sp. 31 E 5|species
 1844100|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. 31 E 6|Pseudomonas sp. 31 E 6|species
+--> dbsources <--
 NCBI|NR|20180109
+--> domains <--
 AAS77241.1|Glutaredoxin|1|1|6.3e-21|9.6e-18|76.6|1|60|17|81|17|81
 AGE95459.1|Glutaredoxin|1|2|0.0012|1.8|21.3|16|58|38|80|33|82
 AGE95459.1|Glutaredoxin|2|2|4.3e-13|6.6e-10|51.5|1|60|114|181|114|181
@@ -6600,6 +7817,7 @@ YP_851020.1|NrdAz3|1|2|2.6e-97|8.4e-94|327.6|10|566|101|649|94|654
 YP_851020.1|NrdAz3|2|2|7.1e-08|0.00023|32.0|604|676|655|738|644|741
 YP_851020.1|NrdAz4|1|2|7.9e-100|2.6e-96|335.7|22|559|120|648|104|653
 YP_851020.1|NrdAz4|2|2|3.7e-09|1.2e-05|36.1|597|668|654|736|642|740
+--> tblout <--
 AAS77241.1|Glutaredoxin|6.7e-18|77.1|0.0
 AGE95459.1|Glutaredoxin|6.7e-18|77.1|0.8
 AKU44832.1|Glutaredoxin|0.00023|33.8|0.1
@@ -9244,6 +10462,7 @@ YP_851020.1|NrdAq|2.4e-101|352.4|0.9
 YP_851020.1|NrdAz|3.0e-111|385.2|0.1
 YP_851020.1|NrdAz3|5.6e-104|361.2|0.1
 YP_851020.1|NrdAz4|1.1e-107|373.3|0.1
+--> domtblout <--
 AAS77241.1|110|Glutaredoxin|60|1|1|6.3e-21|9.6e-18|76.6|0.0|1|60|17|81|17|81
 AGE95459.1|204|Glutaredoxin|60|1|2|0.0012|1.8|21.3|0.0|16|58|38|80|33|82
 AGE95459.1|204|Glutaredoxin|60|2|2|4.3e-13|6.6e-10|51.5|0.0|1|60|114|181|114|181
