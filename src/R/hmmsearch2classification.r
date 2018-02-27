@@ -361,10 +361,11 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
     arrange(db, taxon, accno, accto) %>%
     group_by(db, taxon, accno) %>%
     summarise(accto = paste(accto, collapse = ',')) %>%
-    ungroup()
+    ungroup() %>%
+    separate_rows(accto, sep = ',')
   
   con %>% copy_to(accessions, 'accessions', temporary = FALSE, overwrite = TRUE)
-  con %>% DBI::dbExecute('CREATE UNIQUE INDEX "accessions.i00" ON "accessions"("db", "accno", "taxon");')
+  con %>% DBI::dbExecute('CREATE UNIQUE INDEX "accessions.i00" ON "accessions"("db", "accto", "taxon");')
   con %>% DBI::dbExecute('CREATE INDEX "accessions.i01" ON "accessions"("accno");')
   con %>% DBI::dbExecute('CREATE INDEX "accessions.i02" ON "accessions"("taxon");')
   
@@ -396,6 +397,15 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
   logmsg('Saving tblout and domtblout to database')
   con %>% copy_to(tblout    %>% arrange(accno, profile),    'tblout',    temporary = FALSE, overwrite = TRUE)
   con %>% copy_to(domtblout %>% arrange(accno, profile, i), 'domtblout', temporary = FALSE, overwrite = TRUE)
+
+  logmsg('Creating dupfree_proteins and dupfree_accnos')
+  dp <- proteins %>% inner_join(accessions %>% transmute(accno = accto, db, taxon), by = 'accno') %>%
+    group_by(db, taxon, profile, alilen, hmmlen, envlen) %>% mutate(r = sprintf("r%03d", rank(accno))) %>% ungroup()
+  con %>% copy_to(
+    dp %>% filter(r == 'r001') %>% select(-db, -taxon),
+    'dupfree_proteins',
+    temporary = FALSE, overwrite = TRUE
+  )
 }
 
 logmsg("Done")
