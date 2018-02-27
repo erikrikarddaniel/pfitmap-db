@@ -6,6 +6,8 @@ chdir R
 screen -t R
 chdir ../R-test
 screen -t R-test
+chdir $ROOT/doc
+screen -t doc
 chdir $ROOT
 screen -t man
 screen -t root
