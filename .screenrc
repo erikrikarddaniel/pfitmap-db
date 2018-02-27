@@ -9,5 +9,6 @@ screen -t R-test
 chdir $ROOT/doc
 screen -t doc
 chdir $ROOT
+screen -t rstudio
 screen -t man
 screen -t root
