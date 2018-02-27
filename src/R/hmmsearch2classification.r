@@ -17,16 +17,19 @@ option_list = list(
     c('--dbsource', default='', help='dbsource:name:version')
   ),
   make_option(
-    c('--profilehierarchies', default='', help='tsv file with profile hiearchies')
+    c('--fuzzy_factor'), type = 'integer', default = 1, action = 'store', help = 'Factor to make lengths fuzzy for reduction of possible duplicates, default %default.'
   ),
   make_option(
-    c('--singletable', default='', help='Write data in a single tsv format to this filename.')
+    c('--profilehierarchies'), default='', help='tsv file with profile hiearchies'
   ),
   make_option(
-    c('--sqlitedb', default='', help='Write data in a SQLite database with this filename.')
+    c('--singletable'), default='', help='Write data in a single tsv format to this filename.'
   ),
   make_option(
-    c('--taxflat', default='', help='Name of NCBI taxon table in "taxflat" format (see https://github.com/erikrikarddaniel/taxdata2taxflat).')
+    c('--sqlitedb'), default='', help='Write data in a SQLite database with this filename.'
+  ),
+  make_option(
+    c('--taxflat'), default='', help='Name of NCBI taxon table in "taxflat" format (see https://github.com/erikrikarddaniel/taxdata2taxflat).'
   ),
   make_option(
     c("-v", "--verbose"), action="store_true", default=FALSE, 
@@ -46,7 +49,7 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
 }
 
 # Args list for testing:
-# opt = list(args = c('hmmsearch2classification.00.d/GRX.ncbi_nr.test.domtblout', 'hmmsearch2classification.00.d/GRX.ncbi_nr.test.tblout', 'hmmsearch2classification.00.d/NrdAe.tblout','hmmsearch2classification.00.d/NrdAg.tblout','hmmsearch2classification.00.d/NrdAh.tblout','hmmsearch2classification.00.d/NrdAi.tblout','hmmsearch2classification.00.d/NrdAk.tblout','hmmsearch2classification.00.d/NrdAm.tblout','hmmsearch2classification.00.d/NrdAn.tblout','hmmsearch2classification.00.d/NrdAq.tblout','hmmsearch2classification.00.d/NrdA.tblout','hmmsearch2classification.00.d/NrdAz3.tblout','hmmsearch2classification.00.d/NrdAz4.tblout','hmmsearch2classification.00.d/NrdAz.tblout','hmmsearch2classification.00.d/NrdAe.domtblout','hmmsearch2classification.00.d/NrdAg.domtblout','hmmsearch2classification.00.d/NrdAh.domtblout','hmmsearch2classification.00.d/NrdAi.domtblout','hmmsearch2classification.00.d/NrdAk.domtblout','hmmsearch2classification.00.d/NrdAm.domtblout','hmmsearch2classification.00.d/NrdAn.domtblout','hmmsearch2classification.00.d/NrdAq.domtblout','hmmsearch2classification.00.d/NrdA.domtblout','hmmsearch2classification.00.d/NrdAz3.domtblout','hmmsearch2classification.00.d/NrdAz4.domtblout','hmmsearch2classification.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', profilehierarchies='hmmsearch2classification.00.phier.tsv', taxflat='hmmsearch2classification.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212'))
+# opt = list(args = c('hmmsearch2classification.00.d/GRX.ncbi_nr.test.domtblout', 'hmmsearch2classification.00.d/GRX.ncbi_nr.test.tblout', 'hmmsearch2classification.00.d/NrdAe.tblout','hmmsearch2classification.00.d/NrdAg.tblout','hmmsearch2classification.00.d/NrdAh.tblout','hmmsearch2classification.00.d/NrdAi.tblout','hmmsearch2classification.00.d/NrdAk.tblout','hmmsearch2classification.00.d/NrdAm.tblout','hmmsearch2classification.00.d/NrdAn.tblout','hmmsearch2classification.00.d/NrdAq.tblout','hmmsearch2classification.00.d/NrdA.tblout','hmmsearch2classification.00.d/NrdAz3.tblout','hmmsearch2classification.00.d/NrdAz4.tblout','hmmsearch2classification.00.d/NrdAz.tblout','hmmsearch2classification.00.d/NrdAe.domtblout','hmmsearch2classification.00.d/NrdAg.domtblout','hmmsearch2classification.00.d/NrdAh.domtblout','hmmsearch2classification.00.d/NrdAi.domtblout','hmmsearch2classification.00.d/NrdAk.domtblout','hmmsearch2classification.00.d/NrdAm.domtblout','hmmsearch2classification.00.d/NrdAn.domtblout','hmmsearch2classification.00.d/NrdAq.domtblout','hmmsearch2classification.00.d/NrdA.domtblout','hmmsearch2classification.00.d/NrdAz3.domtblout','hmmsearch2classification.00.d/NrdAz4.domtblout','hmmsearch2classification.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', profilehierarchies='hmmsearch2classification.00.phier.tsv', taxflat='hmmsearch2classification.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
 
 logmsg = function(msg, llevel='INFO') {
   if ( opt$options$verbose ) {
@@ -398,14 +401,23 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
   con %>% copy_to(tblout    %>% arrange(accno, profile),    'tblout',    temporary = FALSE, overwrite = TRUE)
   con %>% copy_to(domtblout %>% arrange(accno, profile, i), 'domtblout', temporary = FALSE, overwrite = TRUE)
 
-  logmsg('Creating dupfree_proteins and dupfree_accnos')
+  logmsg(sprintf('Creating dupfree_proteins, using %d as fuzzy factor', opt$options$fuzzy_factor))
   dp <- proteins %>% inner_join(accessions %>% transmute(accno = accto, db, taxon), by = 'accno') %>%
+    mutate(
+      alilen = as.integer(round(round(alilen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor)),
+      envlen = as.integer(round(round(envlen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor)),
+      hmmlen = as.integer(round(round(hmmlen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor))
+    ) %>%
     group_by(db, taxon, profile, alilen, hmmlen, envlen) %>% mutate(r = sprintf("r%03d", rank(accno))) %>% ungroup()
+
   con %>% copy_to(
     dp %>% filter(r == 'r001') %>% select(-db, -taxon),
     'dupfree_proteins',
     temporary = FALSE, overwrite = TRUE
   )
+
+  logmsg('Disconnecting from sqlite3 db')
+  con %>% DBI::dbDisconnect()
 }
 
 logmsg("Done")
