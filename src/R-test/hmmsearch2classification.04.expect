@@ -2340,20 +2340,20 @@ WP_069954463.1|NrdAz3|661.8|6.4e-195|392|700|360|390|390|328.0|700.0|1.0|392.0|1
 YP_851020.1|NrdAm|1091.0|0.0|742|722|720|750|750|1.0|722.0|4.0|742.0|4.0|742.0
 --> hmm_profiles <--
 Glutaredoxin||||||domain|0.1|60
-NrdA|NrdGRE|NrdAJ|NrdA|NrdA no subclass|NrdA no subclass no group|pclass|0.1|467
-NrdAe|NrdGRE|NrdAJ|NrdA|NrdAe|NrdAe no group|psubclass|0.1|684
-NrdAg|NrdGRE|NrdAJ|NrdA|NrdAg|NrdAg no group|psubclass|0.1|652
-NrdAh|NrdGRE|NrdAJ|NrdA|NrdAh|NrdAh no group|psubclass|0.1|660
-NrdAi|NrdGRE|NrdAJ|NrdA|NrdAi|NrdAi no group|psubclass|0.1|545
-NrdAk|NrdGRE|NrdAJ|NrdA|NrdAk|NrdAk no group|psubclass|0.1|578
-NrdAm|NrdGRE|NrdAJ|NrdA|NrdAm|NrdAm no group|psubclass|0.1|739
-NrdAn|NrdGRE|NrdAJ|NrdA|NrdAn|NrdAn no group|psubclass|0.1|682
-NrdAq|NrdGRE|NrdAJ|NrdA|NrdAq|NrdAq no group|psubclass|0.1|650
-NrdAz|NrdGRE|NrdAJ|NrdA|NrdAz|NrdAz no group|psubclass|0.1|707
+NrdA|NrdGRE|NrdAJ|NrdA|||pclass|0.1|467
+NrdAe|NrdGRE|NrdAJ|NrdA|NrdAe||psubclass|0.1|684
+NrdAg|NrdGRE|NrdAJ|NrdA|NrdAg||psubclass|0.1|652
+NrdAh|NrdGRE|NrdAJ|NrdA|NrdAh||psubclass|0.1|660
+NrdAi|NrdGRE|NrdAJ|NrdA|NrdAi||psubclass|0.1|545
+NrdAk|NrdGRE|NrdAJ|NrdA|NrdAk||psubclass|0.1|578
+NrdAm|NrdGRE|NrdAJ|NrdA|NrdAm||psubclass|0.1|739
+NrdAn|NrdGRE|NrdAJ|NrdA|NrdAn||psubclass|0.1|682
+NrdAq|NrdGRE|NrdAJ|NrdA|NrdAq||psubclass|0.1|650
+NrdAz|NrdGRE|NrdAJ|NrdA|NrdAz||psubclass|0.1|707
 NrdAz3|NrdGRE|NrdAJ|NrdA|NrdAz|NrdAz3|pgroup|0.1|750
 NrdAz4|NrdGRE|NrdAJ|NrdA|NrdAz|NrdAz4|pgroup|0.1|750
-NrdB|Ferritin-like|NrdBR2lox|NrdB|NrdB no subclass|NrdB no subclass no group|pclass|0.1|261
-NrdF|Ferritin-like|NrdBR2lox|NrdB|NrdF|NrdF no group|psubclass|0.1|303
+NrdB|Ferritin-like|NrdBR2lox|NrdB|||pclass|0.1|261
+NrdF|Ferritin-like|NrdBR2lox|NrdB|NrdF||psubclass|0.1|303
 --> taxa <--
 286|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas||Pseudomonas|genus
 287|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas aeruginosa|Pseudomonas aeruginosa|species

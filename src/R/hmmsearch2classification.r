@@ -9,7 +9,7 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "1.2.0"
+SCRIPT_VERSION = "1.1.3"
 
 # Get arguments
 option_list = list(
@@ -64,13 +64,7 @@ logmsg(sprintf("hmmsearch2classification.r version %s: Starting classification",
 dbsource = strsplit(opt$options$dbsource, ':')[[1]]
 
 logmsg(sprintf("Reading profile hierarchies from %s", opt$options$profilehierarchies))
-hmm_profiles <- read_tsv(opt$options$profilehierarchies, col_types=cols(.default=col_character())) %>%
-  mutate(
-    pfamily   = ifelse(prank != 'domain' & is.na(pfamily),   sprintf("%s no family",   psuperfamily), pfamily),
-    pclass    = ifelse(prank != 'domain' & is.na(pclass),    sprintf("%s no class",    pfamily),      pclass),
-    psubclass = ifelse(prank != 'domain' & is.na(psubclass), sprintf("%s no subclass", pclass),       psubclass),
-    pgroup    = ifelse(prank != 'domain' & is.na(pgroup),    sprintf("%s no group",    psubclass),    pgroup)
-  )
+hmm_profiles <- read_tsv(opt$options$profilehierarchies, col_types=cols(.default=col_character()))
 
 logmsg(sprintf("Reading taxflat from %s", opt$options$taxflat))
 taxflat <- read_tsv(opt$options$taxflat, col_types=cols(.default=col_character(), ncbi_taxon_id=col_integer())) %>%
