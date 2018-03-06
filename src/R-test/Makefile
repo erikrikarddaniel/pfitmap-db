@@ -5,9 +5,13 @@ CHECK = if [ ` $(DIFF) | wc -l ` -eq 0 ]; then echo "*** $@ OK ***"; else echo "
 SQLITE_SELECT = sqlite3 $@.sqlite3 "select '--> accessions <--'; select accno, accto, taxon, db from accessions order by accno, accto, taxon, db; select '--> proteins <--'; select accno, profile, score, evalue, tlen, qlen, hmmlen, alilen, envlen, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to from proteins order by accno, profile; select '--> dupfree_proteins <--'; select accno, profile, score, evalue, tlen, qlen, hmmlen, alilen, envlen, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to from dupfree_proteins order by accno, profile; select '--> hmm_profiles <--'; select profile, psuperfamily, pfamily, pclass, psubclass, pgroup, prank, version, plen from hmm_profiles order by profile; select '--> taxa <--'; select ncbi_taxon_id, tdomain, tkingdom, tphylum, tclass, torder, tfamily, tgenus, tspecies, taxon, trank from taxa order by ncbi_taxon_id; select '--> dbsources <--'; SELECT source, name, version FROM dbsources; select '--> domains <--'; SELECT accno, profile, i, n, dom_c_evalue, dom_i_evalue, dom_score, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to FROM domains ORDER BY accno, profile, i; select '--> tblout <--'; SELECT * FROM tblout ORDER BY accno, profile; select '--> domtblout <--'; SELECT * FROM domtblout ORDER BY accno, profile, i;" > $@.out
 #SQLITE_SELECT = sqlite3 $@.sqlite3 "select accno, accto, taxon, db from accessions order by accno, accto, taxon, db; select accno, profile, score, evalue, tlen, qlen, hmmlen, alilen, envlen, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to from proteins order by accno, profile; select accno, profile, score, evalue, tlen, qlen, hmmlen, alilen, envlen, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to from dupfree_proteins order by accno, profile; select accno_from, accno_to from dupfree_accessions order by accno, accto; select profile, psuperfamily, pfamily, pclass, psubclass, pgroup, prank, version, plen from hmm_profiles order by profile; select ncbi_taxon_id, tdomain, tkingdom, tphylum, tclass, torder, tfamily, tgenus, tspecies, taxon, trank from taxa order by ncbi_taxon_id; SELECT source, name, version FROM dbsources; SELECT accno, profile, i, n, dom_c_evalue, dom_i_evalue, dom_score, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to FROM domains ORDER BY accno, profile, i; SELECT * FROM tblout ORDER BY accno, profile; SELECT * FROM domtblout ORDER BY accno, profile, i;" > $@.out
 
-all: hmmsearch2classification.00 hmmsearch2classification.01 hmmsearch2classification.02 hmmsearch2classification.03 hmmsearch2classification.04
+all: hmmsearch2classification pf-db2feather
 
 all.sqlite: hmmsearch2classification.02 hmmsearch2classification.03 hmmsearch2classification.04
+
+hmmsearch2classification: hmmsearch2classification.00 hmmsearch2classification.01 hmmsearch2classification.02 hmmsearch2classification.03 hmmsearch2classification.04
+
+pf-db2feather: pf-db2feather.00
 
 Nrd.test.tar.gz:
 	scp rnrdb:projects/profiles/profiles/Nrd.test.tar.gz .
@@ -38,6 +42,11 @@ hmmsearch2classification.04:
 	@$(SQLITE_SELECT)
 	@$(CHECK)
 
+pf-db2feather.00: hmmsearch2classification.02
+	@../R/pf-db2feather.r --verbose --prefix=$@ hmmsearch2classification.02.sqlite3
+	@ls $@.*.feather > $@.out
+	@$(CHECK)
+	
 # Data for this tc available by request from daniel.lundin@dbb.su.se
 hmmsearch2classification.large_tc:
 	../R/hmmsearch2classification.r --verbose --dbsource NCBI:NR:20180109 --profilehierarchies=$@.phier.tsv --sqlitedb=$@.sqlite3 --taxflat=taxflat.tsv $@.d/*.tblout $@.d/*.domtblout
