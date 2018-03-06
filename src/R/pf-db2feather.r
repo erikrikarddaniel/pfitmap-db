@@ -1,33 +1,24 @@
 #!/usr/bin/env Rscript
 
-# __TITLE__
+# pf-db2feather.r
 #
-# Author: __AUTHOR_EMAIL__
+# Outputs selected pfitmap tables from an sqlite3 database file to individual
+# feather files.
+#
+# Author: daniel.lundin@dbb.su.se
 
 suppressPackageStartupMessages(library(optparse))
-suppressPackageStartupMessages(library(readr))
+suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(dplyr))
-suppressPackageStartupMessages(library(tidyr))
+#suppressPackageStartupMessages(library(dbplyr))
+suppressPackageStartupMessages(library(feather))
 
-# Constants for names of different formats
-FORMAT_ONE        = 'one'
-FORMAT_TWO        = 'two'
-FORMAT_DEFAULT    = FORMAT_ONE
-FORMATS           = c(FORMAT_ONE, FORMAT_TWO)
+SCRIPT_VERSION = "0.9.0"
 
 # Get arguments
 option_list = list(
   make_option(
-    c('--inputfile'), type='character',
-    help='Name of input file'
-  ),
-  make_option(
-    c('--format'), type='character', default=FORMAT_DEFAULT,
-    help='Output format, default: [default]. See --formats for a list of supported formats.'
-  ),
-  make_option(
-    c('--formats'), action='store_true', default=FALSE,
-    help='Lists supported formats'
+    c('--prefix'), default='', help='Set a prefix for generated output files'
   ),
   make_option(
     c("-v", "--verbose"), action="store_true", default=FALSE, 
@@ -36,16 +27,11 @@ option_list = list(
 )
 opt = parse_args(
   OptionParser(
-    usage = "%prog [options] file0 .. filen", 
+    usage = "%prog [options] file.sqlite3",
     option_list = option_list
   ), 
   positional_arguments = TRUE
 )
-
-if ( opt$options$formats ) {
-  write(cat("Supported formats:", FORMATS, "\n"))
-  quit('no')
-}
 
 logmsg = function(msg, llevel='INFO') {
   if ( opt$options$verbose ) {
@@ -55,6 +41,22 @@ logmsg = function(msg, llevel='INFO') {
     )
   }
 }
-logmsg(sprintf("Reading %s", opt$options$inputfile))
+
+if ( opt$options$prefix != '' ) opt$options$prefix = sprintf("%s.", opt$options$prefix)
+
+logmsg(sprintf("pf-db2feather.r %s, connecting to %s", SCRIPT_VERSION, opt$args[1]))
+
+db <- DBI::dbConnect(RSQLite::SQLite(), opt$args[1])
+
+list('accessions', 'dbsources', 'hmm_profiles', 'domains', 'dupfree_proteins', 'hmm_profiles', 'taxa') %>%
+  walk(
+    function(t) {
+      logmsg(sprintf("Writing %s", t))
+      db %>% tbl(t) %>% collect() %>%
+        write_feather(sprintf("%s%s.feather", opt$options$prefix, t))
+    }
+  )
+
+db %>% DBI::dbDisconnect()
 
 logmsg("Done")

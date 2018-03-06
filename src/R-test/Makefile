@@ -42,7 +42,8 @@ hmmsearch2classification.04:
 	@$(SQLITE_SELECT)
 	@$(CHECK)
 
-pf-db2feather.00: hmmsearch2classification.02
+pf-db2feather.00: 
+	@../R/hmmsearch2classification.r --dbsource NCBI:NR:20180109 --profilehierarchies=hmmsearch2classification.02.phier.tsv --sqlitedb=hmmsearch2classification.02.sqlite3 --taxflat=hmmsearch2classification.taxflat.tsv hmmsearch2classification.02.d/*.tblout hmmsearch2classification.02.d/*.domtblout
 	@../R/pf-db2feather.r --verbose --prefix=$@ hmmsearch2classification.02.sqlite3
 	@ls $@.*.feather > $@.out
 	@$(CHECK)

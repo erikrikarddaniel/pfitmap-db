@@ -12,3 +12,4 @@ err
 *.nb.html
 !hmmsearch2classification.*.d/*.domtblout
 !hmmsearch2classification.*.d/*.tblout
+*.feather
