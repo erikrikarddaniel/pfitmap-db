@@ -2365,6 +2365,9 @@ NrdF|Ferritin-like|NrdBR2lox|NrdB|NrdF||psubclass|0.1|303
 1126|Bacteria||Cyanobacteria||Chroococcales|Microcystaceae|Microcystis|Microcystis aeruginosa|Microcystis aeruginosa|species
 1386|Bacteria||Firmicutes|Bacilli|Bacillales|Bacillaceae|Bacillus||Bacillus|genus
 1404|Bacteria||Firmicutes|Bacilli|Bacillales|Bacillaceae|Bacillus|Bacillus megaterium|Bacillus megaterium|species
+3708|Eukaryota|Viridiplantae|Streptophyta||Brassicales|Brassicaceae|Brassica|Brassica napus|Brassica napus|species
+4781|Eukaryota|||Oomycetes|Peronosporales|Peronosporaceae|Plasmopara|Plasmopara halstedii|Plasmopara halstedii|species
+6035|Eukaryota|Fungi|Microsporidia|||Unikaryonidae|Encephalitozoon|Encephalitozoon cuniculi|Encephalitozoon cuniculi|species
 9606|Eukaryota|Metazoa|Chordata|Mammalia|Primates|Hominidae|Homo|Homo sapiens|Homo sapiens|species
 28090|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Moraxellaceae|Acinetobacter|Acinetobacter lwoffii|Acinetobacter lwoffii|species
 47883|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas synxantha|Pseudomonas synxantha|species
@@ -2396,9 +2399,11 @@ NrdF|Ferritin-like|NrdBR2lox|NrdB|NrdF||psubclass|0.1|303
 587753|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas chlororaphis|Pseudomonas chlororaphis|species
 652611|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas aeruginosa|Pseudomonas aeruginosa PA14|no rank
 665948|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. 2_1_26|Pseudomonas sp. 2_1_26|species
+688394|Eukaryota|Fungi|Mucoromycota||Mucorales|Lichtheimiaceae|Lichtheimia|Lichtheimia ramosa|Lichtheimia ramosa|species
 721123|Bacteria||Cyanobacteria||Chroococcales|Microcystaceae|Microcystis|Microcystis aeruginosa|Microcystis aeruginosa PCC 9701|no rank
 798130|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas aeruginosa|Pseudomonas aeruginosa 39016|no rank
 856793|Bacteria||Proteobacteria|Alphaproteobacteria|||Micavibrio|Micavibrio aeruginosavorus|Micavibrio aeruginosavorus ARL-13|no rank
+890382|Eukaryota|||Oomycetes|Albuginales|Albuginaceae|Albugo|Albugo laibachii|Albugo laibachii Nc14|no rank
 941193|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas aeruginosa|Pseudomonas aeruginosa M18|no rank
 981367|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Enterobacteriaceae|Escherichia|Escherichia fergusonii|Escherichia fergusonii ECD227|no rank
 983918|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas aeruginosa|Pseudomonas aeruginosa HB13|no rank
@@ -2621,6 +2626,7 @@ NrdF|Ferritin-like|NrdBR2lox|NrdB|NrdF||psubclass|0.1|303
 1581118|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. HMSC05H02|Pseudomonas sp. HMSC05H02|species
 1608994|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas weihenstephanensis|Pseudomonas weihenstephanensis|species
 1674920|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. KG01|Pseudomonas sp. KG01|species
+1675608|Viruses|dsDNA viruses, no RNA stage|||Caudovirales|Myoviridae|Kp15virus|Klebsiella virus Miro|Klebsiella phage Miro|no rank
 1715014|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. HMSC060G01|Pseudomonas sp. HMSC060G01|species
 1715015|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. HMSC060F12|Pseudomonas sp. HMSC060F12|species
 1715060|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. HMSC057H01|Pseudomonas sp. HMSC057H01|species

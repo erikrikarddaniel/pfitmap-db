@@ -192,22 +192,30 @@ NrdF|Ferritin-like|NrdBR2lox|NrdB|NrdF||psubclass|0.1|303
 564|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Enterobacteriaceae|Escherichia|Escherichia fergusonii|Escherichia fergusonii|species
 632|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Yersiniaceae|Yersinia|Yersinia pestis|Yersinia pestis|species
 1404|Bacteria||Firmicutes|Bacilli|Bacillales|Bacillaceae|Bacillus|Bacillus megaterium|Bacillus megaterium|species
+3708|Eukaryota|Viridiplantae|Streptophyta||Brassicales|Brassicaceae|Brassica|Brassica napus|Brassica napus|species
+4781|Eukaryota|||Oomycetes|Peronosporales|Peronosporaceae|Plasmopara|Plasmopara halstedii|Plasmopara halstedii|species
+6035|Eukaryota|Fungi|Microsporidia|||Unikaryonidae|Encephalitozoon|Encephalitozoon cuniculi|Encephalitozoon cuniculi|species
 9606|Eukaryota|Metazoa|Chordata|Mammalia|Primates|Hominidae|Homo|Homo sapiens|Homo sapiens|species
+10090|Eukaryota|Metazoa|Chordata|Mammalia|Rodentia|Muridae|Mus|Mus musculus|Mus musculus|species
 28090|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Moraxellaceae|Acinetobacter|Acinetobacter lwoffii|Acinetobacter lwoffii|species
 47883|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas synxantha|Pseudomonas synxantha|species
 86192|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas chlororaphis|Pseudomonas chlororaphis subsp. aurantiaca|subspecies
 96901|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas synxantha|Pseudomonas synxantha BG33R|no rank
 283811|Bacteria||Actinobacteria|Actinobacteria|Glycomycetales|Glycomycetaceae|Stackebrandtia|Stackebrandtia nassauensis|Stackebrandtia nassauensis|species
+349101|Bacteria||Proteobacteria|Alphaproteobacteria|Rhodobacterales|Rhodobacteraceae|Rhodobacter|Rhodobacter sphaeroides|Rhodobacter sphaeroides ATCC 17029|no rank
 385969|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Yersiniaceae|Yersinia|Yersinia pestis|Yersinia pestis subsp. microtus bv. Ulegeica|no rank
 446470|Bacteria||Actinobacteria|Actinobacteria|Glycomycetales|Glycomycetaceae|Stackebrandtia|Stackebrandtia nassauensis|Stackebrandtia nassauensis DSM 44728|no rank
 550694|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Enterobacteriaceae|Escherichia|Escherichia fergusonii|Escherichia fergusonii B253|no rank
 585054|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Enterobacteriaceae|Escherichia|Escherichia fergusonii|Escherichia fergusonii ATCC 35469|no rank
 587753|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas chlororaphis|Pseudomonas chlororaphis|species
+688394|Eukaryota|Fungi|Mucoromycota||Mucorales|Lichtheimiaceae|Lichtheimia|Lichtheimia ramosa|Lichtheimia ramosa|species
+890382|Eukaryota|||Oomycetes|Albuginales|Albuginaceae|Albugo|Albugo laibachii|Albugo laibachii Nc14|no rank
 981367|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Enterobacteriaceae|Escherichia|Escherichia fergusonii|Escherichia fergusonii ECD227|no rank
 1217668|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Moraxellaceae|Acinetobacter|Acinetobacter lwoffii|Acinetobacter lwoffii NIPH 478|no rank
 1295141|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas veronii|Pseudomonas veronii 1YdBTEX2|no rank
 1608994|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas weihenstephanensis|Pseudomonas weihenstephanensis|species
 1674920|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. KG01|Pseudomonas sp. KG01|species
+1675608|Viruses|dsDNA viruses, no RNA stage|||Caudovirales|Myoviridae|Kp15virus|Klebsiella virus Miro|Klebsiella phage Miro|no rank
 1844093|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. 22 E 5|Pseudomonas sp. 22 E 5|species
 1844099|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. 31 E 5|Pseudomonas sp. 31 E 5|species
 1844100|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. 31 E 6|Pseudomonas sp. 31 E 6|species
