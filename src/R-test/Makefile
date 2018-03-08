@@ -11,7 +11,7 @@ all.sqlite: hmmsearch2classification.02 hmmsearch2classification.03 hmmsearch2cl
 
 hmmsearch2classification: hmmsearch2classification.00 hmmsearch2classification.01 hmmsearch2classification.02 hmmsearch2classification.03 hmmsearch2classification.04
 
-pf-db2feather: pf-db2feather.00
+pf-db2feather: pf-db2feather.00 pf-db2feather.01
 
 Nrd.test.tar.gz:
 	scp rnrdb:projects/profiles/profiles/Nrd.test.tar.gz .
@@ -45,6 +45,12 @@ hmmsearch2classification.04:
 pf-db2feather.00: 
 	@../R/hmmsearch2classification.r --dbsource NCBI:NR:20180109 --profilehierarchies=hmmsearch2classification.02.phier.tsv --sqlitedb=hmmsearch2classification.02.sqlite3 --taxflat=hmmsearch2classification.taxflat.tsv hmmsearch2classification.02.d/*.tblout hmmsearch2classification.02.d/*.domtblout
 	@../R/pf-db2feather.r --verbose --prefix=$@ hmmsearch2classification.02.sqlite3
+	@ls $@.*.feather > $@.out
+	@$(CHECK)
+
+pf-db2feather.01: 
+	@../R/hmmsearch2classification.r --dbsource NCBI:NR:20180109 --profilehierarchies=hmmsearch2classification.03.phier.tsv --sqlitedb=hmmsearch2classification.03.sqlite3 --taxflat=hmmsearch2classification.taxflat.tsv hmmsearch2classification.03.d/*.tblout hmmsearch2classification.03.d/*.domtblout
+	@../R/pf-db2feather.r --verbose --prefix=$@ hmmsearch2classification.03.sqlite3
 	@ls $@.*.feather > $@.out
 	@$(CHECK)
 	
