@@ -12,9 +12,11 @@
 # Author: daniel.lundin@dbb.su.se
 
 suppressPackageStartupMessages(library(optparse))
-suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(dplyr))
-suppressPackageStartupMessages(library(tidyr))
+suppressPackageStartupMessages(library(dbplyr))
+suppressPackageStartupMessages(library(purrr))
+
+# Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.00.sqlite3', verbose = TRUE))
 
 # Get arguments
 option_list = list(
@@ -44,5 +46,24 @@ logmsg = function(msg, llevel='INFO') {
   }
 }
 logmsg(sprintf("Opening %s", opt$options$sqlitedb))
+
+db <- DBI::dbConnect(RSQLite::SQLite(), dbname = opt$options$sqlitedb)
+
+accessions <- db %>% tbl('tblout') %>% distinct(accno) %>% collect()
+
+# Do we have a sequences table or not?
+if ( 'sequences' %in% (db %>% DBI::dbListTables()) ) {
+  sequences <- db %>% table('sequences') %>% collect()
+} else {
+  sequences <- tibble(accno = character(), sequence = character())
+}
+
+# Fetch sequences that are not yet in the sequences table
+accessions %>% anti_join(sequences, by = 'accno') %>% pull(accno) %>%
+  map(print)
+
+### Use efetch -db protein -format fasta -id "XP_021470271.1" from ncbi-entrez-direct
+
+db %>% DBI::dbDisconnect()
 
 logmsg("Done")
