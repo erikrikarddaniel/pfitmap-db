@@ -51,13 +51,15 @@ logmsg(sprintf("Opening %s", opt$options$sqlitedb))
 db <- DBI::dbConnect(RSQLite::SQLite(), dbname = opt$options$sqlitedb)
 
 accessions <- db %>% tbl('tblout') %>% distinct(accno) %>% collect()
+logmsg(sprintf("Read accessions, %d rows", accessions %>% nrow()))
 
 # Do we have a sequences table or not?
 if ( 'sequences' %in% (db %>% DBI::dbListTables()) ) {
-  sequences <- db %>% table('sequences') %>% collect()
+  sequences <- db %>% tbl('sequences') %>% collect()
 } else {
   sequences <- tibble(accno = character(), sequence = character())
 }
+logmsg(sprintf("Read sequences, %d rows", sequences %>% nrow()))
 
 fetch_seq <- function(accno, filename) {
   system(sprintf("efetch -db protein -id %s -format fasta >> %s", accno, filename))
