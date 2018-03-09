@@ -6,7 +6,7 @@ SQLITE_SELECT_CLASSIFICATION = sqlite3 $@.sqlite3 "select '--> accessions <--'; 
 SQLITE_SELECT_FETCHSEQS = sqlite3 $@.sqlite3 "SELECT accno, sequence FROM sequences ORDER BY accno;" > $@.out
 #SQLITE_SELECT_CLASSIFICATION = sqlite3 $@.sqlite3 "select accno, accto, taxon, db from accessions order by accno, accto, taxon, db; select accno, profile, score, evalue, tlen, qlen, hmmlen, alilen, envlen, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to from proteins order by accno, profile; select accno, profile, score, evalue, tlen, qlen, hmmlen, alilen, envlen, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to from dupfree_proteins order by accno, profile; select accno_from, accno_to from dupfree_accessions order by accno, accto; select profile, psuperfamily, pfamily, pclass, psubclass, pgroup, prank, version, plen from hmm_profiles order by profile; select ncbi_taxon_id, tdomain, tkingdom, tphylum, tclass, torder, tfamily, tgenus, tspecies, taxon, trank from taxa order by ncbi_taxon_id; SELECT source, name, version FROM dbsources; SELECT accno, profile, i, n, dom_c_evalue, dom_i_evalue, dom_score, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to FROM domains ORDER BY accno, profile, i; SELECT * FROM tblout ORDER BY accno, profile; SELECT * FROM domtblout ORDER BY accno, profile, i;" > $@.out
 
-all: hmmsearch2classification pf-db2feather
+all: hmmsearch2classification pf-db2feather pf-fetchseqs
 
 all.sqlite: hmmsearch2classification.02 hmmsearch2classification.03 hmmsearch2classification.04
 
@@ -58,9 +58,8 @@ pf-db2feather.01:
 	@$(CHECK)
 
 pf-fetchseqs.00:
-	@../R/hmmsearch2classification.r --dbsource NCBI:NR:20180109 --profilehierarchies=hmmsearch2classification.02.phier.tsv --sqlitedb=hmmsearch2classification.02.sqlite3 --taxflat=hmmsearch2classification.taxflat.tsv hmmsearch2classification.02.d/*.tblout hmmsearch2classification.02.d/*.domtblout
-	@mv hmmsearch2classification.02.sqlite3 $@.sqlite3
-	@../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3
+	cp $@.original.sqlite3 $@.sqlite3
+	../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3
 	@$(SQLITE_SELECT_FETCHSEQS)
 	@$(CHECK)
 	

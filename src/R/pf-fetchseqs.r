@@ -12,6 +12,7 @@
 # Author: daniel.lundin@dbb.su.se
 
 suppressPackageStartupMessages(library(optparse))
+suppressPackageStartupMessages(library(Biostrings))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(dbplyr))
 suppressPackageStartupMessages(library(purrr))
@@ -58,11 +59,25 @@ if ( 'sequences' %in% (db %>% DBI::dbListTables()) ) {
   sequences <- tibble(accno = character(), sequence = character())
 }
 
-# Fetch sequences that are not yet in the sequences table
-accessions %>% anti_join(sequences, by = 'accno') %>% pull(accno) %>%
-  map(print)
+fetch_seq <- function(accno, filename) {
+  system(sprintf("efetch -db protein -id %s -format fasta >> %s", accno, filename))
+}
 
-### Use efetch -db protein -format fasta -id "XP_021470271.1" from ncbi-entrez-direct
+# Fetch sequences that are not yet in the sequences table
+tmpfn <- tempfile()
+logmsg(sprintf("Fetching fasta formated sequences to %s", tmpfn))
+accessions %>% anti_join(sequences, by = 'accno') %>% pull(accno) %>%
+  walk(fetch_seq, tmpfn)
+
+logmsg("Done fetching, reading fasta file and updating/creating sequences table")
+
+newseqs <- readAAStringSet(tmpfn)
+sequences <- sequences %>% dplyr::union(
+  tibble(accno = sub(' .*', '', names(newseqs)), sequence = as.character(newseqs))
+)
+logmsg(sprintf("Inserting new table with %d sequences", sequences %>% nrow()))
+
+db %>% copy_to(sequences, 'sequences', temporary = FALSE, overwrite = TRUE)
 
 db %>% DBI::dbDisconnect()
 
