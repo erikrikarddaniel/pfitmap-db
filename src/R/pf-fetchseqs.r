@@ -17,7 +17,7 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(dbplyr))
 suppressPackageStartupMessages(library(purrr))
 
-# Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.00.sqlite3', verbose = TRUE))
+# Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.02.original.sqlite3', verbose = TRUE))
 
 # Get arguments
 option_list = list(
@@ -62,7 +62,7 @@ if ( 'sequences' %in% (db %>% DBI::dbListTables()) ) {
 logmsg(sprintf("Read sequences, %d rows", sequences %>% nrow()))
 
 fetch_seq <- function(accno, filename) {
-  system(sprintf("efetch -db protein -id %s -format fasta >> %s", accno, filename))
+  system(sprintf("efetch -db protein -id %s -format fasta >> %s 2>/dev/null", accno, filename))
 }
 
 # Fetch sequences that are not yet in the sequences table
@@ -80,6 +80,12 @@ sequences <- sequences %>% dplyr::union(
 logmsg(sprintf("Inserting new table with %d sequences", sequences %>% nrow()))
 
 db %>% copy_to(sequences, 'sequences', temporary = FALSE, overwrite = TRUE)
+
+remaining <- db %>% tbl('tblout') %>% distinct(accno) %>%
+  anti_join(db %>% tbl('sequences') %>% distinct(accno), by = 'accno') %>%
+  collect()
+
+logmsg(sprintf("After insertion %d accessions remain without sequence", remaining %>% nrow()))
 
 db %>% DBI::dbDisconnect()
 
