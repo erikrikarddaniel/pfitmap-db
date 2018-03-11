@@ -98,9 +98,9 @@ fetch_seq <- function(accno, filename) {
 
 # Fetch sequences that are not yet in the sequences table
 tmpfn <- tempfile()
-logmsg(sprintf("Fetching fasta formated sequences to %s", tmpfn))
-accessions %>% anti_join(sequences, by = 'accno') %>% pull(accno) %>%
-  walk(fetch_seq, tmpfn)
+acctofetch <- accessions %>% anti_join(sequences, by = 'accno') 
+logmsg(sprintf("Fetching %d fasta formated sequences to %s", acctofetch %>% nrow(), tmpfn))
+acctofetch %>% pull(accno) %>% walk(fetch_seq, tmpfn)
 
 logmsg("Done fetching, reading fasta file and updating/creating sequences table")
 
