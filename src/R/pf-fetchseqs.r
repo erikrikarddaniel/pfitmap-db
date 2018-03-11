@@ -65,11 +65,11 @@ logmsg(sprintf("Read sequences, %d rows", sequences %>% nrow()))
 # Reads a tsv or fasta file with sequences and returns as a tibble
 handle_input <- function(fn) {
   if ( grepl('\\.faa|\\.fasta$', fn) ) {
-    #print(paste0(fn, ': fasta'))
+    logmsg(sprintf("Reading %s as fasta", fn))
     f <- readAAStringSet(fn)
     d <- tibble(accno = names(f), sequence = as.character(f))
   } else if ( grepl('\\.tsv(\\.gz)?$', fn) ) {
-    #print(paste0(fn, ': tsv'))
+    logmsg(sprintf("Reading %s as tsv", fn))
     d <- read_tsv(fn, col_names = c('accno', 'sequence'), col_types = cols(.default = col_character())) %>%
       filter(accno != 'accno')
   }
