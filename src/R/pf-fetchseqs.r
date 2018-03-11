@@ -16,6 +16,7 @@ suppressPackageStartupMessages(library(Biostrings))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(dbplyr))
 suppressPackageStartupMessages(library(purrr))
+suppressPackageStartupMessages(library(readr))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.02.original.sqlite3', verbose = TRUE))
 
@@ -61,6 +62,35 @@ if ( 'sequences' %in% (db %>% DBI::dbListTables()) ) {
 }
 logmsg(sprintf("Read sequences, %d rows", sequences %>% nrow()))
 
+# Reads a tsv or fasta file with sequences and returns as a tibble
+handle_input <- function(fn) {
+  if ( grepl('\\.faa|\\.fasta$', fn) ) {
+    #print(paste0(fn, ': fasta'))
+    f <- readAAStringSet(fn)
+    d <- tibble(accno = names(f), sequence = as.character(f))
+  } else if ( grepl('\\.tsv(\\.gz)?$', fn) ) {
+    #print(paste0(fn, ': tsv'))
+    d <- read_tsv(fn, col_names = c('accno', 'sequence'), col_types = cols(.default = col_character())) %>%
+      filter(accno != 'accno')
+  }
+  return(d)
+}
+
+# Loop over files on the command line
+new_sequences <- tibble(accno = character(), sequence = character())
+for ( f in opt$args ) {
+  new_sequences <- new_sequences %>% union(handle_input(f))
+}
+
+# Add sequences from new_sequences that are not already in sequences but are in accessions
+sequences <- sequences %>%
+  union(
+    new_sequences %>% anti_join(sequences, by = 'accno') %>%
+      semi_join(accessions, by = 'accno')
+  )
+logmsg(sprintf("Added sequences from command line files, now %d sequences", sequences %>% nrow()))
+
+# Function that fetches the sequence for an accno and appends to a file
 fetch_seq <- function(accno, filename) {
   system(sprintf("efetch -db protein -id %s -format fasta >> %s 2>/dev/null", accno, filename))
 }
