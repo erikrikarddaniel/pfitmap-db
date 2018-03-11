@@ -19,6 +19,7 @@ suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(readr))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.02.original.sqlite3', verbose = TRUE))
+SCRIPT_VERSION = "0.9"
 
 # Get arguments
 option_list = list(
@@ -47,7 +48,7 @@ logmsg = function(msg, llevel='INFO') {
     )
   }
 }
-logmsg(sprintf("Opening %s", opt$options$sqlitedb))
+logmsg(sprintf("pd-fetchseqs.r version %s, opening %s", SCRIPT_VERSION, opt$options$sqlitedb))
 
 db <- DBI::dbConnect(RSQLite::SQLite(), dbname = opt$options$sqlitedb)
 
