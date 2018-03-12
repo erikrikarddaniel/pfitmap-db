@@ -17,12 +17,17 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(dbplyr))
 suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(readr))
+suppressPackageStartupMessages(library(stringr))
 
-# Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.02.original.sqlite3', verbose = TRUE))
+# Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.03.original.sqlite3', verbose = TRUE, sourcedbs = 'refseq,pdb'))
 SCRIPT_VERSION = "0.9"
 
 # Get arguments
 option_list = list(
+  make_option(
+    c('--sourcedbs'), type='character', 
+    help='Comma-separated list of databases to consider (e.g. "refseq", "pdb").'
+  ),
   make_option(
     c('--sqlitedb'), type='character', 
     help='Name of sqlite file'
@@ -55,6 +60,16 @@ db <- DBI::dbConnect(RSQLite::SQLite(), dbname = opt$options$sqlitedb)
 accessions <- db %>% tbl('tblout') %>% distinct(accno) %>% collect()
 logmsg(sprintf("Read accessions, %d rows", accessions %>% nrow()))
 
+if ( length(opt$options$sourcedbs) ) {
+  accessions <- accessions %>%
+    semi_join(
+      db %>% tbl('accessions') %>% collect() %>% filter(db %in% str_split(opt$options$sourcedbs, ',')[[1]]) %>%
+        distinct(accto),
+      by = c('accno' = 'accto')
+    )
+  logmsg(sprintf("Subset accessions to those belonging to %s, %d remaining", opt$options$sourcedbs, accessions %>% nrow()))
+}
+
 # Do we have a sequences table or not?
 if ( 'sequences' %in% (db %>% DBI::dbListTables()) ) {
   sequences <- db %>% tbl('sequences') %>% collect()
@@ -65,7 +80,6 @@ logmsg(sprintf("Read sequences, %d rows", sequences %>% nrow()))
 
 # Reads a tsv or fasta file with sequences and returns as a tibble
 handle_input <- function(fn) {
-  logmsg(sprintf("Reading %s", fn))
   if ( grepl('\\.faa|\\.fasta$', fn) ) {
     logmsg(sprintf("Reading %s as fasta", fn))
     f <- readAAStringSet(fn)
