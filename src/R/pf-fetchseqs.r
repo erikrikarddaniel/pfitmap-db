@@ -20,7 +20,7 @@ suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(stringr))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.03.original.sqlite3', verbose = TRUE, sourcedbs = 'refseq,pdb'))
-SCRIPT_VERSION = "0.9"
+SCRIPT_VERSION = "0.9.1"
 
 # Get arguments
 option_list = list(
