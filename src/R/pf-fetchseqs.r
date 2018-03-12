@@ -65,6 +65,7 @@ logmsg(sprintf("Read sequences, %d rows", sequences %>% nrow()))
 
 # Reads a tsv or fasta file with sequences and returns as a tibble
 handle_input <- function(fn) {
+  logmsg(sprintf("Reading %s", fn))
   if ( grepl('\\.faa|\\.fasta$', fn) ) {
     logmsg(sprintf("Reading %s as fasta", fn))
     f <- readAAStringSet(fn)

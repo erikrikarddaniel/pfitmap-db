@@ -14,7 +14,7 @@ hmmsearch2classification: hmmsearch2classification.00 hmmsearch2classification.0
 
 pf-db2feather: pf-db2feather.00 pf-db2feather.01
 
-pf-fetchseqs: pf-fetchseqs.00 pf-fetchseqs.01 pf-fetchseqs.02
+pf-fetchseqs: pf-fetchseqs.00 pf-fetchseqs.01 pf-fetchseqs.02 pf-fetchseqs.03
 
 Nrd.test.tar.gz:
 	scp rnrdb:projects/profiles/profiles/Nrd.test.tar.gz .
@@ -72,6 +72,12 @@ pf-fetchseqs.01:
 pf-fetchseqs.02:
 	@cp $@.original.sqlite3 $@.sqlite3
 	@../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3 $@.tsv $@.faa $@.fasta
+	@$(SQLITE_SELECT_FETCHSEQS)
+	@$(CHECK)
+	
+pf-fetchseqs.03:
+	@cp $@.original.sqlite3 $@.sqlite3
+	@../R/pf-fetchseqs.r --verbose --sourcedbs=refseq,pdb --sqlitedb=$@.sqlite3 $@.tsv $@.faa $@.fasta
 	@$(SQLITE_SELECT_FETCHSEQS)
 	@$(CHECK)
 	
