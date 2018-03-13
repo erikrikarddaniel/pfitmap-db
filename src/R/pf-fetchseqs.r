@@ -20,10 +20,18 @@ suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(stringr))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.03.original.sqlite3', verbose = TRUE, sourcedbs = 'refseq,pdb'))
-SCRIPT_VERSION = "0.9.1"
+SCRIPT_VERSION = "0.9.2"
 
 # Get arguments
 option_list = list(
+  make_option(
+    c('--prefetch_accnos'), type='character', 
+    help='File name to write accession numbers not present with sequences *before* attempting fetch'
+  ),
+  make_option(
+    c('--postfetch_accnos'), type='character', 
+    help='File name to write accession numbers not present with sequences *after* attempting fetch'
+  ),
   make_option(
     c('--sourcedbs'), type='character', 
     help='Comma-separated list of databases to consider (e.g. "refseq", "pdb").'
@@ -114,6 +122,7 @@ fetch_seq <- function(accno, filename) {
 # Fetch sequences that are not yet in the sequences table
 tmpfn <- tempfile()
 acctofetch <- accessions %>% anti_join(sequences, by = 'accno') 
+if ( length(opt$options$prefetch_accnos) > 0 ) acctofetch %>% arrange(accno) %>% write_tsv(opt$options$prefetch_accnos)
 logmsg(sprintf("Fetching %d fasta formated sequences to %s", acctofetch %>% nrow(), tmpfn))
 acctofetch %>% pull(accno) %>% walk(fetch_seq, tmpfn)
 
@@ -132,6 +141,7 @@ remaining <- db %>% tbl('tblout') %>% distinct(accno) %>%
   collect()
 
 logmsg(sprintf("After insertion %d accessions remain without sequence", remaining %>% nrow()))
+if ( length(opt$options$postfetch_accnos) > 0 ) remaining %>% arrange(accno) %>% write_tsv(opt$options$postfetch_accnos)
 
 db %>% DBI::dbDisconnect()
 
