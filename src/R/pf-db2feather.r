@@ -48,8 +48,10 @@ logmsg(sprintf("pf-db2feather.r %s, connecting to %s", SCRIPT_VERSION, opt$args[
 
 db <- DBI::dbConnect(RSQLite::SQLite(), opt$args[1])
 
-list('accessions', 'dbsources', 'hmm_profiles', 'domains', 'dupfree_proteins', 'hmm_profiles', 'taxa') %>%
-  walk(
+intersect(
+  c('accessions', 'dbsources', 'hmm_profiles', 'domains', 'dupfree_proteins', 'hmm_profiles', 'sequences', 'taxa'),
+  db %>% DBI::dbListTables()
+) %>% walk(
     function(t) {
       logmsg(sprintf("Writing %s", t))
       db %>% tbl(t) %>% collect() %>%
