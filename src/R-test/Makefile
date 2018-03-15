@@ -12,7 +12,7 @@ all.sqlite: hmmsearch2classification.02 hmmsearch2classification.03 hmmsearch2cl
 
 hmmsearch2classification: hmmsearch2classification.00 hmmsearch2classification.01 hmmsearch2classification.02 hmmsearch2classification.03 hmmsearch2classification.04
 
-pf-db2feather: pf-db2feather.00 pf-db2feather.01
+pf-db2feather: pf-db2feather.00 pf-db2feather.01 pf-db2feather.02
 
 pf-fetchseqs: pf-fetchseqs.00 pf-fetchseqs.01 pf-fetchseqs.02 pf-fetchseqs.03 pf-fetchseqs.04
 
@@ -54,6 +54,11 @@ pf-db2feather.00:
 pf-db2feather.01: 
 	@../R/hmmsearch2classification.r --dbsource NCBI:NR:20180109 --profilehierarchies=hmmsearch2classification.03.phier.tsv --sqlitedb=hmmsearch2classification.03.sqlite3 --taxflat=hmmsearch2classification.taxflat.tsv hmmsearch2classification.03.d/*.tblout hmmsearch2classification.03.d/*.domtblout
 	@../R/pf-db2feather.r --verbose --prefix=$@ hmmsearch2classification.03.sqlite3
+	@ls $@.*.feather > $@.out
+	@$(CHECK)
+
+pf-db2feather.02:
+	@../R/pf-db2feather.r --verbose --prefix=$@ $@.sqlite3
 	@ls $@.*.feather > $@.out
 	@$(CHECK)
 
