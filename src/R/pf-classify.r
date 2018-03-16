@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-# hmmsearch2classification
+# pf-classify
 #
 # Author: daniel.lundin@dbb.su.se
 
@@ -49,7 +49,7 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
 }
 
 # Args list for testing:
-# opt = list(args = c('hmmsearch2classification.00.d/GRX.ncbi_nr.test.domtblout', 'hmmsearch2classification.00.d/GRX.ncbi_nr.test.tblout', 'hmmsearch2classification.00.d/NrdAe.tblout','hmmsearch2classification.00.d/NrdAg.tblout','hmmsearch2classification.00.d/NrdAh.tblout','hmmsearch2classification.00.d/NrdAi.tblout','hmmsearch2classification.00.d/NrdAk.tblout','hmmsearch2classification.00.d/NrdAm.tblout','hmmsearch2classification.00.d/NrdAn.tblout','hmmsearch2classification.00.d/NrdAq.tblout','hmmsearch2classification.00.d/NrdA.tblout','hmmsearch2classification.00.d/NrdAz3.tblout','hmmsearch2classification.00.d/NrdAz4.tblout','hmmsearch2classification.00.d/NrdAz.tblout','hmmsearch2classification.00.d/NrdAe.domtblout','hmmsearch2classification.00.d/NrdAg.domtblout','hmmsearch2classification.00.d/NrdAh.domtblout','hmmsearch2classification.00.d/NrdAi.domtblout','hmmsearch2classification.00.d/NrdAk.domtblout','hmmsearch2classification.00.d/NrdAm.domtblout','hmmsearch2classification.00.d/NrdAn.domtblout','hmmsearch2classification.00.d/NrdAq.domtblout','hmmsearch2classification.00.d/NrdA.domtblout','hmmsearch2classification.00.d/NrdAz3.domtblout','hmmsearch2classification.00.d/NrdAz4.domtblout','hmmsearch2classification.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', profilehierarchies='hmmsearch2classification.00.phier.tsv', taxflat='hmmsearch2classification.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
+# opt = list(args = c('pf-classify.00.d/GRX.ncbi_nr.test.domtblout', 'pf-classify.00.d/GRX.ncbi_nr.test.tblout', 'pf-classify.00.d/NrdAe.tblout','pf-classify.00.d/NrdAg.tblout','pf-classify.00.d/NrdAh.tblout','pf-classify.00.d/NrdAi.tblout','pf-classify.00.d/NrdAk.tblout','pf-classify.00.d/NrdAm.tblout','pf-classify.00.d/NrdAn.tblout','pf-classify.00.d/NrdAq.tblout','pf-classify.00.d/NrdA.tblout','pf-classify.00.d/NrdAz3.tblout','pf-classify.00.d/NrdAz4.tblout','pf-classify.00.d/NrdAz.tblout','pf-classify.00.d/NrdAe.domtblout','pf-classify.00.d/NrdAg.domtblout','pf-classify.00.d/NrdAh.domtblout','pf-classify.00.d/NrdAi.domtblout','pf-classify.00.d/NrdAk.domtblout','pf-classify.00.d/NrdAm.domtblout','pf-classify.00.d/NrdAn.domtblout','pf-classify.00.d/NrdAq.domtblout','pf-classify.00.d/NrdA.domtblout','pf-classify.00.d/NrdAz3.domtblout','pf-classify.00.d/NrdAz4.domtblout','pf-classify.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', profilehierarchies='pf-classify.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
 
 logmsg = function(msg, llevel='INFO') {
   if ( opt$options$verbose ) {
@@ -59,7 +59,7 @@ logmsg = function(msg, llevel='INFO') {
     )
   }
 }
-logmsg(sprintf("hmmsearch2classification.r version %s: Starting classification", SCRIPT_VERSION))
+logmsg(sprintf("pf-classify.r version %s: Starting classification", SCRIPT_VERSION))
 
 dbsource = strsplit(opt$options$dbsource, ':')[[1]]
 
