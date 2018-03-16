@@ -25,6 +25,10 @@ SCRIPT_VERSION = "0.9.2"
 # Get arguments
 option_list = list(
   make_option(
+    c("--only_prefetch"), action="store_true", default=FALSE, 
+    help="Only run until not present accession numbers are written to file"
+  ),
+  make_option(
     c('--prefetch_accnos'), type='character', 
     help='File name to write accession numbers not present with sequences *before* attempting fetch'
   ),
@@ -122,7 +126,16 @@ fetch_seq <- function(accno, filename) {
 # Fetch sequences that are not yet in the sequences table
 tmpfn <- tempfile()
 acctofetch <- accessions %>% anti_join(sequences, by = 'accno') 
-if ( length(opt$options$prefetch_accnos) > 0 ) acctofetch %>% arrange(accno) %>% write_tsv(opt$options$prefetch_accnos)
+if ( length(opt$options$prefetch_accnos) > 0 ) {
+  acctofetch %>% arrange(accno) %>% write_tsv(opt$options$prefetch_accnos)
+  logmsg(sprintf("Saved accessions to %s", opt$options$prefetch_accnos))
+}
+
+if ( opt$options$only_prefetch ) {
+  logmsg("Not continuing with fetch due to only_prefetch flag set")
+  quit('no')
+}
+
 logmsg(sprintf("Fetching %d fasta formated sequences to %s", acctofetch %>% nrow(), tmpfn))
 acctofetch %>% pull(accno) %>% walk(fetch_seq, tmpfn)
 
