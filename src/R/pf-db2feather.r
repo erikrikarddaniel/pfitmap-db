@@ -13,7 +13,7 @@ suppressPackageStartupMessages(library(dplyr))
 #suppressPackageStartupMessages(library(dbplyr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "0.9.0"
+SCRIPT_VERSION = "0.9.1"
 
 # Get arguments
 option_list = list(
