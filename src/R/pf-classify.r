@@ -365,7 +365,8 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
     group_by(db, taxon, accno) %>%
     summarise(accto = paste(accto, collapse = ',')) %>%
     ungroup() %>%
-    separate_rows(accto, sep = ',')
+    separate_rows(accto, sep = ',') %>%
+    distinct()
   
   con %>% copy_to(accessions, 'accessions', temporary = FALSE, overwrite = TRUE)
   con %>% DBI::dbExecute('CREATE UNIQUE INDEX "accessions.i00" ON "accessions"("db", "accto", "taxon");')
