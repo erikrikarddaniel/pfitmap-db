@@ -14,13 +14,21 @@
 suppressPackageStartupMessages(library(optparse))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.03.original.sqlite3', verbose = TRUE, sourcedbs = 'refseq,pdb'))
-SCRIPT_VERSION = "0.9.4"
+SCRIPT_VERSION = "1.0.0"
 
 # Get arguments
 option_list = list(
   make_option(
+    c("--fetch"), action="store_true", default=TRUE,
+    help="Run fetching"
+  ),
+  make_option(
+    c("--skipfetch"), action="store_false", dest='fetch',
+    help="Skip fetching, inserting only what's found in files on the command line"
+  ),
+  make_option(
     c("--only_prefetch"), action="store_true", default=FALSE, 
-    help="Only run until not present accession numbers are written to file"
+    help="Only run until not present accession numbers are written to file, default %default"
   ),
   make_option(
     c('--prefetch_accnos'), type='character', 
@@ -146,17 +154,21 @@ if ( opt$options$only_prefetch ) {
   quit('no')
 }
 
-logmsg(sprintf("Fetching %d fasta formated sequences to %s", acctofetch %>% nrow(), tmpfn))
-acctofetch %>% pull(accno) %>% walk(fetch_seq, tmpfn)
+if ( opt$options$fetch ) {
+  logmsg(sprintf("Fetching %d fasta formated sequences to %s", acctofetch %>% nrow(), tmpfn))
+  acctofetch %>% pull(accno) %>% walk(fetch_seq, tmpfn)
 
-logmsg("Done fetching, reading fasta file and updating/creating sequences table")
+  logmsg("Done fetching, reading fasta file and updating/creating sequences table")
 
-newseqs <- readAAStringSet(tmpfn)
-sequences <- sequences %>% dplyr::union(
-  tibble(accno = sub(' .*', '', names(newseqs)), sequence = as.character(newseqs))
-)
-logmsg(sprintf("Inserting new table with %d sequences", sequences %>% nrow()))
+  newseqs <- readAAStringSet(tmpfn)
+  sequences <- sequences %>% dplyr::union(
+    tibble(accno = sub(' .*', '', names(newseqs)), sequence = as.character(newseqs))
+  )
+  logmsg(sprintf("Inserting new table with %d sequences", sequences %>% nrow()))
 
+} else {
+  logmsg("Skipping fetch")
+}
 db %>% copy_to(sequences, 'sequences', temporary = FALSE, overwrite = TRUE)
 
 remaining <- db %>% tbl('tblout') %>% distinct(accno) %>%
