@@ -10,7 +10,6 @@
 suppressPackageStartupMessages(library(optparse))
 suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(dplyr))
-#suppressPackageStartupMessages(library(dbplyr))
 suppressPackageStartupMessages(library(feather))
 
 SCRIPT_VERSION = "0.9.1"
@@ -23,6 +22,10 @@ option_list = list(
   make_option(
     c("-v", "--verbose"), action="store_true", default=FALSE, 
     help="Print progress messages"
+  ),
+  make_option(
+    c("-V", "--version"), action="store_true", default=FALSE, 
+    help="Print program version and exit"
   )
 )
 opt = parse_args(
@@ -32,6 +35,11 @@ opt = parse_args(
   ), 
   positional_arguments = TRUE
 )
+
+if ( opt$options$version ) {
+  write(SCRIPT_VERSION[1], stdout())
+  quit('no')
+}
 
 logmsg = function(msg, llevel='INFO') {
   if ( opt$options$verbose ) {

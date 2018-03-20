@@ -12,15 +12,9 @@
 # Author: daniel.lundin@dbb.su.se
 
 suppressPackageStartupMessages(library(optparse))
-suppressPackageStartupMessages(library(Biostrings))
-suppressPackageStartupMessages(library(dplyr))
-suppressPackageStartupMessages(library(dbplyr))
-suppressPackageStartupMessages(library(purrr))
-suppressPackageStartupMessages(library(readr))
-suppressPackageStartupMessages(library(stringr))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.03.original.sqlite3', verbose = TRUE, sourcedbs = 'refseq,pdb'))
-SCRIPT_VERSION = "0.9.3"
+SCRIPT_VERSION = "0.9.4"
 
 # Get arguments
 option_list = list(
@@ -47,6 +41,10 @@ option_list = list(
   make_option(
     c("-v", "--verbose"), action="store_true", default=FALSE, 
     help="Print progress messages"
+  ),
+  make_option(
+    c("-V", "--version"), action="store_true", default=FALSE, 
+    help="Print program version and exit"
   )
 )
 opt = parse_args(
@@ -56,6 +54,18 @@ opt = parse_args(
   ), 
   positional_arguments = TRUE
 )
+
+if ( opt$options$version ) {
+  write(SCRIPT_VERSION[1], stdout())
+  quit('no')
+}
+
+suppressPackageStartupMessages(library(Biostrings))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(dbplyr))
+suppressPackageStartupMessages(library(purrr))
+suppressPackageStartupMessages(library(readr))
+suppressPackageStartupMessages(library(stringr))
 
 logmsg = function(msg, llevel='INFO') {
   if ( opt$options$verbose ) {
