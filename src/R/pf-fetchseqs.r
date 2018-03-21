@@ -14,7 +14,7 @@
 suppressPackageStartupMessages(library(optparse))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.03.original.sqlite3', verbose = TRUE, sourcedbs = 'refseq,pdb'))
-SCRIPT_VERSION = "1.0.0"
+SCRIPT_VERSION = "1.0.1"
 
 # Get arguments
 option_list = list(
@@ -57,7 +57,7 @@ option_list = list(
 )
 opt = parse_args(
   OptionParser(
-    usage = "%prog [options] file.faa", 
+    usage = "%prog [options] file0.faa|file0.tsv|file0.tsv.gz ... filen.faa|filen.tsv|filen.tsv.gz", 
     option_list = option_list
   ), 
   positional_arguments = TRUE
@@ -118,6 +118,8 @@ handle_input <- function(fn) {
     logmsg(sprintf("Reading %s as tsv", fn))
     d <- read_tsv(fn, col_names = c('accno', 'sequence'), col_types = cols(.default = col_character())) %>%
       filter(accno != 'accno')
+  } else {
+    logmsg(sprintf("Don't know how to handle %s", fn))
   }
   return(d)
 }
