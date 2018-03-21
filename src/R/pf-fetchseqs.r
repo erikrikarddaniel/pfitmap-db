@@ -138,13 +138,6 @@ sequences <- sequences %>%
   )
 logmsg(sprintf("Added sequences from command line files, now %d sequences", sequences %>% nrow()))
 
-# Function that fetches the sequence for an accno and appends to a file
-fetch_seq <- function(accno, filename) {
-  system(sprintf("efetch -db protein -id %s -format fasta >> %s 2>/dev/null", accno, filename))
-}
-
-# Fetch sequences that are not yet in the sequences table
-tmpfn <- tempfile()
 acctofetch <- accessions %>% anti_join(sequences, by = 'accno') 
 if ( length(opt$options$prefetch_accnos) > 0 ) {
   acctofetch %>% arrange(accno) %>% write_tsv(opt$options$prefetch_accnos)
@@ -156,13 +149,22 @@ if ( opt$options$only_prefetch ) {
   quit('no')
 }
 
+# Fetch sequences that are not yet in the sequences table
+faafn <- tempfile(pattern = 'pf-fetchseqs.', tmpdir = '/tmp', fileext = '.faa')
+errfn <- tempfile(pattern = 'pf-fetchseqs.', tmpdir = '/tmp', fileext = '.err')
+
+# Function that fetches the sequence for an accno and appends to a file
+fetch_seq <- function(accno, faafile, errfile) {
+  system(sprintf("efetch -db protein -id %s -format fasta >> %s 2>>%s", accno, faafile, errfile))
+}
+
 if ( opt$options$fetch ) {
-  logmsg(sprintf("Fetching %d fasta formated sequences to %s", acctofetch %>% nrow(), tmpfn))
-  acctofetch %>% pull(accno) %>% walk(fetch_seq, tmpfn)
+  logmsg(sprintf("Fetching %d fasta formated sequences to %s, stderr to %s", acctofetch %>% nrow(), faafn, errfn))
+  acctofetch %>% pull(accno) %>% walk(fetch_seq, faafn, errfn)
 
   logmsg("Done fetching, reading fasta file and updating/creating sequences table")
 
-  newseqs <- readAAStringSet(tmpfn)
+  newseqs <- readAAStringSet(faafn)
   sequences <- sequences %>% dplyr::union(
     tibble(accno = sub(' .*', '', names(newseqs)), sequence = as.character(newseqs))
   )
