@@ -3,5 +3,6 @@ pf-db2feather.02.dbsources.feather
 pf-db2feather.02.domains.feather
 pf-db2feather.02.dupfree_proteins.feather
 pf-db2feather.02.hmm_profiles.feather
+pf-db2feather.02.proteins.feather
 pf-db2feather.02.sequences.feather
 pf-db2feather.02.taxa.feather

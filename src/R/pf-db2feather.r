@@ -12,7 +12,7 @@ suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "0.9.1"
+SCRIPT_VERSION = "0.9.2"
 
 # Get arguments
 option_list = list(
@@ -57,7 +57,7 @@ logmsg(sprintf("pf-db2feather.r %s, connecting to %s", SCRIPT_VERSION, opt$args[
 db <- DBI::dbConnect(RSQLite::SQLite(), opt$args[1])
 
 intersect(
-  c('accessions', 'dbsources', 'hmm_profiles', 'domains', 'dupfree_proteins', 'hmm_profiles', 'sequences', 'taxa'),
+  c('accessions', 'dbsources', 'hmm_profiles', 'domains', 'dupfree_proteins', 'hmm_profiles', 'proteins', 'sequences', 'taxa'),
   db %>% DBI::dbListTables()
 ) %>% walk(
     function(t) {
