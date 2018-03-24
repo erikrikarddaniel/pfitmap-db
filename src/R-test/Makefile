@@ -15,7 +15,7 @@ all.sqlite: pf-classify.02 pf-classify.03 pf-classify.04
 
 pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04
 
-pf-db2feather: pf-db2feather.00 pf-db2feather.01 pf-db2feather.02
+pf-db2feather: pf-db2feather.00 pf-db2feather.01 pf-db2feather.02 pf-db2feather.03
 
 pf-fetchseqs: pf-fetchseqs.00 pf-fetchseqs.01 pf-fetchseqs.02 pf-fetchseqs.03 pf-fetchseqs.04 pf-fetchseqs.05
 
@@ -62,6 +62,11 @@ pf-db2feather.01:
 
 pf-db2feather.02:
 	@../R/pf-db2feather.r --verbose --prefix=$@ $@.sqlite3
+	@ls $@.*.feather > $@.out
+	@$(CHECK)
+
+pf-db2feather.03:
+	@../R/pf-db2feather.r --verbose --dbs=refseq,pdb --prefix=$@ $@.sqlite3
 	@ls $@.*.feather > $@.out
 	@$(CHECK)
 

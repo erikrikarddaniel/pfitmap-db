@@ -17,6 +17,9 @@ SCRIPT_VERSION = "0.9.2"
 # Get arguments
 option_list = list(
   make_option(
+    c('--dbs'), default='', help='Comma-separated list of databases to subset data to'
+  ),
+  make_option(
     c('--prefix'), default='', help='Set a prefix for generated output files'
   ),
   make_option(
@@ -55,6 +58,12 @@ if ( opt$options$prefix != '' ) opt$options$prefix = sprintf("%s.", opt$options$
 logmsg(sprintf("pf-db2feather.r %s, connecting to %s", SCRIPT_VERSION, opt$args[1]))
 
 db <- DBI::dbConnect(RSQLite::SQLite(), opt$args[1])
+
+dbs <- ifelse(
+  length(opt$options$dbs) > 0,
+  str_split(opt$options$dbs),
+  db %>% tbl('accessions') %>% distinct(db) %>% collect() %>% pull(db)
+)
 
 intersect(
   c('accessions', 'dbsources', 'hmm_profiles', 'domains', 'dupfree_proteins', 'hmm_profiles', 'proteins', 'sequences', 'taxa'),
