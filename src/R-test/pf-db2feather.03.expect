@@ -1,1 +1,8 @@
-pf-db2feather.02.expect
+pf-db2feather.03.accessions.feather
+pf-db2feather.03.dbsources.feather
+pf-db2feather.03.domains.feather
+pf-db2feather.03.dupfree_proteins.feather
+pf-db2feather.03.hmm_profiles.feather
+pf-db2feather.03.proteins.feather
+pf-db2feather.03.sequences.feather
+pf-db2feather.03.taxa.feather

@@ -7,12 +7,13 @@
 #
 # Author: daniel.lundin@dbb.su.se
 
-suppressPackageStartupMessages(library(optparse))
-suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(feather))
+suppressPackageStartupMessages(library(optparse))
+suppressPackageStartupMessages(library(purrr))
+suppressPackageStartupMessages(library(stringr))
 
-SCRIPT_VERSION = "0.9.2"
+SCRIPT_VERSION = "1.0.0"
 
 # Get arguments
 option_list = list(
@@ -61,17 +62,35 @@ db <- DBI::dbConnect(RSQLite::SQLite(), opt$args[1])
 
 dbs <- ifelse(
   length(opt$options$dbs) > 0,
-  str_split(opt$options$dbs),
+  str_split(opt$options$dbs, ',')[[1]],
   db %>% tbl('accessions') %>% distinct(db) %>% collect() %>% pull(db)
 )
 
+# All tables that are subset by db, must be taken care of separately
+accessions <- db %>% tbl('accessions') %>% filter(db %in% dbs)
+logmsg("Writing accessions")
+accessions %>% collect() %>%
+  write_feather(sprintf("%saccessions.feather", opt$options$prefix))
+
+logmsg("Writing taxa")
+t <- db %>% tbl('taxa') %>% semi_join(accessions %>% distinct(taxon), by = 'taxon') %>% collect() %>%
+  write_feather(sprintf("%staxa.feather", opt$options$prefix))
+
+logmsg("Writing dbsources")
+db %>% tbl('dbsources') %>% collect() %>%
+  write_feather(sprintf("%sdbsources.feather", opt$options$prefix))
+
+logmsg("Writing hmm_profiles")
+db %>% tbl('hmm_profiles') %>% collect() %>%
+  write_feather(sprintf("%shmm_profiles.feather", opt$options$prefix))
+
 intersect(
-  c('accessions', 'dbsources', 'hmm_profiles', 'domains', 'dupfree_proteins', 'hmm_profiles', 'proteins', 'sequences', 'taxa'),
+  c('domains', 'dupfree_proteins', 'proteins', 'sequences'),
   db %>% DBI::dbListTables()
 ) %>% walk(
     function(t) {
       logmsg(sprintf("Writing %s", t))
-      db %>% tbl(t) %>% collect() %>%
+      db %>% tbl(t) %>% semi_join(accessions %>% transmute(accno = accto) %>% distinct(), by = 'accno') %>% collect() %>%
         write_feather(sprintf("%s%s.feather", opt$options$prefix, t))
     }
   )

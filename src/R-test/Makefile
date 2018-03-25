@@ -49,23 +49,27 @@ pf-classify.04:
 	@$(CHECK)
 
 pf-db2feather.00: 
+	@rm -f $@*.feather
 	@../R/pf-classify.r --dbsource NCBI:NR:20180109 --profilehierarchies=pf-classify.02.phier.tsv --sqlitedb=pf-classify.02.sqlite3 --taxflat=pf-classify.taxflat.tsv pf-classify.02.d/*.tblout pf-classify.02.d/*.domtblout
 	@../R/pf-db2feather.r --verbose --prefix=$@ pf-classify.02.sqlite3
 	@ls $@.*.feather > $@.out
 	@$(CHECK)
 
 pf-db2feather.01: 
+	@rm -f $@*.feather
 	@../R/pf-classify.r --dbsource NCBI:NR:20180109 --profilehierarchies=pf-classify.03.phier.tsv --sqlitedb=pf-classify.03.sqlite3 --taxflat=pf-classify.taxflat.tsv pf-classify.03.d/*.tblout pf-classify.03.d/*.domtblout
 	@../R/pf-db2feather.r --verbose --prefix=$@ pf-classify.03.sqlite3
 	@ls $@.*.feather > $@.out
 	@$(CHECK)
 
 pf-db2feather.02:
+	@rm -f $@*.feather
 	@../R/pf-db2feather.r --verbose --prefix=$@ $@.sqlite3
 	@ls $@.*.feather > $@.out
 	@$(CHECK)
 
 pf-db2feather.03:
+	@rm -f $@*.feather
 	@../R/pf-db2feather.r --verbose --dbs=refseq,pdb --prefix=$@ $@.sqlite3
 	@ls $@.*.feather > $@.out
 	@$(CHECK)
