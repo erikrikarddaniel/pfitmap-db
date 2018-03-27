@@ -17,7 +17,7 @@ pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-clas
 
 pf-db2feather: pf-db2feather.00 pf-db2feather.01 pf-db2feather.02 pf-db2feather.03
 
-pf-fetchseqs: pf-fetchseqs.00 pf-fetchseqs.01 pf-fetchseqs.02 pf-fetchseqs.03 pf-fetchseqs.04 pf-fetchseqs.05
+pf-fetchseqs: pf-fetchseqs.00 pf-fetchseqs.01 pf-fetchseqs.02 pf-fetchseqs.03 pf-fetchseqs.04 pf-fetchseqs.05 pf-fetchseqs.06
 
 Nrd.test.tar.gz:
 	scp rnrdb:projects/profiles/profiles/Nrd.test.tar.gz .
@@ -110,6 +110,12 @@ pf-fetchseqs.05:
 	@cp $@.original.sqlite3 $@.sqlite3
 	@../R/pf-fetchseqs.r --verbose --skipfetch --sqlitedb=$@.sqlite3
 	@$(SQLITE_SELECT_FETCHSEQS)
+	@$(CHECK)
+
+pf-fetchseqs.06:
+	@cp $@.original.sqlite3 $@.sqlite3
+	@rm -f $@.out
+	@../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3 --faa=$@.out
 	@$(CHECK)
 	
 # Data for this tc available by request from daniel.lundin@dbb.su.se
