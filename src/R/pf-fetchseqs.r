@@ -14,13 +14,17 @@
 suppressPackageStartupMessages(library(optparse))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.03.original.sqlite3', verbose = TRUE, sourcedbs = 'refseq,pdb'))
-SCRIPT_VERSION = "1.0.1"
+SCRIPT_VERSION = "1.1.0"
 
 # Get arguments
 option_list = list(
   make_option(
     c("--fetch"), action="store_true", default=TRUE,
     help="Run fetching"
+  ),
+  make_option(
+    c("--fetchedseqs"), type='character',
+    help="Save all sequences to this file. Implies that *sequences will not be saved to the database*."
   ),
   make_option(
     c("--skipfetch"), action="store_false", dest='fetch',
@@ -73,6 +77,7 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(dbplyr))
 suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(readr))
+suppressPackageStartupMessages(library(feather))
 suppressPackageStartupMessages(library(stringr))
 
 logmsg = function(msg, llevel='INFO') {
@@ -168,18 +173,29 @@ if ( opt$options$fetch ) {
   sequences <- sequences %>% dplyr::union(
     tibble(accno = sub(' .*', '', names(newseqs)), sequence = as.character(newseqs))
   )
-  logmsg(sprintf("Inserting new table with %d sequences", sequences %>% nrow()))
 
 } else {
   logmsg("Skipping fetch")
 }
-db %>% copy_to(sequences, 'sequences', temporary = FALSE, overwrite = TRUE)
 
-remaining <- db %>% tbl('tblout') %>% distinct(accno) %>%
-  anti_join(db %>% tbl('sequences') %>% distinct(accno), by = 'accno') %>%
-  collect()
+if ( length(opt$options$fetchedseqs) > 0 ) {
+  logmsg(sprintf("Saving table with %d sequences to %s", sequences %>% nrow(), opt$options$fetchedseqs))
+  if ( grepl('\\.feather', opt$options$fetchedseqs) ) {
+    sequences %>% arrange(accno) %>% write_feather(opt$options$fetchedseqs)
+  } else {
+    sequences %>% arrange(accno) %>% write_tsv(opt$options$fetchedseqs)
+  }
+} else {
+  logmsg(sprintf("Inserting new table with %d sequences", sequences %>% nrow()))
+  db %>% copy_to(sequences, 'sequences', temporary = FALSE, overwrite = TRUE)
 
-logmsg(sprintf("After insertion %d accessions remain without sequence", remaining %>% nrow()))
+  remaining <- db %>% tbl('tblout') %>% distinct(accno) %>%
+    anti_join(db %>% tbl('sequences') %>% distinct(accno), by = 'accno') %>%
+    collect()
+
+  logmsg(sprintf("After insertion %d accessions remain without sequence", remaining %>% nrow()))
+}
+
 if ( length(opt$options$postfetch_accnos) > 0 ) remaining %>% arrange(accno) %>% write_tsv(opt$options$postfetch_accnos)
 
 db %>% DBI::dbDisconnect()

@@ -115,7 +115,8 @@ pf-fetchseqs.05:
 pf-fetchseqs.06:
 	@cp $@.original.sqlite3 $@.sqlite3
 	@rm -f $@.out
-	@../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3 --faa=$@.out
+	@../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3 --fetchedseqs=$@.tsv
+	@mv $@.tsv $@.out
 	@$(CHECK)
 	
 # Data for this tc available by request from daniel.lundin@dbb.su.se
