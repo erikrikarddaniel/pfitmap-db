@@ -13,7 +13,7 @@
 
 suppressPackageStartupMessages(library(optparse))
 
-# Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.03.original.sqlite3', verbose = TRUE, sourcedbs = 'refseq,pdb'))
+# Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', verbose = TRUE, sourcedbs = 'refseq,pdb', looplevel='pfamily', loopdir='.'))
 SCRIPT_VERSION = "1.1.0"
 
 # Get arguments
