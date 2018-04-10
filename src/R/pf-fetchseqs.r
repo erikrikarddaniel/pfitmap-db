@@ -27,6 +27,14 @@ option_list = list(
     help="Save all sequences to this file. Implies that *sequences will not be saved to the database*."
   ),
   make_option(
+    c("--loopdir"), type='character', default='.',
+    help="Save output files resulting from loops over profiles at '--looplevel' to this directory, default %default."
+  ),
+  make_option(
+    c("--looplevel"), type='character', 
+    help="If set to 'psuperfamily', 'pfamily' or 'pclass', this option will make the program write individual faa files with sequences for each entry at the particular hierarchy level of profiles. Files will be written to the directory specied with '--loopdir'."
+  ),
+  make_option(
     c("--skipfetch"), action="store_false", dest='fetch',
     help="Skip fetching, inserting only what's found in files on the command line"
   ),
@@ -173,7 +181,6 @@ if ( opt$options$fetch ) {
   sequences <- sequences %>% dplyr::union(
     tibble(accno = sub(' .*', '', names(newseqs)), sequence = as.character(newseqs))
   )
-
 } else {
   logmsg("Skipping fetch")
 }
@@ -184,6 +191,11 @@ if ( length(opt$options$fetchedseqs) > 0 ) {
     sequences %>% arrange(accno) %>% write_feather(opt$options$fetchedseqs)
   } else {
     sequences %>% arrange(accno) %>% write_tsv(opt$options$fetchedseqs)
+  }
+} else if ( length(opt$options$looplevel) > 0 ) {
+  logmsg(sprintf("Writing faa files, one per %s, to %s", opt$options$looplevel, opt$options$loopdir))
+  for ( ptaxon in db %>% tbl('hmm_profiles') %>% distinct(opt$options$looplevel) %>% collect() ) {
+    logmsg(ptaxon, DEBUG)
   }
 } else {
   logmsg(sprintf("Inserting new table with %d sequences", sequences %>% nrow()))
