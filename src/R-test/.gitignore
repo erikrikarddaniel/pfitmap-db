@@ -14,3 +14,4 @@ err
 !hmmsearch2classification.*.d/*.tblout
 *.feather
 *.accnos
+pf-fetchseqs.07.psuperfamilies/

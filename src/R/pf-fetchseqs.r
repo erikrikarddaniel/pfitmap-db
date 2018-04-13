@@ -13,7 +13,7 @@
 
 suppressPackageStartupMessages(library(optparse))
 
-# Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', verbose = TRUE, sourcedbs = 'refseq,pdb', looplevel='pfamily', loopdir='.'))
+# Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', fetch = TRUE, verbose = TRUE, sourcedbs = 'refseq,pdb', looplevel='pfamily', loopdir='.'))
 SCRIPT_VERSION = "1.1.0"
 
 # Get arguments
@@ -194,8 +194,22 @@ if ( length(opt$options$fetchedseqs) > 0 ) {
   }
 } else if ( length(opt$options$looplevel) > 0 ) {
   logmsg(sprintf("Writing faa files, one per %s, to %s", opt$options$looplevel, opt$options$loopdir))
-  for ( ptaxon in db %>% tbl('hmm_profiles') %>% distinct(opt$options$looplevel) %>% collect() ) {
-    logmsg(ptaxon, DEBUG)
+  if ( ! dir.exists(opt$options$loopdir) ) dir.create(opt$options$loopdir)
+  for ( 
+    ptaxon in db %>% tbl('hmm_profiles') %>% 
+      transmute(pt = !! rlang::sym(opt$options$looplevel)) %>% 
+      distinct() %>% filter(!is.na(pt)) %>% collect() %>% pull(pt)
+  ) {
+    f <- sprintf("%s/%s.faa", opt$options$loopdir, ptaxon)
+    s <- db %>% tbl('hmm_profiles') %>% filter(!! rlang::sym(opt$options$looplevel) == ptaxon) %>%
+      inner_join(db %>% tbl('tblout'), by = 'profile') %>%
+      distinct(accno) %>% collect() %>%
+      inner_join(sequences, by = 'accno') %>%
+      arrange(accno)
+    ss <- AAStringSet(s$sequence)
+    names(ss) <- s$accno
+    writeXStringSet(ss, f)
+    logmsg(sprintf("\t%s: %d sequences saved to %s", ptaxon, nrow(s), f))
   }
 } else {
   logmsg(sprintf("Inserting new table with %d sequences", sequences %>% nrow()))
