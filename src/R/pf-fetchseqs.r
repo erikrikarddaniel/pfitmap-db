@@ -131,6 +131,8 @@ handle_input <- function(fn) {
     logmsg(sprintf("Reading %s as tsv", fn))
     d <- read_tsv(fn, col_names = c('accno', 'sequence'), col_types = cols(.default = col_character())) %>%
       filter(accno != 'accno')
+  } else if ( grepl('\\.feather$', fn) ) {
+    d <- read_feather(fn)
   } else {
     logmsg(sprintf("Don't know how to handle %s", fn))
   }
