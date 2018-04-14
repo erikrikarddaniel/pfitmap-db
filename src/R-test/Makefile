@@ -122,6 +122,7 @@ pf-fetchseqs.06:
 pf-fetchseqs.07:
 	@cp $@.original.sqlite3 $@.sqlite3
 	@rm -f $@.out
-	@../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3 --sourcedbs=refseq --looplevel=psuperfamily --loopdir=$@.psuperfamilies
+	@../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3 --sourcedbs=refseq --fetchedseqs=$@.feather --looplevel=psuperfamily --loopdir=$@.psuperfamilies
 	@cat $@.psuperfamilies/*.faa > $@.out
+	@ls $@.feather >> $@.out
 	@$(CHECK)

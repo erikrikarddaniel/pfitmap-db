@@ -14,7 +14,7 @@
 suppressPackageStartupMessages(library(optparse))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', fetch = TRUE, verbose = TRUE, sourcedbs = 'refseq,pdb', looplevel='pfamily', loopdir='.'))
-SCRIPT_VERSION = "1.2.0"
+SCRIPT_VERSION = "1.2.1"
 
 # Get arguments
 option_list = list(
@@ -192,7 +192,17 @@ if ( length(opt$options$fetchedseqs) > 0 ) {
   } else {
     sequences %>% arrange(accno) %>% write_tsv(opt$options$fetchedseqs)
   }
-} else if ( length(opt$options$looplevel) > 0 ) {
+} else {
+  logmsg(sprintf("Inserting new table with %d sequences", sequences %>% nrow()))
+  db %>% copy_to(sequences, 'sequences', temporary = FALSE, overwrite = TRUE)
+
+  remaining <- db %>% tbl('tblout') %>% distinct(accno) %>%
+    anti_join(db %>% tbl('sequences') %>% distinct(accno), by = 'accno') %>%
+    collect()
+
+  logmsg(sprintf("After insertion %d accessions remain without sequence", remaining %>% nrow()))
+}
+if ( length(opt$options$looplevel) > 0 ) {
   logmsg(sprintf("Writing faa files, one per %s, to %s", opt$options$looplevel, opt$options$loopdir))
   if ( ! dir.exists(opt$options$loopdir) ) dir.create(opt$options$loopdir)
   for ( 
@@ -211,16 +221,7 @@ if ( length(opt$options$fetchedseqs) > 0 ) {
     writeXStringSet(ss, f)
     logmsg(sprintf("\t%s: %d sequences saved to %s", ptaxon, nrow(s), f))
   }
-} else {
-  logmsg(sprintf("Inserting new table with %d sequences", sequences %>% nrow()))
-  db %>% copy_to(sequences, 'sequences', temporary = FALSE, overwrite = TRUE)
-
-  remaining <- db %>% tbl('tblout') %>% distinct(accno) %>%
-    anti_join(db %>% tbl('sequences') %>% distinct(accno), by = 'accno') %>%
-    collect()
-
-  logmsg(sprintf("After insertion %d accessions remain without sequence", remaining %>% nrow()))
-}
+} 
 
 if ( length(opt$options$postfetch_accnos) > 0 ) remaining %>% arrange(accno) %>% write_tsv(opt$options$postfetch_accnos)
 
