@@ -171,7 +171,7 @@ fetch_seq <- function(accno, faafile, errfile) {
   system(sprintf("efetch -db protein -id %s -format fasta >> %s 2>>%s", accno, faafile, errfile))
 }
 
-if ( opt$options$fetch ) {
+if ( opt$options$fetch & acctofetch %>% nrow() > 0 ) {
   logmsg(sprintf("Fetching %d fasta formated sequences to %s, stderr to %s", acctofetch %>% nrow(), faafn, errfn))
   acctofetch %>% pull(accno) %>% walk(fetch_seq, faafn, errfn)
 
