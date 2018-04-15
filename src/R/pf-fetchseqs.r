@@ -215,11 +215,14 @@ if ( length(opt$options$looplevel) > 0 ) {
     f <- sprintf("%s/%s.faa", opt$options$loopdir, ptaxon)
     s <- db %>% tbl('hmm_profiles') %>% filter(!! rlang::sym(opt$options$looplevel) == ptaxon) %>%
       inner_join(db %>% tbl('tblout'), by = 'profile') %>%
-      distinct(accno) %>% collect() %>%
+      inner_join(db %>% tbl('accessions') %>% transmute(accno = accto, taxon), by = 'accno') %>%
+      inner_join(db %>% tbl('taxa'), by = 'taxon') %>%
+      distinct(accno, tdomain, tphylum, tclass, psuperfamily, pfamily, pclass, pgroup, taxon) %>% collect() %>%
       inner_join(sequences, by = 'accno') %>%
+      mutate(name = sprintf("%s_%s_%s_%s_%s_%s_%s_%s@%s", tdomain, tphylum, tclass, gsub(' ', '_', taxon), psuperfamily, pfamily, pclass, pgroup, accno)) %>%
       arrange(accno)
     ss <- AAStringSet(s$sequence)
-    names(ss) <- s$accno
+    names(ss) <- s$name
     writeXStringSet(ss, f)
     logmsg(sprintf("\t%s: %d sequences saved to %s", ptaxon, nrow(s), f))
   }
