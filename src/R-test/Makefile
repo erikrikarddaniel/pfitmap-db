@@ -122,7 +122,7 @@ pf-fetchseqs.06:
 pf-fetchseqs.07:
 	@cp $@.original.sqlite3 $@.sqlite3
 	@rm -f $@.out
-	@../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3 --sourcedbs=refseq --fetchedseqs=$@.feather --looplevel=psuperfamily --loopdir=$@.psuperfamilies
+	@../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3 --sourcedbs=refseq --fetchedseqs=$@.feather --faalevel=psuperfamily --faadir=$@.psuperfamilies
 	@cat $@.psuperfamilies/*.faa > $@.out
 	@ls $@.feather >> $@.out
 	@$(CHECK)
@@ -130,7 +130,7 @@ pf-fetchseqs.07:
 pf-fetchseqs.08:
 	@cp $@.original.sqlite3 $@.sqlite3
 	@rm -f $@.out
-	@../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3 --sourcedbs=refseq --fetchedseqs=$@.feather --looplevel=psuperfamily --loopdir=$@.psuperfamilies --loophmmcov=1.0
+	@../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3 --sourcedbs=refseq --fetchedseqs=$@.feather --faalevel=psuperfamily --faadir=$@.psuperfamilies --faahmmcov=1.0
 	@cat $@.psuperfamilies/*.faa > $@.out
 	@ls $@.feather >> $@.out
 	@$(CHECK)

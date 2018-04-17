@@ -13,8 +13,8 @@
 
 suppressPackageStartupMessages(library(optparse))
 
-# Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', fetch = TRUE, verbose = TRUE, sourcedbs = 'refseq,pdb', looplevel='pfamily', loopdir='.'))
-SCRIPT_VERSION = "1.2.3"
+# Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', fetch = TRUE, verbose = TRUE, sourcedbs = 'refseq,pdb', faalevel='pfamily', faadir='.'))
+SCRIPT_VERSION = "1.3.0"
 
 # Get arguments
 option_list = list(
@@ -27,16 +27,16 @@ option_list = list(
     help="Save all sequences to this file. Implies that *sequences will not be saved to the database*."
   ),
   make_option(
-    c("--loopdir"), type='character', default='.',
-    help="Save output files resulting from loops over profiles at '--looplevel' to this directory, default %default."
+    c("--faadir"), type='character', default='.',
+    help="Save output files resulting from faas over profiles at '--faalevel' to this directory, default %default."
   ),
   make_option(
-    c("--loophmmcov"), type='double', default='0.0',
+    c("--faahmmcov"), type='double', default='0.0',
     help="Only save sequences to faa files if the HMMER hit covers at least this fraction of the hmm, default %default. In the db, proteins.hmmlen will be compared with hmm_profiles.plen."
   ),
   make_option(
-    c("--looplevel"), type='character', 
-    help="If set to 'psuperfamily', 'pfamily' or 'pclass', this option will make the program write individual faa files with sequences for each entry at the particular hierarchy level of profiles. Files will be written to the directory specied with '--loopdir'."
+    c("--faalevel"), type='character', 
+    help="If set to 'psuperfamily', 'pfamily' or 'pclass', this option will make the program write individual faa files with sequences for each entry at the particular hierarchy level of profiles. Files will be written to the directory specied with '--faadir'."
   ),
   make_option(
     c("--skipfetch"), action="store_false", dest='fetch',
@@ -208,21 +208,21 @@ if ( length(opt$options$fetchedseqs) > 0 ) {
 
   logmsg(sprintf("After insertion %d accessions remain without sequence", remaining %>% nrow()))
 }
-if ( length(opt$options$looplevel) > 0 ) {
-  logmsg(sprintf("Writing faa files, one per %s, to %s", opt$options$looplevel, opt$options$loopdir))
-  if ( ! dir.exists(opt$options$loopdir) ) dir.create(opt$options$loopdir)
+if ( length(opt$options$faalevel) > 0 ) {
+  logmsg(sprintf("Writing faa files, one per %s, to %s", opt$options$faalevel, opt$options$faadir))
+  if ( ! dir.exists(opt$options$faadir) ) dir.create(opt$options$faadir)
   for ( 
     ptaxon in db %>% tbl('hmm_profiles') %>% 
-      transmute(pt = !! rlang::sym(opt$options$looplevel)) %>% 
+      transmute(pt = !! rlang::sym(opt$options$faalevel)) %>% 
       distinct() %>% filter(!is.na(pt)) %>% collect() %>% pull(pt)
   ) {
-    f <- sprintf("%s/%s.faa", opt$options$loopdir, ptaxon)
-    s <- db %>% tbl('hmm_profiles') %>% filter(!! rlang::sym(opt$options$looplevel) == ptaxon) %>%
+    f <- sprintf("%s/%s.faa", opt$options$faadir, ptaxon)
+    s <- db %>% tbl('hmm_profiles') %>% filter(!! rlang::sym(opt$options$faalevel) == ptaxon) %>%
       inner_join(db %>% tbl('tblout'), by = 'profile') %>%
       inner_join(db %>% tbl('accessions') %>% transmute(accno = accto, taxon), by = 'accno') %>%
       inner_join(db %>% tbl('taxa'), by = 'taxon') %>%
       inner_join(db %>% tbl('proteins'), by = c('accno', 'profile')) %>%
-      filter(hmmlen/as.integer(plen) >= opt$options$loophmmcov) %>%
+      filter(hmmlen/as.integer(plen) >= opt$options$faahmmcov) %>%
       distinct(accno, tdomain, tphylum, tclass, psuperfamily, pfamily, pclass, pgroup, taxon) %>% collect() %>%
       inner_join(sequences, by = 'accno') %>%
       mutate(name = sprintf("%s_%s_%s_%s_%s_%s_%s_%s@%s", tdomain, tphylum, tclass, gsub(' ', '_', taxon), psuperfamily, pfamily, pclass, pgroup, accno)) %>%
