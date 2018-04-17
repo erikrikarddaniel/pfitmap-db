@@ -14,7 +14,7 @@
 suppressPackageStartupMessages(library(optparse))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', fetch = TRUE, verbose = TRUE, sourcedbs = 'refseq,pdb', looplevel='pfamily', loopdir='.'))
-SCRIPT_VERSION = "1.2.0"
+SCRIPT_VERSION = "1.2.2"
 
 # Get arguments
 option_list = list(
@@ -131,6 +131,8 @@ handle_input <- function(fn) {
     logmsg(sprintf("Reading %s as tsv", fn))
     d <- read_tsv(fn, col_names = c('accno', 'sequence'), col_types = cols(.default = col_character())) %>%
       filter(accno != 'accno')
+  } else if ( grepl('\\.feather$', fn) ) {
+    d <- read_feather(fn)
   } else {
     logmsg(sprintf("Don't know how to handle %s", fn))
   }
@@ -171,7 +173,7 @@ fetch_seq <- function(accno, faafile, errfile) {
   system(sprintf("efetch -db protein -id %s -format fasta >> %s 2>>%s", accno, faafile, errfile))
 }
 
-if ( opt$options$fetch ) {
+if ( opt$options$fetch & acctofetch %>% nrow() > 0 ) {
   logmsg(sprintf("Fetching %d fasta formated sequences to %s, stderr to %s", acctofetch %>% nrow(), faafn, errfn))
   acctofetch %>% pull(accno) %>% walk(fetch_seq, faafn, errfn)
 
@@ -192,25 +194,6 @@ if ( length(opt$options$fetchedseqs) > 0 ) {
   } else {
     sequences %>% arrange(accno) %>% write_tsv(opt$options$fetchedseqs)
   }
-} else if ( length(opt$options$looplevel) > 0 ) {
-  logmsg(sprintf("Writing faa files, one per %s, to %s", opt$options$looplevel, opt$options$loopdir))
-  if ( ! dir.exists(opt$options$loopdir) ) dir.create(opt$options$loopdir)
-  for ( 
-    ptaxon in db %>% tbl('hmm_profiles') %>% 
-      transmute(pt = !! rlang::sym(opt$options$looplevel)) %>% 
-      distinct() %>% filter(!is.na(pt)) %>% collect() %>% pull(pt)
-  ) {
-    f <- sprintf("%s/%s.faa", opt$options$loopdir, ptaxon)
-    s <- db %>% tbl('hmm_profiles') %>% filter(!! rlang::sym(opt$options$looplevel) == ptaxon) %>%
-      inner_join(db %>% tbl('tblout'), by = 'profile') %>%
-      distinct(accno) %>% collect() %>%
-      inner_join(sequences, by = 'accno') %>%
-      arrange(accno)
-    ss <- AAStringSet(s$sequence)
-    names(ss) <- s$accno
-    writeXStringSet(ss, f)
-    logmsg(sprintf("\t%s: %d sequences saved to %s", ptaxon, nrow(s), f))
-  }
 } else {
   logmsg(sprintf("Inserting new table with %d sequences", sequences %>% nrow()))
   db %>% copy_to(sequences, 'sequences', temporary = FALSE, overwrite = TRUE)
@@ -221,6 +204,29 @@ if ( length(opt$options$fetchedseqs) > 0 ) {
 
   logmsg(sprintf("After insertion %d accessions remain without sequence", remaining %>% nrow()))
 }
+if ( length(opt$options$looplevel) > 0 ) {
+  logmsg(sprintf("Writing faa files, one per %s, to %s", opt$options$looplevel, opt$options$loopdir))
+  if ( ! dir.exists(opt$options$loopdir) ) dir.create(opt$options$loopdir)
+  for ( 
+    ptaxon in db %>% tbl('hmm_profiles') %>% 
+      transmute(pt = !! rlang::sym(opt$options$looplevel)) %>% 
+      distinct() %>% filter(!is.na(pt)) %>% collect() %>% pull(pt)
+  ) {
+    f <- sprintf("%s/%s.faa", opt$options$loopdir, ptaxon)
+    s <- db %>% tbl('hmm_profiles') %>% filter(!! rlang::sym(opt$options$looplevel) == ptaxon) %>%
+      inner_join(db %>% tbl('tblout'), by = 'profile') %>%
+      inner_join(db %>% tbl('accessions') %>% transmute(accno = accto, taxon), by = 'accno') %>%
+      inner_join(db %>% tbl('taxa'), by = 'taxon') %>%
+      distinct(accno, tdomain, tphylum, tclass, psuperfamily, pfamily, pclass, pgroup, taxon) %>% collect() %>%
+      inner_join(sequences, by = 'accno') %>%
+      mutate(name = sprintf("%s_%s_%s_%s_%s_%s_%s_%s@%s", tdomain, tphylum, tclass, gsub(' ', '_', taxon), psuperfamily, pfamily, pclass, pgroup, accno)) %>%
+      arrange(accno)
+    ss <- AAStringSet(s$sequence)
+    names(ss) <- s$name
+    writeXStringSet(ss, f)
+    logmsg(sprintf("\t%s: %d sequences saved to %s", ptaxon, nrow(s), f))
+  }
+} 
 
 if ( length(opt$options$postfetch_accnos) > 0 ) remaining %>% arrange(accno) %>% write_tsv(opt$options$postfetch_accnos)
 
