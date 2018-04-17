@@ -14,7 +14,7 @@
 suppressPackageStartupMessages(library(optparse))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', fetch = TRUE, verbose = TRUE, sourcedbs = 'refseq,pdb', looplevel='pfamily', loopdir='.'))
-SCRIPT_VERSION = "1.2.2"
+SCRIPT_VERSION = "1.2.3"
 
 # Get arguments
 option_list = list(
@@ -29,6 +29,10 @@ option_list = list(
   make_option(
     c("--loopdir"), type='character', default='.',
     help="Save output files resulting from loops over profiles at '--looplevel' to this directory, default %default."
+  ),
+  make_option(
+    c("--loophmmcov"), type='double', default='0.0',
+    help="Only save sequences to faa files if the HMMER hit covers at least this fraction of the hmm, default %default. In the db, proteins.hmmlen will be compared with hmm_profiles.plen."
   ),
   make_option(
     c("--looplevel"), type='character', 
@@ -217,10 +221,13 @@ if ( length(opt$options$looplevel) > 0 ) {
       inner_join(db %>% tbl('tblout'), by = 'profile') %>%
       inner_join(db %>% tbl('accessions') %>% transmute(accno = accto, taxon), by = 'accno') %>%
       inner_join(db %>% tbl('taxa'), by = 'taxon') %>%
+      inner_join(db %>% tbl('proteins'), by = c('accno', 'profile')) %>%
+      filter(hmmlen/as.integer(plen) >= opt$options$loophmmcov) %>%
       distinct(accno, tdomain, tphylum, tclass, psuperfamily, pfamily, pclass, pgroup, taxon) %>% collect() %>%
       inner_join(sequences, by = 'accno') %>%
       mutate(name = sprintf("%s_%s_%s_%s_%s_%s_%s_%s@%s", tdomain, tphylum, tclass, gsub(' ', '_', taxon), psuperfamily, pfamily, pclass, pgroup, accno)) %>%
       arrange(accno)
+
     ss <- AAStringSet(s$sequence)
     names(ss) <- s$name
     writeXStringSet(ss, f)
