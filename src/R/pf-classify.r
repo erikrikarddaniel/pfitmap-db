@@ -9,7 +9,7 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "1.1.4"
+SCRIPT_VERSION = "1.1.5"
 
 # Get arguments
 option_list = list(
@@ -73,7 +73,7 @@ logmsg(sprintf("pf-classify.r version %s: Starting classification", SCRIPT_VERSI
 dbsource = strsplit(opt$options$dbsource, ':')[[1]]
 
 logmsg(sprintf("Reading profile hierarchies from %s", opt$options$profilehierarchies))
-hmm_profiles <- read_tsv(opt$options$profilehierarchies, col_types=cols(.default=col_character()))
+hmm_profiles <- read_tsv(opt$options$profilehierarchies, col_types=cols(.default=col_character(), plen = col_integer()))
 
 logmsg(sprintf("Reading taxflat from %s", opt$options$taxflat))
 taxflat <- read_tsv(opt$options$taxflat, col_types=cols(.default=col_character(), ncbi_taxon_id=col_integer())) %>%
