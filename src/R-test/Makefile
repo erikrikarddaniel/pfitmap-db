@@ -13,7 +13,7 @@ clean:
 
 all.sqlite: pf-classify.02 pf-classify.03 pf-classify.04
 
-pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05
+pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06
 
 pf-db2feather: pf-db2feather.00 pf-db2feather.01 pf-db2feather.02 pf-db2feather.03
 
@@ -51,6 +51,10 @@ pf-classify.04:
 # Check that the script fails when no dbsource is specified
 pf-classify.05:
 	( ../R/pf-classify.r --verbose --dbsource x --profilehierarchies=$@.phier.tsv --singletable=$@.out --taxflat=pf-classify.taxflat.tsv $@.d/*.tblout $@.d/*.domtblout 2>&1 | grep -o 'needs to contain three components' > $@.out )
+	@$(CHECK)
+
+pf-classify.06:
+	( ../R/pf-classify.r --verbose --profilehierarchies=$@.phier.tsv --singletable=$@.out --taxflat=pf-classify.taxflat.tsv $@.d/*.tblout $@.d/*.domtblout 2>&1 | grep -o 'dbsource is required' > $@.out )
 	@$(CHECK)
 
 pf-db2feather.00: 

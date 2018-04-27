@@ -70,7 +70,12 @@ logmsg = function(msg, llevel='INFO') {
 }
 logmsg(sprintf("pf-classify.r version %s: Starting classification", SCRIPT_VERSION))
 
-dbsource = strsplit(opt$options$dbsource, ':')[[1]]
+if ( ! is.null(opt$options[['dbsource']]) ) {
+  dbsource = strsplit(opt$options$dbsource, ':')[[1]]
+} else {
+  logmsg(sprintf("--dbsource is required"), 'ERROR')
+  quit('no', status = 2)
+}
 
 if ( length(dbsource) != 3 ) {
   logmsg(sprintf("--dbsource needs to contain three components separated with ':', you specified '%s'", opt$options$dbsource), 'ERROR')
