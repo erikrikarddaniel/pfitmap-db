@@ -14,7 +14,7 @@
 suppressPackageStartupMessages(library(optparse))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', fetch = TRUE, verbose = TRUE, sourcedbs = 'refseq,pdb', faalevel='pfamily', faadir='.'))
-SCRIPT_VERSION = "1.3.1"
+SCRIPT_VERSION = "1.3.2"
 
 # Get arguments
 option_list = list(
@@ -147,7 +147,7 @@ handle_input <- function(fn) {
 # Loop over files on the command line
 new_sequences <- tibble(accno = character(), sequence = character())
 for ( f in opt$args ) {
-  new_sequences <- new_sequences %>% union(handle_input(f))
+  new_sequences <- new_sequences %>% union(handle_input(f) %>% anti_join(new_sequences, by = 'accno'))
 }
 
 # Add sequences from new_sequences that are not already in sequences but are in accessions
