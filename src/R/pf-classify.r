@@ -72,6 +72,11 @@ logmsg(sprintf("pf-classify.r version %s: Starting classification", SCRIPT_VERSI
 
 dbsource = strsplit(opt$options$dbsource, ':')[[1]]
 
+if ( length(dbsource) != 3 ) {
+  logmsg(sprintf("--dbsource needs to contain three components separated with ':', you specified '%s'", opt$options$dbsource), 'ERROR')
+  quit('no', status = 2)
+}
+
 logmsg(sprintf("Reading profile hierarchies from %s", opt$options$profilehierarchies))
 hmm_profiles <- read_tsv(opt$options$profilehierarchies, col_types=cols(.default=col_character(), plen = col_integer()))
 
