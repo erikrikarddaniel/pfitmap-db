@@ -14,7 +14,7 @@
 suppressPackageStartupMessages(library(optparse))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', fetch = TRUE, verbose = TRUE, sourcedbs = 'refseq,pdb', faalevel='pfamily', faadir='.'))
-SCRIPT_VERSION = "1.3.0"
+SCRIPT_VERSION = "1.3.1"
 
 # Get arguments
 option_list = list(
@@ -136,6 +136,7 @@ handle_input <- function(fn) {
     d <- read_tsv(fn, col_names = c('accno', 'sequence'), col_types = cols(.default = col_character())) %>%
       filter(accno != 'accno')
   } else if ( grepl('\\.feather$', fn) ) {
+    logmsg(sprintf("Reading %s as feather", fn))
     d <- read_feather(fn)
   } else {
     logmsg(sprintf("Don't know how to handle %s", fn))
