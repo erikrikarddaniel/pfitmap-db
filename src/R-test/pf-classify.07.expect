@@ -4,11 +4,8 @@ AAA39907.1|AAI41079.1|Mus musculus|genbank
 AAA39907.1|BAE27045.1|Mus musculus|dbj
 AAS77241.1|AAS77241.1|uncultured bacterium|genbank
 AAS77241.1|AAS77244.1|uncultured bacterium|genbank
-ABN77368.1|ABN77368.1|Rhodobacter sphaeroides ATCC 17029|genbank
 AGE95459.1|AGE95459.1|Encephalitozoon cuniculi|genbank
-AKU44832.1|AKU44832.1|Klebsiella phage Miro|genbank
 CCA19224.1|CCA19224.1|Albugo laibachii Nc14|embl
-CDS12966.1|CDS12966.1|Lichtheimia ramosa|embl
 CDY67051.1|CDY67051.1|Brassica napus|embl
 CEG37520.1|CEG37520.1|Plasmopara halstedii|embl
 EKD41788.1|EKD41788.1|uncultured bacterium|genbank
@@ -36,8 +33,6 @@ NP_001024.1|P23921.1|unknown|uniprot
 NP_001040892.1|CCD71619.1|Caenorhabditis elegans|embl
 NP_001040892.1|NP_001040892.1|Caenorhabditis elegans|refseq
 NP_001304993.1|NP_001304993.1|Homo sapiens|refseq
-NP_001304994.1|NP_001304994.1|Homo sapiens|refseq
-NP_001317122.1|NP_001317122.1|Homo sapiens|refseq
 NP_568962.1|AAL91146.1|Arabidopsis thaliana|genbank
 NP_568962.1|AAM47884.1|Arabidopsis thaliana|genbank
 NP_568962.1|AED97688.1|Arabidopsis thaliana|genbank
@@ -45,15 +40,9 @@ NP_568962.1|NP_568962.1|Arabidopsis thaliana|refseq
 NP_568962.1|Q8L8T2.2|unknown|
 OGP67976.1|OGP67976.1|Deltaproteobacteria bacterium RBG_16_44_11|genbank
 OGT35179.1|OGT35179.1|Gammaproteobacteria bacterium RBG_16_51_14|genbank
-OGT53645.1|OGT53645.1|Gammaproteobacteria bacterium RIFCSPHIGHO2_12_FULL_41_15|genbank
 OJV62051.1|OJV62051.1|Clostridiales bacterium 38-18|genbank
-OUT66489.1|OUT66489.1|Cellvibrionales bacterium TMED21|genbank
-OUT66489.1|PDH38423.1|Halieaceae bacterium MED-G27|genbank
 OUX69892.1|OUX69892.1|Oceanospirillales bacterium TMED91|genbank
-PAA71096.1|PAA71096.1|Macrostomum lignano|genbank
-PHQ55257.1|PHQ55257.1|Porticoccus sp.|genbank
 PHS71537.1|PHS71537.1|Methylophaga sp.|genbank
-PIQ97238.1|PIQ97238.1|Nitrospinae bacterium CG11_big_fil_rev_8_21_14_0_20_56_8|genbank
 WP_001273797.1|CAQ91076.1|Escherichia fergusonii ATCC 35469|embl
 WP_001273797.1|EGC05920.1|Escherichia fergusonii B253|genbank
 WP_001273797.1|EGC97018.1|Escherichia fergusonii ECD227|genbank
@@ -61,18 +50,12 @@ WP_001273797.1|KWV99425.1|Escherichia fergusonii|genbank
 WP_001273797.1|KWW00685.1|Escherichia fergusonii|genbank
 WP_001273797.1|KWW00729.1|Escherichia fergusonii|genbank
 WP_001273797.1|WP_001273797.1|Escherichia fergusonii|refseq
-WP_005043099.1|EMA52790.1|Halococcus salifodinae DSM 8989|genbank
-WP_005043099.1|WP_005043099.1|Halococcus salifodinae|refseq
-WP_005107183.1|ENW30764.1|Acinetobacter lwoffii NIPH 478|genbank
-WP_005107183.1|WP_005107183.1|Acinetobacter lwoffii|refseq
 WP_005783931.1|EIK68131.1|Pseudomonas synxantha BG33R|genbank
 WP_005783931.1|WP_005783931.1|Pseudomonas synxantha|refseq
 WP_007095417.1|EDP98404.1|Kordia algicida OT-1|genbank
 WP_007095417.1|WP_007095417.1|Kordia algicida|refseq
 WP_013019775.1|ADD44204.1|Stackebrandtia nassauensis DSM 44728|genbank
 WP_013019775.1|WP_013019775.1|Stackebrandtia nassauensis|refseq
-WP_015510438.1|EEV40101.1|Enterococcus casseliflavus EC20|genbank
-WP_015510438.1|WP_015510438.1|Enterococcus casseliflavus|refseq
 WP_017529549.1|CRM50022.1|Pseudomonas sp. 31 E 6|embl
 WP_017529549.1|CRM69133.1|Pseudomonas sp. 31 E 5|embl
 WP_017529549.1|CRM95591.1|Pseudomonas sp. 22 E 5|embl
@@ -82,22 +65,13 @@ WP_017849930.1|SBW78280.1|Pseudomonas veronii 1YdBTEX2|
 WP_017849930.1|WP_017849930.1|Pseudomonas|refseq
 WP_019402145.1|ALA17276.1|Chelatococcus sp. CO-6|genbank
 WP_019402145.1|WP_019402145.1|Chelatococcus|refseq
-WP_021845602.1|CCX58946.1|Blautia hydrogenotrophica CAG:147|embl
-WP_021845602.1|CUM75907.1|Blautia hydrogenotrophica|embl
-WP_021845602.1|SCI33106.1|uncultured Blautia sp.|
-WP_021845602.1|WP_021845602.1|Blautia hydrogenotrophica|refseq
 WP_023848731.1|ETA52961.1|Rhodobacteraceae bacterium PD-2|genbank
 WP_023848731.1|WP_023848731.1|Rhodobacteraceae bacterium PD-2|refseq
 WP_024539350.1|OJU92547.1|Burkholderiales bacterium 66-5|genbank
 WP_024539350.1|WP_024539350.1|Comamonas badia|refseq
-WP_027115138.1|WP_027115138.1|Lachnospiraceae bacterium P6B14|refseq
-WP_036824496.1|KGP70884.1|Pontibacillus yanchengensis Y32|genbank
-WP_036824496.1|WP_036824496.1|Pontibacillus yanchengensis|refseq
 WP_039611886.1|KID54992.1|Pseudoalteromonas luteoviolacea|genbank
 WP_039611886.1|KZN65890.1|Pseudoalteromonas luteoviolacea CPMOR-1|genbank
 WP_039611886.1|WP_039611886.1|Pseudoalteromonas luteoviolacea|refseq
-WP_040388356.1|SIS98756.1|Kroppenstedtia eburnea|
-WP_040388356.1|WP_040388356.1|Thermoactinomycetaceae|refseq
 WP_040714684.1|WP_040714684.1|Novosphingobium tardaugens|refseq
 WP_045123803.1|KJG90328.1|Yersinia pestis subsp. microtus bv. Ulegeica|genbank
 WP_045123803.1|KPE01158.1|Yersinia pestis subsp. microtus bv. Ulegeica|genbank
@@ -117,7 +91,6 @@ WP_048401872.1|KMN17816.1|Pseudomonas weihenstephanensis|genbank
 WP_048401872.1|WP_048401872.1|Pseudomonas weihenstephanensis|refseq
 WP_053552091.1|ALC18146.1|Desulfuromonas soudanensis|genbank
 WP_053552091.1|WP_053552091.1|Desulfuromonas soudanensis|refseq
-WP_058882919.1|WP_058882919.1|Oscillatoriales cyanobacterium MTP1|refseq
 WP_062556275.1|KQZ49482.1|Rhizobium sp. Root149|genbank
 WP_062556275.1|WP_062556275.1|Rhizobium sp. Root149|refseq
 WP_063277327.1|OLZ60369.1|Amycolatopsis keratiniphila subsp. nogabecina|genbank
@@ -134,23 +107,16 @@ WP_063875302.1|WP_063875302.1|Pseudoalteromonas luteoviolacea|refseq
 WP_066724171.1|AMV71055.1|Desulfuromonas sp. DDH964|genbank
 WP_066724171.1|WP_066724171.1|Desulfuromonas sp. DDH964|refseq
 WP_072281281.1|WP_072281281.1|Rappaport israeli|refseq
-WP_078082351.1|AQU76929.1|Bacillus megaterium|genbank
-WP_078082351.1|WP_078082351.1|Bacillus megaterium|refseq
 WP_078820067.1|OPB11118.1|Pseudomonas synxantha|genbank
 WP_078820067.1|WP_078820067.1|Pseudomonas synxantha|refseq
 WP_081362930.1|BAV72424.1|Pseudomonas chlororaphis subsp. aurantiaca|dbj
 WP_081362930.1|SDT66528.1|Pseudomonas chlororaphis|
 WP_081362930.1|WP_081362930.1|Pseudomonas chlororaphis|refseq
-WP_096717201.1|BAZ43108.1|Chondrocystis sp. NIES-4102|dbj
-WP_096717201.1|WP_096717201.1|Chondrocystis sp. NIES-4102|refseq
-WP_099201284.1|PHQ49335.1|Streptomyces cinnamoneus|genbank
-WP_099201284.1|WP_099201284.1|Streptomyces cinnamoneus|refseq
 XP_008486154.1|XP_008486154.1|Diaphorina citri|refseq
 XP_008487196.1|XP_008487196.1|Diaphorina citri|refseq
 XP_009080205.1|XP_009080205.1|Acanthisitta chloris|refseq
 XP_017780289.1|XP_017780289.1|Nicrophorus vespilloides|refseq
 XP_020183285.1|XP_020183285.1|Aegilops tauschii subsp. tauschii|refseq
-XP_021470271.1|XP_021470271.1|Oncorhynchus mykiss|refseq
 XP_021876068.1|ORZ00027.1|Lobosporangium transversale|genbank
 XP_021876068.1|XP_021876068.1|Lobosporangium transversale|refseq
 XP_022142239.1|XP_022142239.1|Momordica charantia|refseq
@@ -158,14 +124,10 @@ XP_022925807.1|XP_022925807.1|Cucurbita moschata|refseq
 --> proteins <--
 NP_001024.1|NrdAe|1272.8|0.0|792|684|678.0|681.0|700.0|2.0|679.0|94.0|774.0|93.0|792.0
 NP_001304993.1|NrdAe|1267.4|0.0|695|684|674.0|677.0|695.0|6.0|679.0|1.0|677.0|1.0|695.0
-NP_001304994.1|NrdAe|801.5|3.9e-237|454|684|433.0|436.0|454.0|247.0|679.0|1.0|436.0|1.0|454.0
-NP_001317122.1|NrdAe|1056.5|0.0|570|684|549.0|552.0|570.0|131.0|679.0|1.0|552.0|1.0|570.0
 WP_013019775.1|NrdA|218.9|5.7e-61|946|467|447.0|496.0|552.0|5.0|451.0|133.0|694.0|130.0|704.0
 --> dupfree_proteins <--
 NP_001024.1|NrdAe|1272.8|0.0|792|684|678|681|700|2.0|679.0|94.0|774.0|93.0|792.0
 NP_001304993.1|NrdAe|1267.4|0.0|695|684|674|677|695|6.0|679.0|1.0|677.0|1.0|695.0
-NP_001304994.1|NrdAe|801.5|3.9e-237|454|684|433|436|454|247.0|679.0|1.0|436.0|1.0|454.0
-NP_001317122.1|NrdAe|1056.5|0.0|570|684|549|552|570|131.0|679.0|1.0|552.0|1.0|570.0
 WP_013019775.1|NrdA|218.9|5.7e-61|946|467|447|496|552|5.0|451.0|133.0|694.0|130.0|704.0
 --> hmm_profiles <--
 Glutaredoxin||||||domain|0.1|60
@@ -189,31 +151,25 @@ Thioredoxin||||||domain|0.1|104
 286|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas||Pseudomonas|genus
 564|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Enterobacteriaceae|Escherichia|Escherichia fergusonii|Escherichia fergusonii|species
 632|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Yersiniaceae|Yersinia|Yersinia pestis|Yersinia pestis|species
-1404|Bacteria||Firmicutes|Bacilli|Bacillales|Bacillaceae|Bacillus|Bacillus megaterium|Bacillus megaterium|species
 3708|Eukaryota|Viridiplantae|Streptophyta||Brassicales|Brassicaceae|Brassica|Brassica napus|Brassica napus|species
 4781|Eukaryota|||Oomycetes|Peronosporales|Peronosporaceae|Plasmopara|Plasmopara halstedii|Plasmopara halstedii|species
 6035|Eukaryota|Fungi|Microsporidia|||Unikaryonidae|Encephalitozoon|Encephalitozoon cuniculi|Encephalitozoon cuniculi|species
 9606|Eukaryota|Metazoa|Chordata|Mammalia|Primates|Hominidae|Homo|Homo sapiens|Homo sapiens|species
 10090|Eukaryota|Metazoa|Chordata|Mammalia|Rodentia|Muridae|Mus|Mus musculus|Mus musculus|species
-28090|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Moraxellaceae|Acinetobacter|Acinetobacter lwoffii|Acinetobacter lwoffii|species
 47883|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas synxantha|Pseudomonas synxantha|species
 86192|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas chlororaphis|Pseudomonas chlororaphis subsp. aurantiaca|subspecies
 96901|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas synxantha|Pseudomonas synxantha BG33R|no rank
 283811|Bacteria||Actinobacteria|Actinobacteria|Glycomycetales|Glycomycetaceae|Stackebrandtia|Stackebrandtia nassauensis|Stackebrandtia nassauensis|species
-349101|Bacteria||Proteobacteria|Alphaproteobacteria|Rhodobacterales|Rhodobacteraceae|Rhodobacter|Rhodobacter sphaeroides|Rhodobacter sphaeroides ATCC 17029|no rank
 385969|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Yersiniaceae|Yersinia|Yersinia pestis|Yersinia pestis subsp. microtus bv. Ulegeica|no rank
 446470|Bacteria||Actinobacteria|Actinobacteria|Glycomycetales|Glycomycetaceae|Stackebrandtia|Stackebrandtia nassauensis|Stackebrandtia nassauensis DSM 44728|no rank
 550694|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Enterobacteriaceae|Escherichia|Escherichia fergusonii|Escherichia fergusonii B253|no rank
 585054|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Enterobacteriaceae|Escherichia|Escherichia fergusonii|Escherichia fergusonii ATCC 35469|no rank
 587753|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas chlororaphis|Pseudomonas chlororaphis|species
-688394|Eukaryota|Fungi|Mucoromycota||Mucorales|Lichtheimiaceae|Lichtheimia|Lichtheimia ramosa|Lichtheimia ramosa|species
 890382|Eukaryota|||Oomycetes|Albuginales|Albuginaceae|Albugo|Albugo laibachii|Albugo laibachii Nc14|no rank
 981367|Bacteria||Proteobacteria|Gammaproteobacteria|Enterobacterales|Enterobacteriaceae|Escherichia|Escherichia fergusonii|Escherichia fergusonii ECD227|no rank
-1217668|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Moraxellaceae|Acinetobacter|Acinetobacter lwoffii|Acinetobacter lwoffii NIPH 478|no rank
 1295141|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas veronii|Pseudomonas veronii 1YdBTEX2|no rank
 1608994|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas weihenstephanensis|Pseudomonas weihenstephanensis|species
 1674920|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. KG01|Pseudomonas sp. KG01|species
-1675608|Viruses|dsDNA viruses, no RNA stage|||Caudovirales|Myoviridae|Kp15virus|Klebsiella virus Miro|Klebsiella phage Miro|no rank
 1844093|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. 22 E 5|Pseudomonas sp. 22 E 5|species
 1844099|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. 31 E 5|Pseudomonas sp. 31 E 5|species
 1844100|Bacteria||Proteobacteria|Gammaproteobacteria|Pseudomonadales|Pseudomonadaceae|Pseudomonas|Pseudomonas sp. 31 E 6|Pseudomonas sp. 31 E 6|species
@@ -224,22 +180,10 @@ AAA39907.1|Thioredoxin|1|3|2.3e-30|1.5e-27|108.1|2|102|57|158|56|160
 AAA39907.1|Thioredoxin|2|3|1.7e-30|1.1e-27|108.5|3|102|173|273|171|275
 AAA39907.1|Thioredoxin|3|3|2.8e-29|1.8e-26|104.6|2|104|520|627|519|627
 AAS77241.1|Glutaredoxin|1|1|6.3e-21|9.6e-18|76.6|1|60|17|81|17|81
-ABN77368.1|Peptidase_M27|1|9|5.4|1600000.0|0.8|116|187|355|426|345|451
-ABN77368.1|Peptidase_M27|2|9|0.73|220000.0|3.7|110|187|414|490|406|503
-ABN77368.1|Peptidase_M27|3|9|0.31|93000.0|4.9|110|182|478|550|469|567
-ABN77368.1|Peptidase_M27|4|9|0.31|91000.0|4.9|110|178|542|610|532|614
-ABN77368.1|Peptidase_M27|5|9|0.069|21000.0|7.1|110|187|606|682|599|697
-ABN77368.1|Peptidase_M27|6|9|2.7|810000.0|1.8|113|183|673|743|667|762
-ABN77368.1|Peptidase_M27|7|9|7.9|2300000.0|0.3|117|187|709|778|695|802
-ABN77368.1|Peptidase_M27|8|9|1.8|530000.0|2.4|110|187|766|842|759|875
-ABN77368.1|Peptidase_M27|9|9|1.5|450000.0|2.6|112|185|831|905|817|925
-AGE95459.1|Glutaredoxin|1|2|0.0012|1.8|21.3|16|58|38|80|33|82
 AGE95459.1|Glutaredoxin|2|2|4.3e-13|6.6e-10|51.5|1|60|114|181|114|181
-AKU44832.1|Glutaredoxin|1|1|3.3e-07|0.0005|32.7|8|60|13|76|3|76
 CCA19224.1|Glutaredoxin|1|3|3.8e-16|5.9e-13|61.3|1|60|151|215|151|215
 CCA19224.1|Glutaredoxin|2|3|8.8e-17|1.4e-13|63.4|1|60|260|324|260|324
 CCA19224.1|Glutaredoxin|3|3|2.0e-17|3.0e-14|65.4|1|60|364|428|364|428
-CDS12966.1|Glutaredoxin|1|1|5.7e-05|0.088|25.5|16|59|501|549|498|550
 CDY67051.1|Glutaredoxin|1|1|3.2e-09|4.9e-06|39.1|1|59|224|294|224|295
 CEG37520.1|Glutaredoxin|1|3|5.8e-16|8.9e-13|60.7|1|60|150|214|150|214
 CEG37520.1|Glutaredoxin|2|3|4.2e-16|6.5e-13|61.2|1|60|259|323|259|323
@@ -247,134 +191,34 @@ CEG37520.1|Glutaredoxin|3|3|7.3e-18|1.1e-14|66.8|1|60|363|427|363|427
 EKD41788.1|Glutaredoxin|1|1|1.9e-23|2.9e-20|84.7|1|60|4|63|4|63
 KDR75122.1|Glutaredoxin|1|1|3.3e-10|5.0e-07|42.3|1|60|126|190|126|190
 KPQ34288.1|Glutaredoxin|1|1|2.1e-23|3.2e-20|84.6|1|60|18|82|18|82
-NP_001024.1|NrdA|1|4|4.1e-76|1.3e-72|257.3|2|175|185|360|184|373
-NP_001024.1|NrdA|2|4|4.1e-65|1.3e-61|221.0|172|341|382|558|375|567
-NP_001024.1|NrdA|3|4|5.8e-16|1.8e-12|59.0|337|393|586|642|582|662
-NP_001024.1|NrdA|4|4|9.4e-25|3.0e-21|88.0|381|460|665|745|651|748
 NP_001024.1|NrdAe|1|1|0.0|0.0|1272.4|2|679|94|774|93|792
-NP_001024.1|NrdAg|1|2|6.1e-95|2.0e-91|319.7|37|581|129|662|112|669
-NP_001024.1|NrdAg|2|2|0.00076|2.5|18.7|555|638|667|745|655|750
-NP_001024.1|NrdAh|1|2|5.4e-75|1.8e-71|253.6|40|359|129|437|122|441
-NP_001024.1|NrdAh|2|2|4.1e-45|1.3e-41|154.8|377|648|432|742|432|746
-NP_001024.1|NrdAi|1|3|6.0e-25|2.0e-21|88.6|10|196|147|345|141|351
-NP_001024.1|NrdAi|2|3|1.3e-26|4.1e-23|94.1|199|375|385|559|377|565
-NP_001024.1|NrdAi|3|3|6.4e-34|2.1e-30|118.2|372|531|588|746|583|757
-NP_001024.1|NrdAk|1|2|1.6e-60|5.1e-57|206.3|7|398|138|553|132|562
-NP_001024.1|NrdAk|2|2|9.7e-31|3.2e-27|107.9|410|559|595|743|585|757
-NP_001024.1|NrdAm|1|2|8.2e-131|2.6e-127|439.0|2|637|3|643|2|667
-NP_001024.1|NrdAm|2|2|0.34|1100.0|10.5|625|705|663|741|652|747
 NP_001024.1|NrdAn|1|1|4.2e-224|1.3e-220|746.6|17|681|110|790|100|791
 NP_001024.1|NrdAq|1|1|3.4e-180|1.1e-176|601.5|13|700|116|787|111|791
-NP_001024.1|NrdAz|1|1|1.9e-206|6.1e-203|688.3|37|701|121|769|83|774
-NP_001024.1|NrdAz3|1|1|7.2e-197|2.3e-193|656.7|32|682|126|759|91|779
-NP_001024.1|NrdAz4|1|1|1.6e-201|5.2e-198|671.8|29|679|127|762|108|772
 NP_001040892.1|Glutaredoxin|1|1|3.3e-10|5.1e-07|42.3|3|60|1|66|1|66
-NP_001304993.1|NrdA|1|4|3.3e-76|1.0e-72|257.6|2|175|88|263|87|276
-NP_001304993.1|NrdA|2|4|3.3e-65|1.0e-61|221.4|172|341|285|461|278|470
-NP_001304993.1|NrdA|3|4|4.9e-16|1.5e-12|59.2|337|393|489|545|485|565
-NP_001304993.1|NrdA|4|4|7.9e-25|2.5e-21|88.2|381|460|568|648|554|651
 NP_001304993.1|NrdAe|1|1|0.0|0.0|1267.1|6|679|1|677|1|695
-NP_001304993.1|NrdAg|1|2|4.1e-95|1.3e-91|320.3|37|581|32|565|18|572
-NP_001304993.1|NrdAg|2|2|0.00072|2.3|18.8|555|638|570|648|565|652
-NP_001304993.1|NrdAh|1|3|3.6e-75|1.2e-71|254.2|40|360|32|341|25|345
-NP_001304993.1|NrdAh|2|3|2.8e-37|9.1e-34|129.0|377|564|335|530|335|562
-NP_001304993.1|NrdAh|3|3|4.5e-09|1.5e-05|35.8|563|648|555|645|547|649
-NP_001304993.1|NrdAi|1|3|4.8e-25|1.5e-21|88.9|10|196|50|248|44|254
-NP_001304993.1|NrdAi|2|3|1.0e-26|3.3e-23|94.4|199|375|288|462|280|468
-NP_001304993.1|NrdAi|3|3|5.2e-34|1.7e-30|118.5|372|531|491|649|486|660
-NP_001304993.1|NrdAk|1|2|1.1e-60|3.6e-57|206.8|7|398|41|456|35|465
-NP_001304993.1|NrdAk|2|2|7.8e-31|2.5e-27|108.2|410|559|498|646|488|660
-NP_001304993.1|NrdAm|1|2|2.8e-118|9.1e-115|397.6|125|637|33|546|19|565
-NP_001304993.1|NrdAm|2|2|0.3|960.0|10.7|625|705|566|644|560|651
 NP_001304993.1|NrdAn|1|1|3.1e-224|9.9e-221|747.1|17|681|13|693|8|694
 NP_001304993.1|NrdAq|1|1|2.1e-180|6.8e-177|602.2|13|700|19|690|14|694
-NP_001304993.1|NrdAz|1|1|1.6e-206|5.0e-203|688.6|45|701|30|672|12|677
-NP_001304993.1|NrdAz3|1|1|5.4e-197|1.7e-193|657.1|35|682|30|662|6|682
-NP_001304993.1|NrdAz4|1|1|1.0e-201|3.3e-198|672.5|29|679|30|665|12|675
-NP_001304994.1|NrdA|1|4|0.6|1900.0|9.5|154|175|1|22|1|42
-NP_001304994.1|NrdA|2|4|1.4e-65|4.4e-62|222.6|172|341|44|220|35|229
-NP_001304994.1|NrdA|3|4|2.7e-16|8.6e-13|60.1|337|393|248|304|244|324
-NP_001304994.1|NrdA|4|4|4.3e-25|1.4e-21|89.1|381|460|327|407|314|410
-NP_001304994.1|NrdAe|1|1|1.7e-240|5.3e-237|801.1|247|679|1|436|1|454
-NP_001304994.1|NrdAg|1|2|5.4e-55|1.8e-51|187.7|252|580|1|323|1|330
-NP_001304994.1|NrdAg|2|2|0.00033|1.1|19.9|555|638|329|407|314|412
-NP_001304994.1|NrdAh|1|3|5.6e-19|1.8e-15|68.5|258|359|4|99|1|103
-NP_001304994.1|NrdAh|2|3|1.1e-37|3.6e-34|130.3|377|564|94|289|94|321
-NP_001304994.1|NrdAh|3|3|2.3e-09|7.4e-06|36.7|562|648|313|404|304|408
-NP_001304994.1|NrdAi|1|2|4.3e-27|1.4e-23|95.7|199|375|47|221|39|228
-NP_001304994.1|NrdAi|2|2|2.2e-34|7.2e-31|119.7|372|531|250|408|244|419
-NP_001304994.1|NrdAk|1|2|5.3e-27|1.7e-23|95.6|214|398|37|215|25|224
-NP_001304994.1|NrdAk|2|2|3.5e-31|1.2e-27|109.4|410|559|257|405|247|419
-NP_001304994.1|NrdAm|1|2|1.1e-61|3.7e-58|210.4|332|638|1|306|1|330
-NP_001304994.1|NrdAm|2|2|0.15|500.0|11.7|625|705|325|403|313|408
-NP_001304994.1|NrdAn|1|1|1.3e-146|4.1e-143|490.6|246|681|1|452|1|453
-NP_001304994.1|NrdAq|1|1|6.5e-109|2.1e-105|365.9|240|700|1|449|1|453
-NP_001304994.1|NrdAz|1|1|1.0e-127|3.4e-124|428.0|258|701|1|431|1|436
-NP_001304994.1|NrdAz3|1|1|6.0e-119|1.9e-115|399.1|248|682|1|421|1|441
-NP_001304994.1|NrdAz4|1|1|3.7e-126|1.2e-122|422.7|242|679|1|424|1|434
-NP_001317122.1|NrdA|1|4|4.7e-57|1.5e-53|194.5|41|175|3|138|1|158
-NP_001317122.1|NrdA|2|4|2.3e-65|7.3e-62|221.9|172|341|160|336|154|345
-NP_001317122.1|NrdA|3|4|3.7e-16|1.2e-12|59.6|337|393|364|420|360|440
-NP_001317122.1|NrdA|4|4|5.9e-25|1.9e-21|88.6|381|460|443|523|429|526
-NP_001317122.1|NrdAe|1|1|0.0|0.0|1056.1|131|679|1|552|1|570
-NP_001317122.1|NrdAg|1|2|8.8e-78|2.9e-74|263.0|139|580|3|439|1|446
-NP_001317122.1|NrdAg|2|2|0.00053|1.7|19.3|555|638|445|523|440|528
-NP_001317122.1|NrdAh|1|3|1.9e-57|6.2e-54|195.6|140|359|3|215|1|219
-NP_001317122.1|NrdAh|2|3|1.7e-37|5.7e-34|129.6|377|565|210|406|210|439
-NP_001317122.1|NrdAh|3|3|3.3e-09|1.1e-05|36.2|562|648|429|520|420|524
-NP_001317122.1|NrdAi|1|3|8.3e-17|2.7e-13|61.7|84|196|3|123|1|129
-NP_001317122.1|NrdAi|2|3|6.9e-27|2.2e-23|95.0|199|375|163|337|155|344
-NP_001317122.1|NrdAi|3|3|3.6e-34|1.2e-30|119.0|372|531|366|524|361|535
-NP_001317122.1|NrdAk|1|3|1.4e-19|4.6e-16|71.1|87|217|3|134|1|150
-NP_001317122.1|NrdAk|2|3|9.2e-27|3.0e-23|94.8|214|398|153|331|141|339
-NP_001317122.1|NrdAk|3|3|5.5e-31|1.8e-27|108.7|410|559|373|521|363|535
-NP_001317122.1|NrdAm|1|2|1.1e-103|3.6e-100|349.3|219|637|3|421|1|438
-NP_001317122.1|NrdAm|2|2|0.23|730.0|11.1|625|705|441|519|433|524
-NP_001317122.1|NrdAn|1|1|2.0e-192|6.5e-189|641.9|133|681|3|568|1|569
-NP_001317122.1|NrdAq|1|1|1.4e-152|4.4e-149|510.2|127|700|3|565|1|569
-NP_001317122.1|NrdAz|1|1|4.0e-175|1.3e-171|584.8|145|701|3|547|1|552
-NP_001317122.1|NrdAz3|1|1|1.3e-166|4.2e-163|556.6|135|682|3|537|1|557
-NP_001317122.1|NrdAz4|1|1|7.1e-172|2.3e-168|573.8|129|679|3|540|1|550
 NP_568962.1|Glutaredoxin|1|1|2.2e-20|3.4e-17|74.9|1|60|31|93|31|93
 OGP67976.1|Glutaredoxin|1|1|2.8e-10|4.4e-07|42.5|1|59|86|144|86|145
 OGT35179.1|Glutaredoxin|1|1|1.9e-20|2.9e-17|75.1|1|60|16|80|16|80
-OGT53645.1|Glutaredoxin|1|2|0.079|120.0|15.5|1|44|4|47|4|52
-OGT53645.1|Glutaredoxin|2|2|4.7|7200.0|9.8|14|44|54|84|53|97
 OJV62051.1|Glutaredoxin|1|1|5.3e-21|8.1e-18|76.9|1|60|5|64|5|64
-OUT66489.1|Glutaredoxin|1|1|3.3e-05|0.05|26.3|1|35|9|43|9|60
 OUX69892.1|Glutaredoxin|1|1|6.6e-21|1.0e-17|76.6|1|60|4|63|4|63
-PAA71096.1|Glutaredoxin|1|2|8.8|14000.0|8.9|2|19|46|63|45|104
-PAA71096.1|Glutaredoxin|2|2|1.2|1800.0|11.7|2|21|330|349|328|378
-PHQ55257.1|Glutaredoxin|1|1|2.7e-05|0.042|26.6|2|54|11|62|10|66
 PHS71537.1|Glutaredoxin|1|1|1.0e-21|1.5e-18|79.2|1|59|4|62|4|63
-PIQ97238.1|Glutaredoxin|1|1|2.3e-05|0.035|26.8|2|54|1|54|1|59
 WP_001273797.1|Glutaredoxin|1|1|1.8e-23|2.8e-20|84.7|1|60|4|63|4|63
-WP_005043099.1|Glutaredoxin|1|1|2.2e-10|3.4e-07|42.8|2|57|4|59|3|62
-WP_005107183.1|Glutaredoxin|1|1|0.023|35.0|17.2|2|52|37|88|36|93
 WP_005783931.1|Glutaredoxin|1|1|1.0e-21|1.5e-18|79.2|1|60|4|63|4|63
 WP_007095417.1|Glutaredoxin|1|1|1.9e-07|0.00029|33.5|1|58|7|66|7|68
-WP_013019775.1|NrdA|1|4|1.0e-25|3.2e-22|91.2|5|142|133|271|130|278
-WP_013019775.1|NrdA|2|4|5.3e-26|1.7e-22|92.1|139|340|287|494|280|504
-WP_013019775.1|NrdA|3|4|0.045|140.0|13.2|340|396|540|598|527|623
-WP_013019775.1|NrdA|4|4|0.0022|7.0|17.5|365|451|605|694|599|704
-WP_015510438.1|Glutaredoxin|1|1|0.00011|0.17|24.6|1|31|2|32|2|50
 WP_017529549.1|Glutaredoxin|1|1|1.0e-21|1.5e-18|79.2|1|60|4|63|4|63
 WP_017849930.1|Glutaredoxin|1|1|1.0e-21|1.5e-18|79.2|1|60|4|63|4|63
 WP_019402145.1|Glutaredoxin|1|1|1.9e-23|2.9e-20|84.7|1|60|4|64|4|64
-WP_021845602.1|Glutaredoxin|1|1|2.5e-06|0.0039|29.9|7|51|8|52|1|53
 WP_023848731.1|Glutaredoxin|1|1|5.1e-21|7.8e-18|76.9|1|60|4|64|4|64
 WP_024539350.1|Glutaredoxin|1|1|1.8e-23|2.8e-20|84.8|1|60|4|64|4|64
-WP_027115138.1|Glutaredoxin|1|1|0.00036|0.55|23.0|2|44|4|46|3|54
-WP_036824496.1|Glutaredoxin|1|1|1.3e-06|0.002|30.8|1|41|2|42|2|49
 WP_039611886.1|Glutaredoxin|1|1|2.0e-23|3.1e-20|84.6|1|60|5|65|5|65
-WP_040388356.1|Glutaredoxin|1|1|2.8e-07|0.00044|32.9|2|51|4|53|3|56
 WP_040714684.1|Glutaredoxin|1|1|6.6e-21|1.0e-17|76.6|1|60|17|81|17|81
 WP_045123803.1|Glutaredoxin|1|1|1.8e-23|2.8e-20|84.8|3|60|1|58|1|58
 WP_046357020.1|Glutaredoxin|1|1|2.0e-23|3.1e-20|84.6|1|60|5|65|5|65
 WP_046801873.1|Glutaredoxin|1|1|1.0e-21|1.5e-18|79.2|1|60|4|63|4|63
 WP_048401872.1|Glutaredoxin|1|1|3.1e-05|0.047|26.4|2|60|5|63|4|63
 WP_053552091.1|Glutaredoxin|1|1|1.9e-20|3.0e-17|75.1|1|60|4|63|4|63
-WP_058882919.1|Glutaredoxin|1|1|8.2e-05|0.13|25.0|1|53|376|430|376|438
 WP_062556275.1|Glutaredoxin|1|1|1.7e-20|2.6e-17|75.2|1|60|4|64|4|64
 WP_063277327.1|Glutaredoxin|1|1|2.2e-10|3.4e-07|42.8|1|58|6|64|6|66
 WP_063379257.1|Glutaredoxin|1|1|1.9e-23|3.0e-20|84.7|1|60|5|65|5|65
@@ -382,11 +226,8 @@ WP_063630546.1|Glutaredoxin|1|1|1.1e-21|1.7e-18|79.0|1|57|8|64|8|70
 WP_063875302.1|Glutaredoxin|1|1|1.9e-23|3.0e-20|84.7|1|60|5|65|5|65
 WP_066724171.1|Glutaredoxin|1|1|1.8e-20|2.8e-17|75.1|1|60|4|63|4|63
 WP_072281281.1|Glutaredoxin|1|1|5.3e-21|8.1e-18|76.9|1|60|4|64|4|64
-WP_078082351.1|Glutaredoxin|1|1|7.5e-07|0.0012|31.5|3|45|4|46|2|53
 WP_078820067.1|Glutaredoxin|1|1|1.0e-21|1.5e-18|79.2|1|60|4|63|4|63
 WP_081362930.1|Glutaredoxin|1|1|5.1e-21|7.8e-18|76.9|1|60|4|63|4|63
-WP_096717201.1|Glutaredoxin|1|1|2.8e-07|0.00043|32.9|3|58|11|69|9|71
-WP_099201284.1|Glutaredoxin|1|1|2.3e-10|3.6e-07|42.8|1|55|5|60|5|64
 XP_008486154.1|Glutaredoxin|1|4|5.6e-14|8.6e-11|54.4|1|60|24|87|24|87
 XP_008486154.1|Glutaredoxin|2|4|1.5e-13|2.3e-10|53.0|1|60|131|194|131|194
 XP_008486154.1|Glutaredoxin|3|4|9.7e-16|1.5e-12|60.0|1|60|238|301|238|301
@@ -420,7 +261,6 @@ XP_008487196.1|Glutaredoxin|26|26|1.8e-15|2.8e-12|59.1|1|60|2702|2765|2702|2765
 XP_009080205.1|Glutaredoxin|1|1|2.3e-20|3.6e-17|74.8|1|60|29|91|29|91
 XP_017780289.1|Glutaredoxin|1|1|6.9e-21|1.1e-17|76.5|1|60|37|101|37|101
 XP_020183285.1|Glutaredoxin|1|1|2.4e-07|0.00036|33.2|1|59|22|83|22|84
-XP_021470271.1|Glutaredoxin|1|1|2.6e-10|4.0e-07|42.6|22|60|26|64|22|64
 XP_021876068.1|Glutaredoxin|1|1|5.9e-21|9.1e-18|76.7|1|60|18|80|18|80
 XP_022142239.1|Glutaredoxin|1|3|1.1e-16|1.7e-13|63.1|1|59|168|231|168|232
 XP_022142239.1|Glutaredoxin|2|3|7.8e-17|1.2e-13|63.5|1|60|297|361|297|361
@@ -431,11 +271,8 @@ XP_022925807.1|Glutaredoxin|3|3|1.4e-16|2.2e-13|62.7|1|60|405|469|405|469
 --> tblout <--
 AAA39907.1|Thioredoxin|4.5e-95|325.0|0.4
 AAS77241.1|Glutaredoxin|6.7e-18|77.1|0.0
-ABN77368.1|Peptidase_M27|0.004|29.2|0.3
 AGE95459.1|Glutaredoxin|6.7e-18|77.1|0.8
-AKU44832.1|Glutaredoxin|0.00023|33.8|0.1
 CCA19224.1|Glutaredoxin|1.6e-54|194.4|0.0
-CDS12966.1|Glutaredoxin|0.029|27.1|0.0
 CDY67051.1|Glutaredoxin|2.6e-07|43.2|0.9
 CEG37520.1|Glutaredoxin|3.3e-54|193.4|0.0
 EKD41788.1|Glutaredoxin|2.4e-20|85.0|0.0
@@ -466,65 +303,28 @@ NP_001304993.1|NrdAq|5.1e-177|602.6|0.0
 NP_001304993.1|NrdAz|3.3e-203|689.2|0.1
 NP_001304993.1|NrdAz3|1.2e-193|657.6|0.1
 NP_001304993.1|NrdAz4|2.1e-198|673.1|0.2
-NP_001304994.1|NrdA|2.9e-110|381.5|5.3
-NP_001304994.1|NrdAe|3.9e-237|801.5|2.6
-NP_001304994.1|NrdAg|3.1e-57|206.8|2.8
-NP_001304994.1|NrdAh|2.1e-65|233.5|2.1
-NP_001304994.1|NrdAi|2.0e-60|217.3|0.2
-NP_001304994.1|NrdAk|2.5e-57|207.3|0.1
-NP_001304994.1|NrdAm|7.8e-62|222.6|1.5
-NP_001304994.1|NrdAn|2.0e-143|491.6|1.1
-NP_001304994.1|NrdAq|1.7e-105|366.2|0.2
-NP_001304994.1|NrdAz|2.2e-124|428.6|0.7
-NP_001304994.1|NrdAz3|1.3e-115|399.6|0.3
-NP_001304994.1|NrdAz4|7.8e-123|423.4|0.9
-NP_001317122.1|NrdA|4.6e-167|568.7|1.4
-NP_001317122.1|NrdAe|0.0|1056.5|0.4
-NP_001317122.1|NrdAg|1.6e-80|283.7|0.2
-NP_001317122.1|NrdAh|5.8e-104|360.9|0.4
-NP_001317122.1|NrdAi|3.1e-79|279.4|0.1
-NP_001317122.1|NrdAk|9.0e-79|278.1|0.1
-NP_001317122.1|NrdAm|4.2e-104|362.3|0.1
-NP_001317122.1|NrdAn|3.5e-189|642.8|0.3
-NP_001317122.1|NrdAq|3.6e-149|510.5|0.0
-NP_001317122.1|NrdAz|8.8e-172|585.3|0.1
-NP_001317122.1|NrdAz3|3.0e-163|557.1|0.1
-NP_001317122.1|NrdAz4|1.6e-168|574.4|0.1
 NP_568962.1|Glutaredoxin|2.2e-17|75.5|0.0
 OGP67976.1|Glutaredoxin|2.6e-07|43.2|0.0
 OGT35179.1|Glutaredoxin|2.2e-17|75.5|0.0
-OGT53645.1|Glutaredoxin|0.029|27.1|0.1
 OJV62051.1|Glutaredoxin|6.7e-18|77.1|0.1
-OUT66489.1|Glutaredoxin|0.029|27.1|0.0
 OUX69892.1|Glutaredoxin|6.6e-18|77.2|0.2
-PAA71096.1|Glutaredoxin|0.029|27.1|5.5
-PHQ55257.1|Glutaredoxin|0.029|27.1|0.0
 PHS71537.1|Glutaredoxin|1.3e-18|79.4|0.1
-PIQ97238.1|Glutaredoxin|0.029|27.1|0.0
 WP_001273797.1|Glutaredoxin|2.4e-20|85.0|0.0
-WP_005043099.1|Glutaredoxin|2.6e-07|43.2|0.0
-WP_005107183.1|Glutaredoxin|0.029|27.1|0.0
 WP_005783931.1|Glutaredoxin|1.3e-18|79.4|0.0
 WP_007095417.1|Glutaredoxin|0.00023|33.8|0.0
 WP_013019775.1|NrdA|5.7e-61|218.9|0.0
-WP_015510438.1|Glutaredoxin|0.029|27.1|0.0
 WP_017529549.1|Glutaredoxin|1.3e-18|79.4|0.0
 WP_017849930.1|Glutaredoxin|1.3e-18|79.4|0.0
 WP_019402145.1|Glutaredoxin|2.4e-20|85.0|0.0
-WP_021845602.1|Glutaredoxin|0.00023|33.8|0.1
 WP_023848731.1|Glutaredoxin|6.6e-18|77.2|0.0
 WP_024539350.1|Glutaredoxin|2.4e-20|85.0|0.1
-WP_027115138.1|Glutaredoxin|0.029|27.1|0.2
-WP_036824496.1|Glutaredoxin|0.00023|33.8|0.1
 WP_039611886.1|Glutaredoxin|2.4e-20|85.0|0.0
-WP_040388356.1|Glutaredoxin|0.00023|33.8|0.0
 WP_040714684.1|Glutaredoxin|6.7e-18|77.2|0.0
 WP_045123803.1|Glutaredoxin|2.4e-20|85.0|0.0
 WP_046357020.1|Glutaredoxin|2.5e-20|84.9|0.0
 WP_046801873.1|Glutaredoxin|1.3e-18|79.4|0.0
 WP_048401872.1|Glutaredoxin|0.029|27.1|0.0
 WP_053552091.1|Glutaredoxin|2.2e-17|75.5|0.1
-WP_058882919.1|Glutaredoxin|0.029|27.1|0.4
 WP_062556275.1|Glutaredoxin|2.2e-17|75.5|0.0
 WP_063277327.1|Glutaredoxin|2.6e-07|43.2|0.0
 WP_063379257.1|Glutaredoxin|2.4e-20|84.9|0.0
@@ -532,17 +332,13 @@ WP_063630546.1|Glutaredoxin|1.3e-18|79.4|0.3
 WP_063875302.1|Glutaredoxin|2.4e-20|84.9|0.0
 WP_066724171.1|Glutaredoxin|2.2e-17|75.5|0.0
 WP_072281281.1|Glutaredoxin|6.7e-18|77.1|0.0
-WP_078082351.1|Glutaredoxin|0.00023|33.8|0.1
 WP_078820067.1|Glutaredoxin|1.3e-18|79.4|0.0
 WP_081362930.1|Glutaredoxin|6.7e-18|77.2|0.0
-WP_096717201.1|Glutaredoxin|0.00023|33.8|0.0
-WP_099201284.1|Glutaredoxin|2.6e-07|43.2|0.0
 XP_008486154.1|Glutaredoxin|4.6e-67|234.6|2.9
 XP_008487196.1|Glutaredoxin|0.0|1547.5|39.4
 XP_009080205.1|Glutaredoxin|2.2e-17|75.5|0.1
 XP_017780289.1|Glutaredoxin|6.7e-18|77.1|0.0
 XP_020183285.1|Glutaredoxin|0.00023|33.8|0.0
-XP_021470271.1|Glutaredoxin|2.6e-07|43.2|0.0
 XP_021876068.1|Glutaredoxin|6.7e-18|77.1|0.0
 XP_022142239.1|Glutaredoxin|1.4e-54|194.7|0.0
 XP_022925807.1|Glutaredoxin|2.6e-55|197.0|0.0
@@ -551,22 +347,11 @@ AAA39907.1|638|Thioredoxin|104|1|3|2.3e-30|1.5e-27|108.1|0.0|2|102|57|158|56|160
 AAA39907.1|638|Thioredoxin|104|2|3|1.7e-30|1.1e-27|108.5|0.0|3|102|173|273|171|275
 AAA39907.1|638|Thioredoxin|104|3|3|2.8e-29|1.8e-26|104.6|0.0|2|104|520|627|519|627
 AAS77241.1|110|Glutaredoxin|60|1|1|6.3e-21|9.6e-18|76.6|0.0|1|60|17|81|17|81
-ABN77368.1|1225|Peptidase_M27|419|1|9|5.4|1600000.0|0.8|0.0|116|187|355|426|345|451
-ABN77368.1|1225|Peptidase_M27|419|2|9|0.73|220000.0|3.7|0.0|110|187|414|490|406|503
-ABN77368.1|1225|Peptidase_M27|419|3|9|0.31|93000.0|4.9|0.0|110|182|478|550|469|567
-ABN77368.1|1225|Peptidase_M27|419|4|9|0.31|91000.0|4.9|0.0|110|178|542|610|532|614
-ABN77368.1|1225|Peptidase_M27|419|5|9|0.069|21000.0|7.1|0.0|110|187|606|682|599|697
-ABN77368.1|1225|Peptidase_M27|419|6|9|2.7|810000.0|1.8|0.0|113|183|673|743|667|762
-ABN77368.1|1225|Peptidase_M27|419|7|9|7.9|2300000.0|0.3|0.0|117|187|709|778|695|802
-ABN77368.1|1225|Peptidase_M27|419|8|9|1.8|530000.0|2.4|0.0|110|187|766|842|759|875
-ABN77368.1|1225|Peptidase_M27|419|9|9|1.5|450000.0|2.6|0.0|112|185|831|905|817|925
 AGE95459.1|204|Glutaredoxin|60|1|2|0.0012|1.8|21.3|0.0|16|58|38|80|33|82
 AGE95459.1|204|Glutaredoxin|60|2|2|4.3e-13|6.6e-10|51.5|0.0|1|60|114|181|114|181
-AKU44832.1|89|Glutaredoxin|60|1|1|3.3e-07|0.0005|32.7|0.1|8|60|13|76|3|76
 CCA19224.1|448|Glutaredoxin|60|1|3|3.8e-16|5.9e-13|61.3|0.0|1|60|151|215|151|215
 CCA19224.1|448|Glutaredoxin|60|2|3|8.8e-17|1.4e-13|63.4|0.0|1|60|260|324|260|324
 CCA19224.1|448|Glutaredoxin|60|3|3|2.0e-17|3.0e-14|65.4|0.0|1|60|364|428|364|428
-CDS12966.1|624|Glutaredoxin|60|1|1|5.7e-05|0.088|25.5|0.0|16|59|501|549|498|550
 CDY67051.1|379|Glutaredoxin|60|1|1|3.2e-09|4.9e-06|39.1|0.0|1|59|224|294|224|295
 CEG37520.1|447|Glutaredoxin|60|1|3|5.8e-16|8.9e-13|60.7|0.0|1|60|150|214|150|214
 CEG37520.1|447|Glutaredoxin|60|2|3|4.2e-16|6.5e-13|61.2|0.0|1|60|259|323|259|323
@@ -618,90 +403,31 @@ NP_001304993.1|695|NrdAq|704|1|1|2.1e-180|6.8e-177|602.2|0.0|13|700|19|690|14|69
 NP_001304993.1|695|NrdAz|707|1|1|1.6e-206|5.0e-203|688.6|0.1|45|701|30|672|12|677
 NP_001304993.1|695|NrdAz3|700|1|1|5.4e-197|1.7e-193|657.1|0.1|35|682|30|662|6|682
 NP_001304993.1|695|NrdAz4|690|1|1|1.0e-201|3.3e-198|672.5|0.2|29|679|30|665|12|675
-NP_001304994.1|454|NrdA|467|1|4|0.6|1900.0|9.5|0.0|154|175|1|22|1|42
-NP_001304994.1|454|NrdA|467|2|4|1.4e-65|4.4e-62|222.6|0.3|172|341|44|220|35|229
-NP_001304994.1|454|NrdA|467|3|4|2.7e-16|8.6e-13|60.1|0.1|337|393|248|304|244|324
-NP_001304994.1|454|NrdA|467|4|4|4.3e-25|1.4e-21|89.1|0.1|381|460|327|407|314|410
-NP_001304994.1|454|NrdAe|684|1|1|1.7e-240|5.3e-237|801.1|2.6|247|679|1|436|1|454
-NP_001304994.1|454|NrdAg|652|1|2|5.4e-55|1.8e-51|187.7|0.5|252|580|1|323|1|330
-NP_001304994.1|454|NrdAg|652|2|2|0.00033|1.1|19.9|0.1|555|638|329|407|314|412
-NP_001304994.1|454|NrdAh|660|1|3|5.6e-19|1.8e-15|68.5|0.2|258|359|4|99|1|103
-NP_001304994.1|454|NrdAh|660|2|3|1.1e-37|3.6e-34|130.3|0.0|377|564|94|289|94|321
-NP_001304994.1|454|NrdAh|660|3|3|2.3e-09|7.4e-06|36.7|0.0|562|648|313|404|304|408
-NP_001304994.1|454|NrdAi|545|1|2|4.3e-27|1.4e-23|95.7|0.0|199|375|47|221|39|228
-NP_001304994.1|454|NrdAi|545|2|2|2.2e-34|7.2e-31|119.7|0.0|372|531|250|408|244|419
-NP_001304994.1|454|NrdAk|578|1|2|5.3e-27|1.7e-23|95.6|0.0|214|398|37|215|25|224
-NP_001304994.1|454|NrdAk|578|2|2|3.5e-31|1.2e-27|109.4|0.0|410|559|257|405|247|419
-NP_001304994.1|454|NrdAm|722|1|2|1.1e-61|3.7e-58|210.4|0.4|332|638|1|306|1|330
-NP_001304994.1|454|NrdAm|722|2|2|0.15|500.0|11.7|0.0|625|705|325|403|313|408
-NP_001304994.1|454|NrdAn|682|1|1|1.3e-146|4.1e-143|490.6|1.1|246|681|1|452|1|453
-NP_001304994.1|454|NrdAq|704|1|1|6.5e-109|2.1e-105|365.9|0.2|240|700|1|449|1|453
-NP_001304994.1|454|NrdAz|707|1|1|1.0e-127|3.4e-124|428.0|0.7|258|701|1|431|1|436
-NP_001304994.1|454|NrdAz3|700|1|1|6.0e-119|1.9e-115|399.1|0.3|248|682|1|421|1|441
-NP_001304994.1|454|NrdAz4|690|1|1|3.7e-126|1.2e-122|422.7|0.9|242|679|1|424|1|434
-NP_001317122.1|570|NrdA|467|1|4|4.7e-57|1.5e-53|194.5|0.0|41|175|3|138|1|158
-NP_001317122.1|570|NrdA|467|2|4|2.3e-65|7.3e-62|221.9|0.3|172|341|160|336|154|345
-NP_001317122.1|570|NrdA|467|3|4|3.7e-16|1.2e-12|59.6|0.1|337|393|364|420|360|440
-NP_001317122.1|570|NrdA|467|4|4|5.9e-25|1.9e-21|88.6|0.0|381|460|443|523|429|526
-NP_001317122.1|570|NrdAe|684|1|1|0.0|0.0|1056.1|0.4|131|679|1|552|1|570
-NP_001317122.1|570|NrdAg|652|1|2|8.8e-78|2.9e-74|263.0|0.0|139|580|3|439|1|446
-NP_001317122.1|570|NrdAg|652|2|2|0.00053|1.7|19.3|0.1|555|638|445|523|440|528
-NP_001317122.1|570|NrdAh|660|1|3|1.9e-57|6.2e-54|195.6|0.0|140|359|3|215|1|219
-NP_001317122.1|570|NrdAh|660|2|3|1.7e-37|5.7e-34|129.6|0.0|377|565|210|406|210|439
-NP_001317122.1|570|NrdAh|660|3|3|3.3e-09|1.1e-05|36.2|0.0|562|648|429|520|420|524
-NP_001317122.1|570|NrdAi|545|1|3|8.3e-17|2.7e-13|61.7|0.0|84|196|3|123|1|129
-NP_001317122.1|570|NrdAi|545|2|3|6.9e-27|2.2e-23|95.0|0.0|199|375|163|337|155|344
-NP_001317122.1|570|NrdAi|545|3|3|3.6e-34|1.2e-30|119.0|0.0|372|531|366|524|361|535
-NP_001317122.1|570|NrdAk|578|1|3|1.4e-19|4.6e-16|71.1|0.0|87|217|3|134|1|150
-NP_001317122.1|570|NrdAk|578|2|3|9.2e-27|3.0e-23|94.8|0.1|214|398|153|331|141|339
-NP_001317122.1|570|NrdAk|578|3|3|5.5e-31|1.8e-27|108.7|0.0|410|559|373|521|363|535
-NP_001317122.1|570|NrdAm|722|1|2|1.1e-103|3.6e-100|349.3|0.0|219|637|3|421|1|438
-NP_001317122.1|570|NrdAm|722|2|2|0.23|730.0|11.1|0.0|625|705|441|519|433|524
-NP_001317122.1|570|NrdAn|682|1|1|2.0e-192|6.5e-189|641.9|0.3|133|681|3|568|1|569
-NP_001317122.1|570|NrdAq|704|1|1|1.4e-152|4.4e-149|510.2|0.0|127|700|3|565|1|569
-NP_001317122.1|570|NrdAz|707|1|1|4.0e-175|1.3e-171|584.8|0.1|145|701|3|547|1|552
-NP_001317122.1|570|NrdAz3|700|1|1|1.3e-166|4.2e-163|556.6|0.1|135|682|3|537|1|557
-NP_001317122.1|570|NrdAz4|690|1|1|7.1e-172|2.3e-168|573.8|0.1|129|679|3|540|1|550
 NP_568962.1|125|Glutaredoxin|60|1|1|2.2e-20|3.4e-17|74.9|0.0|1|60|31|93|31|93
 OGP67976.1|159|Glutaredoxin|60|1|1|2.8e-10|4.4e-07|42.5|0.0|1|59|86|144|86|145
 OGT35179.1|106|Glutaredoxin|60|1|1|1.9e-20|2.9e-17|75.1|0.0|1|60|16|80|16|80
-OGT53645.1|116|Glutaredoxin|60|1|2|0.079|120.0|15.5|0.0|1|44|4|47|4|52
-OGT53645.1|116|Glutaredoxin|60|2|2|4.7|7200.0|9.8|0.1|14|44|54|84|53|97
 OJV62051.1|85|Glutaredoxin|60|1|1|5.3e-21|8.1e-18|76.9|0.1|1|60|5|64|5|64
-OUT66489.1|82|Glutaredoxin|60|1|1|3.3e-05|0.05|26.3|0.0|1|35|9|43|9|60
 OUX69892.1|89|Glutaredoxin|60|1|1|6.6e-21|1.0e-17|76.6|0.2|1|60|4|63|4|63
-PAA71096.1|426|Glutaredoxin|60|1|2|8.8|14000.0|8.9|0.4|2|19|46|63|45|104
-PAA71096.1|426|Glutaredoxin|60|2|2|1.2|1800.0|11.7|0.1|2|21|330|349|328|378
-PHQ55257.1|83|Glutaredoxin|60|1|1|2.7e-05|0.042|26.6|0.0|2|54|11|62|10|66
 PHS71537.1|85|Glutaredoxin|60|1|1|1.0e-21|1.5e-18|79.2|0.1|1|59|4|62|4|63
-PIQ97238.1|68|Glutaredoxin|60|1|1|2.3e-05|0.035|26.8|0.0|2|54|1|54|1|59
 WP_001273797.1|83|Glutaredoxin|60|1|1|1.8e-23|2.8e-20|84.7|0.0|1|60|4|63|4|63
-WP_005043099.1|80|Glutaredoxin|60|1|1|2.2e-10|3.4e-07|42.8|0.0|2|57|4|59|3|62
-WP_005107183.1|260|Glutaredoxin|60|1|1|0.023|35.0|17.2|0.0|2|52|37|88|36|93
 WP_005783931.1|84|Glutaredoxin|60|1|1|1.0e-21|1.5e-18|79.2|0.0|1|60|4|63|4|63
 WP_007095417.1|86|Glutaredoxin|60|1|1|1.9e-07|0.00029|33.5|0.0|1|58|7|66|7|68
 WP_013019775.1|946|NrdA|467|1|4|1.0e-25|3.2e-22|91.2|0.0|5|142|133|271|130|278
 WP_013019775.1|946|NrdA|467|2|4|5.3e-26|1.7e-22|92.1|0.0|139|340|287|494|280|504
 WP_013019775.1|946|NrdA|467|3|4|0.045|140.0|13.2|0.0|340|396|540|598|527|623
 WP_013019775.1|946|NrdA|467|4|4|0.0022|7.0|17.5|0.0|365|451|605|694|599|704
-WP_015510438.1|125|Glutaredoxin|60|1|1|0.00011|0.17|24.6|0.0|1|31|2|32|2|50
 WP_017529549.1|84|Glutaredoxin|60|1|1|1.0e-21|1.5e-18|79.2|0.0|1|60|4|63|4|63
 WP_017849930.1|84|Glutaredoxin|60|1|1|1.0e-21|1.5e-18|79.2|0.0|1|60|4|63|4|63
 WP_019402145.1|85|Glutaredoxin|60|1|1|1.9e-23|2.9e-20|84.7|0.0|1|60|4|64|4|64
-WP_021845602.1|118|Glutaredoxin|60|1|1|2.5e-06|0.0039|29.9|0.0|7|51|8|52|1|53
 WP_023848731.1|85|Glutaredoxin|60|1|1|5.1e-21|7.8e-18|76.9|0.0|1|60|4|64|4|64
 WP_024539350.1|85|Glutaredoxin|60|1|1|1.8e-23|2.8e-20|84.8|0.1|1|60|4|64|4|64
-WP_027115138.1|117|Glutaredoxin|60|1|1|0.00036|0.55|23.0|0.2|2|44|4|46|3|54
-WP_036824496.1|131|Glutaredoxin|60|1|1|1.3e-06|0.002|30.8|0.0|1|41|2|42|2|49
 WP_039611886.1|85|Glutaredoxin|60|1|1|2.0e-23|3.1e-20|84.6|0.0|1|60|5|65|5|65
-WP_040388356.1|119|Glutaredoxin|60|1|1|2.8e-07|0.00044|32.9|0.0|2|51|4|53|3|56
 WP_040714684.1|107|Glutaredoxin|60|1|1|6.6e-21|1.0e-17|76.6|0.0|1|60|17|81|17|81
 WP_045123803.1|77|Glutaredoxin|60|1|1|1.8e-23|2.8e-20|84.8|0.0|3|60|1|58|1|58
 WP_046357020.1|85|Glutaredoxin|60|1|1|2.0e-23|3.1e-20|84.6|0.0|1|60|5|65|5|65
 WP_046801873.1|84|Glutaredoxin|60|1|1|1.0e-21|1.5e-18|79.2|0.0|1|60|4|63|4|63
 WP_048401872.1|198|Glutaredoxin|60|1|1|3.1e-05|0.047|26.4|0.0|2|60|5|63|4|63
 WP_053552091.1|89|Glutaredoxin|60|1|1|1.9e-20|3.0e-17|75.1|0.1|1|60|4|63|4|63
-WP_058882919.1|465|Glutaredoxin|60|1|1|8.2e-05|0.13|25.0|0.0|1|53|376|430|376|438
 WP_062556275.1|85|Glutaredoxin|60|1|1|1.7e-20|2.6e-17|75.2|0.0|1|60|4|64|4|64
 WP_063277327.1|83|Glutaredoxin|60|1|1|2.2e-10|3.4e-07|42.8|0.0|1|58|6|64|6|66
 WP_063379257.1|85|Glutaredoxin|60|1|1|1.9e-23|3.0e-20|84.7|0.0|1|60|5|65|5|65
@@ -709,11 +435,8 @@ WP_063630546.1|123|Glutaredoxin|60|1|1|1.1e-21|1.7e-18|79.0|0.3|1|57|8|64|8|70
 WP_063875302.1|85|Glutaredoxin|60|1|1|1.9e-23|3.0e-20|84.7|0.0|1|60|5|65|5|65
 WP_066724171.1|85|Glutaredoxin|60|1|1|1.8e-20|2.8e-17|75.1|0.0|1|60|4|63|4|63
 WP_072281281.1|84|Glutaredoxin|60|1|1|5.3e-21|8.1e-18|76.9|0.0|1|60|4|64|4|64
-WP_078082351.1|132|Glutaredoxin|60|1|1|7.5e-07|0.0012|31.5|0.0|3|45|4|46|2|53
 WP_078820067.1|84|Glutaredoxin|60|1|1|1.0e-21|1.5e-18|79.2|0.0|1|60|4|63|4|63
 WP_081362930.1|84|Glutaredoxin|60|1|1|5.1e-21|7.8e-18|76.9|0.0|1|60|4|63|4|63
-WP_096717201.1|264|Glutaredoxin|60|1|1|2.8e-07|0.00043|32.9|0.0|3|58|11|69|9|71
-WP_099201284.1|85|Glutaredoxin|60|1|1|2.3e-10|3.6e-07|42.8|0.0|1|55|5|60|5|64
 XP_008486154.1|980|Glutaredoxin|60|1|4|5.6e-14|8.6e-11|54.4|0.1|1|60|24|87|24|87
 XP_008486154.1|980|Glutaredoxin|60|2|4|1.5e-13|2.3e-10|53.0|0.0|1|60|131|194|131|194
 XP_008486154.1|980|Glutaredoxin|60|3|4|9.7e-16|1.5e-12|60.0|0.0|1|60|238|301|238|301
@@ -747,7 +470,6 @@ XP_008487196.1|2825|Glutaredoxin|60|26|26|1.8e-15|2.8e-12|59.1|0.0|1|60|2702|276
 XP_009080205.1|119|Glutaredoxin|60|1|1|2.3e-20|3.6e-17|74.8|0.1|1|60|29|91|29|91
 XP_017780289.1|140|Glutaredoxin|60|1|1|6.9e-21|1.1e-17|76.5|0.0|1|60|37|101|37|101
 XP_020183285.1|111|Glutaredoxin|60|1|1|2.4e-07|0.00036|33.2|0.0|1|59|22|83|22|84
-XP_021470271.1|87|Glutaredoxin|60|1|1|2.6e-10|4.0e-07|42.6|0.0|22|60|26|64|22|64
 XP_021876068.1|102|Glutaredoxin|60|1|1|5.9e-21|9.1e-18|76.7|0.0|1|60|18|80|18|80
 XP_022142239.1|489|Glutaredoxin|60|1|3|1.1e-16|1.7e-13|63.1|0.0|1|59|168|231|168|232
 XP_022142239.1|489|Glutaredoxin|60|2|3|7.8e-17|1.2e-13|63.5|0.0|1|60|297|361|297|361

@@ -9,7 +9,7 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "1.1.6"
+SCRIPT_VERSION = "1.2.0"
 
 # Get arguments
 option_list = list(
@@ -18,6 +18,9 @@ option_list = list(
   ),
   make_option(
     c('--fuzzy_factor'), type = 'integer', default = 1, action = 'store', help = 'Factor to make lengths fuzzy for reduction of possible duplicates, default %default.'
+  ),
+  make_option(
+    c('--hmm_mincov'), type = 'double', default = 0.0, action = 'store', help = 'Minimum coverage of hmm profile to include in output, default %default.'
   ),
   make_option(
     c('--profilehierarchies'), default='', help='tsv file with profile hiearchies'
@@ -336,6 +339,36 @@ proteins <- proteins %>% inner_join(align_lengths, by = c('accno', 'profile'))
 
 logmsg("Joined in lengths, writing data")
 
+# Subset data with hmm_mincov parameter
+logmsg(sprintf("Subsetting output to proteins and domains covering at least %f of the hmm profile", opt$options$hmm_mincov))
+
+# 1. proteins table
+#logmsg(sprintf("proteins before: %d", proteins %>% nrow()), 'DEBUG')
+proteins <- proteins %>% 
+  inner_join(hmm_profiles %>% select(profile, plen), by = 'profile') %>%
+  filter(hmmlen/plen >= opt$options$hmm_mincov) %>%
+  select(-plen)
+#logmsg(sprintf("proteins after: %d", proteins %>% nrow()), 'DEBUG')
+
+# 2. domains
+domains <- domains %>%
+  inner_join(hmm_profiles %>% select(profile, plen), by = 'profile') %>%
+  filter((hmm_to - hmm_from + 1)/plen >= opt$options$hmm_mincov) %>%
+  select(-plen)
+
+# 3. accessions
+accessions <- accessions %>% 
+  semi_join(
+    union(proteins %>% select(accno), domains %>% select(accno)) %>% distinct(accno), 
+    by = 'accno'
+  )
+
+# 4. tblout
+tblout <- tblout %>% semi_join(accessions %>% distinct(accno), by = 'accno')
+
+# 5. domtblout
+domtblout <- domtblout %>% semi_join(accessions %>% distinct(accno), by = 'accno')
+
 # If we were called with the singletable option, prepare data suitable for that
 if ( length(grep('singletable', names(opt$options), value = TRUE)) > 0 ) {
   logmsg("Writing single table format")
@@ -409,7 +442,7 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
   # If we have a taxflat NCBI taxonomy, read and join
   logmsg(sprintf("Adding NCBI taxon ids from taxflat"))
   con %>% copy_to(
-    taxflat %>% inner_join(accessions %>% distinct(taxon), by='taxon'),
+    taxflat %>% semi_join(accessions %>% distinct(taxon), by='taxon'),
     'taxa', temporary = FALSE, overwrite = TRUE
   )
 

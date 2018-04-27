@@ -14,3 +14,5 @@ NrdAz4	NrdGRE	NrdAJ	NrdA	NrdAz	NrdAz4	pgroup	0.1	750
 NrdB	Ferritin-like	NrdBR2lox	NrdB			pclass	0.1	261
 NrdF	Ferritin-like	NrdBR2lox	NrdB	NrdF		psubclass	0.1	303
 Glutaredoxin						domain	0.1	60
+Thioredoxin						domain	0.1	104
+Peptidase_M27						domain	0.1	419
