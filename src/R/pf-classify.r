@@ -9,7 +9,7 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "1.1.5"
+SCRIPT_VERSION = "1.1.6"
 
 # Get arguments
 option_list = list(
