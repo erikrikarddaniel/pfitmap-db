@@ -13,8 +13,9 @@ suppressPackageStartupMessages(library(optparse))
 suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(stringr))
 
-SCRIPT_VERSION = "1.0.0"
+SCRIPT_VERSION = "1.0.1"
 
+# Options for testing: opt <- list(options = list(verbose = TRUE, prefix='testing'), args = 'pf-classify.02.sqlite3')
 # Get arguments
 option_list = list(
   make_option(
@@ -60,11 +61,7 @@ logmsg(sprintf("pf-db2feather.r %s, connecting to %s", SCRIPT_VERSION, opt$args[
 
 db <- DBI::dbConnect(RSQLite::SQLite(), opt$args[1])
 
-dbs <- ifelse(
-  length(opt$options$dbs) > 0,
-  str_split(opt$options$dbs, ',')[[1]],
-  db %>% tbl('accessions') %>% distinct(db) %>% collect() %>% pull(db)
-)
+dbs <- if(opt$options$dbs != '') str_split(opt$options$dbs, ',')[[1]] else  db %>% tbl('accessions') %>% distinct(db) %>% filter(!is.na(db)) %>% collect() %>% pull(db)
 
 # All tables that are subset by db, must be taken care of separately
 accessions <- db %>% tbl('accessions') %>% filter(db %in% dbs)
