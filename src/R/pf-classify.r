@@ -9,7 +9,7 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "1.2.0"
+SCRIPT_VERSION = "1.2.1"
 
 # Get arguments
 option_list = list(
@@ -421,7 +421,8 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
     distinct()
   
   con %>% copy_to(accessions, 'accessions', temporary = FALSE, overwrite = TRUE)
-  con %>% DBI::dbExecute('CREATE UNIQUE INDEX "accessions.i00" ON "accessions"("db", "accto", "taxon");')
+  #con %>% DBI::dbExecute('CREATE UNIQUE INDEX "accessions.i00" ON "accessions"("db", "accto", "taxon");')
+  con %>% DBI::dbExecute('CREATE INDEX "accessions.i00" ON "accessions"("db", "accto", "taxon");')
   con %>% DBI::dbExecute('CREATE INDEX "accessions.i01" ON "accessions"("accno");')
   con %>% DBI::dbExecute('CREATE INDEX "accessions.i02" ON "accessions"("taxon");')
   
