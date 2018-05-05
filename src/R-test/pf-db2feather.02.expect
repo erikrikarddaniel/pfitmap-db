@@ -1,8 +1,8 @@
-pf-db2feather.02.accessions.feather
-pf-db2feather.02.dbsources.feather
-pf-db2feather.02.domains.feather
-pf-db2feather.02.dupfree_proteins.feather
-pf-db2feather.02.hmm_profiles.feather
-pf-db2feather.02.proteins.feather
-pf-db2feather.02.sequences.feather
-pf-db2feather.02.taxa.feather
+[1] "pf-db2feather.02.accessions.feather: 150 rows"
+[1] "pf-db2feather.02.dbsources.feather: 1 rows"
+[1] "pf-db2feather.02.domains.feather: 208 rows"
+[1] "pf-db2feather.02.dupfree_proteins.feather: 7 rows"
+[1] "pf-db2feather.02.hmm_profiles.feather: 15 rows"
+[1] "pf-db2feather.02.proteins.feather: 7 rows"
+[1] "pf-db2feather.02.sequences.feather: 1 rows"
+[1] "pf-db2feather.02.taxa.feather: 30 rows"
