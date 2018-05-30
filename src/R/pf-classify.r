@@ -9,7 +9,7 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "1.2.1"
+SCRIPT_VERSION = "1.2.2"
 
 # Get arguments
 option_list = list(
@@ -344,11 +344,20 @@ logmsg(sprintf("Subsetting output to proteins and domains covering at least %f o
 
 # 1. proteins table
 #logmsg(sprintf("proteins before: %d", proteins %>% nrow()), 'DEBUG')
-proteins <- proteins %>% 
+p <- proteins %>% 
   inner_join(hmm_profiles %>% select(profile, plen), by = 'profile') %>%
   filter(hmmlen/plen >= opt$options$hmm_mincov) %>%
   select(-plen)
 #logmsg(sprintf("proteins after: %d", proteins %>% nrow()), 'DEBUG')
+p <- p %>%
+  union(
+    proteins %>% anti_join(p, by = 'accno') %>%
+      semi_join(accessions %>% filter(db == 'pdb'), by = c('accno' = 'accto'))
+  )
+proteins <- p
+rm(p)
+
+# 1.b add pdb entries that are not present due to not passing the hmm_mincov criterion
 
 # 2. domains
 domains <- domains %>%
