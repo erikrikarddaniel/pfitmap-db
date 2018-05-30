@@ -13,7 +13,7 @@ suppressPackageStartupMessages(library(optparse))
 suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(stringr))
 
-SCRIPT_VERSION = "1.0.1"
+SCRIPT_VERSION = "1.0.2"
 
 # Options for testing: opt <- list(options = list(verbose = TRUE, prefix='testing'), args = 'pf-classify.02.sqlite3')
 # Get arguments
@@ -82,7 +82,7 @@ db %>% tbl('hmm_profiles') %>% collect() %>%
   write_feather(sprintf("%shmm_profiles.feather", opt$options$prefix))
 
 intersect(
-  c('domains', 'dupfree_proteins', 'proteins', 'sequences'),
+  c('domains', 'dupfree_proteins', 'proteins', 'sequences', 'tblout', 'domtblout'),
   db %>% DBI::dbListTables()
 ) %>% walk(
     function(t) {
