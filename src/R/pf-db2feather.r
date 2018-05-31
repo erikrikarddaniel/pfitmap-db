@@ -65,30 +65,30 @@ dbs <- if(opt$options$dbs != '') str_split(opt$options$dbs, ',')[[1]] else  db %
 
 # All tables that are subset by db, must be taken care of separately
 accessions <- db %>% tbl('accessions') %>% filter(db %in% dbs)
-tt <- accessions %>% collect()
-logmsg(sprintf("Writing accessions, %d rows", nrow(tt)))
-tt %>% write_feather(sprintf("%saccessions.feather", opt$options$prefix))
+logmsg("Writing accessions")
+accessions %>% collect() %>%
+  write_feather(sprintf("%saccessions.feather", opt$options$prefix))
 
-tt <- db %>% tbl('taxa') %>% semi_join(accessions %>% distinct(taxon), by = 'taxon') %>% collect()
-logmsg(sprintf("Writing taxa, %d rows", nrow(tt)))
-tt %>% write_feather(sprintf("%staxa.feather", opt$options$prefix))
+logmsg("Writing taxa")
+db %>% tbl('taxa') %>% semi_join(accessions %>% distinct(taxon), by = 'taxon') %>% collect() %>%
+  write_feather(sprintf("%staxa.feather", opt$options$prefix))
 
-tt <- db %>% tbl('dbsources') %>% collect()
-logmsg(sprintf("Writing dbsources, %d rows", nrow(tt)))
-tt %>% write_feather(sprintf("%sdbsources.feather", opt$options$prefix))
+logmsg("Writing dbsources")
+db %>% tbl('dbsources') %>% collect() %>%
+  write_feather(sprintf("%sdbsources.feather", opt$options$prefix))
 
-tt <- db %>% tbl('hmm_profiles') %>% collect()
-logmsg(sprintf("Writing hmm_profiles, %d rows", nrow(tt)))
-tt %>% write_feather(sprintf("%shmm_profiles.feather", opt$options$prefix))
+logmsg("Writing hmm_profiles")
+db %>% tbl('hmm_profiles') %>% collect() %>%
+  write_feather(sprintf("%shmm_profiles.feather", opt$options$prefix))
 
 intersect(
   c('domains', 'dupfree_proteins', 'proteins', 'sequences', 'tblout', 'domtblout'),
   db %>% DBI::dbListTables()
 ) %>% walk(
     function(t) {
-      tt <- db %>% tbl(t) %>% semi_join(accessions %>% transmute(accno = accto) %>% distinct(), by = 'accno') %>% collect()
-      logmsg(sprintf("Writing %s, %d rows", t, nrow(tt)))
-      tt %>% write_feather(sprintf("%s%s.feather", opt$options$prefix, t))
+      logmsg(sprintf("Writing %s", t))
+      db %>% tbl(t) %>% semi_join(accessions %>% transmute(accno = accto) %>% distinct(), by = 'accno') %>% collect() %>%
+        write_feather(sprintf("%s%s.feather", opt$options$prefix, t))
     }
   )
 
