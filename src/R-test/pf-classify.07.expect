@@ -144,6 +144,15 @@ NrdAz|NrdGRE|NrdAJ|NrdA|NrdAz||psubclass|0.1|707
 NrdAz3|NrdGRE|NrdAJ|NrdA|NrdAz|NrdAz3|pgroup|0.1|750
 NrdAz4|NrdGRE|NrdAJ|NrdA|NrdAz|NrdAz4|pgroup|0.1|750
 NrdB|Ferritin-like|NrdBR2lox|NrdB|||pclass|0.1|261
+NrdD|class|NrdGRE|GRE|NrdD|||0.5|498
+NrdDa|subclass|NrdGRE|GRE|NrdD|NrdDa||0.5|683
+NrdDb|subclass|NrdGRE|GRE|NrdD|NrdDb||0.5|741
+NrdDc|subclass|NrdGRE|GRE|NrdD|NrdDc||0.5|519
+NrdDd|subclass|NrdGRE|GRE|NrdD|NrdDd||0.5|565
+NrdDf|subclass|NrdGRE|GRE|NrdD|NrdDf||0.5|667
+NrdDg|subclass|NrdGRE|GRE|NrdD|NrdDg||0.5|635
+NrdDh|subclass|NrdGRE|GRE|NrdD|NrdDh||0.5|568
+NrdDi|subclass|NrdGRE|GRE|NrdD|NrdDi||0.5|593
 NrdF|Ferritin-like|NrdBR2lox|NrdB|NrdF||psubclass|0.1|303
 Peptidase_M27||||||domain|0.1|419
 Thioredoxin||||||domain|0.1|104

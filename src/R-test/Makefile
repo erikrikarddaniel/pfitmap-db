@@ -15,7 +15,7 @@ clean:
 
 all.sqlite: pf-classify.02 pf-classify.03 pf-classify.04
 
-pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06 pf-classify.07
+pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06 pf-classify.07 pf-classify.08
 
 pf-db2feather: pf-db2feather.00 pf-db2feather.01 pf-db2feather.02 pf-db2feather.03
 
@@ -61,6 +61,13 @@ pf-classify.06:
 	@$(CHECK)
 
 pf-classify.07:
+	@rm -f $@.sqlite3
+	../R/pf-classify.r --hmm_mincov=0.95 --verbose --dbsource NCBI:NR:20180109 --profilehierarchies=$@.phier.tsv --sqlitedb=$@.sqlite3 --taxflat=pf-classify.taxflat.tsv $@.d/*.tblout $@.d/*.domtblout
+	@$(SQLITE_SELECT_CLASSIFICATION)
+	@$(CHECK)
+
+# Thought I had problems with the 4CON structure...
+pf-classify.08:
 	@rm -f $@.sqlite3
 	../R/pf-classify.r --hmm_mincov=0.95 --verbose --dbsource NCBI:NR:20180109 --profilehierarchies=$@.phier.tsv --sqlitedb=$@.sqlite3 --taxflat=pf-classify.taxflat.tsv $@.d/*.tblout $@.d/*.domtblout
 	@$(SQLITE_SELECT_CLASSIFICATION)

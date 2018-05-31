@@ -352,7 +352,7 @@ p <- proteins %>%
 p <- p %>%
   union(
     proteins %>% anti_join(p, by = 'accno') %>%
-      semi_join(accessions %>% filter(db == 'pdb'), by = c('accno' = 'accto'))
+      semi_join(accessions %>% filter(db == 'pdb'), by = c('accno' = 'accno'))
   )
 proteins <- p
 rm(p)
