@@ -14,7 +14,7 @@
 suppressPackageStartupMessages(library(optparse))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', fetch = TRUE, verbose = TRUE, sourcedbs = 'refseq,pdb', faalevel='pfamily', faadir='.'))
-SCRIPT_VERSION = "1.3.3"
+SCRIPT_VERSION = "1.3.4"
 
 # Get arguments
 option_list = list(
@@ -220,13 +220,13 @@ if ( length(opt$options$faalevel) > 0 ) {
     f <- sprintf("%s/%s.faa", opt$options$faadir, ptaxon)
     s <- db %>% tbl('hmm_profiles') %>% filter(!! rlang::sym(opt$options$faalevel) == ptaxon) %>%
       inner_join(db %>% tbl('tblout'), by = 'profile') %>%
-      inner_join(db %>% tbl('accessions') %>% transmute(accno = accto, taxon), by = 'accno') %>%
+      inner_join(db %>% tbl('accessions') %>% transmute(accno = accto, taxon, db), by = 'accno') %>%
       inner_join(db %>% tbl('taxa'), by = 'taxon') %>%
       inner_join(db %>% tbl('proteins'), by = c('accno', 'profile')) %>%
       filter(hmmlen/as.integer(plen) >= opt$options$faahmmcov) %>%
-      distinct(accno, tdomain, tphylum, tclass, psuperfamily, pfamily, pclass, psubclass, pgroup, taxon) %>% collect() %>%
+      distinct(accno, tdomain, tphylum, tclass, psuperfamily, pfamily, pclass, psubclass, pgroup, taxon, db) %>% collect() %>%
       inner_join(sequences, by = 'accno') %>%
-      mutate(name = sprintf("%s_%s_%s_%s_%s_%s_%s_%s_%s@%s", tdomain, tphylum, tclass, gsub(' ', '_', taxon), psuperfamily, pfamily, pclass, psubclass, pgroup, accno)) %>%
+      mutate(name = sprintf("%s_%s_%s_%s_%s_%s_%s_%s_%s@%s_%s", tdomain, tphylum, tclass, gsub(' ', '_', taxon), psuperfamily, pfamily, pclass, psubclass, pgroup, db, accno)) %>%
       arrange(accno)
 
     ss <- AAStringSet(s$sequence)
