@@ -9,12 +9,12 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "1.2.2"
+SCRIPT_VERSION = "1.2.3"
 
 # Get arguments
 option_list = list(
   make_option(
-    c('--dbsource', default='', help='dbsource:name:version')
+    c('--dbsource'), default='', help='Database source in dbsource:name:version format'
   ),
   make_option(
     c('--fuzzy_factor'), type = 'integer', default = 1, action = 'store', help = 'Factor to make lengths fuzzy for reduction of possible duplicates, default %default.'
@@ -73,7 +73,7 @@ logmsg = function(msg, llevel='INFO') {
 }
 logmsg(sprintf("pf-classify.r version %s: Starting classification", SCRIPT_VERSION))
 
-if ( ! is.null(opt$options[['dbsource']]) ) {
+if ( opt$options[['dbsource']] != '' ) {
   dbsource = strsplit(opt$options$dbsource, ':')[[1]]
 } else {
   logmsg(sprintf("--dbsource is required"), 'ERROR')
