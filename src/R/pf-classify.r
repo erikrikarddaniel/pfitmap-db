@@ -9,7 +9,7 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "1.2.3"
+SCRIPT_VERSION = "1.2.4"
 
 # Get arguments
 option_list = list(
@@ -471,10 +471,10 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
       envlen = as.integer(round(round(envlen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor)),
       hmmlen = as.integer(round(round(hmmlen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor))
     ) %>%
-    group_by(db, taxon, profile, alilen, hmmlen, envlen) %>% mutate(r = sprintf("r%03d", rank(accno))) %>% ungroup()
+    group_by(db, taxon, profile, alilen, hmmlen, envlen) %>% mutate(r = rank(accno)) %>% ungroup()
 
   con %>% copy_to(
-    dp %>% filter(r == 'r001') %>% select(-db, -taxon),
+    dp %>% filter(r < 2) %>% select(-db, -taxon),
     'dupfree_proteins',
     temporary = FALSE, overwrite = TRUE
   )
