@@ -22,6 +22,7 @@ WP_004083208.1|NrdDh|695.0|6.8e-205|651|568|563.0|597.0|600.0|6.0|568.0|48.0|644
 --> dupfree_proteins <--
 WP_004083208.1|NrdDh|695.0|6.8e-205|651|568|563|597|600|6.0|568.0|48.0|644.0|45.0|644.0
 --> hmm_profiles <--
+ATP-cone||||||domain|0.1|86
 Glutaredoxin||||||domain|0.1|60
 NrdA|NrdGRE|NrdAJ|NrdA|||pclass|0.1|467
 NrdAe|NrdGRE|NrdAJ|NrdA|NrdAe||psubclass|0.1|684

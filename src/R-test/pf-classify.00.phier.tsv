@@ -22,6 +22,7 @@ NrdDg	subclass	NrdGRE	GRE	NrdD	NrdDg		0.5	 635
 NrdDh	subclass	NrdGRE	GRE	NrdD	NrdDh		0.5	 568
 NrdDi	subclass	NrdGRE	GRE	NrdD	NrdDi		0.5	 593
 NrdD	class	NrdGRE	GRE	NrdD			0.5	 498
+ATP-cone						domain	0.1	86
 Glutaredoxin						domain	0.1	60
 Thioredoxin						domain	0.1	104
 Peptidase_M27						domain	0.1	419
