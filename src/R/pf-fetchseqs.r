@@ -226,7 +226,10 @@ if ( length(opt$options$faalevel) > 0 ) {
       filter(hmmlen/as.integer(plen) >= opt$options$faahmmcov) %>%
       distinct(accno, tdomain, tphylum, tclass, psuperfamily, pfamily, pclass, psubclass, pgroup, taxon, db) %>% collect() %>%
       inner_join(sequences, by = 'accno') %>%
-      mutate(name = sprintf("%s_%s_%s_%s_%s_%s_%s_%s_%s@%s_%s", tdomain, tphylum, tclass, gsub(' ', '_', taxon), psuperfamily, pfamily, pclass, psubclass, pgroup, db, accno)) %>%
+      mutate(
+        name = sprintf("%s_%s_%s_%s_%s_%s_%s_%s_%s@%s_%s", tdomain, tphylum, tclass, taxon, psuperfamily, pfamily, pclass, psubclass, pgroup, db, accno) %>%
+          gsub(' +', '_', .)
+      ) %>%
       arrange(desc(db), accno)
 
     tibble(d = sprintf(">%s\n%s", s$name, s$sequence)) %>% write.table(f, quote = FALSE, row.names = FALSE, col.names = FALSE)
