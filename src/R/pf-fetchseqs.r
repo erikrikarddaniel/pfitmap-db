@@ -14,7 +14,7 @@
 suppressPackageStartupMessages(library(optparse))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', fetch = TRUE, verbose = TRUE, sourcedbs = 'refseq,pdb', faalevel='pfamily', faadir='.'))
-SCRIPT_VERSION = "1.4.0"
+SCRIPT_VERSION = "1.5.0"
 
 # Get arguments
 option_list = list(
@@ -227,7 +227,7 @@ if ( length(opt$options$faalevel) > 0 ) {
       distinct(accno, tdomain, tphylum, tclass, psuperfamily, pfamily, pclass, psubclass, pgroup, taxon, db) %>% collect() %>%
       inner_join(sequences, by = 'accno') %>%
       mutate(name = sprintf("%s_%s_%s_%s_%s_%s_%s_%s_%s@%s_%s", tdomain, tphylum, tclass, gsub(' ', '_', taxon), psuperfamily, pfamily, pclass, psubclass, pgroup, db, accno)) %>%
-      arrange(accno)
+      arrange(desc(db), accno)
 
     tibble(d = sprintf(">%s\n%s", s$name, s$sequence)) %>% write.table(f, quote = FALSE, row.names = FALSE, col.names = FALSE)
     logmsg(sprintf("\t%s: %d sequences saved to %s", ptaxon, nrow(s), f))
