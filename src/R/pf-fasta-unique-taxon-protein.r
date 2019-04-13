@@ -16,9 +16,9 @@ suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "0.9.2"
+SCRIPT_VERSION = "1.0.0"
 
-# Testing arguments: opt <- list('options' = list('featherprefix' = 'pf-db2feather.01', 'prank' = 'psubclass', 'trank' = 'tspecies'), args = c('pf-fasta-unique-taxon-protein.00.faa'))
+# Testing arguments: opt <- list('options' = list('featherprefix' = 'pf-fasta-unique-taxon-protein.01', 'prank' = 'psubclass', 'trank' = 'tspecies'), args = c('pf-fasta-unique-taxon-protein.01.faa'))
 # Get arguments
 option_list = list(
   make_option(
@@ -76,11 +76,11 @@ sequences <- tibble(name = names(f), seq = as.character(f)) %>%
 logmsg(sprintf("Calculating one accession per %s and %s", opt$options$prank, opt$options$trank))
 keep <- hmm_profiles %>%
   inner_join(proteins %>% select(profile, accno), by = 'profile') %>%
-  inner_join(accessions %>% select(db, accno, accto, taxon), by = 'accno') %>%
+  inner_join(accessions %>% filter(accto %in% sequences$accno) %>% select(db, accno, accto, taxon), by = 'accno') %>%
   inner_join(taxa, by = 'taxon') %>%
   mutate(db = factor(db, levels = unique(c('refseq', order(unique(accessions$db)))), ordered = TRUE)) %>%
   arrange(db, accto) %>%
-  group_by(psubclass, tspecies) %>% mutate(r = rank(accto)) %>% ungroup() %>% filter(r == 1) %>%
+  group_by(psubclass, tspecies) %>% mutate(r = rank(sprintf("%02d-%s", as.integer(db), accto))) %>% ungroup() %>% filter(r == 1) %>%
   transmute(accno = accto) %>% distinct() %>%
   arrange(accno) %>%
   inner_join(sequences, by = 'accno') %>%
