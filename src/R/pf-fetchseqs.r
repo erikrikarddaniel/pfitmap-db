@@ -14,7 +14,7 @@
 suppressPackageStartupMessages(library(optparse))
 
 # Arguments for testing: opt <- list(options = list(sqlitedb = 'pf-fetchseqs.07.original.sqlite3', fetch = TRUE, verbose = TRUE, sourcedbs = 'refseq,pdb', faalevel='pfamily', faadir='.'))
-SCRIPT_VERSION = "1.5.0"
+SCRIPT_VERSION = "1.5.1"
 
 # Get arguments
 option_list = list(
@@ -212,6 +212,7 @@ if ( length(opt$options$fetchedseqs) > 0 ) {
 if ( length(opt$options$faalevel) > 0 ) {
   logmsg(sprintf("Writing faa files, one per %s, to %s", opt$options$faalevel, opt$options$faadir))
   if ( ! dir.exists(opt$options$faadir) ) dir.create(opt$options$faadir)
+  dbs <- db %>% tbl('accessions') %>% distinct(db) %>% arrange(db) %>% collect() %>% pull(db)
   for ( 
     ptaxon in db %>% tbl('hmm_profiles') %>% 
       transmute(pt = !! rlang::sym(opt$options$faalevel)) %>% 
@@ -228,9 +229,10 @@ if ( length(opt$options$faalevel) > 0 ) {
       inner_join(sequences, by = 'accno') %>%
       mutate(
         name = sprintf("%s_%s_%s_%s_%s_%s_%s_%s_%s@%s_%s", tdomain, tphylum, tclass, taxon, psuperfamily, pfamily, pclass, psubclass, pgroup, db, accno) %>%
-          gsub(' +', '_', .)
+          gsub(' +', '_', .),
+        db = factor(db, levels = unique(c('refseq', dbs)), ordered = TRUE)
       ) %>%
-      arrange(desc(db), accno)
+      arrange(db, accno)
 
     tibble(d = sprintf(">%s\n%s", s$name, s$sequence)) %>% write.table(f, quote = FALSE, row.names = FALSE, col.names = FALSE)
     logmsg(sprintf("\t%s: %d sequences saved to %s", ptaxon, nrow(s), f))
