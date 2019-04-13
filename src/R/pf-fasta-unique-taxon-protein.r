@@ -11,12 +11,12 @@
 
 suppressPackageStartupMessages(library(optparse))
 suppressPackageStartupMessages(library(feather))
-suppressPackageStartupMessages(library(seqinr))
+suppressPackageStartupMessages(library(Biostrings))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "0.9"
+SCRIPT_VERSION = "0.9.1"
 
 # Testing arguments: opt <- list('options' = list('featherprefix' = 'pf-db2feather.01', 'prank' = 'psubclass', 'trank' = 'tspecies'), args = c('pf-fasta-unique-taxon-protein.00.faa'))
 # Get arguments
@@ -69,8 +69,8 @@ proteins     <- read_feather(sprintf("%s.proteins.feather",     opt$options$feat
 taxa         <- read_feather(sprintf("%s.taxa.feather",         opt$options$featherprefix))
 
 logmsg(sprintf("Reading fasta file %s", opt$args[1]))
-f <- read.fasta(opt$args[1], as.string = TRUE, seqonly = FALSE, forceDNAtolower = FALSE) 
-sequences <- tibble(name = names(f), seq = unlist(f)) %>%
+f <- readAAStringSet(opt$args[1])
+sequences <- tibble(name = names(f), seq = as.character(f)) %>%
   mutate(accno = gsub('.*@[a-z]+_([A-Za-z][A-Za-z_0-9.]+).*', '\\1', name))
 
 logmsg(sprintf("Calculating one accession per %s and %s", opt$options$prank, opt$options$trank))
