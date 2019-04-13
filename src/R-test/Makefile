@@ -21,6 +21,8 @@ pf-db2feather: pf-db2feather.00 pf-db2feather.01 pf-db2feather.02 pf-db2feather.
 
 pf-fetchseqs: pf-fetchseqs.00 pf-fetchseqs.01 pf-fetchseqs.02 pf-fetchseqs.03 pf-fetchseqs.04 pf-fetchseqs.05 pf-fetchseqs.06 pf-fetchseqs.07 pf-fetchseqs.08
 
+pf-fasta-unique-taxon-protein: pf-fasta-unique-taxon-protein.00
+
 Nrd.test.tar.gz:
 	scp rnrdb:projects/profiles/profiles/Nrd.test.tar.gz .
 
@@ -158,4 +160,8 @@ pf-fetchseqs.08:
 	@../R/pf-fetchseqs.r --verbose --sqlitedb=$@.sqlite3 --sourcedbs=refseq --fetchedseqs=$@.feather --faalevel=psuperfamily --faadir=$@.psuperfamilies --faahmmcov=1.0
 	@cat $@.psuperfamilies/*.faa > $@.out
 	@ls $@.feather >> $@.out
+	@$(CHECK)
+
+pf-fasta-unique-taxon-protein.00: pf-db2feather.01
+	../R/pf-fasta-unique-taxon-protein.r --verbose --featherprefix=$< --trank=species --prank=subclass $@.faa > $@.out
 	@$(CHECK)
