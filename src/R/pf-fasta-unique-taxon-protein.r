@@ -16,7 +16,7 @@ suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "0.9.1"
+SCRIPT_VERSION = "0.9.2"
 
 # Testing arguments: opt <- list('options' = list('featherprefix' = 'pf-db2feather.01', 'prank' = 'psubclass', 'trank' = 'tspecies'), args = c('pf-fasta-unique-taxon-protein.00.faa'))
 # Get arguments
@@ -41,7 +41,7 @@ option_list = list(
 )
 opt = parse_args(
   OptionParser(
-    usage = '%prog [options] sequences.faa\n\n\tThe fasta file description lines must contain accessions like "@refseq_WP_123".',
+    usage = '%prog [options] sequences.faa\n\n\tSubsets a fasta file only contain one sequence per protein and taxon rank.\n\n\tThe fasta file description lines must contain accessions like "@refseq_WP_123".',
     option_list = option_list
   ), 
   positional_arguments = TRUE
