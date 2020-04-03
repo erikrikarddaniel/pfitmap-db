@@ -8,7 +8,7 @@ SQLITE_SELECT_FETCHSEQS = sqlite3 $@.sqlite3 "SELECT accno, sequence FROM sequen
 
 DB2FEATHER_OUT = for f in $@.*.feather; do Rscript --default-packages=dplyr,feather -e "print(paste0('$$f', ': ', read_feather('$$f') %>% nrow(), ' rows'))"; done > $@.out
 
-all: pf-classify pf-db2feather pf-fetchseqs
+all: pf-classify.gtdb pf-classify pf-db2feather pf-fetchseqs
 
 clean:
 	rm -f *.out
@@ -16,6 +16,8 @@ clean:
 all.sqlite: pf-classify.02 pf-classify.03 pf-classify.04
 
 pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06 pf-classify.07 pf-classify.08
+
+pf-classify.gtdb: pf-classify.gtdb.00
 
 pf-db2feather: pf-db2feather.00 pf-db2feather.01 pf-db2feather.02 pf-db2feather.03
 
@@ -25,6 +27,12 @@ pf-fasta-unique-taxon-protein: pf-fasta-unique-taxon-protein.00
 
 Nrd.test.tar.gz:
 	scp rnrdb:projects/profiles/profiles/Nrd.test.tar.gz .
+
+pf-classify.gtdb.00:
+	@rm -f $@.sqlite3
+	../R/pf-classify.r --verbose --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --sqlitedb=$@.sqlite3 --gtdbtaxonomy=$@.d/taxonomy.tsv --gtdbgenomeinfo=$@.d/gtdb_genbank_genomes.tsv --gtdbannotindex=$@.d/gtdb_genbank_genomes_prokka_index.tsv.gz $@.d/*.tblout $@.d/*.domtblout
+	@$(SQLITE_SELECT_CLASSIFICATION)
+	@$(CHECK)
 
 pf-classify.00:
 	../R/pf-classify.r --verbose --dbsource NCBI:NR:20180109 --profilehierarchies=$@.phier.tsv --singletable=$@.out --taxflat=pf-classify.taxflat.tsv $@.d/*.tblout $@.d/*.domtblout
