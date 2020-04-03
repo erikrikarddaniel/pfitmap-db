@@ -1,0 +1,992 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.2.1 (June 2018); http://hmmer.org/
+# Copyright (C) 2018 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  NrdAe.hmm
+# target sequence database:        gtdb.faa
+# per-seq hits tabular output:     NrdAe.tblout
+# per-dom hits tabular output:     NrdAe.domtblout
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       NrdAe  [M=684]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence       Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------       -----------
+     8e-123  412.7   1.5   1.5e-113  382.0   0.2    2.8  2  KGLMILOH_00412  hypothetical protein [GCA_000005825.2_ASM582v
+    5.8e-87  294.2   0.0    1.3e-85  289.7   0.0    2.0  2  BMIABBIL_02238  Ribonucleoside-diphosphate reductase 1 subuni
+    7.8e-81  273.9   0.0    2.4e-54  186.3   0.0    2.0  2  BGDMMFNK_00868  Vitamin B12-dependent ribonucleoside-diphosph
+    2.2e-76  259.2   0.0    2.5e-33  116.9   0.0    3.1  3  EHLAHJNJ_00126  Vitamin B12-dependent ribonucleoside-diphosph
+    6.6e-76  257.6   3.4      3e-66  225.7   0.1    3.0  2  DLAHKEME_00505  Ribonucleoside-diphosphate reductase subunit 
+    8.6e-75  253.9  15.0    1.7e-66  226.5   6.5    3.0  2  LCGMICPD_02881  Ribonucleoside-diphosphate reductase subunit 
+    8.5e-70  237.4   0.1    3.3e-59  202.4   0.0    3.0  2  BMIABBIL_02678  Ribonucleoside-diphosphate reductase 2 subuni
+    9.6e-70  237.3   0.0    4.2e-21   76.5   0.0    4.1  4  NIBMKOCB_00809  hypothetical protein [UBA10106]
+    1.7e-68  233.1   0.4      2e-52  180.0   0.0    3.1  3  FHFECEBA_01657  Ribonucleoside-diphosphate reductase subunit 
+    2.1e-64  219.6   0.0    8.1e-38  131.7   0.0    3.7  3  BGDMMFNK_00960  Vitamin B12-dependent ribonucleoside-diphosph
+    1.2e-58  200.5   0.0      4e-31  109.6   0.0    3.0  3  FLKIJBGC_00806  Vitamin B12-dependent ribonucleoside-diphosph
+    9.7e-57  194.3   0.1    1.5e-38  134.1   0.1    2.2  2  KGLMILOH_02706  hypothetical protein [GCA_000005825.2_ASM582v
+    1.5e-55  190.3   0.0    1.3e-19   71.6   0.0    3.1  3  JELDNKDN_00258  hypothetical protein [UBA10107]
+    1.5e-52  180.4   0.9    1.5e-49  170.5   0.9    2.9  1  LCGMICPD_01149  Vitamin B12-dependent ribonucleoside-diphosph
+    3.2e-52  179.3   0.0      1e-25   91.8   0.0    3.7  4  BJNEHILN_00732  hypothetical protein [UBA10127]
+    4.7e-52  178.8  11.7    2.3e-44  153.4   4.3    3.0  2  OKJNKMBH_01350  Ribonucleoside-diphosphate reductase subunit 
+    6.3e-51  175.1   1.5    7.5e-51  174.8   1.5    1.0  1  AIHJNDDH_01273  Ribonucleoside-diphosphate reductase subunit 
+    1.9e-50  173.5   0.5    2.2e-50  173.2   0.5    1.0  1  ADPMMECC_01288  Ribonucleoside-diphosphate reductase subunit 
+    4.4e-43  149.1  11.8    1.6e-35  124.2   4.3    3.0  2  FMKMPEEB_01886  Ribonucleoside-diphosphate reductase subunit 
+    1.2e-30  108.0   0.3    1.4e-30  107.8   0.3    1.1  1  FMKMPEEB_01884  Ribonucleoside-diphosphate reductase subunit 
+    1.3e-28  101.3   0.0    4.6e-24   86.3   0.0    3.5  2  EMCIJKJB_00526  hypothetical protein [UBA10011]
+    1.3e-23   84.8   9.6    1.5e-15   58.1   2.4    3.0  2  AIHJNDDH_01274  Ribonucleoside-diphosphate reductase subunit 
+    2.6e-23   83.8   9.2    4.1e-15   56.7   2.1    3.0  2  ADPMMECC_05799  Ribonucleoside-diphosphate reductase subunit 
+    2.7e-22   80.4   0.3      3e-22   80.3   0.3    1.1  1  OKJNKMBH_01351  Ribonucleoside-diphosphate reductase subunit 
+  ------ inclusion threshold ------
+      0.025   14.4   0.2      0.031   14.2   0.2    1.1  1  BGDMMFNK_00867  Vitamin B12-dependent ribonucleoside-diphosph
+
+
+Domain annotation for each sequence (and alignments):
+>> KGLMILOH_00412  hypothetical protein [GCA_000005825.2_ASM582v2_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  382.0   0.2  7.4e-117  1.5e-113      39     531 ..     107     626 ..      85     641 .. 0.89
+   2 !   27.8   0.1   1.1e-09   2.3e-06     585     648 ..     649     712 ..     638     717 .. 0.85
+
+  Alignments for each domain:
+  == domain 1  score: 382.0 bits;  conditional E-value: 7.4e-117
+           NrdAe  39 ldsaikyerdfeydyfgfktlersyllk.ingkvverpqkllmrvavgihked.....ieaaietyellsekyfthasptlfnagtkkpqlsscf 127
+                     l  +++  rd +++y g+ktl   yl k  n+++ve pq+ +m +a+ + +e+     +e + e+y  ls+ y+t a+pt+ nag    qlsscf
+  KGLMILOH_00412 107 LALTLEPARDQKFTYIGIKTLADRYLAKdFNDQIVELPQERWMVIAMTLMSEEnrgsrLELVKEAYWALSHLYMTVATPTMSNAGKVGGQLSSCF 201
+                     55667889******************98579****************99765434444999********************************** PP
+
+           NrdAe 128 llamkddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafaiylePWhadifdfldl 222
+                     + +++dd +  i+d+ +++a++sk+ gg+g+ + +ira+gs i+g +  s+G++P ++  n++a  vdq g +r+ga+a+yl+ Wh+dif fld 
+  KGLMILOH_00412 202 IDTVEDD-LRSIFDSCTDAATVSKNGGGLGMYLGKIRARGSSIRGFKNVSSGVIPWMKQLNNVAVSVDQLG-QRQGAIAVYLDVWHKDIFAFLDA 294
+                     9888766.99***********************************************************87.799******************** PP
+
+           NrdAe 223 kkntGkeelrardlfyalwipdlfmkrveedeeWsllspneap.....glsdvyge.....efeklyekyekeg.rarktvkaqklwkailesqi 306
+                     k n+G e +r+ dlf+a+ +pdlfm+ ve+ ++W l++p+e++     +l+d y e     ef+k ye+  +++  +r+++ a ++ k+i+ sq+
+  KGLMILOH_00412 295 KLNNGDERQRTHDLFTAVSLPDLFMEAVEKRDTWYLFDPHEVRvkmgfSLEDFYDEkkgdgEFRKRYEQCAANDeLSRTEIPAIEVMKRIMLSQL 389
+                     ****************************************98644444699***874444579****9988765167789*************** PP
+
+           NrdAe 307 etGtPyllykdacnrksnqknlGtikssnlcteiveysskdev...................avCnlasialpkfvkekefdfeklkevtkvvtk 382
+                     etG+P+++y+d++nr +  k+ G i  snlctei++  s+  v                    vCnl+s++l++      f  + +++v+k+ ++
+  KGLMILOH_00412 390 ETGSPFMFYRDTANRLNPNKHKGMIYGSNLCTEIMQNMSATTVveetleddtisikkqpgdyVVCNLSSLSLAQV-----FSDDVVERVVKIQVR 479
+                     **********************************987654322111122222233333333369*******9875.....5667789******** PP
+
+           NrdAe 383 nlnkvidvnaypveeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeGpyetfegspaskGilqfdl 477
+                      l++vid+n   v++a+k+n+  r+ig+G  G    +++  +++esee+    ++++e i  aa++as+ela+++G+y  +egs    G++  + 
+  KGLMILOH_00412 480 MLDNVIDQNSIGVKQAEKTNKMYRAIGLGTYGWHHHLAKRGIAWESEESVWEVERVYERINQAAIKASAELAAEKGAYPHYEGSDWQTGEFFSER 574
+                     *****************************************************************************************997774 PP
+
+           NrdAe 478 wnvkplldWeelkekikkhGlrnsllvapmPtastsqilGnnesfepytsniyt 531
+                         +  +W+e+++ i+khG+rn  ++a+ P a+ts i G + s++p+ ++ y+
+  KGLMILOH_00412 575 --GYEGAEWDEIRSVISKHGMRNGYVMAVAPNATTSLIAGSTASIDPLFQKYYV 626
+                     ..456789****************************************999887 PP
+
+  == domain 2  score: 27.8 bits;  conditional E-value: 1.1e-09
+           NrdAe 585 yktvweikqkkiidlaadrgafidqsqslnlflee.ptlakltsmhfyawkkglktGmyylrtka 648
+                     yk ++ + q   i   a r++++dq  s+nl++ +  + ++l  +h+ awk+glkt +yy+r+ +
+  KGLMILOH_00412 649 YKPAHLVDQTWSIRQNAARQRHVDQGISFNLYVPNnVKAKELLDLHLLAWKEGLKT-TYYVRSTS 712
+                     7778888888889999*****************76156678***************.58999875 PP
+
+>> BMIABBIL_02238  Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000005845.2_ASM584v2_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  289.7   0.0   6.3e-89   1.3e-85      30     525 ..     122     638 ..     102     650 .. 0.90
+   2 ?    2.5   0.0      0.05     1e+02     573     647 ..     654     735 ..     643     751 .. 0.69
+
+  Alignments for each domain:
+  == domain 1  score: 289.7 bits;  conditional E-value: 6.3e-89
+           NrdAe  30 eivkknkekldsaikyerdfeydyfgfktlersyll..kingkvverpqkllmrvavgihke.....dieaaietyellsekyfthasptlfnag 117
+                     +  +++ +++d+ i+++rd++++y ++k le  yl+  ++ g+++e  q l++ va  ++++      ++ + + y+ +s+  +   +p +    
+  BMIABBIL_02238 122 DYTEEEFKQMDTFIDHDRDMTFSYAAVKQLEGKYLVqnRVTGEIYESAQFLYILVAACLFSNypretRLQYVKRFYDAVSTFKISLPTPIMSGVR 216
+                     556778899**************************8335789***************99864222227999**********99999999999999 PP
+
+           NrdAe 118 tkkpqlsscfllamkddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafaiylePW 212
+                     t++ q+ssc l++   ds++ i  t + +++   + +gig++  +ira gs i+g +   +G +P+ + f+ +++ ++qgg  r ga +++   W
+  BMIABBIL_02238 217 TPTRQFSSCVLIEC-GDSLDSINATSSAIVKYVSQRAGIGINAGRIRALGSPIRGGEAFHTGCIPFYKHFQTAVKSCSQGG-VRGGAATLFYPMW 309
+                     ***********997.69************99999999******************************************98.6899999999*** PP
+
+           NrdAe 213 hadifdfldlkkntGkeelrardlfyalwipdlfmkrveedeeWsllspneapglsdvy...geefeklyekyekegrar.ktvkaqklwkaile 303
+                     h ++ ++l lk n G e +r r + y++ i+ l+  r+ + e+ +l+sp+++pgl d++    eefe+ly+kyek++  r ++vka +l++ +++
+  BMIABBIL_02238 310 HLEVESLLVLKNNRGVEGNRVRHMDYGVQINKLMYTRLLKGEDITLFSPSDVPGLYDAFfadQEEFERLYTKYEKDDSIRkQRVKAVELFSLMMQ 404
+                     *********************************************************98555589**********98766157************ PP
+
+           NrdAe 304 sqietGtPyllykdacnrksn.qknlGtikssnlcteiveyssk.deva..vCnlasialpkfvkekefdfeklkevtkvvtknlnkvidvnayp 394
+                      +  tG  y+   d+cn++s     +  ++ snlc ei   +++ ++v     ++a  +l+ f   +  + ++l+e++   ++ l+ ++d + yp
+  BMIABBIL_02238 405 ERASTGRIYIQNVDHCNTHSPfDPAIAPVRQSNLCLEIALPTKPlNDVNdeNGEIALCTLSAFNLGAINNLDELEELAILAVRALDALLDYQDYP 499
+                     *******************9725689************9888763333311233555555666666778899*********************** PP
+
+           NrdAe 395 veeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeGpyetfegspaskGilqfdlwnvk.......p 482
+                     ++ ak++ + +r +giGv  +a  +++    +   +a++l ++ fe+i y  l+as elak++G+   f+ + ++kGil +d ++++       p
+  BMIABBIL_02238 500 IPAAKRGAMGRRTLGIGVINFAYYLAKHGKRYSDGSANNLTHKTFEAIQYYLLKASNELAKEQGACPWFNETTYAKGILPIDTYKKDldtianeP 594
+                     **********************************************************************************9987522222222 PP
+
+           NrdAe 483 .lldWeelkekikkhGlrnsllvapmPtastsqilGnnesfepy 525
+                      ++dWe+l+e+ik+hGlrns l a+mP  + sqi   ++ +ep 
+  BMIABBIL_02238 595 lHYDWEALRESIKTHGLRNSTLSALMPSETSSQISNATNGIEPP 638
+                     368***************************************96 PP
+
+  == domain 2  score: 2.5 bits;  conditional E-value: 0.05
+           NrdAe 573 nieeiPeelkelyktvweikqkk.iidlaadrgafidqsqslnlfle.......eptlakltsmhfyawkkglktGmyylrtk 647
+                     ++    e+l++ y   we+   +  ++l    ++fidqs s n   +       +  +++l    + a+k g+kt +yy  t+
+  BMIABBIL_02238 654 QVVPDYEHLHDAYELLWEMPGNDgYLQLVGIMQKFIDQSISANTNYDpsrfpsgKVPMQQLLKDLLTAYKFGVKT-LYYQNTR 735
+                     5544457999*********9765389****************987651111111334556666667788888887.5555555 PP
+
+>> BGDMMFNK_00868  Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA10111]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   86.5   0.0     2e-27   4.1e-24      93     261 ..      23     185 ..       7     189 .. 0.87
+   2 !  186.3   0.0   1.2e-57   2.4e-54     285     638 ..     187     545 ..     167     577 .. 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 86.5 bits;  conditional E-value: 2e-27
+           NrdAe  93 aaietyellsekyfthasptlfnagtkkpqlsscfllamkddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvf 187
+                     +++e y+l+ ek+f+  +p++ n g      s+cf+l++ +dsieGi +tlk++a++ k+ gg+g + +++r +gs +++t G+++G + ++r+f
+  BGDMMFNK_00868  23 NITEFYNLMVEKHFMPNTPAIANFGNALGMGSACFVLDV-EDSIEGIMETLKNTAIVFKAGGGMGYNFSKLRPEGSFVSTTGGSASGPISFMRLF 116
+                     57899*********************************8.69***************************************************** PP
+
+           NrdAe 188 ndtaryvdqggnkrkgafaiylePWhadifdfldlkkntGkeelrardlfyalwipdlfmkrveedeeWsllsp 261
+                     + ++  ++qgg +r +++ i l+  h di  f+  k  +G++ lr  ++   l +pd f  + e++  + l++p
+  BGDMMFNK_00868 117 DTMTEVIKQGGIRRGANMGI-LNSNHPDIERFITAK--HGNKALRNFNIS-VLIMPD-FWGHYEANTPYPLVDP 185
+                     ***********988888877.899********9876..788877766653.466676.4455666666666665 PP
+
+  == domain 2  score: 186.3 bits;  conditional E-value: 1.2e-57
+           NrdAe 285 egrarktvkaqklwkailesqietGtPyllykdacnrks.nqknlGtikssnlcteiveysskdevavCnlasialpkfvk.....ekefdfekl 373
+                     +++ +k+v+ ++l+ +i+    e+ +P +++ d +n  +   k+lG i ++n c e++ y ++     Cnl+si +  f k     +  fd+e+l
+  BGDMMFNK_00868 187 SKEVVKHVNPRELFDKIVYQAWESAEPGVIFYDRVNDTNpFYKHLGPIVTTNPCGEVLLYPNE----PCNLGSINVWAFAKydaegKVFFDWEHL 277
+                     5667899*****************************876258******************876....5******9999887332223569***** PP
+
+           NrdAe 374 kevtkvvtknlnkvidvnaypveeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeGpyetfegspa 468
+                     ke +   t+ l++vi+vn++p+++ ++  l +r +g+Gv G+ d +  lrlpf+++e +++ +++++ i y +   sv la+++G+   ++ s +
+  BGDMMFNK_00868 278 KETVMSTTRFLDNVIEVNKFPLKQIEEMSLATRKVGLGVMGVGDLLYELRLPFNTDEGRAFMEKLMQFISYWSKVESVRLARERGNLPFYDKSFY 372
+                     **********************************************************************99999******************** PP
+
+           NrdAe 469 skGilqfdlwnvkpll..dWeelkekikkhGlrnsllvapmPtastsqilGnnesfepytsniytrrvlsgefqvvnkyllkdlielglwneelk 561
+                      +G + f  +++ + +  dW+ l e+++khG+rn  +  + Pt s s i G +  +ep+ s ++++ v  g f  v + + + + + gl++++l 
+  BGDMMFNK_00868 373 PEGRMPFTGFDHPEAWemDWKGLSEDVRKHGIRNGYTTIIAPTGSISMIAGCSSGMEPVYSLVFQKNVKVGSFFYVDPAFERAMKREGLYSDRLM 467
+                     ***********98876559**************************************************************************** PP
+
+           NrdAe 562 nkiiaenGsiqnieeiPeelkelyktvweikqkkiidlaadrgafidqsqs.lnlfleeptlakltsmhfyawkkglk 638
+                     +ki ++ G iq iee+Pe+l++++ t+ + +  + i   a  ++++d s s  n f +++t++ +   ++ a+  g k
+  BGDMMFNK_00868 468 EKISNNGGRIQGIEEVPEHLQRVFVTAMDTTPEDHIRALASFQKWVDSSISkTNNFPANATVEDMRESYLLAYGLGCK 545
+                     *************************************************88579999999999999888888877776 PP
+
+>> EHLAHJNJ_00126  Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA10033]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  116.9   0.0   1.2e-36   2.5e-33      44     260 ..     112     333 ..      69     338 .. 0.85
+   2 !  108.0   0.0   5.8e-34   1.2e-30     278     469 ..     329     518 ..     326     522 .. 0.92
+   3 !   33.2   0.0   2.6e-11   5.4e-08     498     639 ..     524     666 ..     518     680 .. 0.88
+
+  Alignments for each domain:
+  == domain 1  score: 116.9 bits;  conditional E-value: 1.2e-36
+           NrdAe  44 kyerdfeydyfgfktlersyllk.ingkvverpqkllmrvavgihkedi......eaaiet....yellsekyfthasptlfnagtkkpqlsscf 127
+                     + + +++++  ++k ler yllk  ng+++e+p+ +l rva +i + d       e++ +t    y++++e  f+  sptl+na tk++qlsscf
+  EHLAHJNJ_00126 112 NFDDNLNFSNEALKILERRYLLKdSNGNTIETPKAMLQRVAKNIAHADTlyqkskEEVQKTedefYQIMAELRFLPNSPTLMNANTKSQQLSSCF 206
+                     456677888889**********945899*************999544322322224444434444****************************** PP
+
+           NrdAe 128 llamkddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafaiylePWhadifdfldl 222
+                     +l + +d++e i+ tl+++ali +  +g g++ +++r kg ++++ +G ++G v +++v++++   ++qgg  r+ga    l   h di+ f++ 
+  EHLAHJNJ_00126 207 VLPI-EDTMESIFGTLRDAALIHQRGSGTGFSFSRLRPKGDAVQTNQGVASGPVAFMKVYDSALEVIKQGG-IRPGANMAVLRVDHPDIIRFIES 299
+                     **98.689*************************************************************98.6888888889***********98 PP
+
+           NrdAe 223 kkntGkeelrardlfyalwipdlfmkrveedeeWslls 260
+                     k n     +  ++  +++ ++d fm+ v ed e+ l  
+  EHLAHJNJ_00126 300 KGNR----KVLKNFNISVAVTDNFMRAVTEDREYYLTN 333
+                     8775....44678889999************9998865 PP
+
+  == domain 2  score: 108.0 bits;  conditional E-value: 5.8e-34
+           NrdAe 278 lyekyekegrarktvkaqklwkailesqietGtPyllykdacnrksnqknlGtikssnlcteiveysskdevavCnlasialpkfvkeke..fdf 370
+                      y +  k+++++ +++a+++++ i +    tG P l++ d  nrk   k+lG i+++n c e            C l+si l++ ++++    ++
+  EHLAHJNJ_00126 329 YYLTNRKNEKYVGRLRARDVFSMITQNAWKTGDPGLIFIDEINRKHPAKHLGEIETTNQCGEAPLLPY----EGCVLGSINLNQVLNTARndVEW 419
+                     5777788999999*************************************************755433....36***********9986611568 PP
+
+           NrdAe 371 eklkevtkvvtknlnkvidvnaypveeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeGpyetfeg 465
+                     ++l++ +++ ++ l++vid+n yp +e +k  + +r  g+G+ Glad++l+l++ ++s++a el ++i+  i  aa e+s+ela+++G+  ++eg
+  EHLAHJNJ_00126 420 DQLRTTVRTAVHFLDNVIDMNSYPKPEIEKQTKLTRKFGLGIMGLADILLKLKIKYDSDTALELAEKIISFIKEAAYEKSAELANQRGACAAWEG 514
+                     9********************************************************************************************** PP
+
+           NrdAe 466 spas 469
+                     s   
+  EHLAHJNJ_00126 515 SDHQ 518
+                     9765 PP
+
+  == domain 3  score: 33.2 bits;  conditional E-value: 2.6e-11
+           NrdAe 498 lrnsllvapmPtastsqilGnnesfepytsniytrrvls.gefqvvnkyllkdlielglwneelknkiiaenGsiqnieeiPeelkelyktvwei 591
+                     +rn   +++ Pt + s +   +   ep  +  +++ vl   e + +n+ + +   e+g++  el +ki a+ Gsiq+ +eiP+++++++ t+ +i
+  EHLAHJNJ_00126 524 MRNMSCLSIAPTGTISILADASSGCEPHFAISFQKTVLGdNEIVYLNEEFERIAHERGFYGPELIRKI-ARLGSIQSCKEIPKDVRDIFVTAQDI 617
+                     89***********99999999999******9999999972467788999999999*********9886.788*********************** PP
+
+           NrdAe 592 kqkkiidlaadrgafidqsqslnl.fleeptlakltsmhfyawkkglkt 639
+                     +    i++ a  ++ +d s s  + f ++++++ +   ++ awk + k 
+  EHLAHJNJ_00126 618 SPEWHIKMQATLQKNVDNSISKTInFPATAAIKDVEEAYMLAWKAKCKG 666
+                     *******************99988355677889999999*****99885 PP
+
+>> DLAHKEME_00505  Ribonucleoside-diphosphate reductase subunit alpha 2 [GCA_000006605.1_ASM660v1_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  225.7   0.1   1.5e-69     3e-66      44     533 ..      98     619 ..      50     639 .. 0.81
+   2 !   29.0   0.5   4.9e-10     1e-06     583     649 ..     639     705 ..     631     711 .. 0.88
+
+  Alignments for each domain:
+  == domain 1  score: 225.7 bits;  conditional E-value: 1.5e-69
+           NrdAe  44 kyerdfeyd.yfgfktlersyllki.ng.kvverpqkllmrvavgihkedieaaietyellsekyfthasptlfnagtkkp.qlsscfllamkdd 134
+                      y + f+++ ++g      sy lk+ +g +  er ++ +  va+g+   d e a +  + + +  f  a+pt++n g k+  +  scfll++ +d
+  DLAHKEME_00505  98 AYAKKFRFQsFLGAYKYYTSYTLKTfDGrRYLERFEDRVCMVALGLAAGDTELASNLVDEIMDGRFQPATPTFLNIGKKQRgEPVSCFLLRI-ED 191
+                     46678888626688889999*99973333789*********************************************87652789******9.57 PP
+
+           NrdAe 135 sieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafaiylePWhadifdfldlkkntGke 229
+                      +e i ++++++ ++sk  gg++l ++n+r +g+ ik  + +s+G++P++++ +d+  y +q g  r+ga a+yl   h di+ fld k+++  e
+  DLAHKEME_00505 192 NMESIGRSINSALQLSKRGGGVALLLSNVREAGAPIKHIENQSSGVIPVMKLLEDAFSYANQLG-ARQGAGAVYLSAHHPDILRFLDTKRENADE 285
+                     89************************************************************87.699*************************** PP
+
+           NrdAe 230 elrardlfyalwipdlfmkrveedeeWsllspneapglsdvygeefekl..yekyek...e.grarktvkaqklwkailesqietGtPyllykda 318
+                     + r + l +++ ipd+  +  +++++  l+sp ++   + vyg+ f ++   e+ye+   +    + +++a+ +++++ e q e+G Py+++ d+
+  DLAHKEME_00505 286 KIRIKTLSLGVVIPDITFELAKRNDDMYLFSPYDV---ERVYGKPFADVsiTEHYEEmveDpRIRKSKINARAFFQTLAEIQFESGYPYIMFEDT 377
+                     ********************************876...567888886532245555411131455679*************************** PP
+
+           NrdAe 319 cnrksnqknlGtikssnlcteiveysskdevav............Cnlasialpkfvkekefdfeklkevtkvvtknlnkvidvnay.pveeakk 400
+                     +n+ +     G i  snlc+ei++ s + e               Cnl+s+ ++k ++++      +++ +++ ++ l  v d++   +v++ ++
+  DLAHKEME_00505 378 VNKANPI--EGRITHSNLCSEILQVSTPSEFNAdlsykqigddisCNLGSMNIAKAMDSE-----DFSKTIETAIRGLTAVADQTSIdSVPSVRQ 465
+                     *976543..4****************9998742222222333333888888877766655.....45677888899999999988763799**** PP
+
+           NrdAe 401 snlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeG.pyetfegspaskGil..qfd................ 476
+                     +n +  +ig+G   l   +   ++ + seea ++ ++ f t+ y al+as ++a+++G ++++fe+s+++ G++  ++d                
+  DLAHKEME_00505 466 GNDNSHAIGLGQMNLHGFLGREHIHYGSEEALDFTNAYFATVMYEALKASNKIAQERGeKFHNFENSQYATGEFfdRYDpaefapkterirqiig 560
+                     *********************************************************9559***********98443442211111111111111 PP
+
+           NrdAe 477 ..lwnvkplldWeelkekikkhGlrnsllvapmPtastsqilGnnesfepytsniytrr 533
+                         +v + +dW++lk+++++hGl n  l a+ Pt s s i   + s+ p++s+i  r+
+  DLAHKEME_00505 561 nsSIQVPTAQDWQQLKDDVQAHGLYNRNLQAIPPTGSISYINNSTSSIHPIASKIEIRK 619
+                     1112334568*********************************************9987 PP
+
+  == domain 2  score: 29.0 bits;  conditional E-value: 4.9e-10
+           NrdAe 583 elyktvweikqkkiidlaadrgafidqsqslnlflee.ptlakltsmhfyawkkglktGmyylrtkaa 649
+                     e y  ++ei   kiid  a  ++++dq  sl lf+++ +t+  +    +yaw+kg+kt +yy+r + +
+  DLAHKEME_00505 639 EYYEDAYEIGYEKIIDTYAVATKYVDQGLSLTLFFKDtATTRDINRAQIYAWRKGIKT-IYYIRLRQT 705
+                     57999*****************************987256788**************9.899998765 PP
+
+>> LCGMICPD_02881  Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003215.1_ASM321v1_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  226.5   6.5   8.3e-70   1.7e-66      22     532 ..      62     602 ..      39     619 .. 0.84
+   2 !   28.5   1.3   6.6e-10   1.4e-06     584     652 ..     623     691 ..     607     696 .. 0.86
+
+  Alignments for each domain:
+  == domain 1  score: 226.5 bits;  conditional E-value: 8.3e-70
+           NrdAe  22 eliseevleivkknkekldsaikyerdfey.dyfgfktlersyllking..kvverpqkllmrvavgihkedieaaietyellsekyfthasptl 113
+                     e+i++  ++++k+  +++d    + + fe+ +y++ + + + y lk n+  ++ e+ ++ ++ va+ + + d + a++  + + ++ f  a+pt+
+  LCGMICPD_02881  62 EVINQYSIDVIKNIYDMID----K-HKFEFqSYMSANKFYQNYALKSNDgkEILETYNDKVLIVALTLGNGDKDLALNLADKIVKQEFQPATPTF 151
+                     3444444444444444333....3.3455526999999********9854489****************************************** PP
+
+           NrdAe 114 fnagtkkp.qlsscfllamkddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafai 207
+                     +nag k++ ++ scfll++ +ds eGi  +++++  +sk  gg++l+++++ra+g  ik  +G + G+v + ++ +++  y +q g  r+g+ a+
+  LCGMICPD_02881 152 LNAGRKRAgEMVSCFLLSV-EDSTEGISYAISSSNHLSKIGGGVALNLSKLRASGESIKDIEGAAGGVVGVAKMLEQSFSYFNQMG-ARQGSGAV 244
+                     ****987539*******98.69**************************************************************87.689***** PP
+
+           NrdAe 208 ylePWhadifdfldlkkntGkeelrardlfyalwipdlfmkrveedeeWsllspneapglsdvygee..feklyekyeke.grarktvkaqklwk 299
+                     yl  +h d   ++d kk +  e+ r   l ++  ipd fm+  e++e    + p+++     v  +e   ++ y k  ++ +  +k+++ +++ +
+  LCGMICPD_02881 245 YLTVFHPDFELLMDTKKINADEKIRLATLSLGAIIPDKFMELAEKNEVAYAFYPHTVYKKYGVSLDEieMDEWYDKLVNDsDIRKKEINPRQMLT 339
+                     *********99********************************************99888877777511568899876551667889******** PP
+
+           NrdAe 300 ailesqietGtPyllykdacnrksnqknlGtikssnlcteiveysskdeva............vCnlasialpkfvkekefdfeklkevtkvvtk 382
+                     +i + q e+G Py++y d++nr+   k++G+ik snlc+ei +y  + e+              Cnl+s+ +++ +     d +++++ +++ ++
+  LCGMICPD_02881 340 KIAQMQQESGYPYVVYIDTANREHTLKDVGIIKMSNLCCEIFQYQTPSEIEgyggknewgqdiSCNLGSLNIANVM-----DNKTIESTVETAIR 429
+                     ***********************************************99953333333333336999998887765.....56678899999*** PP
+
+           NrdAe 383 nlnkvidvna.ypveeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakk.eGpyetfegspaskGi... 472
+                      l  v d +   pv++  +sn +   ig+G   l   ++  ++ ++s++a ++ +  f  + y +++as+++a + + ++e f+ s + kG    
+  LCGMICPD_02881 430 ALSFVADSTDiKPVPTVSNSNSKSHSIGLGAMNLHGYLVRENILYTSDDAIDFSNVFFAMVRYYSIKASMKIAIErNQTFEGFDKSEYVKGRnsk 524
+                     *******87626************************************************************97516789***999999996222 PP
+
+           NrdAe 473 .lqfdlwnvk..................plldWeelkekikkhGlrnsllvapmPtastsqilGnnesfepytsniytr 532
+                      l    ++++                  ++ dW++l +++k++G+ n+ l+a+ Pt s s +   + s+ p+t  + +r
+  LCGMICPD_02881 525 vL-SKYYEQSylpksekvralfegiyipTKEDWTKLLDEVKEKGIYNAYLMAVAPTQSISYVQNATSSIMPITEPVEVR 602
+                     21.1222211111111111111111111467******************************************988777 PP
+
+  == domain 2  score: 28.5 bits;  conditional E-value: 6.6e-10
+           NrdAe 584 lyktvweikqkkiidlaadrgafidqsqslnlfleep.tlakltsmhfyawkkglktGmyylrtkaaada 652
+                      y++++ + ++k+idl a  ++++dq  s  lf+++  t+  ++  ++ya+kkglk  +yy rtk + d+
+  LCGMICPD_02881 623 YYQSAYRMDMRKVIDLVATVQNHVDQGISTTLFVTDEkTTRDIARHYIYAYKKGLKS-LYYTRTKMTRDT 691
+                     5999*****************************986515666777778********6.9*****987765 PP
+
+>> BMIABBIL_02678  Ribonucleoside-diphosphate reductase 2 subunit alpha [GCA_000005845.2_ASM584v2_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  202.4   0.0   1.6e-62   3.3e-59      49     533 ..      97     613 ..      57     621 .. 0.82
+   2 !   30.4   0.0   1.8e-10   3.8e-07     583     649 ..     633     699 ..     624     705 .. 0.89
+
+  Alignments for each domain:
+  == domain 1  score: 202.4 bits;  conditional E-value: 1.6e-62
+           NrdAe  49 feyd.yfgfktlersyllki..ngkvverpqkllmrvavgihkedieaaietyellsekyfthasptlfnagtkk.pqlsscfllamkddsieGi 139
+                     f+++ ++g   +  sy lk+   ++  e   + +  va+ + + d + a++  + + +  f  a+pt++n+g ++  +l scfll++ +d +e i
+  BMIABBIL_02678  97 FRFQtFLGAWKFYTSYTLKTfdGKRYLEDFADRVTMVALTLAQGDETLALQLTDEMLSGRFQPATPTFLNCGKQQrGELVSCFLLRI-EDNMESI 190
+                     555425688888899999863234678998888999**************9999999999************875269********9.5789*** PP
+
+           NrdAe 140 ydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafaiylePWhadifdfldlkkntGkeelrar 234
+                      ++++++ ++sk  gg+++ ++n+r +g+ ik  + +s+G++P++++ +d+  y +q g  r+ga a+yl   h di+ fld k+++  e+ r +
+  BMIABBIL_02678 191 GRAVNSALQLSKRGGGVAFLLSNLREAGAPIKRIENQSSGVIPVMKMLEDAFSYANQLG-ARQGAGAVYLHAHHPDILRFLDTKRENADEKIRIK 284
+                     *********************************************************87.699******************************** PP
+
+           NrdAe 235 dlfyalwipdlfmkrveedeeWsllspneapglsdvygeefekl.....yekyek.egrarktvkaqklwkailesqietGtPyllykdacnrks 323
+                      l +++ ipd+  +  +e+ + +l+sp ++   + vyg+ f ++     y +  + e   +k ++a+++++++ e q e+G Py++y d++nr +
+  BMIABBIL_02678 285 TLSLGVVIPDITFHLAKENAQMALFSPYDV---ERVYGKPFADVaisqhYDELVAdERIRKKYLNARDFFQRLAEIQFESGYPYIMYEDTVNRAN 376
+                     ***************************876...5678887764322111555444144566789****************************975 PP
+
+           NrdAe 324 nqknlGtikssnlcteiveysskdev............avCnlasialpkfvkekefdfeklkevtkvvtknlnkvidvnay.pveeakksnlrh 405
+                          G i+ snlc+ei++  s+ e               Cnl+s+ +++ +++  f     ++ +++ ++ l  v d+++  +v++ + +n   
+  BMIABBIL_02678 377 P--IAGRINMSNLCSEILQVNSASEYdenldytrtghdISCNLGSLNIAHTMDSPDF-----ARTVETAVRGLTAVSDMSHIrSVPSIEAGNAAS 464
+                     4..57************9866554421111111212115799999998877765544.....5678889999******99863789999****** PP
+
+           NrdAe 406 rpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeG.pyetfegspaskGil..qf..dlwnvk.............. 481
+                      +ig+G   l   ++   +++ s+ea ++ +  f +i + al++s+ la+++G ++  f+ s ++ G++  q+    w+ k              
+  BMIABBIL_02678 465 HAIGLGQMNLHGYLAREGIAYGSPEALDFTNLYFYAITWHALRTSMLLARERGeTFAGFKQSRYASGEYfsQYlqGNWQPKtakvgelftrsgit 559
+                     ****************************************************9558999999998886522221122332211111111111222 PP
+
+           NrdAe 482 ..plldWeelkekikkhGlrnsllvapmPtastsqilGnnesfepytsniytrr 533
+                       ++  W++l+++++++G+ n  l a+ Pt s s i   + s+ p+ +++  r+
+  BMIABBIL_02678 560 lpTREMWAQLRDDVMRYGIYNQNLQAVPPTGSISYINHATSSIHPIVAKVEIRK 613
+                     213567****************************************99998886 PP
+
+  == domain 2  score: 30.4 bits;  conditional E-value: 1.8e-10
+           NrdAe 583 elyktvweikqkkiidlaadrgafidqsqslnlflee.ptlakltsmhfyawkkglktGmyylrtkaa 649
+                     +ly+ ++ei   kiid  a+ ++++dq  sl lf+ + +t+  +    +yaw+kg+kt +yy+r + +
+  BMIABBIL_02678 633 ALYQDAYEIGAEKIIDTYAEATRHVDQGLSLTLFFPDtATTRDINKAQIYAWRKGIKT-LYYIRLRQM 699
+                     79*******************************9975267889**************9.899998765 PP
+
+>> NIBMKOCB_00809  hypothetical protein [UBA10106]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   76.5   0.0     2e-24   4.2e-21      57     228 ..      46     225 ..      23     253 .. 0.83
+   2 !   10.6   0.0   0.00017      0.36     291     338 ..     316     363 ..     309     368 .. 0.94
+   3 !   74.0   0.0   1.2e-23   2.5e-20     351     472 ..     726     851 ..     723     855 .. 0.94
+   4 !   70.7   0.1   1.1e-22   2.4e-19     498     677 ..     856    1037 ..     852    1044 .. 0.89
+
+  Alignments for each domain:
+  == domain 1  score: 76.5 bits;  conditional E-value: 2e-24
+           NrdAe  57 ktlersyllk.ingkvverpqkllmrva.........vgihkedieaaie.tyellsekyfthasptlfnagtkkpqlsscfllamkddsieGiy 140
+                      t+++ yll+ ++g v+e+p++ ++r a          g  +e++e+ +e  y+++++k ft       nagt+   l  c++l ++ ds+e iy
+  NIBMKOCB_00809  46 WTFSKKYLLRdLHGDVIETPKQAIFRLArtlaeiekqFGASEEEVERWTEkFYRVIASKAFTPGGRVWTNAGTHITGLFNCYVLPVH-DSLEEIY 139
+                     588999*9985799**********999833322222223346788887652699******************************996.8****** PP
+
+           NrdAe 141 dtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafaiylePWhadifdfldlkkntGk 228
+                     +++k++ali k+ gg g + +++r +gsy+  ++G ++G+v ++r f+  +  ++ g n+ +ga    l+  h di+df+  k + G+
+  NIBMKOCB_00809 140 ESVKHAALIQKHGGGTGYNFSELRPRGSYVVKSKGVASGVVSFIRQFDRQTEIINSG-NR-RGANMGILDINHPDILDFIYAKTERGE 225
+                     *****************************************************9985.45.55555569***********99998886 PP
+
+  == domain 2  score: 10.6 bits;  conditional E-value: 0.00017
+           NrdAe 291 tvkaqklwkailesqietGtPyllykdacnrksnqknlGtikssnlct 338
+                     ++ka  l  +i+e    tG P +++ d  n+ +   +lG ik++n c 
+  NIBMKOCB_00809 316 QLKADVLMDTICELAWRTGDPGMIFLDEINKYNPLPKLGPIKATNPCV 363
+                     78999****************************************996 PP
+
+  == domain 3  score: 74.0 bits;  conditional E-value: 1.2e-23
+           NrdAe 351 vCnlasialpkfvkek....efdfeklkevtkvvtknlnkvidvnaypveeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifet 441
+                      Cnl+s+ l  fv+++    e d ekl+e t+v+++ +++v d n+ p++  +++ l+hr ig+Gv G+ad++++l +p++s+ea ++ + ++  
+  NIBMKOCB_00809 726 ACNLGSVNLDVFVTRRngkaEIDEEKLREATRVIIRFMDNVNDSNKGPIPPVEQTVLKHRRIGLGVLGFADMLIQLGIPYDSDEALQVAEVVMKI 820
+                     6************9642222799************************************************************************ PP
+
+           NrdAe 442 iyyaaleasvelakkeGpyetfegspaskGi 472
+                     i   a  asve+a+++G + +fe s+++ G+
+  NIBMKOCB_00809 821 INDEAKIASVEIAEEKGVFPAFELSKYATGK 851
+                     *************************999986 PP
+
+  == domain 4  score: 70.7 bits;  conditional E-value: 1.1e-22
+           NrdAe  498 lrnsllvapmPtastsqilGnnesfepytsniytrrvlsge.fqvvnkyllkdlielglwneelknkiiaenGsiqnieeiPeelkelyktvw 589 
+                      +rn+   ++ Pt + s i+  +  +ep+  ++y++ +  g+    vnk+l + l e+gl+++e+ +ki +++G +  i+eiPe+lk+++kt +
+  NIBMKOCB_00809  856 VRNAERTTIAPTGTISMIFDTSSGIEPWFGMVYKKNIRGGDsLYYVNKHLERVLKERGLYSKEILEKIYQNRGCVTGIQEIPEDLKRVFKTTF 948 
+                      89999999*******************************984578************************************************ PP
+
+           NrdAe  590 eikqkkiidlaadrgafidqsqslnlfl.eeptlakltsmhfyawkkglktGmyylrtkaaadaikftvdkeklkekkkklacsleeee 677 
+                      ++ + + + + a  ++++d + s  + + ee+t+  +   ++ awk  lk  + y   +  ++ ++   +k++ kek++ +++s+e+++
+  NIBMKOCB_00809  949 DVGTEQHVRIQAAFQKHVDNAVSKTINMpEEATVVDVKKAYLLAWKLALKGITIYRDRSKDVQVLETGGNKKESKEKETPVKESQEKQR 1037
+                      ********************999999984578999***************766665555566778888888888888877777766554 PP
+
+>> FHFECEBA_01657  Ribonucleoside-diphosphate reductase subunit alpha 2 [GCA_000003135.1_ASM313v1_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  180.0   0.0   9.6e-56     2e-52      21     475 ..      76     546 ..      59     559 .. 0.81
+   2 !   18.8   0.0   5.9e-07    0.0012     482     533 ..     579     630 ..     567     647 .. 0.92
+   3 !   30.9   0.2   1.3e-10   2.6e-07     584     649 ..     651     716 ..     642     724 .. 0.89
+
+  Alignments for each domain:
+  == domain 1  score: 180.0 bits;  conditional E-value: 9.6e-56
+           NrdAe  21 aeliseevleivk..k.nkekldsaiky..erdfey.dyfgfktlersyllki.ngkv.verpqkllmrvavgihkedieaaietyellsekyft 107
+                     + lis+++++ +   +  +e ld++ ++  +  fe+ +++g   +  sy lk+ +g++  e   +    va+++   + ++aie  + +    f 
+  FHFECEBA_01657  76 EYLISNQYYNPAVfnQySAEFLDRIYEHveSAGFEFgTFLGAFKFYTSYALKTfDGRLyLEDFPQRCAAVALELAAGNEQQAIEYADEMLAGRFQ 170
+                     556666666533200213455665555411345666346687888999988863665424655555779************************** PP
+
+           NrdAe 108 hasptlfnagtk.kpqlsscfllamkddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkr 201
+                      a+pt++n g   + +  scfl+++ +d +e i + ++ + ++sk  gg++l ++n+r  g+ ik  + +s+G++P++++ +d+  y +q g  r
+  FHFECEBA_01657 171 PATPTFLNLGKAqRGEPVSCFLVRI-EDNMESISRGINAALQLSKRGGGVALLLSNLRELGAPIKHIENQSSGVIPVMKLLEDSFSYANQLG-AR 263
+                     ********9976156789******9.5789************************************************************87.69 PP
+
+           NrdAe 202 kgafaiylePWhadifdfldlkkntGkeelrardlfyalwipdlfmkrveedeeWsllspneapglsdvygeefekl.....yekyekegr.ark 290
+                     +ga a+yl+  h di+ fld k+++  e+ r + l +++ ipd+  +  +++ + +l+sp ++   + vyg+ f ++     y +  +++r +++
+  FHFECEBA_01657 264 QGAGAVYLNAHHPDILRFLDTKRENADEKIRIKSLALGVVIPDITFELAKQKAQMALFSPYDV---ERVYGKPFADIsvtehYDEMVADDRiKKT 355
+                     9***********************************************************876...56788888654221115554455551455 PP
+
+           NrdAe 291 tvkaqklwkailesqietGtPyllykdacnrksnqknlGtikssnlcteiveysskde......va......vCnlasialpkfvkekefdfekl 373
+                      ++a+k++++i e q e+G Py+++ d++nr +     G +  snlc+ei++  ++         a       Cnl+s+ ++k ++        l
+  FHFECEBA_01657 356 YIDARKFFTTIAELQFESGYPYIVFEDTVNRANPI--EGRVTMSNLCSEILQVQEPSAynedltYAhvgrdiSCNLGSLNIAKAMDG------GL 442
+                     69****************************97654..49************987654311111111222222588888888877764......58 PP
+
+           NrdAe 374 kevtkvvtknlnkvidvna.ypveeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeG.pyetfegs 466
+                      + +++ ++ l  v + +    v++ +++n+   +ig+G   l   ++   + + see  ++  + f t+ y a +as  la ++G ++ +f+ s
+  FHFECEBA_01657 443 GHTVETAIRALTSVAEHTSiNAVPSIRRANEEGHAIGLGQMNLHGFLAREGIQYGSEEGLDFTDMYFMTVAYHAYRASHALAVEHGrTFASFATS 537
+                     8889999999*9999987515799*************************************************************95699***99 PP
+
+           NrdAe 467 paskGilqf 475
+                      ++k   q 
+  FHFECEBA_01657 538 DYAKPAGQG 546
+                     888765554 PP
+
+  == domain 2  score: 18.8 bits;  conditional E-value: 5.9e-07
+           NrdAe 482 plldWeelkekikkhGlrnsllvapmPtastsqilGnnesfepytsniytrr 533
+                     +  dWe+l++ i k G+ n  l a+ Pt s s i   + s+ p++s+i  r+
+  FHFECEBA_01657 579 TAADWEALRDAILKDGIYNQNLQAVPPTGSISYINHSTSSIHPIASKIEIRK 630
+                     568*********************************************9986 PP
+
+  == domain 3  score: 30.9 bits;  conditional E-value: 1.3e-10
+           NrdAe 584 lyktvweikqkkiidlaadrgafidqsqslnlflee.ptlakltsmhfyawkkglktGmyylrtkaa 649
+                      yk ++ei  k+i+d  a+ ++++dq  sl lf+ + +t+  l    +yaw+kg+kt +yy+r +  
+  FHFECEBA_01657 651 YYKDAYEIGWKAIVDTYAEATQHVDQGLSLTLFFPDtATTRDLNKAQIYAWRKGIKT-LYYIRIRQQ 716
+                     59******************************9965267889**************9.899998754 PP
+
+>> BGDMMFNK_00960  Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA10111]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   -0.2   0.0      0.32   6.7e+02      56      87 ..      14      46 ..       7      53 .. 0.83
+   2 !   79.4   0.0   2.7e-25   5.5e-22      90     223 ..      88     218 ..      63     227 .. 0.92
+   3 !  131.7   0.0   3.9e-41   8.1e-38     283     639 ..     252     589 ..     223     613 .. 0.87
+
+  Alignments for each domain:
+  == domain 1  score: -0.2 bits;  conditional E-value: 0.32
+           NrdAe 56 fktlersyllki.ngkvverpqkllmrvavgih 87
+                    +  le+ yl k   gk +erp+ l+ rva +i 
+  BGDMMFNK_00960 14 LSILEKRYLRKDgRGKPAERPEGLFRRVAENIA 46
+                    6689*****99636899***********98875 PP
+
+  == domain 2  score: 79.4 bits;  conditional E-value: 2.7e-25
+           NrdAe  90 dieaaietyellsekyfthasptlfnagtkkpqlsscfllamkddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPml 184
+                       ++a e yell++  f+  sptl+nag k +qls+cf+l +  d+i+ i++tl ++al+ k+ +g g++ +++r +g +i++ +G ++G v ++
+  BGDMMFNK_00960  88 ARQTADEFYELLTSLDFLPNSPTLLNAGGKLQQLSACFVLPI-GDTIDSIFKTLYHAALVHKTGAGTGFNFSRLRPRGDVIES-SGFTTGPVSFM 180
+                     55778899********************************99.689*********************************9987.6999******* PP
+
+           NrdAe 185 rvfndtaryvdqggnkrkgafaiylePWhadifdfldlk 223
+                     +v+++++  ++ gg  r +++ i le Wh di +f+ +k
+  BGDMMFNK_00960 181 KVYDAATNEIKLGGVLRGANMGI-LEAWHPDIREFISVK 218
+                     **************999888887.9***********997 PP
+
+  == domain 3  score: 131.7 bits;  conditional E-value: 3.9e-41
+           NrdAe 283 ekegrarktvkaqklwkailesqietGtPyllykdacnrksnqknlGtikssnlcteiveysskdevavCnlasialpkfvkekefdfeklkevt 377
+                      ++++a+ + +a+ l + + e    tG P +++ d   r +    lG ++s++ c e            C l+si l+++vk ++ d++klk+ t
+  BGDMMFNK_00960 252 PRTKKAVGKESARGLVRLMAEEAWATGDPGVVFLDRMERDNPTPALGRLESTDSCGEQPLLPY----ESCILGSINLSHMVKGRKVDYAKLKKRT 342
+                     34455556668999******************************************9543322....35************************** PP
+
+           NrdAe 378 kvvtknlnkvidvnaypveeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeGpyetfegspaskGi 472
+                     ++ ++ l++ id++ yp++e ++  +++r ig+Gv Gl+d++++l++p++s +a e+  +++  i   a  as +la+++G++ ++e s + +  
+  BGDMMFNK_00960 343 HQAVHFLDNAIDMCRYPLPENREMVEQTRKIGVGVMGLSDMLIMLNIPYDSGKALEVAGKMMAFIQREADAASENLARERGAFPAWEKSIYNRKS 437
+                     ***************************************************************************************99876654 PP
+
+           NrdAe 473 lqfdlwnvkplldWeelkekikkhGlrnsllvapmPtastsqilGnnesfepytsniytrrvlsgef.qvvnkyllkdlielglwneelknkiia 566
+                      +f                  k++ lrn+   ++ Pt + s i G +  +ep+ +  y+r +  g      n+ l k l +++l++ee+k++i a
+  BGDMMFNK_00960 438 PHFR----------------GKHKLLRNATRTTIAPTGTISIIAGCSGGIEPLFALSYARTTAEGAIlYYFNERLRKALEARKLFTEEVKENI-A 515
+                     4432................23445899999999*****************************99862579*******************996.7 PP
+
+           NrdAe 567 enGsiqnieeiPeelkelyktvweikqkkiidlaadrgafidqsqslnlflee.ptlakltsmhfyawkkglkt 639
+                     e+Gs+q+++ iP+++k+l+ t+ +i+    + + a  ++++d   s  + l + +t + +  +++ a++ g k 
+  BGDMMFNK_00960 516 EEGSVQRLPGIPSSIKKLFVTANDISPEYHVRMQAAFQKHVDNGISKTVTLPRsATPQDIEKVYLQAYELGCKG 589
+                     89*****************************************9999999865156678888999999888885 PP
+
+>> FLKIJBGC_00806  Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA10089]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   60.8   0.0   1.1e-19   2.4e-16     133     228 ..       2      96 ..       1     104 [. 0.93
+   2 !  109.6   0.0   1.9e-34     4e-31     285     467 ..     126     304 ..     118     307 .. 0.97
+   3 !   27.0   0.0     2e-09   4.1e-06     497     648 ..     308     458 ..     304     463 .. 0.84
+
+  Alignments for each domain:
+  == domain 1  score: 60.8 bits;  conditional E-value: 1.1e-19
+           NrdAe 133 ddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafaiylePWhadifdfldlkkntG 227
+                     +dsieGi+ tl ++ali +s gg g++ +++r +g  ++g +G ++G v ++rvf++++  v qgg +r +++ + l   h di +f+  k++ G
+  FLKIJBGC_00806   2 EDSIEGIFTTLAHMALIHQSGGGTGFSFSHLRPRGDIVNGVRGAATGPVSFMRVFDAATAAVRQGGRRRGANMGV-LAASHPDIEEFVTCKREGG 95 
+                     8***************************************************************99777666665.8899***********9988 PP
+
+           NrdAe 228 k 228
+                      
+  FLKIJBGC_00806  96 L 96 
+                     5 PP
+
+  == domain 2  score: 109.6 bits;  conditional E-value: 1.9e-34
+           NrdAe 285 egrarktvkaqklwkailesqietGtPyllykdacnrksnqknlGtikssnlcteiveysskdevavCnlasialpkfvkekefdfeklkevtkv 379
+                     +g   k ++a++lw+ i es   +G+P +++ d  nr++   +lG i+++n c e   y  +     Cnl+si l++ ++++e d + l +v++ 
+  FLKIJBGC_00806 126 DGSVWKSINARSLWRIIAESAWISGEPGVIFLDEINRRNTTPHLGLIEATNPCGEQPLYPYE----SCNLGSINLARCIRKSEIDDDLLVRVVRC 216
+                     677889*************************************************9999765....6**************************** PP
+
+           NrdAe 380 vtknlnkvidvnaypveeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeGpyetfegsp 467
+                      ++ l+ vidvn++p+++ ++  l +r ig+Gv G+a+a++ l +p+eseea ++ ++++e +  +a e s el  ++G++ + egs 
+  FLKIJBGC_00806 217 GVEFLDSVIDVNHFPLPQIREKTLATRKIGLGVMGFAEALIRLDIPYESEEALRFAENLMEKVQTTARERSEELGVEKGSFPAIEGSV 304
+                     **************************************************************************************96 PP
+
+  == domain 3  score: 27.0 bits;  conditional E-value: 2e-09
+           NrdAe 497 GlrnsllvapmPtastsqilGnnesfepytsniytrrvlsgefqvvnkyllkdlielglwneelknkiiaenGsiqnieeiPeelkelyktvwei 591
+                      +rn+ + ++ Pt s   i G +  +ep+ s  y+r +     ++v + l+++++      +++ ++ ++++G++  ++ + ++  +l+kt+ ei
+  FLKIJBGC_00806 308 DMRNATVTTIAPTGSIHLIAGTTSGIEPVFSFAYERTIDGQPVRIV-SDLITEFLPPTAGGKDVVEH-VRRHGTVAGLP-LDDHTLDLFKTALEI 399
+                     59********************************998766655555.56888999888888888876.58899999986.788999********* PP
+
+           NrdAe 592 kqkkiidlaadrgafidqsqslnlfl.eeptlakltsmhfyawkkglkt.Gmyylrtka 648
+                     +  + + + a  ++++d + s  + l e++t+++++ ++  a++   k   +y  r+++
+  FLKIJBGC_00806 400 TPEHHVRMQAAFQKYVDNAVSKTVNLpERATVGEISRIYSLAHELRCKGiTVYRYRSRP 458
+                     ******************99988888356899999999999988887742567777776 PP
+
+>> KGLMILOH_02706  hypothetical protein [GCA_000005825.2_ASM582v2_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   57.8   0.0     9e-19   1.9e-15      95     221 ..     156     282 ..     132     288 .. 0.91
+   2 !  134.1   0.1   7.4e-42   1.5e-38     244     551 ..     376     692 ..     368     698 .. 0.86
+
+  Alignments for each domain:
+  == domain 1  score: 57.8 bits;  conditional E-value: 9e-19
+           NrdAe  95 ietyellsekyfthasptlfnagtkkp.qlsscfllamkddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfn 188
+                      + y+ l +  f+ a   l+ ag+k++     c+++ + +ds eGi +  k++  i    gg+g + +++r +++  +g nG+s+G v  l  + 
+  KGLMILOH_02706 156 EQFYSELVNMNFIPAGRVLYGAGAKTDvTYFNCYVMPFVKDSREGISEHRKQVMEIMSRGGGVGTNGSTLRPRNTLARGVNGKSSGSVSWLDDIA 250
+                     5678999999*************998725679*************************************************************** PP
+
+           NrdAe 189 dtaryvdqggnkrkgafaiylePWhadifdfld 221
+                     + ++ v+qgg+ r+ga  i l  Wh di++f+ 
+  KGLMILOH_02706 251 KLTHLVEQGGS-RRGAQMIMLADWHPDILEFII 282
+                     ********995.669999*************85 PP
+
+  == domain 2  score: 134.1 bits;  conditional E-value: 7.4e-42
+           NrdAe 244 dlfmkrveedeeWsllspne...apglsdvygeefeklyekyekeg.....rarktvkaqklwkailesqietGtPyllykdacnrksnqknlGt 330
+                       fm+ ve+dee++l  p+    +   ++ y+e ++++    e ++     r+ + ++a++lw+ i  + + + +P +++ d++n  +n k  G 
+  KGLMILOH_02706 376 KEFMEAVENDEEYALRFPDVenyTAEEMESYNETWHEIGDVREWREmgygvRTYRLIRAKELWNLINICATYSAEPGIFFIDNANDMTNAKAYGQ 470
+                     56*************98864111455567899999988655443321112256788**************************************6 PP
+
+           NrdAe 331 .ikssnlcteiveysskdevavCnlasialpkfvke..kefdfeklkevtkvvtknlnkvidvnaypveeakksnlrhrpigiGvqGladaflll 422
+                      + ++n c e          +vCnla+i l+++ ++  k+ +f+klk+ ++v ++  ++vid++ y +e+  k  + +r +g+Gv Gl d ++  
+  KGLMILOH_02706 471 kVVATNPCGEQ----PLAPYSVCNLAAINLAEMADKetKTVNFDKLKRTVEVGVRMQDNVIDATPYFLEDNTKQAKGERRVGLGVMGLHDLLIYA 561
+                     48899****94....344568***********997522679****************************************************** PP
+
+           NrdAe 423 rlpfeseeakelnkeifetiyyaaleasvelakkeGpyetfegspaskGilqfdlwnvkp.lld.WeelkekikkhGlrnsllvapmPtastsqi 515
+                     ++ + se+ ++l  ++feti  +a ++s+elak++G++    g    + +   + + ++  +    e+++e + ++G+rns l+++ Pt st  +
+  KGLMILOH_02706 562 ETVYGSEKGNQLVDQVFETIATTAYRTSIELAKEKGSFPYLIGQNEEETKALREAFINTGyMKKmPEDIREGVLAYGIRNSHLLTVAPTGSTGTM 656
+                     *****************************************999988876655555554404432589*************************** PP
+
+           NrdAe 516 lGnnesfepytsniytrrvlsgefqvvnkyllkdli 551
+                     +G +  +epy s  y r    g+f  v   ++++ +
+  KGLMILOH_02706 657 VGVSTGLEPYFSFSYFRSGRLGKFIEVKAGIVEEYL 692
+                     *************************99998888765 PP
+
+>> JELDNKDN_00258  hypothetical protein [UBA10107]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   71.6   0.0   6.1e-23   1.3e-19      62     275 ..      42     259 ..      33     279 .. 0.80
+   2 !   69.9   0.0     2e-22   4.1e-19     292     463 ..     310     476 ..     295     484 .. 0.84
+   3 !   45.0   0.0   6.7e-15   1.4e-11     498     653 ..     488     645 ..     480     670 .. 0.87
+
+  Alignments for each domain:
+  == domain 1  score: 71.6 bits;  conditional E-value: 6.1e-23
+           NrdAe  62 syllkin.gkvverpqkllmrva.........vgihkedieaaiet.yellsekyfthasptlfnagtkkpqlsscfllamkddsieGiydtlkk 145
+                      +l + + g+++e+pq+ +  +a          g+    i++ +e  y+++s+  f+     + n+g k   l  c++l ++ dsi+ iyd++kk
+  JELDNKDN_00258  42 KFLGRNDaGNIIETPQERFYTIArtmaeserqFGMTDAGIDQLTERyYDMFSSLEFLPGGRVITNTGKKDIALFNCYVLPVS-DSIDDIYDSVKK 135
+                     5555544257778888777766622222222235556678888876268889999************************985.8*********** PP
+
+           NrdAe 146 calisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafaiylePWhadifdfldlkkntGkeelrardlfyal 240
+                     +a i k+ gg g + +++r +gsy+k ++G ++G v ++  f+  +  ++ g n+r ga    l+  h di+df+  k      e + ++  +++
+  JELDNKDN_00258 136 AAGIHKQGGGTGYNFSQLRPRGSYVKKSQGVASGPVSFIDQFDLQTAIINSG-NRR-GANMGILNIDHPDILDFIYAKT----SESKLKNFNISV 224
+                     *******************************************999999875.455.5555559999********9885....5778999999** PP
+
+           NrdAe 241 wipdlfmkrveedeeWsllspneapglsdvygeef 275
+                      i+d fm++v++++ + l+  +++++ +    ee 
+  JELDNKDN_00258 225 GITDDFMQKVKDKSFYQLVVFEKSENKKPLTIEEL 259
+                     *************9999988877776665555555 PP
+
+  == domain 2  score: 69.9 bits;  conditional E-value: 2e-22
+           NrdAe 292 vkaqklwkailesqietGtPyllykdacnrksnqknlGtikssnlcteiveysskdevavCnlasialpkfvkekefdfeklkevtkvvtknlnk 386
+                     ++a k++  i +   +t  P +++ d   ++ n      + ++n c e       +    Cnl+s+ l++fv+ ++ d++kl++ +  v++ ++ 
+  JELDNKDN_00258 310 LDATKIFDLIANLAHQTADPGMIFLDRIAEH-NPIPSQKLDATNPCGEQPL----HPYDACNLGSLNLARFVDGRKIDYQKLERRITDVIRFMDS 399
+                     6677777777777777777777777766554.3344445666777777432....33457*********************************** PP
+
+           NrdAe 387 vidvnaypveeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeGpyetf 463
+                     v d++  p++e +ks +++r ig+Gv G+ad+++ l + ++see  +  ++++  i  +a   s +la+++Gp+ + 
+  JELDNKDN_00258 400 VNDASVGPIPEIEKSVKNNRRIGLGVMGFADMLISLGIRYDSEEGLKTAEDVMKFINEKAYAVSKDLANEKGPFPNI 476
+                     *************************************************************************9765 PP
+
+  == domain 3  score: 45.0 bits;  conditional E-value: 6.7e-15
+           NrdAe 498 lrnsllvapmPtastsqilGnnesfepytsniytrrvlsgefqvvnkyllkdli.elglwneelknkiiaenGsiqnieeiPeelkelyktvwei 591
+                     lrn    ++ Pt s s + G +  +ep  +  + + +  g+ +v  + ll++++ e+g+++++l +ki ++nG+++ + eiPe+++++ +t+ +i
+  JELDNKDN_00258 488 LRNIQRTTIAPTGSISMLAGVSSGIEPNFAVTFRKNMRGGDSAVYFNSLLEQIAkERGFYSDDLVKKIDENNGTLEGMLEIPEDVRNIVRTAMQI 582
+                     899999999***********************************99999999973589************************************* PP
+
+           NrdAe 592 kqkkiidlaadrgafidqsqslnlfl.eeptlakltsmhfyawkkglktGmyylrtkaaadai 653
+                     +    + + a  +++++ + s  + l +++t++ +   ++ aw+++lk  + y   + +++ +
+  JELDNKDN_00258 583 SPEWHVRMQAAFQKHVENAVSKTINLpNNATVDDVKGAYLLAWNEKLKGITVYRDGSKSVQVL 645
+                     *****************988888887357899****************877665555555555 PP
+
+>> LCGMICPD_01149  Vitamin B12-dependent ribonucleoside-diphosphate reductase [GCA_000003215.1_ASM321v1_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  170.5   0.9   7.4e-53   1.5e-49      98     673 ..     133     670 ..     122     681 .. 0.85
+
+  Alignments for each domain:
+  == domain 1  score: 170.5 bits;  conditional E-value: 7.4e-53
+           NrdAe  98 yellsekyfthasptlfnagtkkp....qlsscfllamkddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfn 188
+                      +l+ +k f++a   l n g +k+      s c++++  +dsie i+dt kk a      gg+g+ ++++r kg++++++  +++G v ++ +++
+  LCGMICPD_01149 133 SKLIRQKRFLFAGRILANRGLQKEgkkvTYSNCYVIEPPKDSIEDIFDTAKKLARTFSYGGGVGIDISKLRPKGAKVNNAAKHTTGAVSFMELYS 227
+                     57889999*********99987643322789**************************************************************** PP
+
+           NrdAe 189 dtaryvdqggnkrkgafaiylePWhadifdfldlkkntGkeelrardlfyalwipdlfmkrveedeeWsllspneapglsdvygeefeklyekye 283
+                      t+  + q g  r+ga+ i ++  h +i +f+d+k +     ++     +++ ++d fm+ v+e++ +                  fe       
+  LCGMICPD_01149 228 MTTGLIGQRG--RRGALMISMDVNHPEIEEFIDIKTDL----EKVTKANISIRVTDEFMQAVREKKLYN---------------CTFEV----ET 297
+                     ******9988..99********************9765....4555667899**********9976443...............23332....12 PP
+
+           NrdAe 284 kegrarktvkaqklwkailesqietGtPyllykdac...nrksnqknlGtikssnlcteiveysskdevavCnlasialpkfv.....kekefdf 370
+                     + ++ +k v+a +l+++ ++ + +  +P +l+ d+    n  s  kn+      n c+e            C l+si l++f+     ++++fd 
+  LCGMICPD_01149 298 TGEKIVKIVNAYDLFNKFVKNNWDYAEPGILFWDKIktyNFMSEDKNFC-FSGVNPCAEEPLP----SGGSCLLGSINLSEFIiqpfgEHATFDI 387
+                     234568899************************9763337788999985.5778888885332....3456888888888877333336789*** PP
+
+           NrdAe 371 eklkevtkvvtknlnkvidv..naypveeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeGpyetf 463
+                     +klk+ ++  +  ln v+d   n +p++e + s ++ r ig+Gv G+ad+++++ + + s+e+ el   i  t+   a+++s+ +ak++G+++ +
+  LCGMICPD_01149 388 NKLKSCVREAVVALNDVLDEglNLHPLQEQRDSVHKYRQIGLGVMGIADMLIKMGIRYGSDESLELCDLIGKTMLNEAVKQSALIAKEYGTFSEY 482
+                     *******************64489*********************************************************************** PP
+
+           NrdAe 464 egspaskGilqfdlwnvkplldWeelkekikkhGlrnsllvapmPtastsqilGnnesfepytsniytrrvlsgefqvvnkyllkdlielglwne 558
+                     +   +sk ++ ++  n++        ke +kk+Glrns l+++ Pt s s ++G +  +ep+ +  y r++ s         l ++ +  ++++ 
+  LCGMICPD_01149 483 KYENISKSKFFIENLNED-------TKEMVKKYGLRNSQLLTIPPTGSISTMIGISGGIEPIFNLSYIRKTES---------LHDEDVYYKVYTP 561
+                     ********9998877754.......5899*****************************************987.........4455566778888 PP
+
+           NrdAe 559 elknkiiaenGsiqnieeiPeelkelyktvweikqkkiidlaadrgafidqsqslnlfle.eptlakltsmhfyawkkglktGmyylrtkaaada 652
+                      +k+  + ++G i + e +P    +++ t+ +i   + i++ +  +++id s s  + +  e+t++ +  +++ aw+ glk G+  +r     + 
+  LCGMICPD_01149 562 IVKEY-MDKKG-ITDEECLP----DFFVTAMNIGYEERINMQKVWQKYIDASISSTINIPfETTVEDVFNIYIKAWEAGLK-GVTIFRDGCKRSG 649
+                     88765.45555.67777777....5899***********************999888875378999**************9.7888899888888 PP
+
+           NrdAe 653 ikftvdkeklkekkkklacsl 673
+                     i  + +ke+ ++++kk + ++
+  LCGMICPD_01149 650 ILINEKKEENNKEDKKENSKK 670
+                     887776666655554444333 PP
+
+>> BJNEHILN_00732  hypothetical protein [UBA10127]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   91.8   0.0   4.9e-29     1e-25      96     264 ..      98     260 ..      88     265 .. 0.92
+   2 !   73.1   0.0   2.2e-23   4.6e-20     286     467 ..     260     438 ..     258     444 .. 0.94
+   3 !   10.7   0.0   0.00017      0.35     497     642 ..     447     609 ..     441     622 .. 0.70
+   4 ?   -1.4   0.0      0.77   1.6e+03     181     200 ..     744     763 ..     735     769 .. 0.89
+
+  Alignments for each domain:
+  == domain 1  score: 91.8 bits;  conditional E-value: 4.9e-29
+           NrdAe  96 etyellsekyfthasptlfnagtkkpqlsscfllamkddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndt 190
+                     + ++l+++ yf+  sptl+nag   +ql+ cf+l ++dd + Gi++++++ al+ ks gg g + +++r ++s++ +t   ++G + +  vf+++
+  BJNEHILN_00732  98 QFFDLMTQGYFLPNSPTLMNAGNGLQQLAGCFVLPVEDD-MRGIFNAIRDGALVHKSGGGTGYSFSRLRPRNSAVGSTGKVASGPLSFASVFDAA 191
+                     5689*******************************9877.8****************************************************** PP
+
+           NrdAe 191 aryvdqggnkrkgafaiylePWhadifdfldlkkntGkeelrardlfyalwipdlfmkrveedeeWsllspnea 264
+                     +  ++qgg kr+ga    l   h di++f+d kkn+ k      +  +++  +d fm+ v+e+ ++ l+ p++ 
+  BJNEHILN_00732 192 TETIKQGG-KRRGANMGTLRVDHPDILEFIDAKKNSNK----FNNFNFSVGATDEFMNAVKEERNYDLINPKTK 260
+                     ******98.666777778999*************9865....5678899999*****************99875 PP
+
+  == domain 2  score: 73.1 bits;  conditional E-value: 2.2e-23
+           NrdAe 286 grarktvkaqklwkailesqietGtPyllykdacnrksnqknlGtikssnlcteiveysskdevavCnlasialpkfvk.ekefdfeklkevtkv 379
+                     ++a+ +++a++++++i++   e G+P +l+ d++n+ +   +lG  +++n c e  ++  ++e   Cnl++i + k+v+ e + d e+l++ ++ 
+  BJNEHILN_00732 260 KEAVGQLNAKEVYNRIMQNVWENGEPGVLFLDTANKYNPTPQLGEYETTNPCGE--QWLLPNE--SCNLGAINMGKMVTpEGKLDKETLEKTVRS 350
+                     5667789***********************************************..6777777..5************83569************ PP
+
+           NrdAe 380 vtknlnkvidvnaypveeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeGpyetfegsp 467
+                      ++ l++vid+++yp+ee  k  l +r ig+G+ G  d +++  + + s+e +e  ke +  i+  + + s  la+++G + ++e s 
+  BJNEHILN_00732 351 CVRYLDNVIDRCEYPLEEITKMVLGNRKIGLGIMGGHDYLIQRGILYGSPEGREAAKEFMSFIHEISQDESRILAEERGVFLNWEKSI 438
+                     *********************************************************************************9999886 PP
+
+  == domain 3  score: 10.7 bits;  conditional E-value: 0.00017
+           NrdAe 497 GlrnsllvapmPtastsqilGnnes.fepytsniytrrv...lsgefqvvnkyllkdlielglwneelknkiiae....nGsiqnieeiP..eel 581
+                      lrn+ l ++ Pt +t+ i  n+ s  ep+   +ytr+v   + ++   +n+ + k lie     e++ ++i a+    +  + + + iP  e+l
+  BJNEHILN_00732 447 KLRNAALTTIAPTGTTAIINRNASSgCEPLFDFVYTRKVedtIGTNLIEINNLFKKWLIENHPEGEKIIERIYAKefvdDKEMMSSKYIPmsEDL 541
+                     69***************9998876548***********933335677888877777777776666666666655411114556666777744456 PP
+
+           NrdAe 582 kel.....yktvweikqkkiidlaad.rgafidqsqslnlfl.eeptlakltsmhfyawkkglktGmy 642
+                     ++      +  + ei+ ++ + + a  +++ +d s s  +   +++t++ l+ +++ aw++g k  + 
+  BJNEHILN_00732 542 RKKmkldgFERAEEISARDHVLMQATlQKNGVDSSISKTINApNSATVEDLANLYMLAWEEGCKGVTI 609
+                     65411222556889999986666554166779999998888724568899999999999999986554 PP
+
+  == domain 4  score: -1.4 bits;  conditional E-value: 0.77
+           NrdAe 181 vPmlrvfndtaryvdqggnk 200
+                     vP++ v+n +a+ vd+gg++
+  BJNEHILN_00732 744 VPIIGVINTVAKLVDDGGEN 763
+                     8****************986 PP
+
+>> OKJNKMBH_01350  Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003925.1_ASM392v1_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  153.4   4.3   1.1e-47   2.3e-44     200     536 ..       2     370 ..       1     385 [. 0.81
+   2 !   26.2   0.8   3.3e-09   6.8e-06     584     649 ..     387     452 ..     375     462 .] 0.88
+
+  Alignments for each domain:
+  == domain 1  score: 153.4 bits;  conditional E-value: 1.1e-47
+           NrdAe 200 krkgafaiylePWhadifdfldlkkntGkeelrardlfyalwipdlfmkrveedeeWsllspneapglsdvyge..efeklyekyekegrarkt. 291
+                     +rkga a+yl+ +h di++fld kk +  e+ r + l +++ +p  f +  e++e + +++p ++      + +  + +++y +  ++ + +k+ 
+  OKJNKMBH_01350   2 QRKGAGAVYLNIFHWDIIEFLDTKKINADEKSRIQSLSIGIIVPSKFFELAEKNEPFHVFAPYTVFKEYGKHLDdiDIDEMYDELMSNPKVKKKp 96 
+                     69************************************************************988666655555123567888877776666544 PP
+
+           NrdAe 292 ..vkaqklwkailesqietGtPyllykdacnrksnqknlGtikssnlcteiveysskdeva............vCnlasialpkfvkekefdfek 372
+                       ++a+++  +i   q+e+G Pyl++k ++n++   k++Gt+k snlctei +  ++ e+              Cnl+s+ + + +++     ++
+  OKJNKMBH_01350  97 ldISARDMLIKIAMIQLESGYPYLMFKSNANNQHPLKDIGTVKMSNLCTEIFQLQETSEINdygtediirrdiNCNLGSLNIVNVMEN-----KE 186
+                     449************************************************9877776664222223222333599999998777665.....67 PP
+
+           NrdAe 373 lkevtkvvtknlnkvidvnaypv.eeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeG.pyetfeg 465
+                     ++e ++  ++ l  v d++  p  ++ kk+n     +g+G   l   +++ ++++es+eake+ ++ f  + y ++e+s+e+ak++G +++ f+ 
+  OKJNKMBH_01350 187 IREAVHAGMEALTAVSDMTIIPNaPTVKKANDELHSVGLGAMNLHGYLAKNKIAYESAEAKEFARTFFMMLNYYSIEKSMEIAKEKGeTFKDFDK 281
+                     8899999999999*******996267899*********************************************************954788888 PP
+
+           NrdAe 466 spaskGil.................q.fdlwnvkplldWeelkekikkhGlrnsllvapmPtastsqilGnnesfepytsniytrrvls 536
+                     s +++G++                 q f+  +  ++ dW++lke+++k+Gl ns  +a+ Pt s s +   + s+ p+ s+i +r    
+  OKJNKMBH_01350 282 SDYANGTYfekyettdyspvtekiqQlFEGIHIPTKEDWTSLKEQVQKNGLYNSYRLAIAPTQSISYVQNATSSVMPIVSQIESRTYAN 370
+                     8888887522111111100000000122333344568*********************************************9997654 PP
+
+  == domain 2  score: 26.2 bits;  conditional E-value: 3.3e-09
+           NrdAe 584 lyktvweikqkkiidlaadrgafidqsqslnlfle.eptlakltsmhfyawkkglktGmyylrtkaa 649
+                      yk+ ++++q k+idl a+ +++idq  s  l+++ + ++ +l+  ++ya+kkglk  +yy rt+  
+  OKJNKMBH_01350 387 YYKSSYDMNQFKLIDLIAEVQEHIDQGISTILYVNsDISTRELARYYIYAHKKGLKS-LYYTRTRKL 452
+                     69********************************72578899**************6.9****9965 PP
+
+>> AIHJNDDH_01273  Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003645.1_ASM364v1_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  174.8   1.5   3.6e-54   7.5e-51      37     337 ..      67     376 .]      30     376 .] 0.87
+
+  Alignments for each domain:
+  == domain 1  score: 174.8 bits;  conditional E-value: 3.6e-54
+           NrdAe  37 eklds..aikyerdfeyd.yfgfktlersyllkingk..vverpqkllmrvavgihkedieaaietyellsekyfthasptlfnagtk.kpqlss 125
+                     e++++  +i y  +fe++ y++   + + y lk+n++    e  ++ +  v++ + + d+ +a +  +++ ++ +  a+pt++nag + + ++ s
+  AIHJNDDH_01273  67 EEVEEvyNIAYGENFEFQsYMAASKFYKDYALKTNDQkqYLESYEDRVAIVSLYLGRGDVAKAKQFASMIVKQNYQPATPTFLNAGRSrRGEMVS 161
+                     34443225889999999549999**********99752278999999***************************************761679*** PP
+
+           NrdAe 126 cfllamkddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafaiylePWhadifdfl 220
+                     cfll+m dds++ i   ++++ ++sk  gg++l+++++ra+g +ikg +  ++G+vP++++ +d+  y +q g +rkga a+yl+ +h di++fl
+  AIHJNDDH_01273 162 CFLLEM-DDSLNSIGFNINTAMQLSKIGGGVALNLSKLRARGEQIKGIDNAASGVVPVMKLLEDSFSYANQLG-QRKGAGAVYLNIFHWDIIEFL 254
+                     *****9.79**************************************************************87.899****************** PP
+
+           NrdAe 221 dlkkntGkeelrardlfyalwipdlfmkrveedeeWsllspneapglsdvygee..feklyekyekegrarkt...vkaqklwkailesqietGt 310
+                     d kk +  e+ r + l +++ +p  f +  e++e + +++p ++      + ++   +++y +  ++ + +k+   ++a+++  +i   q+e+G 
+  AIHJNDDH_01273 255 DTKKINADEKSRIQSLSIGIIVPSKFFELAEKNEPFHVFAPYTVYKEYGKHLDDidIDEMYDELMSNPKVKKKpldISARDMLIKIAMIQLESGY 349
+                     *****************************************988766666655411567888877776666644449****************** PP
+
+           NrdAe 311 PyllykdacnrksnqknlGtikssnlc 337
+                     Pyl++k ++n++   k++Gt+k snlc
+  AIHJNDDH_01273 350 PYLMFKSNANNQHPLKDIGTVKMSNLC 376
+                     **************************9 PP
+
+>> ADPMMECC_01288  Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003955.1_ASM395v1_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  173.2   0.5   1.1e-53   2.2e-50      42     337 ..      74     376 .]      39     376 .] 0.90
+
+  Alignments for each domain:
+  == domain 1  score: 173.2 bits;  conditional E-value: 1.1e-53
+           NrdAe  42 aikyerdfeyd.yfgfktlersyllkingk..vverpqkllmrvavgihkedieaaietyellsekyfthasptlfnagtk.kpqlsscfllamk 132
+                     +i y  +fe++ y++   + + y lk+n++    e  ++ +  v++ + + d+ +a +  +++ ++ +  a+pt++nag + + ++ scfll+m 
+  ADPMMECC_01288  74 NIAYGENFEFQsYMAASKFYKDYALKTNDQkqYLESYEDRVAIVSLYLGRGDVAKANHFASMIVKQNYQPATPTFLNAGRSrRGEMVSCFLLEM- 167
+                     5888899999549999**********99752278999999***************************************761679********9. PP
+
+           NrdAe 133 ddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafaiylePWhadifdfldlkkntG 227
+                     dds++ i   ++++ ++sk  gg++l+++++ra+g +ikg +  ++G+vP++++ +d+  y +q g +rkga a+yl+ +h di++fld kk + 
+  ADPMMECC_01288 168 DDSLNSIGFNINTAMQLSKIGGGVALNLSKLRARGEQIKGIDNAASGVVPVMKLLEDSFSYANQLG-QRKGAGAVYLNIFHWDIIEFLDTKKINA 261
+                     79**************************************************************87.899************************* PP
+
+           NrdAe 228 keelrardlfyalwipdlfmkrveedeeWsllspneapglsdvyge..efeklyekyekegrarkt...vkaqklwkailesqietGtPyllykd 317
+                      e+ r + l +++ +p  f +  e++e + +++p ++      + +  + +++y +  ++ + +k+   ++a+++  +i   q+e+G Pyl++k 
+  ADPMMECC_01288 262 DEKSRIQSLSIGIIVPSKFFELAEKNEPFHVFAPYTVFKEYGKHLDdiDIDEMYDELMSNPKVKKKpldISARDMLIKIAMIQLESGYPYLMFKS 356
+                     **********************************988666655555123567888877776666544449************************* PP
+
+           NrdAe 318 acnrksnqknlGtikssnlc 337
+                     ++n++   k++Gt+k snlc
+  ADPMMECC_01288 357 NANNQHPLKDIGTVKMSNLC 376
+                     *******************9 PP
+
+>> FMKMPEEB_01886  Ribonucleoside-diphosphate reductase subunit alpha [GCA_000006155.2_ASM615v2_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  124.2   4.3   7.5e-39   1.6e-35     223     536 ..       3     348 ..       1     364 [. 0.80
+   2 !   26.0   0.9   3.8e-09   7.9e-06     584     649 ..     365     430 ..     353     440 .] 0.88
+
+  Alignments for each domain:
+  == domain 1  score: 124.2 bits;  conditional E-value: 7.5e-39
+           NrdAe 223 kkntGkeelrardlfyalwipdlfmkrveedeeWsllspneapglsdvygee..feklyekyekegrarkt...vkaqklwkailesqietGtPy 312
+                     kk +  e+ r + l +++ +p  f +  e++e + +++p ++      + ++   +++y +  ++ + +k+   ++a+++  +i   q+e+G Py
+  FMKMPEEB_01886   3 KKINADEKSRIQSLSIGIIVPSKFFELAEKNEPFHVFAPYTVYKEYGKHLDDidIDEMYDELMSNPKVKKKpldISARDMLIKIAMIQLESGYPY 97 
+                     67778999*******************************988766666655411567888877776666644449******************** PP
+
+           NrdAe 313 llykdacnrksnqknlGtikssnlcteiveysskdeva............vCnlasialpkfvkekefdfeklkevtkvvtknlnkvidvnaypv 395
+                     l++k ++n++   k++Gt+k snlctei +  ++ e+              Cnl+s+ + + +++     ++++e ++  ++ l  v d++  p 
+  FMKMPEEB_01886  98 LMFKSNANNQHPLKDIGTVKMSNLCTEIFQLQETSEINdygtddiirrdiNCNLGSLNIVNVMEN-----KEIREAVHAGMEALTAVSDMTIIPN 187
+                     ****************************9987777764333333222333599999998777665.....678899999999999*******996 PP
+
+           NrdAe 396 .eeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeG.pyetfegspaskGil..q............ 474
+                      ++ kk+n     +g+G   l   +++ ++++eseeake+ ++ f  + y ++e+s+e+ak++G +++ f+ s +++G++  +            
+  FMKMPEEB_01886 188 aPTVKKANDELHSVGLGAMNLHGYLAKNKIAYESEEAKEFARTFFMMLNYYSIEKSMEIAKEKGeTFKDFDKSDYANGTYfeKyettdyspvtek 282
+                     267899*********************************************************95588888888888875232111110000000 PP
+
+           NrdAe 475 ....fdlwnvkplldWeelkekikkhGlrnsllvapmPtastsqilGnnesfepytsniytrrvls 536
+                         f+  +  ++ dW++lke+++k+Gl ns  +a+ Pt s s +   + s+ p+ s+i +r    
+  FMKMPEEB_01886 283 vqqlFEGIHIPTKEDWTSLKEQVQKNGLYNSYRLAIAPTQSISYVQNATSSVMPIVSQIESRTYAN 348
+                     10112223334567*********************************************9997654 PP
+
+  == domain 2  score: 26.0 bits;  conditional E-value: 3.8e-09
+           NrdAe 584 lyktvweikqkkiidlaadrgafidqsqslnlfle.eptlakltsmhfyawkkglktGmyylrtkaa 649
+                      yk+ ++++q k+idl a+ +++idq  s  l+++ + ++ +l+  ++ya+kkglk  +yy rt+  
+  FMKMPEEB_01886 365 YYKSSYDMNQFKLIDLIAEIQEHIDQGISTILYVNsDISTRELARYYIYAHKKGLKS-LYYTRTRKL 430
+                     69********************************72578899**************6.9****9965 PP
+
+>> FMKMPEEB_01884  Ribonucleoside-diphosphate reductase subunit alpha [GCA_000006155.2_ASM615v2_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  107.8   0.3   6.7e-34   1.4e-30      37     221 ..      67     255 .]      29     255 .] 0.86
+
+  Alignments for each domain:
+  == domain 1  score: 107.8 bits;  conditional E-value: 6.7e-34
+           NrdAe  37 eklds..aikyerdfeyd.yfgfktlersyllkingk..vverpqkllmrvavgihkedieaaietyellsekyfthasptlfnagtk.kpqlss 125
+                     e++++  +i y  +fe++ y++   + + y lk+n++    e  ++ +  v++ + + d+ +a +  +++ ++ +  a+pt++nag + + ++ s
+  FMKMPEEB_01884  67 EEVEEvyNIAYGENFEFQsYMAASKFYKDYALKTNDQkqYLESYEDRVAIVSLYLGRGDVAKAKQFASMIVKQNYQPATPTFLNAGRSrRGEMVS 161
+                     44444225889999999549999**********99752278999999***************************************761679*** PP
+
+           NrdAe 126 cfllamkddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafaiylePWhadifdfl 220
+                     cfll+m dds++ i   ++++ ++sk  gg++l+++++ra+g +ikg +  ++G+vP++++ +d+  y +q g +rkga a+yl+ +h di++fl
+  FMKMPEEB_01884 162 CFLLEM-DDSLNSIGFNINTAMQLSKIGGGVALNLSKLRARGEQIKGIDNAASGVVPVMKLLEDSFSYANQLG-QRKGAGAVYLNIFHWDIIEFL 254
+                     *****9.79**************************************************************87.899*****************9 PP
+
+           NrdAe 221 d 221
+                     d
+  FMKMPEEB_01884 255 D 255
+                     7 PP
+
+>> EMCIJKJB_00526  hypothetical protein [UBA10011]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   86.3   0.0   2.2e-27   4.6e-24     157     465 ..     488     790 ..     483     794 .. 0.87
+   2 !   10.4   0.0   0.00021      0.43     484     577 ..     839     936 ..     832     947 .. 0.81
+
+  Alignments for each domain:
+  == domain 1  score: 86.3 bits;  conditional E-value: 2.2e-27
+           NrdAe 157 glavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdqggnkrkgafaiylePWhadifdfldlkkntGkeelrardlfyalwipdl....fm 247
+                     g + +++r+kg  ++g  G+s+Gl+ +l++f+ +a  ++ +g+ r++a  + l+  h +i +f+d k n   ee++   l+ a + +d     + 
+  EMCIJKJB_00526 488 GTNFSTLRGKGEPLSG-GGKSSGLMSFLKIFDTSAGAIKSAGTTRRAAKMVILDMDHPEIEEFIDWKMN---EEKKVAALVKAGYPSDYegeaYQ 578
+                     5677888999998877.79************************************************98...66777778888877776111144 PP
+
+           NrdAe 248 krveedeeWsllspneapglsdvygeefeklyekyekegrarktvkaqklwkailesqietGtPyllykdacnrksnqknlGtikssnlcteive 342
+                         ++++ s+  pn    +  v ++   +l +   ++g  +k+ kaq +w++i ++   +  P + + d+ n        G  + +n c+e   
+  EMCIJKJB_00526 579 TVSGQNSNNSIRVPNAF--MRAVINDLDWSLIA--RTNGAVMKKTKAQAIWNKIGKAAWASADPGVQFDDTINDWHTCPASGRQRGTNPCSE--- 666
+                     44446666677666643..34444444444444..46788999***********************************************98... PP
+
+           NrdAe 343 ysskdevavCnlasialpkfvkeke..fdfeklkevtkvvtknlnkvidvnaypveeakksnlrhrpigiGvqGladaflllrlpfeseeakeln 435
+                     y   d++a Cnlas+ l kf ++++  fd e  k+ ++  t  l+  + ++ yp +e  ++  + r +g+G   l  +++++ +p++s+ea+++ 
+  EMCIJKJB_00526 667 YLFLDNTA-CNLASLNLMKFYDKETgiFDIELYKHAVRLWTIVLEITVLMAGYPSKEIAEGSYKFRTLGLGFANLGAMLMVMGIPYDSDEARAIS 760
+                     55667765.***********9876444******************************************************************** PP
+
+           NrdAe 436 keifetiyyaaleasvelakkeGpyetfeg 465
+                       +   +   +  as+e+a+  Gp+  +e 
+  EMCIJKJB_00526 761 AGLTAVMTGESYAASAEMAAAVGPFPEYEK 790
+                     **************************9985 PP
+
+  == domain 2  score: 10.4 bits;  conditional E-value: 0.00021
+           NrdAe 484 ldWeelkekikkhGlrnsllvapmPtastsqilGn.nesfepytsniytrrvls.gefqvvnkyllkdlielglwneelkn..kiiaenGsiqni 574
+                      +W++  +  +++G rn+ +  + Pt + + ++   +  +ep  + +  ++    g f++vn+ l k l +lg  ++++k+  k ++ +G+++  
+  EMCIJKJB_00526 839 ENWDRALALGQQYGYRNAQVTLIAPTGTIALVMDCdTTGIEPDFALVKFKKLAGgGYFKIVNQSLQKALKRLGYTEQQIKEieKYVKGHGTLKGC 933
+                     678888888899******************999752678***99999877776516789********************9633567777777666 PP
+
+           NrdAe 575 eei 577
+                     + i
+  EMCIJKJB_00526 934 PAI 936
+                     665 PP
+
+>> AIHJNDDH_01274  Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003645.1_ASM364v1_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   58.1   2.4   7.4e-19   1.5e-15     373     536 ..       6     189 ..       1     204 [. 0.78
+   2 !   27.1   0.8   1.7e-09   3.6e-06     584     649 ..     206     271 ..     193     281 .] 0.88
+
+  Alignments for each domain:
+  == domain 1  score: 58.1 bits;  conditional E-value: 7.4e-19
+           NrdAe 373 lkevtkvvtknlnkvidvnaypv.eeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeG.pyetfeg 465
+                     ++e ++  ++ l  v d++  p  ++ kk+n     +g+G   l   +++ ++++es+eake+ ++ f  + y ++e+s+e+ak++G +++ f+ 
+  AIHJNDDH_01274   6 IREAVHAGMEALTAVSDMTIIPNaPTVKKANDELHSVGLGAMNLHGYLAKNKIAYESAEAKEFARTFFMMLNYYSIEKSMEIAKEKGeTFKDFDK 100
+                     5566666678899999999999626789**********************************************************954788888 PP
+
+           NrdAe 466 spaskGil.................q.fdlwnvkplldWeelkekikkhGlrnsllvapmPtastsqilGnnesfepytsniytrrvls 536
+                     s ++ G++                 q f+  +  ++ dW++lke+++k+Gl ns  +a+ Pt s s +   + s+ p+ s+i +r    
+  AIHJNDDH_01274 101 SDYASGTYfekyettdyspvtekvqQlFEGIHIPTKEDWTSLKEQVQKNGLYNSYRLAIAPTQSISYVQNATSSVMPIVSQIESRTYAN 189
+                     8888886522111111000000000112333344568*********************************************9997654 PP
+
+  == domain 2  score: 27.1 bits;  conditional E-value: 1.7e-09
+           NrdAe 584 lyktvweikqkkiidlaadrgafidqsqslnlfle.eptlakltsmhfyawkkglktGmyylrtkaa 649
+                      yk+ ++++q k+idl a+ +++idq  s  l+++ + ++ +l+  ++ya+kkglk  +yy rt+  
+  AIHJNDDH_01274 206 YYKSSYDMNQFKLIDLIAEIQEHIDQGISTILYVNsDISTRELARYYIYAHKKGLKS-LYYTRTRKL 271
+                     69********************************72578899**************6.9****9965 PP
+
+>> ADPMMECC_05799  Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003955.1_ASM395v1_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   56.7   2.1     2e-18   4.1e-15     384     536 ..       4     176 ..       1     191 [. 0.78
+   2 !   27.2   0.8   1.6e-09   3.4e-06     584     649 ..     193     258 ..     183     268 .] 0.89
+
+  Alignments for each domain:
+  == domain 1  score: 56.7 bits;  conditional E-value: 2e-18
+           NrdAe 384 lnkvidvnaypv.eeakksnlrhrpigiGvqGladaflllrlpfeseeakelnkeifetiyyaaleasvelakkeG.pyetfegspaskGil..q 474
+                     l  v d++  p  ++ kk+n     +g+G   l   + + ++++es+eake+ ++ f  + y ++e+s+e+ak++G +++ f+ s +++G++  +
+  ADPMMECC_05799   4 LTAVSDMTIIPNaPTVKKANDELHSVGLGAMNLHGYLSKNKIAYESAEAKEFARTFFMMLNYYSIEKSMEIAKEKGeTFKDFDKSDYANGTYfeK 98 
+                     667778888885267899*********************************************************95588888888888875232 PP
+
+           NrdAe 475 ................fdlwnvkplldWeelkekikkhGlrnsllvapmPtastsqilGnnesfepytsniytrrvls 536
+                                     f+  +  ++ dW++lke++kk+Gl ns  +a+ Pt s s +   + s+ p+ s+i +r    
+  ADPMMECC_05799  99 yettdyspvtekvqqlFEGIHIPTKEDWTSLKEQVKKNGLYNSYRLAIAPTQSISYVQNATSSVMPIVSQIESRTYAN 176
+                     11111000000010112223334567*********************************************9997654 PP
+
+  == domain 2  score: 27.2 bits;  conditional E-value: 1.6e-09
+           NrdAe 584 lyktvweikqkkiidlaadrgafidqsqslnlfle.eptlakltsmhfyawkkglktGmyylrtkaa 649
+                      yk+ ++++q k+idl a+ +++idq  s  l+++ + ++ +l+  ++ya+kkglk  +yy rt+  
+  ADPMMECC_05799 193 YYKSSYDMNQFKLIDLIAEIQEHIDQGISTILYVNsDISTRELARYYIYAHKKGLKS-LYYTRTRKL 258
+                     69********************************72578899**************6.9****9965 PP
+
+>> OKJNKMBH_01351  Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003925.1_ASM392v1_genomic]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   80.3   0.3   1.4e-25     3e-22      42     196 ..      74     231 ..      29     233 .] 0.87
+
+  Alignments for each domain:
+  == domain 1  score: 80.3 bits;  conditional E-value: 1.4e-25
+           NrdAe  42 aikyerdfeyd.yfgfktlersyllkingk..vverpqkllmrvavgihkedieaaietyellsekyfthasptlfnagtk.kpqlsscfllamk 132
+                     +i y  +fe++ y++   + + y lk+n++    e  ++ +  v++ + + d+ +a +  +++ ++ +  a+pt++nag + + ++ scfll+m 
+  OKJNKMBH_01351  74 NIAYGENFEFQsYMAASKFYKDYALKTNDQkqYLESYEDRVAIVSLYLGRGDVAKAKHFASMIVKQNYQPATPTFLNAGRSrRGEMVSCFLLEM- 167
+                     5889999999549999**********99752278999999***************************************761679********9. PP
+
+           NrdAe 133 ddsieGiydtlkkcalisksaggiglavhnirakgsyikgtnGtsnGlvPmlrvfndtaryvdq 196
+                     dds++ i   ++++ ++sk  gg++l+++++ra+g +ikg +  ++G+vP++++ +d+  y +q
+  OKJNKMBH_01351 168 DDSLNSIGFNINTAMQLSKIGGGVALNLSKLRARGEQIKGIDNAASGVVPVMKLLEDSFSYANQ 231
+                     79***********************************************************999 PP
+
+>> BGDMMFNK_00867  Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA10111]
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   14.2   0.2   1.5e-05     0.031      10      85 ..      74     150 ..      64     165 .. 0.75
+
+  Alignments for each domain:
+  == domain 1  score: 14.2 bits;  conditional E-value: 1.5e-05
+           NrdAe  10 kelveektgkkaeliseevleivkknkekldsaikyerdfeydyfgfktlersyllki.ngkvverpqkllmrvavg 85 
+                      e  + kt k   l  +e+  + k+++ +l+++   e d ++d  +++ l+  yl k  +gk++e+p++l+ rva  
+  BGDMMFNK_00867  74 IEEGHAKTAKAYILYRHEHDALRKEKQLVLEKEDIDEVDKRFDVNALRVLKSRYLRKSpDGKLIETPKQLFTRVATH 150
+                     3444445555555555555556666667899999999******************997589*************976 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (684 nodes)
+Target sequences:                      51840  (14327115 residues searched)
+Passed MSV filter:                      1812  (0.0349537); expected 1036.8 (0.02)
+Passed bias filter:                      920  (0.0177469); expected 1036.8 (0.02)
+Passed Vit filter:                        90  (0.00173611); expected 51.8 (0.001)
+Passed Fwd filter:                        25  (0.000482253); expected 0.5 (1e-05)
+Initial search space (Z):              51840  [actual number of targets]
+Domain search space  (domZ):              25  [number of targets reported over threshold]
+# CPU time: 0.59u 0.02s 00:00:00.61 Elapsed: 00:00:00.26
+# Mc/sec: 37037.05
+//
+[ok]

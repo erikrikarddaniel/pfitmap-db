@@ -1,0 +1,39 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+BMIABBIL_02238       -          NrdAg                -                  0 1070.0   0.0         0 1069.8   0.0   1.0   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000005845.2_ASM584v2_genomic]
+KGLMILOH_00412       -          NrdAg                -             9e-113  379.2   0.2    2e-112  378.1   0.2   1.5   1   1   0   1   1   1   1 hypothetical protein [GCA_000005825.2_ASM582v2_genomic]
+DLAHKEME_00505       -          NrdAg                -              1e-81  276.6   0.4   1.4e-81  276.1   0.4   1.1   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha 2 [GCA_000006605.1_ASM660v1_genomic]
+LCGMICPD_02881       -          NrdAg                -            1.4e-78  266.2  13.4   2.2e-78  265.6  13.4   1.2   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003215.1_ASM321v1_genomic]
+BMIABBIL_02678       -          NrdAg                -            1.7e-74  252.7   0.0   2.5e-74  252.2   0.0   1.2   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase 2 subunit alpha [GCA_000005845.2_ASM584v2_genomic]
+FHFECEBA_01657       -          NrdAg                -            7.8e-69  234.0   0.1   3.9e-68  231.7   0.1   1.8   1   1   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha 2 [GCA_000003135.1_ASM313v1_genomic]
+OKJNKMBH_01350       -          NrdAg                -            2.3e-58  199.5  10.1   2.6e-58  199.3  10.1   1.0   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003925.1_ASM392v1_genomic]
+FMKMPEEB_01886       -          NrdAg                -            7.1e-54  184.6  11.6   8.8e-54  184.3  11.6   1.0   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000006155.2_ASM615v2_genomic]
+BGDMMFNK_00868       -          NrdAg                -            1.2e-51  177.2   0.0   5.2e-33  115.7   0.0   3.0   1   1   2   3   3   3   3 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA10111]
+EHLAHJNJ_00126       -          NrdAg                -            1.9e-46  160.0   0.3   6.7e-24   85.5   0.0   2.9   2   1   1   3   3   3   2 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA10033]
+AIHJNDDH_01274       -          NrdAg                -            6.8e-36  125.2   7.5   7.4e-36  125.1   7.5   1.0   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003645.1_ASM364v1_genomic]
+ADPMMECC_05799       -          NrdAg                -              2e-35  123.6   6.5   2.4e-35  123.4   6.5   1.0   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003955.1_ASM395v1_genomic]
+AIHJNDDH_01273       -          NrdAg                -            3.5e-35  122.8   2.3   4.3e-35  122.5   2.3   1.1   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003645.1_ASM364v1_genomic]
+ADPMMECC_01288       -          NrdAg                -            2.6e-34  120.0   0.9   3.3e-34  119.6   0.9   1.1   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003955.1_ASM395v1_genomic]
+KGLMILOH_02706       -          NrdAg                -            4.9e-33  115.7   0.1     1e-22   81.6   0.0   2.3   2   0   0   2   2   2   2 hypothetical protein [GCA_000005825.2_ASM582v2_genomic]
+BGDMMFNK_00960       -          NrdAg                -            6.5e-32  112.0   0.0     1e-13   51.9   0.0   4.0   3   1   1   4   4   4   2 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA10111]
+NIBMKOCB_00809       -          NrdAg                -            2.7e-28  100.1   0.0     1e-11   45.3   0.0   4.6   4   1   1   5   5   5   3 hypothetical protein [UBA10106]
+FLKIJBGC_00806       -          NrdAg                -            1.7e-27   97.5   0.0   3.6e-14   53.4   0.0   4.0   2   1   2   4   4   4   4 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA10089]
+BJNEHILN_00732       -          NrdAg                -            1.1e-26   94.7   0.0     2e-12   47.6   0.0   3.2   1   1   2   3   3   3   2 hypothetical protein [UBA10127]
+LCGMICPD_01149       -          NrdAg                -            1.1e-25   91.4   0.8   1.4e-21   77.9   0.8   3.5   1   1   0   1   1   1   1 Vitamin B12-dependent ribonucleoside-diphosphate reductase [GCA_000003215.1_ASM321v1_genomic]
+JELDNKDN_00258       -          NrdAg                -            1.8e-25   90.8   0.0   2.1e-11   44.3   0.0   2.8   3   1   0   3   3   3   2 hypothetical protein [UBA10107]
+FMKMPEEB_01884       -          NrdAg                -              3e-19   70.2   0.3   3.7e-19   69.9   0.3   1.1   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000006155.2_ASM615v2_genomic]
+OKJNKMBH_01351       -          NrdAg                -            5.1e-13   49.6   0.4   6.4e-13   49.3   0.4   1.1   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000003925.1_ASM392v1_genomic]
+EMCIJKJB_00526       -          NrdAg                -            2.9e-08   33.9   0.1   0.00074   19.3   0.1   3.5   4   0   0   4   4   4   2 hypothetical protein [UBA10011]
+BGDMMFNK_00344       -          NrdAg                -              0.067   12.9   0.0     0.079   12.6   0.0   1.0   1   0   0   1   1   1   0 hypothetical protein [UBA10111]
+KGLMILOH_00261       -          NrdAg                -               0.15   11.7   0.2      0.16   11.6   0.2   1.0   1   0   0   1   1   1   0 Antitoxin EndoAI [GCA_000005825.2_ASM582v2_genomic]
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      NrdAg.hmm
+# Target file:     gtdb.faa
+# Option settings: hmmsearch --tblout NrdAg.tblout --domtblout NrdAg.domtblout NrdAg.hmm gtdb.faa 
+# Current dir:     /home/dl/dev/pfitmap-db/src/R-test/pf-classify.gtdb.00.d
+# Date:            Fri Mar 27 18:09:47 2020
+# [ok]
