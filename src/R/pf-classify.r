@@ -8,8 +8,9 @@ suppressPackageStartupMessages(library(optparse))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
+suppressPackageStartupMessages(library(stringr))
 
-SCRIPT_VERSION = "1.2.4"
+SCRIPT_VERSION = "1.9.0"
 
 # Get arguments
 option_list = list(
@@ -19,11 +20,20 @@ option_list = list(
   make_option(
     c('--fuzzy_factor'), type = 'integer', default = 1, action = 'store', help = 'Factor to make lengths fuzzy for reduction of possible duplicates, default %default.'
   ),
+###  make_option(
+###    c('--gtdbannotindex'), default = '', help = 'A tsv file (without header) with GTDB genome accession (in GenBank format, i.e. without e.g. "RS_") and gene accessions.',
+###  ),
+  make_option(
+    c('--gtdbmetadata'), default = '', help = 'A concatenation of the bacterial (bac120_metadata.tsv) and archaeal (ar122_metadata.tsv) metadata files from GTDB. Make sure there is *only one header* line.',
+  ),
+###  make_option(
+###    c('--gtdbtaxonomy'), default = '', help = 'A concatenation of the bacterial (bac120_taxonomy.tsv) and archaeal (ar122_taxonomy.tsv) taxonomy files from GTDB. These files *do not have headers*.',
+###  ),
   make_option(
     c('--hmm_mincov'), type = 'double', default = 0.0, action = 'store', help = 'Minimum coverage of hmm profile to include in output, default %default.'
   ),
   make_option(
-    c('--profilehierarchies'), default='', help='tsv file with profile hiearchies'
+  c('--profilehierarchies'), default='', help='A tsv file with profile hiearchies, including a header. Required fields: profile and plen, recommended psuperfamily, pfamily pclass, psubclass, pgroup, prank and version.'
   ),
   make_option(
     c('--singletable'), default='', help='Write data in a single tsv format to this filename.'
@@ -61,7 +71,8 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
 }
 
 # Args list for testing:
-# opt = list(args = c('pf-classify.00.d/GRX.ncbi_nr.test.domtblout', 'pf-classify.00.d/GRX.ncbi_nr.test.tblout', 'pf-classify.00.d/NrdAe.tblout','pf-classify.00.d/NrdAg.tblout','pf-classify.00.d/NrdAh.tblout','pf-classify.00.d/NrdAi.tblout','pf-classify.00.d/NrdAk.tblout','pf-classify.00.d/NrdAm.tblout','pf-classify.00.d/NrdAn.tblout','pf-classify.00.d/NrdAq.tblout','pf-classify.00.d/NrdA.tblout','pf-classify.00.d/NrdAz3.tblout','pf-classify.00.d/NrdAz4.tblout','pf-classify.00.d/NrdAz.tblout','pf-classify.00.d/NrdAe.domtblout','pf-classify.00.d/NrdAg.domtblout','pf-classify.00.d/NrdAh.domtblout','pf-classify.00.d/NrdAi.domtblout','pf-classify.00.d/NrdAk.domtblout','pf-classify.00.d/NrdAm.domtblout','pf-classify.00.d/NrdAn.domtblout','pf-classify.00.d/NrdAq.domtblout','pf-classify.00.d/NrdA.domtblout','pf-classify.00.d/NrdAz3.domtblout','pf-classify.00.d/NrdAz4.domtblout','pf-classify.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', profilehierarchies='pf-classify.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
+# NCBI: opt = list(args = c('pf-classify.00.d/GRX.ncbi_nr.test.domtblout', 'pf-classify.00.d/GRX.ncbi_nr.test.tblout', 'pf-classify.00.d/NrdAe.tblout','pf-classify.00.d/NrdAg.tblout','pf-classify.00.d/NrdAh.tblout','pf-classify.00.d/NrdAi.tblout','pf-classify.00.d/NrdAk.tblout','pf-classify.00.d/NrdAm.tblout','pf-classify.00.d/NrdAn.tblout','pf-classify.00.d/NrdAq.tblout','pf-classify.00.d/NrdA.tblout','pf-classify.00.d/NrdAz3.tblout','pf-classify.00.d/NrdAz4.tblout','pf-classify.00.d/NrdAz.tblout','pf-classify.00.d/NrdAe.domtblout','pf-classify.00.d/NrdAg.domtblout','pf-classify.00.d/NrdAh.domtblout','pf-classify.00.d/NrdAi.domtblout','pf-classify.00.d/NrdAk.domtblout','pf-classify.00.d/NrdAm.domtblout','pf-classify.00.d/NrdAn.domtblout','pf-classify.00.d/NrdAq.domtblout','pf-classify.00.d/NrdA.domtblout','pf-classify.00.d/NrdAz3.domtblout','pf-classify.00.d/NrdAz4.domtblout','pf-classify.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
+# GTDB: opt = list(args = c('pf-classify.gtdb.00.d/NrdA.domtblout', 'pf-classify.gtdb.00.d/NrdAe.domtblout', 'pf-classify.gtdb.00.d/NrdAe.tblout', 'pf-classify.gtdb.00.d/NrdAg.domtblout', 'pf-classify.gtdb.00.d/NrdAg.tblout', 'pf-classify.gtdb.00.d/NrdAh.domtblout', 'pf-classify.gtdb.00.d/NrdAh.tblout', 'pf-classify.gtdb.00.d/NrdAi.domtblout', 'pf-classify.gtdb.00.d/NrdAi.tblout', 'pf-classify.gtdb.00.d/NrdA.tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30, gtdbannotindex='pf-classify.gtdb.00.d/gtdb_prokka_index.tsv.gz', gtdbmetadata='pf-classify.gtdb.00.d/gtdb_metadata.tsv', gtdbtaxonomy='pf-classify.gtdb.00.d/gtdb_taxonomy.tsv'))
 
 logmsg = function(msg, llevel='INFO') {
   if ( opt$options$verbose ) {
@@ -73,6 +84,7 @@ logmsg = function(msg, llevel='INFO') {
 }
 logmsg(sprintf("pf-classify.r version %s: Starting classification", SCRIPT_VERSION))
 
+# Make sure the dbsource parameter is given and in the proper format
 if ( opt$options[['dbsource']] != '' ) {
   dbsource = strsplit(opt$options$dbsource, ':')[[1]]
 } else {
@@ -85,26 +97,78 @@ if ( length(dbsource) != 3 ) {
   quit('no', status = 2)
 }
 
+# Check if GTDB parameters are given and, if so, that all are given
+gtdb <- FALSE
+###if ( opt$options$gtdbannotindex != '' | opt$options$gtdbmetadata != '' | opt$options$gtdbtaxonomy != '' ) {
+if ( length(grep('gtdbmetadata', names(opt$options), value = TRUE)) > 0 ) {
+  gtdb <- TRUE
+  logmsg("GTDB mode set")
+###  if ( ! ( opt$options$gtdbannotindex != '' & opt$options$gtdbmetadata != '' & opt$options$gtdbtaxonomy != '' ) ) {
+###  if ( ! ( opt$options$gtdbannotindex != '' & opt$options$gtdbtaxonomy != '' ) ) {
+###    logmsg("Both GTDB parameters are required in GTDB mode, see --help.", 'ERROR')
+###    quit('no', status = 2)
+###  }
+}
+
 logmsg(sprintf("Reading profile hierarchies from %s", opt$options$profilehierarchies))
 hmm_profiles <- read_tsv(opt$options$profilehierarchies, col_types=cols(.default=col_character(), plen = col_integer()))
 
-logmsg(sprintf("Reading taxflat from %s", opt$options$taxflat))
-taxflat <- read_tsv(opt$options$taxflat, col_types=cols(.default=col_character(), ncbi_taxon_id=col_integer())) %>%
-  transmute(
-    ncbi_taxon_id, taxon, trank = rank,
-    tdomain       = superkingdom, tkingdom = kingdom,
-    tphylum       = phylum,       tclass   = class,
-    torder        = order,        tfamily  = family,
-    tgenus        = genus,        tspecies = species
-  )
+# Read the taxonomy file, in GTDB or NCBI format
+if ( gtdb ) {
+  logmsg(sprintf('Reading GTDB metadata from %s', opt$options$gtdbmetadata))
+###  gtdbtaxonomy <- read_tsv(
+###    opt$options$gtdbtaxonomy, 
+###    col_names = c('gtdb_accno', 'thier'),
+###    col_types=cols(.default=col_character())
+###  ) %>%
+###    mutate(
+###      gtdb_accno = str_remove(gtdb_accno, '\\.[0-9]+') %>% str_remove('^[A-Z][A-Z]_'),
+###      thier = str_remove_all(thier, '[a-z]__'), 
+###      tkingdom = '', 
+###      rank = 'species'
+###    ) %>%
+###    separate(thier, c('tdomain', 'tphylum', 'tclass', 'torder', 'tfamily', 'tgenus', 'tspecies'), sep = ';')
+ 
+###  # If in GTDB mode, read the other file
+###  gtdbannotindex <- read_tsv(
+###    opt$options$gtdbannotindex,
+###    col_names = c('ncbi_accno', 'gene_accno'),
+###    col_types = cols(.default = col_character())
+###  )
+  gtdbmetadata <- read_tsv(
+    opt$options$gtdbmetadata,
+    col_types = cols(.default = col_character())
+  ) %>%
+    mutate(
+      thier = str_remove_all(gtdb_taxonomy, '[a-z]__'), 
+    ) %>%
+    separate(thier, c('tdomain', 'tphylum', 'tclass', 'torder', 'tfamily', 'tgenus', 'tspecies'), sep = ';')
+  gtdbtaxonomy <- gtdbmetadata %>%
+    mutate(
+      accno0 = str_remove(accession, '^RS_') %>% str_remove('^GB_') %>% str_remove('\\.[0-9]'), 
+      accno1 = ncbi_genbank_assembly_accession %>% str_remove('\\.[0-9]'),
+      ncbi_taxon_id = ncbi_species_taxid
+    ) %>%
+    select(accno0, accno1, tdomain:tspecies, ncbi_taxon_id)
+} else {
+  logmsg(sprintf("Reading NCBI taxonomy from %s", opt$options$taxflat))
+  taxflat <- read_tsv(opt$options$taxflat, col_types=cols(.default=col_character(), ncbi_taxon_id=col_integer())) %>%
+    transmute(
+      ncbi_taxon_id, taxon, trank = rank,
+      tdomain       = superkingdom, tkingdom = kingdom,
+      tphylum       = phylum,       tclass   = class,
+      torder        = order,        tfamily  = family,
+      tgenus        = genus,        tspecies = species
+    )
 
-# Delete duplicate taxon, rank combinations belonging in Eukaryota
-taxflat <- taxflat %>%
-  anti_join(
-    taxflat %>% group_by(taxon, trank) %>% summarise(n = n()) %>% ungroup() %>% filter(n > 1) %>%
-      inner_join(taxflat %>% filter(tdomain == 'Eukaryota'), by = c('taxon', 'trank')),
-    by = c('ncbi_taxon_id')
-  )
+  # Delete duplicate taxon, rank combinations belonging in Eukaryota
+  taxflat <- taxflat %>%
+    anti_join(
+      taxflat %>% group_by(taxon, trank) %>% summarise(n = n()) %>% ungroup() %>% filter(n > 1) %>%
+        inner_join(taxflat %>% filter(tdomain == 'Eukaryota'), by = c('taxon', 'trank')),
+      by = c('ncbi_taxon_id')
+    )
+}
 
 # We will populate two tables, one with the full results, one with accessions
 tblout = tibble(
@@ -142,6 +206,10 @@ accessions = accessions %>% separate_rows(accto, sep = '\x01') %>%
     ),
     accto = sub(' .*', '', accto)
   )
+
+###if ( gtdb ) {
+###  accessions <- accessions %>% mutate(genome_accno = str_remove(taxon, '\\.[0-9].*')) %>% select(-taxon)
+###}
 
 domtblout = tibble(
   accno = character(), tlen = integer(), profile = character(), qlen = integer(), i = integer(), n = integer(), 
@@ -300,17 +368,23 @@ align_lengths = domtblout %>% distinct(accno, profile, tlen, qlen) %>%
 
 logmsg("Calculated lengths, inferring source databases from accession numbers")
 
-# Infer databases from the structure of accession numbers
-accessions = accessions %>%
-  mutate(db = ifelse(grepl('^.._', accto), 'refseq', NA)) %>%
-  mutate(db = ifelse((is.na(db) & grepl('^[0-9A-Z]{4,4}_[0-9A-Z]$', accto)), 'pdb', db)) %>%
-  mutate(db = ifelse((is.na(db) & grepl('^P[0-9]+\\.[0-9]+$', accto)), 'uniprot', db)) %>%
-  mutate(db = ifelse((is.na(db) & grepl('^[A-NR-Z][0-9][A-Z][A-Z0-9][A-Z0-9][0-9][A-Z][A-Z0-9][A-Z0-9][0-9]\\.[0-9]+$', accto)), 'uniprot', db)) %>%
-  mutate(db = ifelse((is.na(db) & grepl('^[O,P,Q][0-9][A-Z0-9][A-Z0-9][0-9]\\.[0-9]+$', accto)), 'uniprot', db)) %>%
-  mutate(db = ifelse((is.na(db) & grepl('^[A-NR-Z][0-9][A-Z][A-Z0-9][A-Z0-9][0-9]\\.[0-9]+$', accto)), 'uniprot', db)) %>%
-  mutate(db = ifelse((is.na(db) & grepl('^[ADEKOJMNP][A-Z][A-Z][0-9]+\\.[0-9]+$', accto)), 'genbank', db)) %>%
-  mutate(db = ifelse((is.na(db) & grepl('^[C][A-Z][A-Z][0-9]+\\.[0-9]+$', accto)), 'embl', db)) %>%
-  mutate(db = ifelse((is.na(db) & grepl('^[BFGIL][A-Z][A-Z][0-9]+\\.[0-9]+$', accto)), 'dbj', db))
+if ( gtdb ) {
+  accessions$db = 'gtdb'
+  accessions <- accessions %>%
+    transmute(db, genome_accno = str_remove(taxon, '\\..*'), accno)
+} else {
+  # Infer databases from the structure of accession numbers
+  accessions = accessions %>%
+    mutate(db = ifelse(grepl('^.._', accto), 'refseq', NA)) %>%
+    mutate(db = ifelse((is.na(db) & grepl('^[0-9A-Z]{4,4}_[0-9A-Z]$', accto)), 'pdb', db)) %>%
+    mutate(db = ifelse((is.na(db) & grepl('^P[0-9]+\\.[0-9]+$', accto)), 'uniprot', db)) %>%
+    mutate(db = ifelse((is.na(db) & grepl('^[A-NR-Z][0-9][A-Z][A-Z0-9][A-Z0-9][0-9][A-Z][A-Z0-9][A-Z0-9][0-9]\\.[0-9]+$', accto)), 'uniprot', db)) %>%
+    mutate(db = ifelse((is.na(db) & grepl('^[O,P,Q][0-9][A-Z0-9][A-Z0-9][0-9]\\.[0-9]+$', accto)), 'uniprot', db)) %>%
+    mutate(db = ifelse((is.na(db) & grepl('^[A-NR-Z][0-9][A-Z][A-Z0-9][A-Z0-9][0-9]\\.[0-9]+$', accto)), 'uniprot', db)) %>%
+    mutate(db = ifelse((is.na(db) & grepl('^[ADEKOJMNP][A-Z][A-Z][0-9]+\\.[0-9]+$', accto)), 'genbank', db)) %>%
+    mutate(db = ifelse((is.na(db) & grepl('^[C][A-Z][A-Z][0-9]+\\.[0-9]+$', accto)), 'embl', db)) %>%
+    mutate(db = ifelse((is.na(db) & grepl('^[BFGIL][A-Z][A-Z][0-9]+\\.[0-9]+$', accto)), 'dbj', db))
+}
 
 logmsg("Inferred databases, calculating best scoring profile for each accession")
 
@@ -386,28 +460,49 @@ if ( length(grep('singletable', names(opt$options), value = TRUE)) > 0 ) {
   logmsg(sprintf("Joining in all accession numbers and dropping profile column, nrows before: %d", proteins %>% nrow()))
   singletable <- proteins %>% 
     left_join(hmm_profiles, by='profile') %>%
-    inner_join(accessions, by='accno') %>%
-    mutate(accno = accto) 
+    inner_join(accessions, by='accno') 
+  
+  if ( ! gtdb ) accessions <- accessions %>% mutate(accno = accto) 
 
-  # If we have a taxflat NCBI taxonomy, read and join
-  logmsg(sprintf("Adding NCBI taxon ids from taxflat, nrows before: %d", singletable %>% nrow()))
-  singletable = singletable %>% 
-    left_join(
-      taxflat %>% select(taxon, ncbi_taxon_id),
-      by='taxon'
+  # Join in taxonomies, either GTDB or taxflat
+  if ( gtdb ) {
+    singletable <- union(
+      singletable %>% inner_join(gtdbtaxonomy, by = c('genome_accno' = 'accno0')) %>% select(-accno1),
+      singletable %>% anti_join(gtdbtaxonomy,  by = c('genome_accno' = 'accno0')) %>% left_join(gtdbtaxonomy, by = c('genome_accno' = 'accno1')) %>% select(-accno0)
     )
-
-  logmsg(sprintf("Writing single table %s, nrows: %d", opt$options$singletable, singletable %>% nrow()))
-  write_tsv(
-    singletable %>% 
-      select(db, accno, taxon, score, evalue, profile, psuperfamily:pgroup, ncbi_taxon_id, tlen, qlen, alilen, hmmlen,envlen) %>%
-      arrange(accno, profile),
-    opt$options$singletable
-  )
+    if ( singletable %>% filter(is.na(tspecies)) %>% nrow() > 0 ) {
+      logmsg(
+        sprintf("Accessions without GTDB species assignment: %s", singletable %>% filter(is.na(tspecies)) %>% pull(genome_accno) %>% paste(collapse = ', ')),
+        "WARNING"
+      )
+    }
+    logmsg(sprintf("Writing single table %s, nrows: %d", opt$options$singletable, singletable %>% nrow()))
+    write_tsv(
+      singletable %>% 
+        select(db, accno, score, evalue, profile, psuperfamily:pgroup, genome_accno, tdomain:tspecies, tlen, qlen, alilen, hmmlen,envlen) %>%
+        arrange(accno, profile),
+      opt$options$singletable
+      )
+  } else {
+    logmsg(sprintf("Adding NCBI taxon ids from taxflat, nrows before: %d", singletable %>% nrow()))
+    singletable = singletable %>% 
+      left_join(
+        taxflat %>% select(taxon, ncbi_taxon_id),
+        by='taxon'
+      )
+    logmsg(sprintf("Writing single table %s, nrows: %d", opt$options$singletable, singletable %>% nrow()))
+    write_tsv(
+      singletable %>% 
+        select(db, accno, taxon, score, evalue, profile, psuperfamily:pgroup, ncbi_taxon_id, tlen, qlen, alilen, hmmlen,envlen) %>%
+        arrange(accno, profile),
+      opt$options$singletable
+      )
+  }
 }
 
+
 # If the user specified a filename for a SQLite database, write that here
-if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
+if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length(opt$options$sqlitedb) > 0 ) {
   logmsg(sprintf("Creating/opening SQLite database %s", opt$options$sqlitedb))
   con = DBI::dbConnect(RSQLite::SQLite(), opt$options$sqlitedb, create = TRUE)
 

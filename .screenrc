@@ -8,6 +8,8 @@ chdir ../R-test
 screen -t R-test
 chdir $ROOT/doc
 screen -t doc
+chdir $ROOT/conda
+screen -t conda
 chdir $ROOT
 screen -t rstudio
 screen -t man

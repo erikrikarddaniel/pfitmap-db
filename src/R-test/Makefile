@@ -30,8 +30,8 @@ Nrd.test.tar.gz:
 
 pf-classify.gtdb.00:
 	@rm -f $@.sqlite3
-	../R/pf-classify.r --verbose --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --sqlitedb=$@.sqlite3 --gtdbtaxonomy=$@.d/taxonomy.tsv --gtdbgenomeinfo=$@.d/gtdb_genbank_genomes.tsv --gtdbannotindex=$@.d/gtdb_genbank_genomes_prokka_index.tsv.gz $@.d/*.tblout $@.d/*.domtblout
-	@$(SQLITE_SELECT_CLASSIFICATION)
+	#../R/pf-classify.r --verbose --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --sqlitedb=$@.sqlite3 --gtdbtaxonomy=$@.d/taxonomy.tsv --gtdbmetadata=$@.d/gtdb_metadata.tsv --gtdbannotindex=$@.d/gtdb_prokka_index.tsv.gz $@.d/*.tblout $@.d/*.domtblout
+	../R/pf-classify.r --verbose --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --singletable=$@.out --gtdbmetadata=$@.d/gtdb_metadata.tsv $@.d/*.tblout $@.d/*.domtblout
 	@$(CHECK)
 
 pf-classify.00:
