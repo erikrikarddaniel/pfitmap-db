@@ -13,7 +13,7 @@ suppressPackageStartupMessages(library(stringr))
 SCRIPT_VERSION = "1.9.0"
 
 # Get arguments
-option_list = list(
+option_list <- list(
   make_option(
     c('--dbsource'), default='', help='Database source in dbsource:name:version format'
   ),
@@ -53,7 +53,7 @@ option_list = list(
     help="Print program version and exit"
   )
 )
-opt = parse_args(
+opt <- parse_args(
   OptionParser(
     usage = "%prog [options] file0.tblout .. filen.tblout file0.domtblout .. filen.domtblout", 
     option_list = option_list
@@ -94,7 +94,7 @@ logmsg(sprintf("pf-classify.r version %s: Starting classification", SCRIPT_VERSI
 
 # Make sure the dbsource parameter is given and in the proper format
 if ( opt$options[['dbsource']] != '' ) {
-  dbsource = strsplit(opt$options$dbsource, ':')[[1]]
+  dbsource <- strsplit(opt$options$dbsource, ':')[[1]]
 } else {
   logmsg(sprintf("--dbsource is required"), 'ERROR')
   quit('no', status = 2)
@@ -109,7 +109,7 @@ if ( length(dbsource) != 3 ) {
 gtdb <- ifelse(opt$options$gtdbmetadata > '', TRUE, FALSE)
 
 logmsg(sprintf("Reading profile hierarchies from %s", opt$options$profilehierarchies))
-hmm_profiles <- read_tsv(opt$options$profilehierarchies, col_types=cols(.default=col_character(), plen = col_integer()))
+hmm_profiles <- read_tsv(opt$options$profilehierarchies, col_types = cols(.default=col_character(), plen = col_integer()))
 
 # Read the taxonomy file, in GTDB or NCBI format
 if ( gtdb ) {
@@ -126,7 +126,7 @@ if ( gtdb ) {
     mutate(
       accno0 = str_remove(accession, '^RS_') %>% str_remove('^GB_') %>% str_remove('\\.[0-9]'), 
       accno1 = ncbi_genbank_assembly_accession %>% str_remove('\\.[0-9]'),
-      trank   = 'species',
+      trank  = 'species',
       ncbi_taxon_id = ncbi_species_taxid
     ) %>%
     select(accno0, accno1, tdomain:tspecies, trank, ncbi_taxon_id)
@@ -151,11 +151,11 @@ if ( gtdb ) {
 }
 
 # We will populate two tables, one with the full results, one with accessions
-tblout = tibble(
+tblout <- tibble(
   accno = character(), profile = character(),
   evalue = double(), score = double(), bias = double()
 )
-accessions = tibble(accno = character(), accto = character())
+accessions <- tibble(accno = character(), accto = character())
 
 # Read all the tblout files
 for ( tbloutfile in grep('\\.tblout', opt$args, value=TRUE) ) {
@@ -172,12 +172,12 @@ for ( tbloutfile in grep('\\.tblout', opt$args, value=TRUE) ) {
       extra='merge',
       convert = T
     )
-  tblout = union(tblout, t %>% select(accno, profile, evalue, score, bias))
-  accessions = union(accessions, t %>% transmute(accno, accto = sprintf("%s %s", accno, rest)))
+  tblout <- union(tblout, t %>% select(accno, profile, evalue, score, bias))
+  accessions <- union(accessions, t %>% transmute(accno, accto = sprintf("%s %s", accno, rest)))
 }
 
 # Split the accto field
-accessions = accessions %>% separate_rows(accto, sep = '\x01') %>% 
+accessions <- accessions %>% separate_rows(accto, sep = '\x01') %>% 
   mutate(
     taxon = ifelse(
       grepl('[^[]\\[(.*)\\]', accto), 
@@ -187,11 +187,7 @@ accessions = accessions %>% separate_rows(accto, sep = '\x01') %>%
     accto = sub(' .*', '', accto)
   )
 
-###if ( gtdb ) {
-###  accessions <- accessions %>% mutate(genome_accno = str_remove(taxon, '\\.[0-9].*')) %>% select(-taxon)
-###}
-
-domtblout = tibble(
+domtblout <- tibble(
   accno = character(), tlen = integer(), profile = character(), qlen = integer(), i = integer(), n = integer(), 
   dom_c_evalue = double(), dom_i_evalue = double(), dom_score = double(), dom_bias = double(),
   hmm_from = integer(), hmm_to = integer(), ali_from = integer(), ali_to = integer(), 
@@ -201,7 +197,7 @@ domtblout = tibble(
 # Read all the domtblout files
 for ( domtbloutfile in grep('\\.domtblout', opt$args, value=TRUE) ) {
   logmsg(sprintf("Reading %s", domtbloutfile))
-  t = read_fwf(
+  t <- read_fwf(
     domtbloutfile, fwf_cols(content = c(1, NA)), 
     col_types = cols(content = col_character()), 
     comment='#'
@@ -218,7 +214,7 @@ for ( domtbloutfile in grep('\\.domtblout', opt$args, value=TRUE) ) {
       convert = T
     )
   
-  domtblout = union(
+  domtblout <- union(
     domtblout,
     t %>% select(
       accno, tlen, profile, qlen, i, n, dom_c_evalue, dom_i_evalue, dom_score, dom_bias,
@@ -343,18 +339,18 @@ for ( fs in list(
 }
 
 # Join in the above results with tlen and qlen from domtblout
-align_lengths = domtblout %>% distinct(accno, profile, tlen, qlen) %>%
+align_lengths <- domtblout %>% distinct(accno, profile, tlen, qlen) %>%
   inner_join(lengths %>% spread(type, val, fill = 0), by = c('accno', 'profile'))
 
 logmsg("Calculated lengths, inferring source databases from accession numbers")
 
 if ( gtdb ) {
-  accessions$db = 'gtdb'
+  accessions$db <- 'gtdb'
   accessions <- accessions %>%
     transmute(db, genome_accno = str_remove(taxon, '\\..*'), accno)
 } else {
   # Infer databases from the structure of accession numbers
-  accessions = accessions %>%
+  accessions <- accessions %>%
     mutate(db = ifelse(grepl('^.._', accto), 'refseq', NA)) %>%
     mutate(db = ifelse((is.na(db) & grepl('^[0-9A-Z]{4,4}_[0-9A-Z]$', accto)), 'pdb', db)) %>%
     mutate(db = ifelse((is.na(db) & grepl('^P[0-9]+\\.[0-9]+$', accto)), 'uniprot', db)) %>%
@@ -433,7 +429,8 @@ tblout <- tblout %>% semi_join(accessions %>% distinct(accno), by = 'accno')
 domtblout <- domtblout %>% semi_join(accessions %>% distinct(accno), by = 'accno')
 
 # If we were called with the singletable option, prepare data suitable for that
-if ( length(grep('singletable', names(opt$options), value = TRUE)) > 0 ) {
+#if ( length(grep('singletable', names(opt$options), value = TRUE)) > 0 ) {
+if ( opt$options$singletable > '' ) {
   logmsg("Writing single table format")
 
   # Join proteins with accessions and drop profile to get a single table output
@@ -442,7 +439,7 @@ if ( length(grep('singletable', names(opt$options), value = TRUE)) > 0 ) {
     left_join(hmm_profiles, by='profile') %>%
     inner_join(accessions, by='accno') 
   
-  if ( ! gtdb ) accessions <- accessions %>% mutate(accno = accto) 
+  if ( ! gtdb ) singletable <- singletable %>% mutate(accno = accto) 
 
   # Join in taxonomies, either GTDB or taxflat
   if ( gtdb ) {
@@ -465,7 +462,7 @@ if ( length(grep('singletable', names(opt$options), value = TRUE)) > 0 ) {
       )
   } else {
     logmsg(sprintf("Adding NCBI taxon ids from taxflat, nrows before: %d", singletable %>% nrow()))
-    singletable = singletable %>% 
+    singletable <- singletable %>% 
       left_join(
         taxflat %>% select(taxon, ncbi_taxon_id),
         by='taxon'
@@ -484,7 +481,7 @@ if ( length(grep('singletable', names(opt$options), value = TRUE)) > 0 ) {
 # If the user specified a filename for a SQLite database, write that here
 if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length(opt$options$sqlitedb) > 0 ) {
   logmsg(sprintf("Creating/opening SQLite database %s", opt$options$sqlitedb))
-  con = DBI::dbConnect(RSQLite::SQLite(), opt$options$sqlitedb, create = TRUE)
+  con <- DBI::dbConnect(RSQLite::SQLite(), opt$options$sqlitedb, create = TRUE)
 
   con %>% copy_to(
     tibble(source = dbsource[1], name = dbsource[2], version = dbsource[3]), 
