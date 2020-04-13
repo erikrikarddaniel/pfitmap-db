@@ -72,10 +72,18 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
 
 # Args list for testing:
 # NCBI: opt = list(args = c('pf-classify.00.d/GRX.ncbi_nr.test.domtblout', 'pf-classify.00.d/GRX.ncbi_nr.test.tblout', 'pf-classify.00.d/NrdAe.tblout','pf-classify.00.d/NrdAg.tblout','pf-classify.00.d/NrdAh.tblout','pf-classify.00.d/NrdAi.tblout','pf-classify.00.d/NrdAk.tblout','pf-classify.00.d/NrdAm.tblout','pf-classify.00.d/NrdAn.tblout','pf-classify.00.d/NrdAq.tblout','pf-classify.00.d/NrdA.tblout','pf-classify.00.d/NrdAz3.tblout','pf-classify.00.d/NrdAz4.tblout','pf-classify.00.d/NrdAz.tblout','pf-classify.00.d/NrdAe.domtblout','pf-classify.00.d/NrdAg.domtblout','pf-classify.00.d/NrdAh.domtblout','pf-classify.00.d/NrdAi.domtblout','pf-classify.00.d/NrdAk.domtblout','pf-classify.00.d/NrdAm.domtblout','pf-classify.00.d/NrdAn.domtblout','pf-classify.00.d/NrdAq.domtblout','pf-classify.00.d/NrdA.domtblout','pf-classify.00.d/NrdAz3.domtblout','pf-classify.00.d/NrdAz4.domtblout','pf-classify.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
-# GTDB: opt = list(args = c('pf-classify.gtdb.00.d/NrdA.domtblout', 'pf-classify.gtdb.00.d/NrdAe.domtblout', 'pf-classify.gtdb.00.d/NrdAe.tblout', 'pf-classify.gtdb.00.d/NrdAg.domtblout', 'pf-classify.gtdb.00.d/NrdAg.tblout', 'pf-classify.gtdb.00.d/NrdAh.domtblout', 'pf-classify.gtdb.00.d/NrdAh.tblout', 'pf-classify.gtdb.00.d/NrdAi.domtblout', 'pf-classify.gtdb.00.d/NrdAi.tblout', 'pf-classify.gtdb.00.d/NrdA.tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30, gtdbannotindex='pf-classify.gtdb.00.d/gtdb_prokka_index.tsv.gz', gtdbmetadata='pf-classify.gtdb.00.d/gtdb_metadata.tsv', gtdbtaxonomy='pf-classify.gtdb.00.d/gtdb_taxonomy.tsv'))
-
-logmsg = function(msg, llevel='INFO') {
-  if ( opt$options$verbose ) {
+# GTDB: opt = list(args = c('pf-classify.gtdb.00.d/NrdA.domtblout', 'pf-classify.gtdb.00.d/NrdAe.domtblout', 'pf-classify.gtdb.00.d/NrdAe.tblout', 'pf-classify.gtdb.00.d/NrdAg.domtblout', 'pf-classify.gtdb.00.d/NrdAg.tblout', 'pf-classify.gtdb.00.d/NrdAh.domtblout', 'pf-classify.gtdb.00.d/NrdAh.tblout', 'pf-classify.gtdb.00.d/NrdAi.domtblout', 'pf-classify.gtdb.00.d/NrdAi.tblout', 'pf-classify.gtdb.00.d/NrdA.tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbannotindex='pf-classify.gtdb.00.d/gtdb_prokka_index.tsv.gz', gtdbmetadata='pf-classify.gtdb.00.d/gtdb_metadata.tsv', gtdbtaxonomy='pf-classify.gtdb.00.d/gtdb_taxonomy.tsv'))
+DEBUG   = 0
+INFO    = 1
+WARNING = 2
+LOG_LEVELS = list(
+  DEBUG   = list(n = 0, msg = 'DEBUG'),
+  INFO    = list(n = 1, msg = 'INFO'),
+  WARNING = list(n = 2, msg = 'WARNING'),
+  ERROR   = list(n = 3, msg = 'ERROR')
+)
+logmsg    = function(msg, llevel='INFO') {
+  if ( opt$options$verbose | LOG_LEVELS[[llevel]][["n"]] >= LOG_LEVELS[["WARNING"]][["n"]] ) {
     write(
       sprintf("%s: %s: %s", llevel, format(Sys.time(), "%Y-%m-%d %H:%M:%S"), msg),
       stderr()
@@ -97,17 +105,12 @@ if ( length(dbsource) != 3 ) {
   quit('no', status = 2)
 }
 
-# Check if GTDB parameters are given and, if so, that all are given
+# Check if the GTDB metadata parameter is given
 gtdb <- FALSE
-###if ( opt$options$gtdbannotindex != '' | opt$options$gtdbmetadata != '' | opt$options$gtdbtaxonomy != '' ) {
-if ( length(grep('gtdbmetadata', names(opt$options), value = TRUE)) > 0 ) {
+#if ( length(grep('gtdbmetadata', names(opt$options), value = TRUE)) > 0 ) {
+if ( opt$options$gtdbmetadata > '' ) {
   gtdb <- TRUE
   logmsg("GTDB mode set")
-###  if ( ! ( opt$options$gtdbannotindex != '' & opt$options$gtdbmetadata != '' & opt$options$gtdbtaxonomy != '' ) ) {
-###  if ( ! ( opt$options$gtdbannotindex != '' & opt$options$gtdbtaxonomy != '' ) ) {
-###    logmsg("Both GTDB parameters are required in GTDB mode, see --help.", 'ERROR')
-###    quit('no', status = 2)
-###  }
 }
 
 logmsg(sprintf("Reading profile hierarchies from %s", opt$options$profilehierarchies))
@@ -116,25 +119,6 @@ hmm_profiles <- read_tsv(opt$options$profilehierarchies, col_types=cols(.default
 # Read the taxonomy file, in GTDB or NCBI format
 if ( gtdb ) {
   logmsg(sprintf('Reading GTDB metadata from %s', opt$options$gtdbmetadata))
-###  gtdbtaxonomy <- read_tsv(
-###    opt$options$gtdbtaxonomy, 
-###    col_names = c('gtdb_accno', 'thier'),
-###    col_types=cols(.default=col_character())
-###  ) %>%
-###    mutate(
-###      gtdb_accno = str_remove(gtdb_accno, '\\.[0-9]+') %>% str_remove('^[A-Z][A-Z]_'),
-###      thier = str_remove_all(thier, '[a-z]__'), 
-###      tkingdom = '', 
-###      rank = 'species'
-###    ) %>%
-###    separate(thier, c('tdomain', 'tphylum', 'tclass', 'torder', 'tfamily', 'tgenus', 'tspecies'), sep = ';')
- 
-###  # If in GTDB mode, read the other file
-###  gtdbannotindex <- read_tsv(
-###    opt$options$gtdbannotindex,
-###    col_names = c('ncbi_accno', 'gene_accno'),
-###    col_types = cols(.default = col_character())
-###  )
   gtdbmetadata <- read_tsv(
     opt$options$gtdbmetadata,
     col_types = cols(.default = col_character())
@@ -147,9 +131,10 @@ if ( gtdb ) {
     mutate(
       accno0 = str_remove(accession, '^RS_') %>% str_remove('^GB_') %>% str_remove('\\.[0-9]'), 
       accno1 = ncbi_genbank_assembly_accession %>% str_remove('\\.[0-9]'),
+      trank   = 'species',
       ncbi_taxon_id = ncbi_species_taxid
     ) %>%
-    select(accno0, accno1, tdomain:tspecies, ncbi_taxon_id)
+    select(accno0, accno1, tdomain:tspecies, trank, ncbi_taxon_id)
 } else {
   logmsg(sprintf("Reading NCBI taxonomy from %s", opt$options$taxflat))
   taxflat <- read_tsv(opt$options$taxflat, col_types=cols(.default=col_character(), ncbi_taxon_id=col_integer())) %>%
@@ -472,7 +457,7 @@ if ( length(grep('singletable', names(opt$options), value = TRUE)) > 0 ) {
     )
     if ( singletable %>% filter(is.na(tspecies)) %>% nrow() > 0 ) {
       logmsg(
-        sprintf("Accessions without GTDB species assignment: %s", singletable %>% filter(is.na(tspecies)) %>% pull(genome_accno) %>% paste(collapse = ', ')),
+        sprintf("*** Accessions without GTDB species assignment: %s ***", singletable %>% filter(is.na(tspecies)) %>% pull(genome_accno) %>% paste(collapse = ', ')),
         "WARNING"
       )
     }
@@ -511,24 +496,30 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
     'dbsources', temporary = FALSE, overwrite = TRUE
   )
 
-  # The accto field in accession should be turned into a list for each
-  # combination of accno, db and taxon to ensure organisms do not show up as
-  # having more than one exactly identical sequence, which they do with the new
-  # redundant RefSeq entries (WP_ accessions).
-  logmsg('Copying to "accessions", creating indices')
-  accessions <- accessions %>%
-    arrange(db, taxon, accno, accto) %>%
-    group_by(db, taxon, accno) %>%
-    summarise(accto = paste(accto, collapse = ',')) %>%
-    ungroup() %>%
-    separate_rows(accto, sep = ',') %>%
-    distinct()
+  if ( ! gtdb ) {
+    # The accto field in accession should be turned into a list for each
+    # combination of accno, db and taxon to ensure organisms do not show up as
+    # having more than one exactly identical sequence, which they do with the new
+    # redundant RefSeq entries (WP_ accessions).
+    logmsg('Copying to "accessions", creating indices')
+    accessions <- accessions %>%
+      arrange(db, taxon, accno, accto) %>%
+      group_by(db, taxon, accno) %>%
+      summarise(accto = paste(accto, collapse = ',')) %>%
+      ungroup() %>%
+      separate_rows(accto, sep = ',') %>%
+      distinct()
+  }
   
   con %>% copy_to(accessions, 'accessions', temporary = FALSE, overwrite = TRUE)
-  #con %>% DBI::dbExecute('CREATE UNIQUE INDEX "accessions.i00" ON "accessions"("db", "accto", "taxon");')
-  con %>% DBI::dbExecute('CREATE INDEX "accessions.i00" ON "accessions"("db", "accto", "taxon");')
-  con %>% DBI::dbExecute('CREATE INDEX "accessions.i01" ON "accessions"("accno");')
-  con %>% DBI::dbExecute('CREATE INDEX "accessions.i02" ON "accessions"("taxon");')
+  con %>% DBI::dbExecute('CREATE INDEX "accessions.i00" ON "accessions"("accno");')
+  if ( gtdb ) {
+    con %>% DBI::dbExecute('CREATE INDEX "accessions.i01" ON "accessions"("db", "accno", "genome_accno");')
+    con %>% DBI::dbExecute('CREATE INDEX "accessions.i02" ON "accessions"("genome_accno");')
+  } else {
+    con %>% DBI::dbExecute('CREATE INDEX "accessions.i01" ON "accessions"("db", "accto", "taxon");')
+    con %>% DBI::dbExecute('CREATE INDEX "accessions.i02" ON "accessions"("taxon");')
+  }
   
   logmsg('Copying to "proteins", creating indices')
   con %>% copy_to(proteins, 'proteins', temporary = FALSE, overwrite = TRUE)
@@ -544,35 +535,49 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
   con %>% copy_to(hmm_profiles, 'hmm_profiles', temporary = FALSE, overwrite = TRUE)
   con %>% DBI::dbExecute('CREATE UNIQUE INDEX "hmm_profiles.i00" ON "hmm_profiles"("profile");')
 
-  # If we have a taxflat NCBI taxonomy, read and join
-  logmsg(sprintf("Adding NCBI taxon ids from taxflat"))
-  con %>% copy_to(
-    taxflat %>% semi_join(accessions %>% distinct(taxon), by='taxon'),
-    'taxa', temporary = FALSE, overwrite = TRUE
-  )
+  logmsg('Copying to "taxa", creating indices')
+  if ( gtdb ) {
+    con %>% copy_to(
+      union(
+        gtdbtaxonomy %>% semi_join(accessions, by = c('accno0' = 'genome_accno')) %>% select(-accno1) %>% rename(genome_accno = accno0),
+        gtdbtaxonomy %>% anti_join(accessions, by = c('accno0' = 'genome_accno')) %>% select(-accno0) %>% rename(genome_accno = accno1)
+      ),
+      'taxa', temporary = FALSE, overwrite = TRUE
+    )
+    
+    con %>% DBI::dbExecute('CREATE UNIQUE INDEX "taxa.i00" ON "taxa"("genome_accno");')
+  } else {
+    # If we have a taxflat NCBI taxonomy, read and join
+    logmsg(sprintf("Adding NCBI taxon ids from taxflat"))
+    con %>% copy_to(
+      taxflat %>% semi_join(accessions %>% distinct(taxon), by='taxon'),
+      'taxa', temporary = FALSE, overwrite = TRUE
+    )
 
-  logmsg('Creating indices on "taxa"')
-  con %>% DBI::dbExecute('CREATE UNIQUE INDEX "taxa.i00" ON "taxa"("taxon", "trank");')
-  con %>% DBI::dbExecute('CREATE UNIQUE INDEX "taxa.i01" ON "taxa"("ncbi_taxon_id");')
+    con %>% DBI::dbExecute('CREATE UNIQUE INDEX "taxa.i00" ON "taxa"("taxon", "trank");')
+    con %>% DBI::dbExecute('CREATE UNIQUE INDEX "taxa.i01" ON "taxa"("ncbi_taxon_id");')
+  }
 
   logmsg('Saving tblout and domtblout to database')
   con %>% copy_to(tblout    %>% arrange(accno, profile),    'tblout',    temporary = FALSE, overwrite = TRUE)
   con %>% copy_to(domtblout %>% arrange(accno, profile, i), 'domtblout', temporary = FALSE, overwrite = TRUE)
 
+  if ( ! gtdb ) {
   logmsg(sprintf('Creating dupfree_proteins, using %d as fuzzy factor', opt$options$fuzzy_factor))
-  dp <- proteins %>% inner_join(accessions %>% transmute(accno = accto, db, taxon), by = 'accno') %>%
-    mutate(
-      alilen = as.integer(round(round(alilen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor)),
-      envlen = as.integer(round(round(envlen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor)),
-      hmmlen = as.integer(round(round(hmmlen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor))
-    ) %>%
-    group_by(db, taxon, profile, alilen, hmmlen, envlen) %>% mutate(r = rank(accno)) %>% ungroup()
+    dp <- proteins %>% inner_join(accessions %>% transmute(accno = accto, db, taxon), by = 'accno') %>%
+      mutate(
+        alilen = as.integer(round(round(alilen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor)),
+        envlen = as.integer(round(round(envlen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor)),
+        hmmlen = as.integer(round(round(hmmlen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor))
+      ) %>%
+      group_by(db, taxon, profile, alilen, hmmlen, envlen) %>% mutate(r = rank(accno)) %>% ungroup()
 
-  con %>% copy_to(
-    dp %>% filter(r < 2) %>% select(-db, -taxon),
-    'dupfree_proteins',
-    temporary = FALSE, overwrite = TRUE
-  )
+    con %>% copy_to(
+      dp %>% filter(r < 2) %>% select(-db, -taxon),
+      'dupfree_proteins',
+      temporary = FALSE, overwrite = TRUE
+    )
+  }
 
   logmsg('Disconnecting from sqlite3 db')
   con %>% DBI::dbDisconnect()

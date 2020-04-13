@@ -3,6 +3,7 @@ DIFF = grep -v "^[ ]*$$" $@.out | diff $@.expect -
 CHECK = if [ ` $(DIFF) | wc -l ` -eq 0 ]; then echo "*** $@ OK ***"; else echo "*** $@ FAILED ***"; echo "Here's a diff: "; $(DIFF); exit 1; fi
 
 SQLITE_SELECT_CLASSIFICATION = sqlite3 $@.sqlite3 "select '--> accessions <--'; select accno, accto, taxon, db from accessions order by accno, accto, taxon, db; select '--> proteins <--'; select accno, profile, score, evalue, tlen, qlen, hmmlen, alilen, envlen, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to from proteins order by accno, profile; select '--> dupfree_proteins <--'; select accno, profile, score, evalue, tlen, qlen, hmmlen, alilen, envlen, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to from dupfree_proteins order by accno, profile; select '--> hmm_profiles <--'; select profile, psuperfamily, pfamily, pclass, psubclass, pgroup, prank, version, plen from hmm_profiles order by profile; select '--> taxa <--'; select ncbi_taxon_id, tdomain, tkingdom, tphylum, tclass, torder, tfamily, tgenus, tspecies, taxon, trank from taxa order by ncbi_taxon_id; select '--> dbsources <--'; SELECT source, name, version FROM dbsources; select '--> domains <--'; SELECT accno, profile, i, n, dom_c_evalue, dom_i_evalue, dom_score, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to FROM domains ORDER BY accno, profile, i; select '--> tblout <--'; SELECT * FROM tblout ORDER BY accno, profile; select '--> domtblout <--'; SELECT * FROM domtblout ORDER BY accno, profile, i;" > $@.out
+SQLITE_SELECT_GTDB_CLASSIFICATION = sqlite3 $@.sqlite3 "SELECT '--> accessions <--'; SELECT accno, genome_accno, db FROM accessions ORDER BY accno, genome_accno, db; SELECT '--> proteins <--'; SELECT accno, profile, score, evalue, tlen, qlen, hmmlen, alilen, envlen, hmm_FROM, hmm_to, ali_FROM, ali_to, env_FROM, env_to FROM proteins ORDER BY accno, profile; SELECT '--> hmm_profiles <--'; SELECT profile, psuperfamily, pfamily, pclass, psubclass, pgroup, prank, version, plen FROM hmm_profiles ORDER BY profile; SELECT '--> taxa <--'; SELECT genome_accno, ncbi_taxon_id, tdomain, tphylum, tclass, torder, tfamily, tgenus, tspecies, trank FROM taxa ORDER BY genome_accno; SELECT '--> dbsources <--'; SELECT source, name, version FROM dbsources; SELECT '--> domains <--'; SELECT accno, profile, i, n, dom_c_evalue, dom_i_evalue, dom_score, hmm_FROM, hmm_to, ali_FROM, ali_to, env_FROM, env_to FROM domains ORDER BY accno, profile, i; SELECT '--> tblout <--'; SELECT * FROM tblout ORDER BY accno, profile; SELECT '--> domtblout <--'; SELECT * FROM domtblout ORDER BY accno, profile, i;" > $@.out
 SQLITE_SELECT_FETCHSEQS = sqlite3 $@.sqlite3 "SELECT accno, sequence FROM sequences ORDER BY accno;" > $@.out
 #SQLITE_SELECT_CLASSIFICATION = sqlite3 $@.sqlite3 "select accno, accto, taxon, db from accessions order by accno, accto, taxon, db; select accno, profile, score, evalue, tlen, qlen, hmmlen, alilen, envlen, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to from proteins order by accno, profile; select accno, profile, score, evalue, tlen, qlen, hmmlen, alilen, envlen, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to from dupfree_proteins order by accno, profile; select accno_from, accno_to from dupfree_accessions order by accno, accto; select profile, psuperfamily, pfamily, pclass, psubclass, pgroup, prank, version, plen from hmm_profiles order by profile; select ncbi_taxon_id, tdomain, tkingdom, tphylum, tclass, torder, tfamily, tgenus, tspecies, taxon, trank from taxa order by ncbi_taxon_id; SELECT source, name, version FROM dbsources; SELECT accno, profile, i, n, dom_c_evalue, dom_i_evalue, dom_score, hmm_from, hmm_to, ali_from, ali_to, env_from, env_to FROM domains ORDER BY accno, profile, i; SELECT * FROM tblout ORDER BY accno, profile; SELECT * FROM domtblout ORDER BY accno, profile, i;" > $@.out
 
@@ -17,7 +18,7 @@ all.sqlite: pf-classify.02 pf-classify.03 pf-classify.04
 
 pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06 pf-classify.07 pf-classify.08
 
-pf-classify.gtdb: pf-classify.gtdb.00
+pf-classify.gtdb: pf-classify.gtdb.00 pf-classify.gtdb.01
 
 pf-db2feather: pf-db2feather.00 pf-db2feather.01 pf-db2feather.02 pf-db2feather.03
 
@@ -30,8 +31,13 @@ Nrd.test.tar.gz:
 
 pf-classify.gtdb.00:
 	@rm -f $@.sqlite3
-	#../R/pf-classify.r --verbose --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --sqlitedb=$@.sqlite3 --gtdbtaxonomy=$@.d/taxonomy.tsv --gtdbmetadata=$@.d/gtdb_metadata.tsv --gtdbannotindex=$@.d/gtdb_prokka_index.tsv.gz $@.d/*.tblout $@.d/*.domtblout
-	../R/pf-classify.r --verbose --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --singletable=$@.out --gtdbmetadata=$@.d/gtdb_metadata.tsv $@.d/*.tblout $@.d/*.domtblout
+	../R/pf-classify.r --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --singletable=$@.out --gtdbmetadata=$@.d/gtdb_metadata.tsv $@.d/*.tblout $@.d/*.domtblout
+	@$(CHECK)
+
+pf-classify.gtdb.01:
+	@rm -f $@.sqlite3
+	../R/pf-classify.r --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --sqlitedb=$@.sqlite3 --gtdbmetadata=$@.d/gtdb_metadata.tsv $@.d/*.tblout $@.d/*.domtblout
+	@$(SQLITE_SELECT_GTDB_CLASSIFICATION)
 	@$(CHECK)
 
 pf-classify.00:
