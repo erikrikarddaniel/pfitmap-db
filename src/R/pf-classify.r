@@ -106,12 +106,7 @@ if ( length(dbsource) != 3 ) {
 }
 
 # Check if the GTDB metadata parameter is given
-gtdb <- FALSE
-#if ( length(grep('gtdbmetadata', names(opt$options), value = TRUE)) > 0 ) {
-if ( opt$options$gtdbmetadata > '' ) {
-  gtdb <- TRUE
-  logmsg("GTDB mode set")
-}
+gtdb <- ifelse(opt$options$gtdbmetadata > '', TRUE, FALSE)
 
 logmsg(sprintf("Reading profile hierarchies from %s", opt$options$profilehierarchies))
 hmm_profiles <- read_tsv(opt$options$profilehierarchies, col_types=cols(.default=col_character(), plen = col_integer()))
