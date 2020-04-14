@@ -13,13 +13,17 @@ suppressPackageStartupMessages(library(optparse))
 suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(stringr))
 
-SCRIPT_VERSION = "1.0.3"
+SCRIPT_VERSION = "1.9.0"
 
-# Options for testing: opt <- list(options = list(verbose = TRUE, prefix='testing'), args = 'pf-classify.02.sqlite3')
+# Options for testing: opt <- list(options = list(gtdb = TRUE, verbose = TRUE, prefix='testing'), args = 'pf-classify.02.sqlite3')
 # Get arguments
 option_list = list(
   make_option(
     c('--dbs'), default='', help='Comma-separated list of databases to subset data to'
+  ),
+  make_option(
+    c("--gtdb"), action="store_true", default=FALSE, 
+    help="Run in GTDB mode. Input database is slightly different, output files too."
   ),
   make_option(
     c('--prefix'), default='', help='Set a prefix for generated output files'
@@ -70,8 +74,13 @@ accessions %>% collect() %>%
   write_feather(sprintf("%saccessions.feather", opt$options$prefix))
 
 logmsg("Writing taxa")
-db %>% tbl('taxa') %>% semi_join(accessions %>% distinct(taxon), by = 'taxon') %>% collect() %>%
-  write_feather(sprintf("%staxa.feather", opt$options$prefix))
+if ( opt$options$gtdb ) {
+  db %>% tbl('taxa') %>% collect() %>%
+    write_feather(sprintf("%staxa.feather", opt$options$prefix))
+} else {
+  db %>% tbl('taxa') %>% semi_join(accessions %>% distinct(taxon), by = 'taxon') %>% collect() %>%
+    write_feather(sprintf("%staxa.feather", opt$options$prefix))
+}
 
 logmsg("Writing dbsources")
 db %>% tbl('dbsources') %>% collect() %>%
@@ -87,8 +96,13 @@ intersect(
 ) %>% walk(
     function(t) {
       logmsg(sprintf("Writing %s", t))
-      db %>% tbl(t) %>% semi_join(accessions %>% transmute(accno = accto) %>% distinct(), by = 'accno') %>% collect() %>%
-        write_feather(sprintf("%s%s.feather", opt$options$prefix, t))
+      if ( opt$options$gtdb ) {
+        db %>% tbl(t) %>% semi_join(accessions %>% distinct(accno), by = 'accno') %>% collect() %>%
+          write_feather(sprintf("%s%s.feather", opt$options$prefix, t))
+      } else {
+        db %>% tbl(t) %>% semi_join(accessions %>% transmute(accno = accto) %>% distinct(), by = 'accno') %>% collect() %>%
+          write_feather(sprintf("%s%s.feather", opt$options$prefix, t))
+      }
     }
   )
 
