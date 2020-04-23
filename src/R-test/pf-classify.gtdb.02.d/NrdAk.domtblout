@@ -1,0 +1,56 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+OJPPLLDI_02543       -            955 NrdAk                -            578  1.4e-109  368.6   0.2   1   3     1e-49   2.3e-46  159.8   0.0     7   217   288   507   283   518 0.90 hypothetical protein [GCA_000009145]
+OJPPLLDI_02543       -            955 NrdAk                -            578  1.4e-109  368.6   0.2   2   3   3.8e-28   8.5e-25   88.6   0.0   218   397   535   707   509   714 0.81 hypothetical protein [GCA_000009145]
+OJPPLLDI_02543       -            955 NrdAk                -            578  1.4e-109  368.6   0.2   3   3     1e-36   2.2e-33  116.9   0.1   408   566   759   915   739   921 0.93 hypothetical protein [GCA_000009145]
+EBMHHDFG_02854       -            987 NrdAk                -            578  3.1e-104  350.9   0.1   1   2   1.1e-70   2.4e-67  229.1   0.0     4   397   285   712   282   720 0.83 hypothetical protein [GCA_000009125]
+EBMHHDFG_02854       -            987 NrdAk                -            578  3.1e-104  350.9   0.1   2   2   9.7e-35   2.2e-31  110.4   0.0   408   561   764   915   734   925 0.93 hypothetical protein [GCA_000009125]
+CKODLGHM_02542       -            792 NrdAk                -            578   2.8e-99  334.5   0.0   1   3   1.4e-37   3.2e-34  119.7   0.0     9   216   140   355   134   361 0.88 hypothetical protein [GCA_001545115]
+CKODLGHM_02542       -            792 NrdAk                -            578   2.8e-99  334.5   0.0   2   3   2.8e-28   6.2e-25   89.0   0.0   215   397   376   551   364   559 0.89 hypothetical protein [GCA_001545115]
+CKODLGHM_02542       -            792 NrdAk                -            578   2.8e-99  334.5   0.0   3   3   3.1e-38     7e-35  121.9   0.1   411   563   595   746   585   754 0.92 hypothetical protein [GCA_001545115]
+AAJJOOCP_01555       -            572 NrdAk                -            578   3.5e-71  241.7   0.0   1   1   1.9e-74   4.3e-71  241.4   0.0    12   548    24   570    14   572 0.86 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9950]
+NGOGMLFJ_04158       -            832 NrdAk                -            578   2.5e-70  238.9   5.8   1   4   1.4e-38   3.1e-35  123.0   0.0    52   220   267   435   256   445 0.94 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000009165]
+NGOGMLFJ_04158       -            832 NrdAk                -            578   2.5e-70  238.9   5.8   2   4   8.1e-23   1.8e-19   71.0   0.1   210   398   460   665   454   682 0.76 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000009165]
+NGOGMLFJ_04158       -            832 NrdAk                -            578   2.5e-70  238.9   5.8   3   4     0.052   1.2e+02    2.3   0.1   409   442   702   734   693   739 0.81 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000009165]
+NGOGMLFJ_04158       -            832 NrdAk                -            578   2.5e-70  238.9   5.8   4   4   3.7e-14   8.4e-11   42.4   0.1   497   561   759   823   752   828 0.95 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000009165]
+PAPHBKOD_02415       -            844 NrdAk                -            578     5e-68  231.3   4.5   1   3   1.3e-35   2.9e-32  113.2   0.0    22   216   254   455   231   466 0.88 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_001244405]
+PAPHBKOD_02415       -            844 NrdAk                -            578     5e-68  231.3   4.5   2   3   5.7e-20   1.3e-16   61.6   0.2   211   444   477   749   461   757 0.73 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_001244405]
+PAPHBKOD_02415       -            844 NrdAk                -            578     5e-68  231.3   4.5   3   3   5.6e-16   1.2e-12   48.4   0.3   495   561   769   835   759   842 0.93 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_001244405]
+FBOAFKLH_00488       -            532 NrdAk                -            578   2.9e-63  215.6   0.0   1   2   3.7e-64   8.2e-61  207.5   0.0    10   442     5   421     1   440 0.89 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9945]
+FBOAFKLH_00488       -            532 NrdAk                -            578   2.9e-63  215.6   0.0   2   2    0.0039       8.6    6.0   0.0   489   559   445   515   437   529 0.85 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9945]
+KEOFIFCG_00615       -            606 NrdAk                -            578   3.9e-63  215.2   0.0   1   2     3e-51   6.6e-48  164.9   0.0    58   399     3   335     1   341 0.89 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9998]
+KEOFIFCG_00615       -            606 NrdAk                -            578   3.9e-63  215.2   0.0   2   2   6.1e-16   1.4e-12   48.3   0.0   395   570   363   535   359   542 0.91 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9998]
+BFHDIKLF_01381       -            634 NrdAk                -            578   3.9e-61  208.5   0.0   1   1   3.5e-64   7.8e-61  207.6   0.0    13   554    41   580    34   591 0.86 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9902]
+KEOFIFCG_00085       -            619 NrdAk                -            578     3e-58  199.0   0.0   1   1   4.1e-61   9.1e-58  197.4   0.0    41   559    84   597    69   615 0.86 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9998]
+MGLECCPO_00316       -            813 NrdAk                -            578   1.1e-55  190.6   0.0   1   1   8.1e-59   1.8e-55  189.8   0.0    47   557    94   612    80   623 0.84 hypothetical protein [UBA9966]
+FHGKEOLE_01260       -            827 NrdAk                -            578   2.6e-54  186.0   0.0   1   1   2.9e-57   6.5e-54  184.7   0.0    46   567   117   658   101   669 0.82 hypothetical protein [UBA9997]
+BHDKMOOB_00467       -            719 NrdAk                -            578   4.4e-49  168.8   0.6   1   4   4.1e-29   9.1e-26   91.8   0.0    29   217   118   308   107   316 0.90 Ribonucleoside-diphosphate reductase subunit alpha 2 [GCA_000007785]
+BHDKMOOB_00467       -            719 NrdAk                -            578   4.4e-49  168.8   0.6   2   4   5.9e-13   1.3e-09   38.4   0.0   205   397   321   512   315   522 0.80 Ribonucleoside-diphosphate reductase subunit alpha 2 [GCA_000007785]
+BHDKMOOB_00467       -            719 NrdAk                -            578   4.4e-49  168.8   0.6   3   4    0.0013       2.9    7.6   0.0   377   437   540   598   535   609 0.81 Ribonucleoside-diphosphate reductase subunit alpha 2 [GCA_000007785]
+BHDKMOOB_00467       -            719 NrdAk                -            578   4.4e-49  168.8   0.6   4   4   3.5e-09   7.9e-06   26.0   0.0   490   575   621   718   615   719 0.81 Ribonucleoside-diphosphate reductase subunit alpha 2 [GCA_000007785]
+GILLGKDK_00168       -            761 NrdAk                -            578     4e-43  149.1   0.9   1   3   1.2e-20   2.6e-17   63.9   0.0    29   216   167   360   134   365 0.81 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000007725]
+GILLGKDK_00168       -            761 NrdAk                -            578     4e-43  149.1   0.9   2   3   7.9e-26   1.8e-22   80.9   0.1   196   399   365   566   360   575 0.87 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000007725]
+GILLGKDK_00168       -            761 NrdAk                -            578     4e-43  149.1   0.9   3   3     0.099   2.2e+02    1.4   0.0   510   574   681   754   659   759 0.64 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000007725]
+NHJCJKCG_00931       -            756 NrdAk                -            578   2.4e-42  146.5   0.0   1   3   4.4e-24   9.8e-21   75.2   0.0     5   216   136   360   132   367 0.85 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000007745]
+NHJCJKCG_00931       -            756 NrdAk                -            578   2.4e-42  146.5   0.0   2   3   7.5e-22   1.7e-18   67.8   0.0   219   403   389   570   364   576 0.85 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000007745]
+NHJCJKCG_00931       -            756 NrdAk                -            578   2.4e-42  146.5   0.0   3   3      0.47     1e+03   -0.9   0.0   532   558   709   735   685   751 0.71 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000007745]
+FHGMODCP_01397       -            759 NrdAk                -            578   5.5e-40  138.7   0.0   1   3     8e-22   1.8e-18   67.7   0.0     5   216   138   362   134   368 0.80 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000009105]
+FHGMODCP_01397       -            759 NrdAk                -            578   5.5e-40  138.7   0.0   2   3   3.2e-21   7.1e-18   65.7   0.0   220   399   392   568   366   577 0.87 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000009105]
+FHGMODCP_01397       -            759 NrdAk                -            578   5.5e-40  138.7   0.0   3   3     0.091     2e+02    1.5   0.0   527   558   706   737   660   755 0.72 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000009105]
+EBMHHDFG_00198       -            617 NrdAk                -            578   4.6e-29  102.7   0.0   1   2   1.2e-27   2.6e-24   87.0   0.0    11   441    23   496    18   503 0.69 Vitamin B12-dependent ribonucleoside-diphosphate reductase [GCA_000009125]
+EBMHHDFG_00198       -            617 NrdAk                -            578   4.6e-29  102.7   0.0   2   2    0.0034       7.5    6.2   0.0   495   556   533   594   520   599 0.92 Vitamin B12-dependent ribonucleoside-diphosphate reductase [GCA_000009125]
+JBKLNOKJ_02087       -           1909 NrdAk                -            578   5.4e-27   95.8   0.1   1   3   6.5e-06     0.015   15.2   0.0    48    99   144   195   122   201 0.86 hypothetical protein [GCA_000009185]
+JBKLNOKJ_02087       -           1909 NrdAk                -            578   5.4e-27   95.8   0.1   2   3   1.2e-10   2.7e-07   30.8   0.0   105   176   609   681   598   711 0.89 hypothetical protein [GCA_000009185]
+JBKLNOKJ_02087       -           1909 NrdAk                -            578   5.4e-27   95.8   0.1   3   3   1.8e-11   4.1e-08   33.5   0.0   190   405   736   996   722  1005 0.63 hypothetical protein [GCA_000009185]
+FHGKEOLE_00871       -            336 NrdAk                -            578      0.12   12.2   0.0   1   1   8.1e-05      0.18   11.6   0.0   317   366   115   168   104   196 0.83 ATPase RavA [UBA9997]
+#
+# Program:         hmmsearch
+# Version:         3.3 (Nov 2019)
+# Pipeline mode:   SEARCH
+# Query file:      NrdAk.hmm
+# Target file:     all_genomes.faa
+# Option settings: hmmsearch --tblout NrdAk.tblout --domtblout NrdAk.domtblout NrdAk.hmm all_genomes.faa 
+# Current dir:     /home/dl/dev/pfitmap-nextflow/work/3b/c7c11416717507bee6a116e72d9b38
+# Date:            Thu Apr 23 17:13:49 2020
+# [ok]

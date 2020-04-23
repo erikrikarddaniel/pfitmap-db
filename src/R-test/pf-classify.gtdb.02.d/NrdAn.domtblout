@@ -1,0 +1,53 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+CKODLGHM_02542       -            792 NrdAn                -            682  1.1e-223  745.6   0.1   1   1  6.8e-226  1.6e-222  741.6   0.1    16   663   109   755   100   791 0.95 hypothetical protein [GCA_001545115]
+OJPPLLDI_02543       -            955 NrdAn                -            682  5.1e-223  743.3   0.1   1   1  3.2e-226  7.6e-223  742.7   0.1     8   682   254   955   246   955 0.91 hypothetical protein [GCA_000009145]
+EBMHHDFG_02854       -            987 NrdAn                -            682  1.4e-222  741.9   0.1   1   1  8.2e-226  1.9e-222  741.4   0.1     4   664   250   927   247   938 0.93 hypothetical protein [GCA_000009125]
+NGOGMLFJ_04158       -            832 NrdAn                -            682  4.9e-111  373.2   2.0   1   2    1e-104  2.4e-101  341.2   0.2    24   534   183   734   161   738 0.84 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000009165]
+NGOGMLFJ_04158       -            832 NrdAn                -            682  4.9e-111  373.2   2.0   2   2   4.1e-10   9.7e-07   28.5   0.1   591   649   761   820   754   825 0.86 Ribonucleoside-diphosphate reductase subunit alpha [GCA_000009165]
+PAPHBKOD_02415       -            844 NrdAn                -            682  1.6e-108  364.9   0.2   1   3     9e-64   2.1e-60  205.9   0.0     5   346   192   543   188   549 0.89 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_001244405]
+PAPHBKOD_02415       -            844 NrdAn                -            682  1.6e-108  364.9   0.2   2   3   4.6e-39   1.1e-35  124.2   0.0   339   539   559   752   554   766 0.93 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_001244405]
+PAPHBKOD_02415       -            844 NrdAn                -            682  1.6e-108  364.9   0.2   3   3   5.9e-11   1.4e-07   31.3   0.1   600   650   782   833   757   839 0.78 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_001244405]
+FHGMODCP_01397       -            759 NrdAn                -            682   7.4e-82  276.8   0.0   1   2     1e-79   2.4e-76  258.6   0.0    28   527   123   639   110   647 0.88 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000009105]
+FHGMODCP_01397       -            759 NrdAn                -            682   7.4e-82  276.8   0.0   2   2   2.2e-06    0.0051   16.2   0.0   571   659   651   747   643   758 0.77 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000009105]
+GILLGKDK_00168       -            761 NrdAn                -            682   4.8e-81  274.1   0.7   1   2   2.6e-79   6.1e-76  257.2   0.0    29   527   122   637   104   644 0.89 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000007725]
+GILLGKDK_00168       -            761 NrdAn                -            682   4.8e-81  274.1   0.7   2   2   3.9e-06    0.0092   15.4   0.1   571   657   649   743   642   760 0.74 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000007725]
+AAJJOOCP_01555       -            572 NrdAn                -            682   2.7e-79  268.3   0.0   1   2     5e-39   1.2e-35  124.1   0.0    57   262    31   240    19   245 0.87 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9950]
+AAJJOOCP_01555       -            572 NrdAn                -            682   2.7e-79  268.3   0.0   2   2   1.5e-40   3.6e-37  129.1   0.0   290   639   246   570   241   572 0.88 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9950]
+NHJCJKCG_00931       -            756 NrdAn                -            682     6e-78  263.9   0.0   1   2   4.7e-78   1.1e-74  253.1   0.0    17   528   109   638   101   655 0.88 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000007745]
+NHJCJKCG_00931       -            756 NrdAn                -            682     6e-78  263.9   0.0   2   2   0.00029      0.69    9.2   0.0   571   653   649   739   638   753 0.75 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_000007745]
+KEOFIFCG_00615       -            606 NrdAn                -            682   1.7e-77  262.4   0.0   1   1   1.6e-77   3.8e-74  251.3   0.0   103   647     3   521     1   549 0.93 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9998]
+KEOFIFCG_00085       -            619 NrdAn                -            682     3e-71  241.7   0.0   1   2   6.5e-31   1.5e-27   97.3   0.0    89   263    87   255    60   261 0.89 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9998]
+KEOFIFCG_00085       -            619 NrdAn                -            682     3e-71  241.7   0.0   2   2   5.1e-43   1.2e-39  137.3   0.0   283   648   253   595   235   614 0.84 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9998]
+BFHDIKLF_01381       -            634 NrdAn                -            682     6e-70  237.4   0.0   1   3   7.4e-34   1.7e-30  107.0   0.0    51   262    41   254     3   292 0.85 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9902]
+BFHDIKLF_01381       -            634 NrdAn                -            682     6e-70  237.4   0.0   2   3   2.5e-27   5.9e-24   85.4   0.0   352   467   314   429   311   432 0.97 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9902]
+BFHDIKLF_01381       -            634 NrdAn                -            682     6e-70  237.4   0.0   3   3   3.6e-14   8.5e-11   41.9   0.0   496   642   431   577   427   587 0.83 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9902]
+FBOAFKLH_00488       -            532 NrdAn                -            682   3.6e-69  234.8   0.0   1   4   1.5e-37   3.5e-34  119.2   0.0    74   262    24   205    11   210 0.94 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9945]
+FBOAFKLH_00488       -            532 NrdAn                -            682   3.6e-69  234.8   0.0   2   4   3.7e-27   8.8e-24   84.9   0.0   284   465   205   380   204   383 0.91 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9945]
+FBOAFKLH_00488       -            532 NrdAn                -            682   3.6e-69  234.8   0.0   3   4   1.3e-05      0.03   13.7   0.0   499   556   386   442   380   449 0.88 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9945]
+FBOAFKLH_00488       -            532 NrdAn                -            682   3.6e-69  234.8   0.0   4   4   1.7e-05      0.04   13.3   0.0   586   651   450   518   442   525 0.84 Vitamin B12-dependent ribonucleoside-diphosphate reductase [UBA9945]
+BHDKMOOB_00467       -            719 NrdAn                -            682   4.4e-62  211.4   1.0   1   2   2.7e-59   6.3e-56  191.1   0.1     9   529    52   598    44   624 0.82 Ribonucleoside-diphosphate reductase subunit alpha 2 [GCA_000007785]
+BHDKMOOB_00467       -            719 NrdAn                -            682   4.4e-62  211.4   1.0   2   2     4e-07   0.00093   18.7   0.1   584   648   623   701   601   714 0.79 Ribonucleoside-diphosphate reductase subunit alpha 2 [GCA_000007785]
+FHGKEOLE_01260       -            827 NrdAn                -            682     1e-61  210.2   0.0   1   2   1.3e-32     3e-29  102.9   0.0    96   261   122   282   105   287 0.95 hypothetical protein [UBA9997]
+FHGKEOLE_01260       -            827 NrdAn                -            682     1e-61  210.2   0.0   2   2   1.6e-31   3.7e-28   99.3   0.0   289   645   288   643   282   664 0.77 hypothetical protein [UBA9997]
+MGLECCPO_00316       -            813 NrdAn                -            682   2.9e-55  188.9   0.0   1   3      0.78   1.8e+03   -2.1   0.0    62    89    33    60    30    76 0.85 hypothetical protein [UBA9966]
+MGLECCPO_00316       -            813 NrdAn                -            682   2.9e-55  188.9   0.0   2   3   3.8e-50   8.9e-47  160.9   0.0    75   466    77   436    59   442 0.92 hypothetical protein [UBA9966]
+MGLECCPO_00316       -            813 NrdAn                -            682   2.9e-55  188.9   0.0   3   3   4.3e-06      0.01   15.2   0.0   499   661   446   627   442   645 0.68 hypothetical protein [UBA9966]
+EBMHHDFG_00198       -            617 NrdAn                -            682   2.8e-38  132.8   0.0   1   2   5.7e-39   1.3e-35  123.9   0.0    75   535    43   498    31   503 0.81 Vitamin B12-dependent ribonucleoside-diphosphate reductase [GCA_000009125]
+EBMHHDFG_00198       -            617 NrdAn                -            682   2.8e-38  132.8   0.0   2   2    0.0019       4.4    6.5   0.0   587   652   533   599   516   611 0.86 Vitamin B12-dependent ribonucleoside-diphosphate reductase [GCA_000009125]
+JBKLNOKJ_02087       -           1909 NrdAn                -            682   2.9e-37  129.4   0.8   1   5     2e-11   4.8e-08   32.9   0.0    95   148   146   198   135   203 0.88 hypothetical protein [GCA_000009185]
+JBKLNOKJ_02087       -           1909 NrdAn                -            682   2.9e-37  129.4   0.8   2   5   9.8e-11   2.3e-07   30.6   0.0   149   235   606   690   581   707 0.83 hypothetical protein [GCA_000009185]
+JBKLNOKJ_02087       -           1909 NrdAn                -            682   2.9e-37  129.4   0.8   3   5   4.9e-06     0.011   15.1   0.0   233   394   733   894   700   905 0.79 hypothetical protein [GCA_000009185]
+JBKLNOKJ_02087       -           1909 NrdAn                -            682   2.9e-37  129.4   0.8   4   5   3.6e-15   8.4e-12   45.3   0.0   367   490   895  1019   887  1053 0.84 hypothetical protein [GCA_000009185]
+JBKLNOKJ_02087       -           1909 NrdAn                -            682   2.9e-37  129.4   0.8   5   5      0.28   6.6e+02   -0.7   0.0   546   655  1512  1627  1476  1649 0.72 hypothetical protein [GCA_000009185]
+#
+# Program:         hmmsearch
+# Version:         3.3 (Nov 2019)
+# Pipeline mode:   SEARCH
+# Query file:      NrdAn.hmm
+# Target file:     all_genomes.faa
+# Option settings: hmmsearch --tblout NrdAn.tblout --domtblout NrdAn.domtblout NrdAn.hmm all_genomes.faa 
+# Current dir:     /home/dl/dev/pfitmap-nextflow/work/24/04a0310d2b8a1f890039cbd2e26cf4
+# Date:            Thu Apr 23 17:13:49 2020
+# [ok]

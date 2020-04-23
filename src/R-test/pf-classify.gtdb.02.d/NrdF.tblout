@@ -1,0 +1,23 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+BHDKMOOB_00466       -          NrdF                 -           2.9e-140  467.8   6.9  3.3e-140  467.6   6.9   1.0   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit beta nrdF2 [GCA_000007785]
+NGOGMLFJ_04157       -          NrdF                 -            3.7e-45  155.5   1.1   4.8e-45  155.1   1.1   1.1   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit beta [GCA_000009165]
+PAPHBKOD_02414       -          NrdF                 -            1.6e-31  110.7   2.6   2.2e-31  110.3   2.6   1.1   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit beta [GCA_001244405]
+FHGMODCP_01394       -          NrdF                 -            5.9e-30  105.6   0.6   2.1e-16   61.1   0.1   2.0   2   0   0   2   2   2   2 Ribonucleoside-diphosphate reductase 1 subunit beta [GCA_000009105]
+GILLGKDK_00167       -          NrdF                 -              3e-29  103.3   4.1   4.2e-16   60.1   0.2   2.1   1   1   0   2   2   2   2 Ribonucleoside-diphosphate reductase 1 subunit beta [GCA_000007725]
+NHJCJKCG_00906       -          NrdF                 -            2.9e-28  100.0   0.9   6.9e-16   59.3   0.1   2.1   2   0   0   2   2   2   2 Ribonucleoside-diphosphate reductase 1 subunit beta [GCA_000007745]
+CKODLGHM_02541       -          NrdF                 -            3.7e-25   89.8   0.1     5e-25   89.4   0.1   1.1   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit beta [GCA_001545115]
+EBMHHDFG_02853       -          NrdF                 -            8.8e-24   85.3   0.1     4e-14   53.6   0.0   2.0   2   0   0   2   2   2   2 Ribonucleoside-diphosphate reductase subunit beta [GCA_000009125]
+OJPPLLDI_02542       -          NrdF                 -            4.2e-23   83.0   0.1   1.9e-13   51.3   0.0   2.0   2   0   0   2   2   2   2 Ribonucleoside-diphosphate reductase subunit beta [GCA_000009145]
+GILLGKDK_00248       -          NrdF                 -               0.24   11.6   0.2      0.36   11.0   0.2   1.2   1   0   0   1   1   1   0 hypothetical protein [GCA_000007725]
+#
+# Program:         hmmsearch
+# Version:         3.3 (Nov 2019)
+# Pipeline mode:   SEARCH
+# Query file:      NrdF.hmm
+# Target file:     all_genomes.faa
+# Option settings: hmmsearch --tblout NrdF.tblout --domtblout NrdF.domtblout NrdF.hmm all_genomes.faa 
+# Current dir:     /home/dl/dev/pfitmap-nextflow/work/50/fc301d78672e4d406f5b1792f15f4b
+# Date:            Thu Apr 23 17:13:48 2020
+# [ok]
