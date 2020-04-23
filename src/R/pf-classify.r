@@ -10,7 +10,7 @@ suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 
-SCRIPT_VERSION = "1.9.0"
+SCRIPT_VERSION = "1.9.1"
 
 # Get arguments
 option_list <- list(
@@ -20,15 +20,9 @@ option_list <- list(
   make_option(
     c('--fuzzy_factor'), type = 'integer', default = 1, action = 'store', help = 'Factor to make lengths fuzzy for reduction of possible duplicates, default %default.'
   ),
-###  make_option(
-###    c('--gtdbannotindex'), default = '', help = 'A tsv file (without header) with GTDB genome accession (in GenBank format, i.e. without e.g. "RS_") and gene accessions.',
-###  ),
   make_option(
     c('--gtdbmetadata'), default = '', help = 'A concatenation of the bacterial (bac120_metadata.tsv) and archaeal (ar122_metadata.tsv) metadata files from GTDB. Make sure there is *only one header* line.',
   ),
-###  make_option(
-###    c('--gtdbtaxonomy'), default = '', help = 'A concatenation of the bacterial (bac120_taxonomy.tsv) and archaeal (ar122_taxonomy.tsv) taxonomy files from GTDB. These files *do not have headers*.',
-###  ),
   make_option(
     c('--hmm_mincov'), type = 'double', default = 0.0, action = 'store', help = 'Minimum coverage of hmm profile to include in output, default %default.'
   ),
@@ -72,7 +66,7 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
 
 # Args list for testing:
 # NCBI: opt = list(args = c('pf-classify.00.d/GRX.ncbi_nr.test.domtblout', 'pf-classify.00.d/GRX.ncbi_nr.test.tblout', 'pf-classify.00.d/NrdAe.tblout','pf-classify.00.d/NrdAg.tblout','pf-classify.00.d/NrdAh.tblout','pf-classify.00.d/NrdAi.tblout','pf-classify.00.d/NrdAk.tblout','pf-classify.00.d/NrdAm.tblout','pf-classify.00.d/NrdAn.tblout','pf-classify.00.d/NrdAq.tblout','pf-classify.00.d/NrdA.tblout','pf-classify.00.d/NrdAz3.tblout','pf-classify.00.d/NrdAz4.tblout','pf-classify.00.d/NrdAz.tblout','pf-classify.00.d/NrdAe.domtblout','pf-classify.00.d/NrdAg.domtblout','pf-classify.00.d/NrdAh.domtblout','pf-classify.00.d/NrdAi.domtblout','pf-classify.00.d/NrdAk.domtblout','pf-classify.00.d/NrdAm.domtblout','pf-classify.00.d/NrdAn.domtblout','pf-classify.00.d/NrdAq.domtblout','pf-classify.00.d/NrdA.domtblout','pf-classify.00.d/NrdAz3.domtblout','pf-classify.00.d/NrdAz4.domtblout','pf-classify.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
-# GTDB: opt = list(args = c('pf-classify.gtdb.00.d/NrdA.domtblout', 'pf-classify.gtdb.00.d/NrdAe.domtblout', 'pf-classify.gtdb.00.d/NrdAe.tblout', 'pf-classify.gtdb.00.d/NrdAg.domtblout', 'pf-classify.gtdb.00.d/NrdAg.tblout', 'pf-classify.gtdb.00.d/NrdAh.domtblout', 'pf-classify.gtdb.00.d/NrdAh.tblout', 'pf-classify.gtdb.00.d/NrdAi.domtblout', 'pf-classify.gtdb.00.d/NrdAi.tblout', 'pf-classify.gtdb.00.d/NrdA.tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbannotindex='pf-classify.gtdb.00.d/gtdb_prokka_index.tsv.gz', gtdbmetadata='pf-classify.gtdb.00.d/gtdb_metadata.tsv', gtdbtaxonomy='pf-classify.gtdb.00.d/gtdb_taxonomy.tsv'))
+# GTDB: opt = list(args = c('pf-classify.gtdb.02.d/NrdA.domtblout', 'pf-classify.gtdb.02.d/NrdAe.domtblout', 'pf-classify.gtdb.02.d/NrdAe.tblout', 'pf-classify.gtdb.02.d/NrdAg.domtblout', 'pf-classify.gtdb.02.d/NrdAg.tblout', 'pf-classify.gtdb.02.d/NrdAi.domtblout', 'pf-classify.gtdb.02.d/NrdAi.tblout', 'pf-classify.gtdb.02.d/NrdA.tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.02.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbannotindex='pf-classify.gtdb.02.d/gtdb_prokka_index.tsv.gz', gtdbmetadata='pf-classify.gtdb.02.d/gtdb_metadata.tsv', gtdbtaxonomy='pf-classify.gtdb.02.d/gtdb_taxonomy.tsv'))
 DEBUG   = 0
 INFO    = 1
 WARNING = 2

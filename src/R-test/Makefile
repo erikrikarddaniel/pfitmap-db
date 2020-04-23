@@ -16,7 +16,7 @@ clean:
 
 all.sqlite: pf-classify.02 pf-classify.03 pf-classify.04
 
-pf-classify.gtdb: pf-classify.gtdb.00 pf-classify.gtdb.01
+pf-classify.gtdb: pf-classify.gtdb.00 pf-classify.gtdb.01 pf-classify.gtdb.02
 
 pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06 pf-classify.07 pf-classify.08 pf-classify.gtdb
 
@@ -37,6 +37,12 @@ pf-classify.gtdb.00:
 	@$(CHECK)
 
 pf-classify.gtdb.01:
+	@rm -f $@.sqlite3
+	../R/pf-classify.r --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --sqlitedb=$@.sqlite3 --gtdbmetadata=$@.d/gtdb_metadata.tsv $@.d/*.tblout $@.d/*.domtblout
+	@$(SQLITE_SELECT_GTDB_CLASSIFICATION)
+	@$(CHECK)
+
+pf-classify.gtdb.02:
 	@rm -f $@.sqlite3
 	../R/pf-classify.r --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --sqlitedb=$@.sqlite3 --gtdbmetadata=$@.d/gtdb_metadata.tsv $@.d/*.tblout $@.d/*.domtblout
 	@$(SQLITE_SELECT_GTDB_CLASSIFICATION)

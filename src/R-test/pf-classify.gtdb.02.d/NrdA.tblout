@@ -1,0 +1,32 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+CKODLGHM_02542       -          NrdA                 -           1.7e-232  773.9   0.0  2.3e-232  773.5   0.0   1.1   1   0   0   1   1   1   1 hypothetical protein
+OJPPLLDI_02543       -          NrdA                 -           1.6e-228  760.8   0.0  1.3e-226  754.6   0.0   2.4   1   1   0   1   1   1   1 hypothetical protein
+EBMHHDFG_02854       -          NrdA                 -           3.3e-225  749.9   0.0  1.1e-223  744.9   0.0   2.2   1   1   0   1   1   1   1 hypothetical protein
+PAPHBKOD_02415       -          NrdA                 -             8e-191  636.4   0.0   1.2e-94  319.0   0.0   2.4   2   0   0   2   2   2   2 Ribonucleoside-diphosphate reductase 1 subunit alpha
+NGOGMLFJ_04158       -          NrdA                 -           1.4e-172  576.2   0.9   2.3e-89  301.5   0.0   3.3   2   2   0   2   2   2   2 Ribonucleoside-diphosphate reductase subunit alpha
+BHDKMOOB_00467       -          NrdA                 -           2.3e-158  529.3   3.3  2.7e-155  519.2   3.3   3.4   1   1   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha 2
+NHJCJKCG_00931       -          NrdA                 -           1.9e-153  513.1   0.0    1e-152  510.6   0.0   1.9   1   1   0   1   1   1   1 Ribonucleoside-diphosphate reductase 1 subunit alpha
+FHGMODCP_01397       -          NrdA                 -           2.9e-150  502.5   0.0  2.2e-149  499.6   0.0   2.0   1   1   0   1   1   1   1 Ribonucleoside-diphosphate reductase 1 subunit alpha
+GILLGKDK_00168       -          NrdA                 -           5.4e-149  498.3   0.7    3e-148  495.9   0.7   1.9   1   1   0   1   1   1   1 Ribonucleoside-diphosphate reductase 1 subunit alpha
+KEOFIFCG_00615       -          NrdA                 -           2.9e-115  387.0   0.0  3.9e-115  386.6   0.0   1.1   1   0   0   1   1   1   1 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+AAJJOOCP_01555       -          NrdA                 -           3.6e-114  383.4   0.0  8.2e-114  382.2   0.0   1.5   1   1   0   1   1   1   1 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+KEOFIFCG_00085       -          NrdA                 -           1.5e-101  341.8   0.0  2.2e-101  341.2   0.0   1.2   1   0   0   1   1   1   1 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+BFHDIKLF_01381       -          NrdA                 -             5e-101  340.0   0.0  3.1e-100  337.4   0.0   2.0   1   1   0   1   1   1   1 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+FBOAFKLH_00488       -          NrdA                 -            1.1e-98  332.2   0.0   1.7e-97  328.3   0.0   2.4   1   1   0   1   1   1   1 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+FHGKEOLE_01260       -          NrdA                 -              2e-97  328.1   0.0   6.4e-97  326.4   0.0   1.8   1   1   0   1   1   1   1 hypothetical protein
+MGLECCPO_00316       -          NrdA                 -            1.1e-88  299.3   0.0   4.4e-88  297.3   0.0   1.9   1   1   0   1   1   1   1 hypothetical protein
+EBMHHDFG_00198       -          NrdA                 -            1.1e-61  210.2   0.0   3.9e-61  208.3   0.0   1.7   1   1   0   1   1   1   1 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+JBKLNOKJ_02087       -          NrdA                 -            1.8e-60  206.1   1.5   5.9e-27   95.5   0.0   5.1   4   1   0   4   4   4   4 hypothetical protein
+MGLECCPO_00637       -          NrdA                 -               0.15   11.7   0.1      0.16   11.5   0.1   1.1   1   0   0   1   1   1   0 hypothetical protein
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      NrdA.hmm
+# Target file:     all_genomes.faa
+# Option settings: hmmsearch --tblout NrdA.tblout --domtblout NrdA.domtblout NrdA.hmm all_genomes.faa 
+# Current dir:     /home/dl/dev/pfitmap-nextflow/work/93/ec0da8c69591394bf5465a1792bd3a
+# Date:            Thu Apr 23 15:28:12 2020
+# [ok]

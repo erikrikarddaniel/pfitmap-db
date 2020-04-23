@@ -1,0 +1,60 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+OJPPLLDI_02543       -            955 NrdAz                -            707         0 1296.7   0.6   1   1         0         0 1295.6   0.6     2   707   234   955   233   955 0.97 hypothetical protein
+EBMHHDFG_02854       -            987 NrdAz                -            707         0 1293.0   0.1   1   1         0         0 1292.6   0.1     2   694   234   932   233   940 0.99 hypothetical protein
+CKODLGHM_02542       -            792 NrdAz                -            707  3.8e-199  664.4   0.0   1   1  2.6e-202  5.8e-199  663.8   0.0    45   687   127   754    99   773 0.96 hypothetical protein
+PAPHBKOD_02415       -            844 NrdAz                -            707  4.8e-139  465.7   2.5   1   3   1.4e-84   3.1e-81  274.7   0.0    27   364   204   546   177   549 0.89 Ribonucleoside-diphosphate reductase 1 subunit alpha
+PAPHBKOD_02415       -            844 NrdAz                -            707  4.8e-139  465.7   2.5   2   3   2.8e-43   6.2e-40  138.1   0.0   358   563   563   751   557   766 0.90 Ribonucleoside-diphosphate reductase 1 subunit alpha
+PAPHBKOD_02415       -            844 NrdAz                -            707  4.8e-139  465.7   2.5   3   3   1.5e-16   3.3e-13   49.8   0.3   612   676   769   834   754   843 0.89 Ribonucleoside-diphosphate reductase 1 subunit alpha
+NGOGMLFJ_04158       -            832 NrdAz                -            707  1.9e-138  463.8   3.5   1   2  1.1e-127  2.5e-124  417.1   0.5    39   558   187   733   160   738 0.86 Ribonucleoside-diphosphate reductase subunit alpha
+NGOGMLFJ_04158       -            832 NrdAz                -            707  1.9e-138  463.8   3.5   2   2   2.1e-14   4.7e-11   42.7   0.1   614   674   759   820   754   828 0.91 Ribonucleoside-diphosphate reductase subunit alpha
+AAJJOOCP_01555       -            572 NrdAz                -            707   5.2e-97  326.8   0.0   1   3   9.3e-40   2.1e-36  126.5   0.0    57   273    20   239     5   244 0.89 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+AAJJOOCP_01555       -            572 NrdAz                -            707   5.2e-97  326.8   0.0   2   3   1.8e-37     4e-34  118.9   0.0   307   486   246   427   240   431 0.93 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+AAJJOOCP_01555       -            572 NrdAz                -            707   5.2e-97  326.8   0.0   3   3   2.1e-25   4.8e-22   79.0   0.0   524   664   429   570   423   572 0.92 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+FHGMODCP_01397       -            759 NrdAz                -            707     8e-93  313.0   0.0   1   2   8.7e-93   1.9e-89  301.8   0.0    37   562   121   649    95   658 0.90 Ribonucleoside-diphosphate reductase 1 subunit alpha
+FHGMODCP_01397       -            759 NrdAz                -            707     8e-93  313.0   0.0   2   2   0.00017      0.38    9.9   0.0   596   678   651   741   644   758 0.74 Ribonucleoside-diphosphate reductase 1 subunit alpha
+GILLGKDK_00168       -            761 NrdAz                -            707   1.3e-91  308.9   0.7   1   2   1.7e-90   3.9e-87  294.2   0.0    18   562    96   647    80   657 0.88 Ribonucleoside-diphosphate reductase 1 subunit alpha
+GILLGKDK_00168       -            761 NrdAz                -            707   1.3e-91  308.9   0.7   2   2   7.2e-06     0.016   14.5   0.1   596   689   649   751   639   761 0.69 Ribonucleoside-diphosphate reductase 1 subunit alpha
+NHJCJKCG_00931       -            756 NrdAz                -            707   4.4e-89  300.6   0.0   1   2   8.1e-91   1.8e-87  295.3   0.0    23   570   105   655    87   677 0.88 Ribonucleoside-diphosphate reductase 1 subunit alpha
+NHJCJKCG_00931       -            756 NrdAz                -            707   4.4e-89  300.6   0.0   2   2    0.0076        17    4.5   0.1   597   675   650   736   647   750 0.67 Ribonucleoside-diphosphate reductase 1 subunit alpha
+KEOFIFCG_00615       -            606 NrdAz                -            707   2.2e-86  291.6   0.0   1   2     5e-24   1.1e-20   74.5   0.0   117   234     4   121     1   134 0.96 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+KEOFIFCG_00615       -            606 NrdAz                -            707   2.2e-86  291.6   0.0   2   2   1.5e-66   3.4e-63  215.0   0.0   303   673   159   522   139   552 0.92 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+BFHDIKLF_01381       -            634 NrdAz                -            707   8.1e-85  286.5   0.0   1   3   7.7e-34   1.7e-30  106.9   0.0    67   238    46   222    33   254 0.90 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+BFHDIKLF_01381       -            634 NrdAz                -            707   8.1e-85  286.5   0.0   2   3   8.5e-36   1.9e-32  113.4   0.0   305   481   258   429   251   432 0.94 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+BFHDIKLF_01381       -            634 NrdAz                -            707   8.1e-85  286.5   0.0   3   3   1.2e-20   2.7e-17   63.3   0.0   520   667   430   577   425   588 0.86 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+KEOFIFCG_00085       -            619 NrdAz                -            707   5.9e-84  283.6   0.0   1   4     0.061   1.4e+02    1.5   0.0    62   101    10    50     2    53 0.85 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+KEOFIFCG_00085       -            619 NrdAz                -            707   5.9e-84  283.6   0.0   2   4   2.2e-30     5e-27   95.5   0.0    96   238    81   221    52   253 0.89 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+KEOFIFCG_00085       -            619 NrdAz                -            707   5.9e-84  283.6   0.0   3   4   1.4e-32   3.2e-29  102.7   0.0   303   485   256   435   228   439 0.90 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+KEOFIFCG_00085       -            619 NrdAz                -            707   5.9e-84  283.6   0.0   4   4   2.1e-25   4.7e-22   79.0   0.0   524   673   445   595   439   614 0.91 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+FBOAFKLH_00488       -            532 NrdAz                -            707   5.1e-81  273.9   0.0   1   4   1.3e-33   2.9e-30  106.2   0.0   104   238    40   174    23   207 0.91 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+FBOAFKLH_00488       -            532 NrdAz                -            707   5.1e-81  273.9   0.0   2   4   1.9e-40   4.3e-37  128.7   0.0   304   483   208   384   198   387 0.96 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+FBOAFKLH_00488       -            532 NrdAz                -            707   5.1e-81  273.9   0.0   3   4   4.2e-07   0.00093   18.6   0.1   524   577   386   438   382   449 0.80 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+FBOAFKLH_00488       -            532 NrdAz                -            707   5.1e-81  273.9   0.0   4   4   1.7e-06    0.0039   16.5   0.0   611   673   450   515   442   521 0.84 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+FHGKEOLE_01260       -            827 NrdAz                -            707   6.1e-79  267.1   0.1   1   3   2.6e-33   5.8e-30  105.2   0.0   106   273   119   282    81   288 0.92 hypothetical protein
+FHGKEOLE_01260       -            827 NrdAz                -            707   6.1e-79  267.1   0.1   2   3     3e-38   6.8e-35  121.5   0.0   306   486   288   469   282   479 0.92 hypothetical protein
+FHGKEOLE_01260       -            827 NrdAz                -            707   6.1e-79  267.1   0.1   3   3   1.3e-12     3e-09   36.7   0.1   527   672   481   645   474   667 0.83 hypothetical protein
+BHDKMOOB_00467       -            719 NrdAz                -            707   1.2e-77  262.8   0.7   1   2   1.9e-74   4.3e-71  241.1   0.1    22   554    51   598    31   603 0.85 Ribonucleoside-diphosphate reductase subunit alpha 2
+BHDKMOOB_00467       -            719 NrdAz                -            707   1.2e-77  262.8   0.7   2   2   1.5e-07   0.00032   20.1   0.1   612   678   626   706   616   717 0.76 Ribonucleoside-diphosphate reductase subunit alpha 2
+MGLECCPO_00316       -            813 NrdAz                -            707     2e-65  222.4   0.0   1   3   6.3e-32   1.4e-28  100.6   0.0   105   274    94   259    85   264 0.95 hypothetical protein
+MGLECCPO_00316       -            813 NrdAz                -            707     2e-65  222.4   0.0   2   3     1e-30   2.2e-27   96.6   0.0   306   483   264   439   259   443 0.95 hypothetical protein
+MGLECCPO_00316       -            813 NrdAz                -            707     2e-65  222.4   0.0   3   3   4.7e-08    0.0001   21.7   0.0   525   671   447   610   441   634 0.73 hypothetical protein
+JBKLNOKJ_02087       -           1909 NrdAz                -            707   1.6e-43  150.0   5.7   1   5   2.9e-11   6.5e-08   32.3   0.1   104   161   142   199   135   204 0.92 hypothetical protein
+JBKLNOKJ_02087       -           1909 NrdAz                -            707   1.6e-43  150.0   5.7   2   5   3.6e-09     8e-06   25.4   0.0   152   234   602   680   581   685 0.84 hypothetical protein
+JBKLNOKJ_02087       -           1909 NrdAz                -            707   1.6e-43  150.0   5.7   3   5   2.5e-07   0.00057   19.3   0.0   247   377   735   862   730   870 0.78 hypothetical protein
+JBKLNOKJ_02087       -           1909 NrdAz                -            707   1.6e-43  150.0   5.7   4   5     4e-19   8.9e-16   58.3   0.1   377   484   891   998   880  1003 0.96 hypothetical protein
+JBKLNOKJ_02087       -           1909 NrdAz                -            707   1.6e-43  150.0   5.7   5   5     3e-05     0.066   12.4   0.0   539   694  1475  1642  1461  1653 0.72 hypothetical protein
+EBMHHDFG_00198       -            617 NrdAz                -            707   6.4e-41  141.4   0.0   1   3   4.5e-36     1e-32  114.3   0.0    67   480    30   436    18   449 0.87 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+EBMHHDFG_00198       -            617 NrdAz                -            707   6.4e-41  141.4   0.0   2   3   3.3e-07   0.00075   18.9   0.0   516   558   452   496   448   500 0.88 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+EBMHHDFG_00198       -            617 NrdAz                -            707   6.4e-41  141.4   0.0   3   3     0.012        26    3.9   0.0   611   674   532   596   522   607 0.87 Vitamin B12-dependent ribonucleoside-diphosphate reductase
+PAPHBKOD_02214       -            139 NrdAz                -            707      0.14   11.3   0.7   1   1   7.8e-05      0.17   11.0   0.7   347   404    79   135    66   138 0.88 hypothetical protein
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      NrdAz.hmm
+# Target file:     all_genomes.faa
+# Option settings: hmmsearch --tblout NrdAz.tblout --domtblout NrdAz.domtblout NrdAz.hmm all_genomes.faa 
+# Current dir:     /home/dl/dev/pfitmap-nextflow/work/05/bc8afbd36c6d32e75c8c5e9ec2468d
+# Date:            Thu Apr 23 15:28:12 2020
+# [ok]
