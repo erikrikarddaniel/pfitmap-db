@@ -66,7 +66,7 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
 
 # Args list for testing:
 # NCBI: opt = list(args = c('pf-classify.00.d/GRX.ncbi_nr.test.domtblout', 'pf-classify.00.d/GRX.ncbi_nr.test.tblout', 'pf-classify.00.d/NrdAe.tblout','pf-classify.00.d/NrdAg.tblout','pf-classify.00.d/NrdAh.tblout','pf-classify.00.d/NrdAi.tblout','pf-classify.00.d/NrdAk.tblout','pf-classify.00.d/NrdAm.tblout','pf-classify.00.d/NrdAn.tblout','pf-classify.00.d/NrdAq.tblout','pf-classify.00.d/NrdA.tblout','pf-classify.00.d/NrdAz3.tblout','pf-classify.00.d/NrdAz4.tblout','pf-classify.00.d/NrdAz.tblout','pf-classify.00.d/NrdAe.domtblout','pf-classify.00.d/NrdAg.domtblout','pf-classify.00.d/NrdAh.domtblout','pf-classify.00.d/NrdAi.domtblout','pf-classify.00.d/NrdAk.domtblout','pf-classify.00.d/NrdAm.domtblout','pf-classify.00.d/NrdAn.domtblout','pf-classify.00.d/NrdAq.domtblout','pf-classify.00.d/NrdA.domtblout','pf-classify.00.d/NrdAz3.domtblout','pf-classify.00.d/NrdAz4.domtblout','pf-classify.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
-# GTDB: opt = list(args = c('pf-classify.gtdb.02.d/NrdA.domtblout', 'pf-classify.gtdb.02.d/NrdAe.domtblout', 'pf-classify.gtdb.02.d/NrdAe.tblout', 'pf-classify.gtdb.02.d/NrdAg.domtblout', 'pf-classify.gtdb.02.d/NrdAg.tblout', 'pf-classify.gtdb.02.d/NrdAi.domtblout', 'pf-classify.gtdb.02.d/NrdAi.tblout', 'pf-classify.gtdb.02.d/NrdA.tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.02.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbannotindex='pf-classify.gtdb.02.d/gtdb_prokka_index.tsv.gz', gtdbmetadata='pf-classify.gtdb.02.d/gtdb_metadata.tsv', gtdbtaxonomy='pf-classify.gtdb.02.d/gtdb_taxonomy.tsv'))
+# GTDB: opt = list(args = c('pf-classify.gtdb.02.d/NrdA.domtblout', 'pf-classify.gtdb.02.d/NrdAe.domtblout', 'pf-classify.gtdb.02.d/NrdAe.tblout', 'pf-classify.gtdb.02.d/NrdAg.domtblout', 'pf-classify.gtdb.02.d/NrdAg.tblout', 'pf-classify.gtdb.02.d/NrdAh.domtblout', 'pf-classify.gtdb.02.d/NrdAh.tblout', 'pf-classify.gtdb.02.d/NrdAi.domtblout', 'pf-classify.gtdb.02.d/NrdAi.tblout', 'pf-classify.gtdb.02.d/NrdAk.domtblout', 'pf-classify.gtdb.02.d/NrdAk.tblout', 'pf-classify.gtdb.02.d/NrdAn.domtblout', 'pf-classify.gtdb.02.d/NrdAn.tblout', 'pf-classify.gtdb.02.d/NrdA.tblout', 'pf-classify.gtdb.02.d/NrdAz.domtblout', 'pf-classify.gtdb.02.d/NrdAz.tblout', 'pf-classify.gtdb.02.d/NrdF.domtblout', 'pf-classify.gtdb.02.d/NrdF.tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.02.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbannotindex='pf-classify.gtdb.02.d/gtdb_prokka_index.tsv.gz', gtdbmetadata='pf-classify.gtdb.02.d/gtdb_metadata.tsv', gtdbtaxonomy='pf-classify.gtdb.02.d/gtdb_taxonomy.tsv'))
 DEBUG   = 0
 INFO    = 1
 WARNING = 2
@@ -423,7 +423,6 @@ tblout <- tblout %>% semi_join(accessions %>% distinct(accno), by = 'accno')
 domtblout <- domtblout %>% semi_join(accessions %>% distinct(accno), by = 'accno')
 
 # If we were called with the singletable option, prepare data suitable for that
-#if ( length(grep('singletable', names(opt$options), value = TRUE)) > 0 ) {
 if ( opt$options$singletable > '' ) {
   logmsg("Writing single table format")
 
@@ -470,7 +469,6 @@ if ( opt$options$singletable > '' ) {
       )
   }
 }
-
 
 # If the user specified a filename for a SQLite database, write that here
 if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length(opt$options$sqlitedb) > 0 ) {
@@ -525,8 +523,11 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
   if ( gtdb ) {
     con %>% copy_to(
       union(
-        gtdbtaxonomy %>% semi_join(accessions, by = c('accno0' = 'genome_accno')) %>% select(-accno1) %>% rename(genome_accno = accno0),
-        gtdbtaxonomy %>% anti_join(accessions, by = c('accno0' = 'genome_accno')) %>% select(-accno0) %>% rename(genome_accno = accno1)
+        gtdbtaxonomy %>% semi_join(accessions, by = c('accno0' = 'genome_accno')) %>% 
+          select(-accno1) %>% rename(genome_accno = accno0),
+        gtdbtaxonomy %>% anti_join(accessions, by = c('accno0' = 'genome_accno')) %>% 
+          mutate(genome_accno = ifelse(accno1 == 'none', accno0, accno1)) %>%
+          select(-accno0, -accno1)
       ),
       'taxa', temporary = FALSE, overwrite = TRUE
     )
