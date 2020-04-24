@@ -106,7 +106,9 @@ UBA10106|none|Archaea|Nanoarchaeota|Nanoarchaeia|Pacearchaeales|UBA12030|UBA1203
 UBA10107|none|Archaea|Nanoarchaeota|Nanoarchaeia|Woesearchaeales|UBA10107|UBA10107|UBA10107 sp10107u|species
 UBA10111|none|Archaea|Nanoarchaeota|Nanoarchaeia|Woesearchaeales|GW2011-AR4|GW2011-AR11|GW2011-AR11 sp12027u|species
 UBA10127|none|Archaea|Nanoarchaeota|Nanoarchaeia|Pacearchaeales|GW2011-AR1|GW2011-AR13|GW2011-AR13 sp9966u|species
-none|none|Archaea|Nanoarchaeota|Nanoarchaeia|Pacearchaeales|UBA12030|UBA12030|UBA12030 sp10106u|species
+UBA10186|none|Archaea|Nanoarchaeota|Nanoarchaeia|Pacearchaeales|UBA12030|UBA12030|UBA12030 sp10106u|species
+UBA12030|none|Archaea|Nanoarchaeota|Nanoarchaeia|Pacearchaeales|UBA12030|UBA12030|UBA12030 sp10106u|species
+UBA12055|none|Archaea|Nanoarchaeota|Nanoarchaeia|Pacearchaeales|UBA12030|UBA12030|UBA12030 sp10106u|species
 --> dbsources <--
 GTDB|GTDB|RS89
 --> domains <--
