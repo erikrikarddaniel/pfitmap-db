@@ -10,7 +10,7 @@ suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 
-SCRIPT_VERSION = "1.9.1"
+SCRIPT_VERSION = "1.9.2"
 
 # Get arguments
 option_list <- list(
@@ -28,6 +28,9 @@ option_list <- list(
   ),
   make_option(
   c('--profilehierarchies'), default='', help='A tsv file with profile hiearchies, including a header. Required fields: profile and plen, recommended psuperfamily, pfamily pclass, psubclass, pgroup, prank and version.'
+  ),
+  make_option(
+    c('--seqfaa'), default='', help='Fasta file with amino acid sequences, same as the one used as database when hmmsearching. Will populate a sequence table if --sqlitedb is set.',
   ),
   make_option(
     c('--singletable'), default='', help='Write data in a single tsv format to this filename.'
@@ -66,7 +69,7 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
 
 # Args list for testing:
 # NCBI: opt = list(args = c('pf-classify.00.d/GRX.ncbi_nr.test.domtblout', 'pf-classify.00.d/GRX.ncbi_nr.test.tblout', 'pf-classify.00.d/NrdAe.tblout','pf-classify.00.d/NrdAg.tblout','pf-classify.00.d/NrdAh.tblout','pf-classify.00.d/NrdAi.tblout','pf-classify.00.d/NrdAk.tblout','pf-classify.00.d/NrdAm.tblout','pf-classify.00.d/NrdAn.tblout','pf-classify.00.d/NrdAq.tblout','pf-classify.00.d/NrdA.tblout','pf-classify.00.d/NrdAz3.tblout','pf-classify.00.d/NrdAz4.tblout','pf-classify.00.d/NrdAz.tblout','pf-classify.00.d/NrdAe.domtblout','pf-classify.00.d/NrdAg.domtblout','pf-classify.00.d/NrdAh.domtblout','pf-classify.00.d/NrdAi.domtblout','pf-classify.00.d/NrdAk.domtblout','pf-classify.00.d/NrdAm.domtblout','pf-classify.00.d/NrdAn.domtblout','pf-classify.00.d/NrdAq.domtblout','pf-classify.00.d/NrdA.domtblout','pf-classify.00.d/NrdAz3.domtblout','pf-classify.00.d/NrdAz4.domtblout','pf-classify.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
-# GTDB: opt = list(args = c('pf-classify.gtdb.02.d/NrdA.domtblout', 'pf-classify.gtdb.02.d/NrdAe.domtblout', 'pf-classify.gtdb.02.d/NrdAe.tblout', 'pf-classify.gtdb.02.d/NrdAg.domtblout', 'pf-classify.gtdb.02.d/NrdAg.tblout', 'pf-classify.gtdb.02.d/NrdAh.domtblout', 'pf-classify.gtdb.02.d/NrdAh.tblout', 'pf-classify.gtdb.02.d/NrdAi.domtblout', 'pf-classify.gtdb.02.d/NrdAi.tblout', 'pf-classify.gtdb.02.d/NrdAk.domtblout', 'pf-classify.gtdb.02.d/NrdAk.tblout', 'pf-classify.gtdb.02.d/NrdAn.domtblout', 'pf-classify.gtdb.02.d/NrdAn.tblout', 'pf-classify.gtdb.02.d/NrdA.tblout', 'pf-classify.gtdb.02.d/NrdAz.domtblout', 'pf-classify.gtdb.02.d/NrdAz.tblout', 'pf-classify.gtdb.02.d/NrdF.domtblout', 'pf-classify.gtdb.02.d/NrdF.tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.02.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbannotindex='pf-classify.gtdb.02.d/gtdb_prokka_index.tsv.gz', gtdbmetadata='pf-classify.gtdb.02.d/gtdb_metadata.tsv', gtdbtaxonomy='pf-classify.gtdb.02.d/gtdb_taxonomy.tsv'))
+# GTDB: opt = list(args = c('pf-classify.gtdb.02.d/NrdA.domtblout', 'pf-classify.gtdb.02.d/NrdAe.domtblout', 'pf-classify.gtdb.02.d/NrdAe.tblout', 'pf-classify.gtdb.02.d/NrdAg.domtblout', 'pf-classify.gtdb.02.d/NrdAg.tblout', 'pf-classify.gtdb.02.d/NrdAh.domtblout', 'pf-classify.gtdb.02.d/NrdAh.tblout', 'pf-classify.gtdb.02.d/NrdAi.domtblout', 'pf-classify.gtdb.02.d/NrdAi.tblout', 'pf-classify.gtdb.02.d/NrdAk.domtblout', 'pf-classify.gtdb.02.d/NrdAk.tblout', 'pf-classify.gtdb.02.d/NrdAn.domtblout', 'pf-classify.gtdb.02.d/NrdAn.tblout', 'pf-classify.gtdb.02.d/NrdA.tblout', 'pf-classify.gtdb.02.d/NrdAz.domtblout', 'pf-classify.gtdb.02.d/NrdAz.tblout', 'pf-classify.gtdb.02.d/NrdF.domtblout', 'pf-classify.gtdb.02.d/NrdF.tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.02.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbannotindex='pf-classify.gtdb.02.d/gtdb_prokka_index.tsv.gz', gtdbmetadata='pf-classify.gtdb.02.d/gtdb_metadata.tsv', gtdbtaxonomy='pf-classify.gtdb.02.d/gtdb_taxonomy.tsv', seqfaa='pf-classify.gtdb.03.d/genomes.faa'))
 DEBUG   = 0
 INFO    = 1
 WARNING = 2
@@ -564,6 +567,19 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
       'dupfree_proteins',
       temporary = FALSE, overwrite = TRUE
     )
+  }
+
+  if ( opt$options$seqfaa != '' ) {
+    logmsg(sprintf('Reading %s and saving sequences table', opt$options$seqfaa))
+    s <- Biostrings::readAAStringSet(opt$options$seqfaa)
+    s <- tibble(accno = str_remove(names(s), ' .*'), sequence = as.character(s)) %>%
+      distinct()
+    con %>% copy_to(
+      s %>% semi_join(accessions, by = 'accno'),
+      'sequences',
+      temporary = FALSE, overwrite = TRUE
+    )
+    con %>% DBI::dbExecute('CREATE UNIQUE INDEX "sequences.i00" ON "sequences"("accno");')
   }
 
   logmsg('Disconnecting from sqlite3 db')
