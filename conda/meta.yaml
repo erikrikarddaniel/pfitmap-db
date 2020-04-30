@@ -1,4 +1,4 @@
-{% set version = "1.9.2" %}
+{% set version = "1.9.3" %}
 
 package:
   name: pfitmap-db
@@ -18,4 +18,5 @@ requirements:
     - r-optparse
     - r-tidyverse
     - r-feather
+    - r-stringr
     - bioconductor-biostrings
