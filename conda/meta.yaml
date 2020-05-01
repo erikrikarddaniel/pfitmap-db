@@ -18,5 +18,6 @@ requirements:
     - r-optparse
     - r-tidyverse
     - r-feather
+    - r-stringi
     - r-stringr
     - bioconductor-biostrings
