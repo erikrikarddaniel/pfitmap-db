@@ -21,7 +21,7 @@ pf-classify.gtdb: pf-classify.gtdb.00 pf-classify.gtdb.01 pf-classify.gtdb.02 pf
 
 pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06 pf-classify.07 pf-classify.08 pf-classify.gtdb
 
-pf-db2feather.gtdb: pf-db2feather.gtdb.00 pf-db2feather.gtdb.01
+pf-db2feather.gtdb: pf-db2feather.gtdb.00 pf-db2feather.gtdb.01 pf-db2feather.gtdb.02
 
 pf-db2feather: pf-db2feather.00 pf-db2feather.01 pf-db2feather.02 pf-db2feather.03 pf-db2feather.gtdb
 
@@ -138,6 +138,12 @@ pf-db2feather.gtdb.00:
 	@$(CHECK)
 
 pf-db2feather.gtdb.01:
+	@rm -f $@*.feather
+	@../R/pf-db2feather.r --gtdb --verbose --prefix=$@ $@.sqlite3
+	@$(DB2FEATHER_OUT)
+	@$(CHECK)
+
+pf-db2feather.gtdb.02:
 	@rm -f $@*.feather
 	@../R/pf-db2feather.r --gtdb --verbose --prefix=$@ $@.sqlite3
 	@$(DB2FEATHER_OUT)
