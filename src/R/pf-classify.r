@@ -141,7 +141,7 @@ if ( gtdb ) {
   # Delete duplicate taxon, rank combinations belonging in Eukaryota
   taxflat <- taxflat %>%
     anti_join(
-      taxflat %>% group_by(taxon, trank) %>% summarise(n = n()) %>% ungroup() %>% filter(n > 1) %>%
+      taxflat %>% group_by(taxon, trank) %>% summarise(n = n(), .groups = 'drop_last') %>% ungroup() %>% filter(n > 1) %>%
         inner_join(taxflat %>% filter(tdomain == 'Eukaryota'), by = c('taxon', 'trank')),
       by = c('ncbi_taxon_id')
     )
@@ -311,7 +311,7 @@ for ( fs in list(
         nextjoin %>% select(accno, profile, from, to) %>% 
           inner_join(nextjoin %>% select(accno, profile, from, to), by = c('accno', 'profile', 'to')) %>% 
           filter(from.x != from.y) %>% 
-          group_by(accno, profile, to) %>% summarise(from = max(from.x)) %>% ungroup(),
+          group_by(accno, profile, to) %>% summarise(from = max(from.x), .groups = 'drop_last') %>% ungroup(),
         by = c('accno', 'profile', 'from', 'to')
       )
 
@@ -323,7 +323,7 @@ for ( fs in list(
   lengths <- lengths %>%
     union(
       nooverlaps %>% mutate(len = to - from + 1) %>%
-        group_by(accno, profile) %>% summarise(len = sum(len), from = min(from), to = max(to)) %>% ungroup() %>%
+        group_by(accno, profile) %>% summarise(len = sum(len), from = min(from), to = max(to), .groups = 'drop_last') %>% ungroup() %>%
         gather(type, val, len, from, to) %>%
         mutate(
           type = case_when(
@@ -492,7 +492,7 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
     accessions <- accessions %>%
       arrange(db, taxon, accno, accto) %>%
       group_by(db, taxon, accno) %>%
-      summarise(accto = paste(accto, collapse = ',')) %>%
+      summarise(accto = paste(accto, collapse = ','), .groups = 'drop_last') %>%
       ungroup() %>%
       separate_rows(accto, sep = ',') %>%
       distinct()
