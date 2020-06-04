@@ -1,4 +1,4 @@
-{% set version = "1.9.3.2" %}
+{% set version = "1.9.4" %}
 
 package:
   name: pfitmap-db
@@ -13,6 +13,7 @@ requirements:
     - setuptools
 
   run:
+    - r-dplyr >= 1.0.0
     - r-dbplyr
     - r-rsqlite
     - r-optparse

@@ -10,7 +10,7 @@ suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 
-SCRIPT_VERSION = "1.9.2"
+SCRIPT_VERSION = "1.9.4"
 
 # Get arguments
 option_list <- list(
@@ -306,16 +306,18 @@ for ( fs in list(
     
     # 6. Delete rows that are the last in their group of overlaps, they now have
     #   the same "to" as the previous row.
-    nextjoin <- nextjoin %>%
-      anti_join(
-        nextjoin %>% select(accno, profile, from, to) %>% 
-          inner_join(nextjoin %>% select(accno, profile, from, to), by = c('accno', 'profile', 'to')) %>% 
-          filter(from.x != from.y) %>% 
-          group_by(accno, profile, to) %>% summarise(from = max(from.x), .groups = 'drop_last') %>% ungroup(),
-        by = c('accno', 'profile', 'from', 'to')
-      )
+    suppressWarnings( # The max(from.x) causes warnings: "no non-missing arguments to max; returning -Inf"; I can't find any errors
+      nextjoin <- nextjoin %>%
+        anti_join(
+          nextjoin %>% select(accno, profile, from, to) %>% 
+            inner_join(nextjoin %>% select(accno, profile, from, to), by = c('accno', 'profile', 'to')) %>% 
+            filter(from.x != from.y) %>% 
+            group_by(accno, profile, to) %>% summarise(from = max(from.x), .groups = 'drop_last') %>% ungroup(),
+          by = c('accno', 'profile', 'from', 'to')
+        )
+    )
 
-    # 5. Calculate a new domt from nextjoin
+    # 7. Calculate a new domt from nextjoin
     domt <- nextjoin %>% distinct(accno, profile, from, to) %>%
       group_by(accno, profile) %>% mutate(i = rank(from), n = n()) %>% ungroup()
   }
