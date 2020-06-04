@@ -19,7 +19,7 @@ all.sqlite: pf-classify.02 pf-classify.03 pf-classify.04
 
 pf-classify.gtdb: pf-classify.gtdb.00 pf-classify.gtdb.01 pf-classify.gtdb.02 pf-classify.gtdb.03
 
-pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06 pf-classify.07 pf-classify.08 pf-classify.gtdb
+pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06 pf-classify.07 pf-classify.08 pf-classify.09 pf-classify.gtdb
 
 pf-db2feather.gtdb: pf-db2feather.gtdb.00 pf-db2feather.gtdb.01
 
@@ -103,6 +103,11 @@ pf-classify.08:
 	@rm -f $@.sqlite3
 	../R/pf-classify.r --hmm_mincov=0.95 --dbsource NCBI:NR:20180109 --profilehierarchies=$@.phier.tsv --sqlitedb=$@.sqlite3 --taxflat=pf-classify.taxflat.tsv $@.d/*.tblout $@.d/*.domtblout
 	@$(SQLITE_SELECT_CLASSIFICATION)
+	@$(CHECK)
+
+# Check that the script fails when the hmm_profiles table is not unique on profile
+pf-classify.09:
+	( ../R/pf-classify.r --dbsource NCBI:NR:20180109 --profilehierarchies=$@.phier.tsv --singletable=$@.out --taxflat=pf-classify.taxflat.tsv $@.d/*.tblout $@.d/*.domtblout 2>&1 | grep -o 'The profile column in the hmm_profiles table .* needs to be unique' > $@.out )
 	@$(CHECK)
 
 pf-db2feather.00: 

@@ -108,6 +108,12 @@ gtdb <- ifelse(opt$options$gtdbmetadata > '', TRUE, FALSE)
 logmsg(sprintf("Reading profile hierarchies from %s", opt$options$profilehierarchies))
 hmm_profiles <- read_tsv(opt$options$profilehierarchies, col_types = cols(.default=col_character(), plen = col_integer()))
 
+# Check that it's unique on profile
+if ( nrow(hmm_profiles) != nrow(hmm_profiles %>% distinct(profile)) ) {
+  logmsg(sprintf("The profile column in the hmm_profiles table (%s) needs to be unique", opt$options$profilehierarchies), 'ERROR')
+  quit('no', status = 2)
+}
+
 # Read the taxonomy file, in GTDB or NCBI format
 if ( gtdb ) {
   logmsg(sprintf('Reading GTDB metadata from %s', opt$options$gtdbmetadata))
