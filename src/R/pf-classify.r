@@ -5,6 +5,8 @@
 # Author: daniel.lundin@dbb.su.se
 
 suppressPackageStartupMessages(library(optparse))
+suppressPackageStartupMessages(library(data.table))
+suppressPackageStartupMessages(library(dtplyr))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
@@ -68,8 +70,8 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
 }
 
 # Args list for testing:
-# NCBI: opt = list(args = c('pf-classify.00.d/GRX.ncbi_nr.test.domtblout', 'pf-classify.00.d/GRX.ncbi_nr.test.tblout', 'pf-classify.00.d/NrdAe.tblout','pf-classify.00.d/NrdAg.tblout','pf-classify.00.d/NrdAh.tblout','pf-classify.00.d/NrdAi.tblout','pf-classify.00.d/NrdAk.tblout','pf-classify.00.d/NrdAm.tblout','pf-classify.00.d/NrdAn.tblout','pf-classify.00.d/NrdAq.tblout','pf-classify.00.d/NrdA.tblout','pf-classify.00.d/NrdAz3.tblout','pf-classify.00.d/NrdAz4.tblout','pf-classify.00.d/NrdAz.tblout','pf-classify.00.d/NrdAe.domtblout','pf-classify.00.d/NrdAg.domtblout','pf-classify.00.d/NrdAh.domtblout','pf-classify.00.d/NrdAi.domtblout','pf-classify.00.d/NrdAk.domtblout','pf-classify.00.d/NrdAm.domtblout','pf-classify.00.d/NrdAn.domtblout','pf-classify.00.d/NrdAq.domtblout','pf-classify.00.d/NrdA.domtblout','pf-classify.00.d/NrdAz3.domtblout','pf-classify.00.d/NrdAz4.domtblout','pf-classify.00.d/NrdAz.domtblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
-# GTDB: opt = list(args = c('pf-classify.gtdb.02.d/NrdA.domtblout', 'pf-classify.gtdb.02.d/NrdAe.domtblout', 'pf-classify.gtdb.02.d/NrdAe.tblout', 'pf-classify.gtdb.02.d/NrdAg.domtblout', 'pf-classify.gtdb.02.d/NrdAg.tblout', 'pf-classify.gtdb.02.d/NrdAh.domtblout', 'pf-classify.gtdb.02.d/NrdAh.tblout', 'pf-classify.gtdb.02.d/NrdAi.domtblout', 'pf-classify.gtdb.02.d/NrdAi.tblout', 'pf-classify.gtdb.02.d/NrdAk.domtblout', 'pf-classify.gtdb.02.d/NrdAk.tblout', 'pf-classify.gtdb.02.d/NrdAn.domtblout', 'pf-classify.gtdb.02.d/NrdAn.tblout', 'pf-classify.gtdb.02.d/NrdA.tblout', 'pf-classify.gtdb.02.d/NrdAz.domtblout', 'pf-classify.gtdb.02.d/NrdAz.tblout', 'pf-classify.gtdb.02.d/NrdF.domtblout', 'pf-classify.gtdb.02.d/NrdF.tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.02.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbannotindex='pf-classify.gtdb.02.d/gtdb_prokka_index.tsv.gz', gtdbmetadata='pf-classify.gtdb.02.d/gtdb_metadata.tsv', gtdbtaxonomy='pf-classify.gtdb.02.d/gtdb_taxonomy.tsv', seqfaa='pf-classify.gtdb.03.d/genomes.faa'))
+# NCBI: opt = list(args = Sys.glob('pf-classify.00.d/*tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
+# GTDB: opt = list(args = Sys.glob('pf-classify.gtdb.02.d/*tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.02.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbannotindex='pf-classify.gtdb.02.d/gtdb_prokka_index.tsv.gz', gtdbmetadata='pf-classify.gtdb.02.d/gtdb_metadata.tsv', gtdbtaxonomy='pf-classify.gtdb.02.d/gtdb_taxonomy.tsv', seqfaa='pf-classify.gtdb.03.d/genomes.faa'))
 DEBUG   = 0
 INFO    = 1
 WARNING = 2
@@ -106,10 +108,10 @@ if ( length(dbsource) != 3 ) {
 gtdb <- ifelse(opt$options$gtdbmetadata > '', TRUE, FALSE)
 
 logmsg(sprintf("Reading profile hierarchies from %s", opt$options$profilehierarchies))
-hmm_profiles <- read_tsv(opt$options$profilehierarchies, col_types = cols(.default=col_character(), plen = col_integer()))
+hmm_profiles <- fread(opt$options$profilehierarchies)
 
 # Check that it's unique on profile
-if ( nrow(hmm_profiles) != nrow(hmm_profiles %>% distinct(profile)) ) {
+if ( nrow(hmm_profiles) != nrow(unique(hmm_profiles[, .(profile)])) ) {
   logmsg(sprintf("The profile column in the hmm_profiles table (%s) needs to be unique", opt$options$profilehierarchies), 'ERROR')
   quit('no', status = 2)
 }
@@ -117,48 +119,51 @@ if ( nrow(hmm_profiles) != nrow(hmm_profiles %>% distinct(profile)) ) {
 # Read the taxonomy file, in GTDB or NCBI format
 if ( gtdb ) {
   logmsg(sprintf('Reading GTDB metadata from %s', opt$options$gtdbmetadata))
-  gtdbmetadata <- read_tsv(
-    opt$options$gtdbmetadata,
-    col_types = cols(.default = col_character())
-  ) %>%
+  gtdbmetadata <- fread(opt$options$gtdbmetadata) %>%
+    lazy_dt() %>%
     mutate(
       thier = str_remove_all(gtdb_taxonomy, '[a-z]__'), 
     ) %>%
-    separate(thier, c('tdomain', 'tphylum', 'tclass', 'torder', 'tfamily', 'tgenus', 'tspecies'), sep = ';')
-  gtdbtaxonomy <- gtdbmetadata %>%
+    separate(thier, c('tdomain', 'tphylum', 'tclass', 'torder', 'tfamily', 'tgenus', 'tspecies'), sep = ';') %>%
+    as.data.table()
+  gtdbtaxonomy <- lazy_dt(gtdbmetadata) %>%
     mutate(
       accno0 = str_remove(accession, '^RS_') %>% str_remove('^GB_') %>% str_remove('\\.[0-9]'), 
       accno1 = ncbi_genbank_assembly_accession %>% str_remove('\\.[0-9]'),
       trank  = 'species',
       ncbi_taxon_id = ncbi_species_taxid
     ) %>%
-    select(accno0, accno1, tdomain:tspecies, trank, ncbi_taxon_id)
+    select(accno0, accno1, tdomain:tspecies, trank, ncbi_taxon_id) %>%
+    as.data.table()
 } else {
   logmsg(sprintf("Reading NCBI taxonomy from %s", opt$options$taxflat))
-  taxflat <- read_tsv(opt$options$taxflat, col_types=cols(.default=col_character(), ncbi_taxon_id=col_integer())) %>%
+  taxflat <- fread(opt$options$taxflat) %>%
+    lazy_dt() %>%
     transmute(
       ncbi_taxon_id, taxon, trank = rank,
       tdomain       = superkingdom, tkingdom = kingdom,
       tphylum       = phylum,       tclass   = class,
       torder        = order,        tfamily  = family,
       tgenus        = genus,        tspecies = species
-    )
+    ) %>%
+    as.data.table()
 
   # Delete duplicate taxon, rank combinations belonging in Eukaryota
-  taxflat <- taxflat %>%
+  taxflat <- lazy_dt(taxflat) %>%
     anti_join(
-      taxflat %>% group_by(taxon, trank) %>% summarise(n = n(), .groups = 'drop_last') %>% ungroup() %>% filter(n > 1) %>%
-        inner_join(taxflat %>% filter(tdomain == 'Eukaryota'), by = c('taxon', 'trank')),
+      lazy_dt(taxflat) %>% group_by(taxon, trank) %>% summarise(n = n(), .groups = 'drop_last') %>% ungroup() %>% filter(n > 1) %>%
+        inner_join(lazy_dt(taxflat) %>% filter(tdomain == 'Eukaryota'), by = c('taxon', 'trank')),
       by = c('ncbi_taxon_id')
-    )
+    ) %>%
+    as.data.table()
 }
 
 # We will populate two tables, one with the full results, one with accessions
-tblout <- tibble(
+tblout <- data.table(
   accno = character(), profile = character(),
   evalue = double(), score = double(), bias = double()
 )
-accessions <- tibble(accno = character(), accto = character())
+accessions <- data.table(accno = character(), accto = character())
 
 # Read all the tblout files
 for ( tbloutfile in grep('\\.tblout', opt$args, value=TRUE) ) {
@@ -174,13 +179,18 @@ for ( tbloutfile in grep('\\.tblout', opt$args, value=TRUE) ) {
       '\\s+', 
       extra='merge',
       convert = T
-    )
-  tblout <- union(tblout, t %>% select(accno, profile, evalue, score, bias))
-  accessions <- union(accessions, t %>% transmute(accno, accto = sprintf("%s %s", accno, rest)))
+    ) %>%
+    as.data.table()
+  tblout <- funion(tblout, t[, .(accno, profile, evalue, score, bias)])
+  accessions <- funion(
+    accessions, 
+    t[, {  accno <- accno; accto <- sprintf("%s %s", accno, rest); .(accno = accno, accto = accto) }]
+  )
 }
 
-# Split the accto field
-accessions <- accessions %>% separate_rows(accto, sep = '\x01') %>% 
+# Split the accto field (data.table magic I don't understand, see https://stackoverflow.com/questions/13773770/split-comma-separated-strings-in-a-column-into-separate-rows/31514711#31514711)
+accessions <- accessions[, strsplit(accto, "\x01", fixed=TRUE), by = .(accno, accto)][,.(accno, accto = V1)] %>% 
+  lazy_dt() %>%
   mutate(
     taxon = ifelse(
       grepl('[^[]\\[(.*)\\]', accto), 
@@ -188,9 +198,10 @@ accessions <- accessions %>% separate_rows(accto, sep = '\x01') %>%
       'unknown'
     ),
     accto = sub(' .*', '', accto)
-  )
+  ) %>%
+  as.data.table()
 
-domtblout <- tibble(
+domtblout <- data.table(
   accno = character(), tlen = integer(), profile = character(), qlen = integer(), i = integer(), n = integer(), 
   dom_c_evalue = double(), dom_i_evalue = double(), dom_score = double(), dom_bias = double(),
   hmm_from = integer(), hmm_to = integer(), ali_from = integer(), ali_to = integer(), 
@@ -215,14 +226,15 @@ for ( domtbloutfile in grep('\\.domtblout', opt$args, value=TRUE) ) {
       '\\s+', 
       extra='merge',
       convert = T
-    )
+    ) %>%
+    as.data.table()
   
-  domtblout <- union(
+  domtblout <- funion(
     domtblout,
-    t %>% select(
+    t[, .(
       accno, tlen, profile, qlen, i, n, dom_c_evalue, dom_i_evalue, dom_score, dom_bias,
       hmm_from, hmm_to, ali_from, ali_to, env_from, env_to
-    )
+    )]
   )
 }
 
@@ -233,21 +245,24 @@ for ( domtbloutfile in grep('\\.domtblout', opt$args, value=TRUE) ) {
 
 # Define a temporary table that will be filled with lengths, minimum from and maximum
 # to values.
-lengths <- tibble(
+lengths <- data.table(
   accno = character(), profile = character(), type = character(), val = integer()
 )
 
 # Function that joins all with n > 1 with the next row and not occurring in the second
 # table in the call.
-do_nextjoin <- function(dt, no) {
-  dt %>% 
+do_nextjoin <- function(dt) {
+  # Filter dt on n > 1, then join with itself with transmuted column names
+  t <- lazy_dt(dt) %>% 
     filter(n > 1) %>%
     left_join(
-      domt %>% transmute(accno, profile, i = i - 1, next_row = TRUE, next_from = from, next_to = to), 
+      lazy_dt(dt) %>% transmute(accno, profile, i = i - 1, next_row = TRUE, next_from = from, next_to = to), 
       by = c('accno', 'profile', 'i')
     ) %>%
-    replace_na(list('next_row' = FALSE)) %>%
-    return()
+    as.data.table()
+  # Set any NA next_row entries to FALSE (doesn't work through dtplyr)
+  t$next_row = ifelse(is.na(t$next_row), FALSE, TRUE)
+  return(t)
 }
 
 # FOR EACH FROM-TO PAIR:
@@ -260,79 +275,86 @@ for ( fs in list(
 
   # 1. Set from and to to current pair, delete shorter rows with the same start and 
   # calculate i (rownumber) and n (total domains) for each combination of accno and profile
-  domt <- domtblout %>% transmute(accno, profile, from = .data[[fs[1]]], to = .data[[fs[2]]]) 
-  domt <- domt %>% distinct() %>%
+  domt <- domtblout[, .(accno = accno, profile = profile, from = get(fs[1]), to = get(fs[2]))]
+  domt <- lazy_dt(domt) %>% distinct() %>%
     semi_join(
-      domt %>% group_by(accno, profile, from) %>% filter(to == max(to)) %>% ungroup,
+      lazy_dt(domt) %>% group_by(accno, profile, from) %>% filter(to == max(to)) %>% ungroup(),
       by = c('accno', 'profile', 'from', 'to')
     ) %>% 
     arrange(accno, profile, from, to) %>%
-    group_by(accno, profile) %>% mutate(i = row_number(from), n = n()) %>% ungroup()
+    group_by(accno, profile) %>% mutate(i = row_number(from), n = n()) %>% ungroup() %>%
+    as.data.table()
 
   # This is where non-overlapping rows will be stored
-  nooverlaps <- tibble(
+  nooverlaps <- data.table(
     accno = character(), profile = character(),
     from = integer(), to = integer()
   )
 
-  while ( domt %>% nrow() > 0 ) {
+  while ( nrow(domt) > 0 ) {
     logmsg(sprintf("Working on overlaps, nrow: %d", domt %>% nrow()))
     
     # 2. Move rows with n == 1 to nooverlaps
-    nooverlaps <- nooverlaps %>%
-      union(domt %>% filter(n == 1) %>% select(accno, profile, from, to))
-    domt <- domt %>% filter(n > 1)
+    nooverlaps <- funion(nooverlaps, domt[n == 1, .(accno, profile, from, to)])
+    domt <- domt[n > 1]
     
-    nextjoin <- do_nextjoin(domt, nooverlaps)
+    nextjoin <- do_nextjoin(domt)
 
     # As a debug aid, save the domt and nextjoin data sets
     #write_tsv(domt, 'domt.tsv.gz')
     #write_tsv(nextjoin, 'nextjoin.tsv.gz')
   
     # 3. Move rows that do not overlap with the next row
-    nooverlaps <- nooverlaps %>%
-      union(nextjoin %>% filter(to < next_from) %>% select(accno, profile, from, to))
-    nextjoin <- nextjoin %>%
+    nooverlaps <- funion(nooverlaps, nextjoin[to < next_from, .(accno, profile, from, to)])
+    nextjoin <- lazy_dt(nextjoin) %>%
       anti_join(
-        nextjoin %>% filter(to < next_from) %>% select(accno, profile, from, to),
+        lazy_dt(nextjoin) %>% filter(to < next_from) %>% select(accno, profile, from, to),
         by = c('accno', 'profile', 'from', 'to')
-      )
+      ) %>%
+      as.data.table()
     
     # 4. Delete rows which are contained in the earlier row
-    nextjoin <- nextjoin %>%
+    nextjoin <- lazy_dt(nextjoin) %>%
       anti_join(
-        nextjoin %>% filter(from < next_from, to > next_to) %>%
+        lazy_dt(nextjoin) %>% filter(from < next_from, to > next_to) %>%
           transmute(accno, profile, from = next_from, to = next_to),
         by = c('accno', 'profile', 'from', 'to')
-      )
+      ) %>%
+      as.data.table()
     
     # 5. Set a new "to" for those that overlap with the next row
-    nextjoin <- nextjoin %>%
-      mutate(to = ifelse(! is.na(next_from) & to >= next_from & next_to > to, next_to, to))
+    nextjoin <- lazy_dt(nextjoin) %>%
+      mutate(to = ifelse(! is.na(next_from) & to >= next_from & next_to > to, next_to, to)) %>%
+      as.data.table()
     
     # 6. Delete rows that are the last in their group of overlaps, they now have
     #   the same "to" as the previous row.
-    suppressWarnings( # The max(from.x) causes warnings: "no non-missing arguments to max; returning -Inf"; I can't find any errors
-      nextjoin <- nextjoin %>%
+    #suppressWarnings( # The max(from.x) causes warnings: "no non-missing arguments to max; returning -Inf"; I can't find any errors
+      nextjoin <- lazy_dt(nextjoin) %>%
         anti_join(
-          nextjoin %>% select(accno, profile, from, to) %>% 
-            inner_join(nextjoin %>% select(accno, profile, from, to), by = c('accno', 'profile', 'to')) %>% 
+          lazy_dt(nextjoin) %>% select(accno, profile, from, to) %>% 
+            inner_join(lazy_dt(nextjoin) %>% select(accno, profile, from, to), by = c('accno', 'profile', 'to')) %>% 
             filter(from.x != from.y) %>% 
             group_by(accno, profile, to) %>% summarise(from = max(from.x), .groups = 'drop_last') %>% ungroup(),
           by = c('accno', 'profile', 'from', 'to')
-        )
-    )
+        ) %>%
+        as.data.table()
+    #)
 
     # 7. Calculate a new domt from nextjoin
-    domt <- nextjoin %>% distinct(accno, profile, from, to) %>%
-      group_by(accno, profile) %>% mutate(i = rank(from), n = n()) %>% ungroup()
+    if ( nrow(nextjoin) > 0 ) {
+      domt <- lazy_dt(nextjoin) %>% distinct(accno, profile, from, to) %>%
+        group_by(accno, profile) %>% mutate(i = rank(from), n = n()) %>% ungroup() %>%
+        as.data.table()
+    }
   }
   
-  lengths <- lengths %>%
+  # I'm resorting to tibbles here because of the gather buried relatively deep in the pipeline
+  lengths <- as_tibble(lengths) %>%
     union(
-      nooverlaps %>% mutate(len = to - from + 1) %>%
+      as_tibble(nooverlaps) %>% mutate(len = to - from + 1) %>%
         group_by(accno, profile) %>% summarise(len = sum(len), from = min(from), to = max(to), .groups = 'drop_last') %>% ungroup() %>%
-        gather(type, val, len, from, to) %>%
+        gather(type, val, len, from, to) %>% # Change to pivot_longer()!
         mutate(
           type = case_when(
             type == 'len' ~ fs[3],
@@ -340,22 +362,26 @@ for ( fs in list(
             type == 'to'   ~ fs[2]
           )
         )
-    )
+    ) %>%
+    as.data.table()
 }
 
 # Join in the above results with tlen and qlen from domtblout
-align_lengths <- domtblout %>% distinct(accno, profile, tlen, qlen) %>%
-  inner_join(lengths %>% spread(type, val, fill = 0), by = c('accno', 'profile'))
+align_lengths <- lazy_dt(domtblout) %>% 
+  distinct(accno, profile, tlen, qlen) %>%
+  inner_join(as_tibble(lengths) %>% spread(type, val, fill = 0), by = c('accno', 'profile')) %>% as.data.table() %>% lazy_dt() %>%
+  as.data.table()
 
 logmsg("Calculated lengths, inferring source databases from accession numbers")
 
 if ( gtdb ) {
   accessions$db <- 'gtdb'
-  accessions <- accessions %>%
-    transmute(db, genome_accno = str_remove(taxon, '\\..*'), accno)
+  accessions <- lazy_dt(accessions) %>%
+    transmute(db, genome_accno = str_remove(taxon, '\\..*'), accno) %>%
+    as.data.table()
 } else {
   # Infer databases from the structure of accession numbers
-  accessions <- accessions %>%
+  accessions <- lazy_dt(accessions) %>%
     mutate(db = ifelse(grepl('^.._', accto), 'refseq', NA)) %>%
     mutate(db = ifelse((is.na(db) & grepl('^[0-9A-Z]{4,4}_[0-9A-Z]$', accto)), 'pdb', db)) %>%
     mutate(db = ifelse((is.na(db) & grepl('^P[0-9]+\\.[0-9]+$', accto)), 'uniprot', db)) %>%
@@ -364,17 +390,20 @@ if ( gtdb ) {
     mutate(db = ifelse((is.na(db) & grepl('^[A-NR-Z][0-9][A-Z][A-Z0-9][A-Z0-9][0-9]\\.[0-9]+$', accto)), 'uniprot', db)) %>%
     mutate(db = ifelse((is.na(db) & grepl('^[ADEKOJMNP][A-Z][A-Z][0-9]+\\.[0-9]+$', accto)), 'genbank', db)) %>%
     mutate(db = ifelse((is.na(db) & grepl('^[C][A-Z][A-Z][0-9]+\\.[0-9]+$', accto)), 'embl', db)) %>%
-    mutate(db = ifelse((is.na(db) & grepl('^[BFGIL][A-Z][A-Z][0-9]+\\.[0-9]+$', accto)), 'dbj', db))
+    mutate(db = ifelse((is.na(db) & grepl('^[BFGIL][A-Z][A-Z][0-9]+\\.[0-9]+$', accto)), 'dbj', db)) %>%
+    as.data.table()
 }
 
 logmsg("Inferred databases, calculating best scoring profile for each accession")
 
 # Create proteins with entries from tblout not matching hmm_profile entries with rank == 'domain'.
 # Calculate best scoring profile for each accession
-proteins <- tblout %>% 
-  anti_join(hmm_profiles %>% filter(prank == 'domain'), by = 'profile') %>%
-  group_by(accno) %>% top_n(1, score) %>% ungroup() %>%
-  select(accno, profile, score, evalue)
+proteins <- lazy_dt(tblout) %>% 
+  anti_join(lazy_dt(hmm_profiles) %>% filter(prank == 'domain'), by = 'profile') %>%
+  #group_by(accno) %>% top_n(1, score) %>% ungroup() %>%
+  select(accno, profile, score, evalue) %>%
+  as.data.table()
+proteins <- setorder(setDT(proteins, score))[, head(.SD, 1), keyby = accno]
 
 logmsg("Calculated best scoring profiles, creating domains")
 

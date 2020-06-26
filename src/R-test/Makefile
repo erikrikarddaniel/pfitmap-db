@@ -34,7 +34,7 @@ Nrd.test.tar.gz:
 
 pf-classify.gtdb.00:
 	@rm -f $@.sqlite3
-	../R/pf-classify.r --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --singletable=$@.out --gtdbmetadata=$@.d/gtdb_metadata.tsv $@.d/*.tblout $@.d/*.domtblout
+	../R/pf-classify.r --verbose --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --singletable=$@.out --gtdbmetadata=$@.d/gtdb_metadata.tsv $@.d/*.tblout $@.d/*.domtblout
 	@$(CHECK)
 
 pf-classify.gtdb.01:
