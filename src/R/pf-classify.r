@@ -14,6 +14,8 @@ suppressPackageStartupMessages(library(stringr))
 
 SCRIPT_VERSION = "1.9.4"
 
+options(warn = 1)
+
 # Get arguments
 option_list <- list(
   make_option(
@@ -256,13 +258,15 @@ lengths <- data.table(
 # table in the call.
 do_nextjoin <- function(dt) {
   # Filter dt on n > 1, then join with itself with transmuted column names
-  t <- lazy_dt(dt) %>% 
-    filter(n > 1) %>%
-    left_join(
-      lazy_dt(dt) %>% transmute(accno, profile, i = i - 1, next_row = TRUE, next_from = from, next_to = to), 
-      by = c('accno', 'profile', 'i')
-    ) %>%
-    as.data.table()
+  suppressWarnings( # To avoid warnings about, I believe, empty data.tables
+    t <- lazy_dt(dt) %>% 
+      filter(n > 1) %>%
+      left_join(
+        lazy_dt(dt) %>% transmute(accno, profile, i = i - 1, next_row = TRUE, next_from = from, next_to = to), 
+        by = c('accno', 'profile', 'i')
+      ) %>%
+      as.data.table()
+  )
   # Set any NA next_row entries to FALSE (doesn't work through dtplyr)
   t$next_row = ifelse(is.na(t$next_row), FALSE, TRUE)
   return(t)
@@ -332,7 +336,7 @@ for ( fs in list(
     
     # 6. Delete rows that are the last in their group of overlaps, they now have
     #   the same "to" as the previous row.
-    #suppressWarnings( # The max(from.x) causes warnings: "no non-missing arguments to max; returning -Inf"; I can't find any errors
+    suppressWarnings( # The max(from.x) causes warnings: "no non-missing arguments to max; returning -Inf"; I can't find any errors
       nextjoin <- lazy_dt(nextjoin) %>%
         anti_join(
           lazy_dt(nextjoin) %>% select(accno, profile, from, to) %>% 
@@ -342,7 +346,7 @@ for ( fs in list(
           by = c('accno', 'profile', 'from', 'to')
         ) %>%
         as.data.table()
-    #)
+    )
 
     # 7. Calculate a new domt from nextjoin
     if ( nrow(nextjoin) > 0 ) {
@@ -352,7 +356,7 @@ for ( fs in list(
     }
   }
   
-  # I'm resorting to tibbles here because of the gather buried relatively deep in the pipeline
+  # I'm resorting to tibbles here because of the gather() buried relatively deep in the pipeline
   lengths <- as_tibble(lengths) %>%
     union(
       as_tibble(nooverlaps) %>% mutate(len = to - from + 1) %>%
