@@ -13,7 +13,7 @@ requirements:
     - setuptools
 
   run:
-    - r-dplyr >= 1.0.0
+    - r-dplyr >=1.0.0
     - r-dbplyr
     - r-dtplyr
     - r-data.table
