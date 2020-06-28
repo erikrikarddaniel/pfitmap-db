@@ -13,7 +13,7 @@ suppressPackageStartupMessages(library(optparse))
 suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(stringr))
 
-SCRIPT_VERSION = "1.9.4dev"
+SCRIPT_VERSION = "1.9.5"
 
 # Options for testing: opt <- list(options = list(gtdb = TRUE, verbose = TRUE, prefix='testing'), args = 'pf-classify.02.sqlite3')
 # Get arguments
