@@ -11,8 +11,9 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
+suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "1.9.4"
+SCRIPT_VERSION = "1.9.5"
 
 options(warn = 1)
 
@@ -20,6 +21,9 @@ options(warn = 1)
 option_list <- list(
   make_option(
     c('--dbsource'), default='', help='Database source in dbsource:name:version format'
+  ),
+  make_option(
+    c('--featherprefix'), default = '', help = 'Turn on generation of feather output files, and use this sting to prefix file names with.',
   ),
   make_option(
     c('--fuzzy_factor'), type = 'integer', default = 1, action = 'store', help = 'Factor to make lengths fuzzy for reduction of possible duplicates, default %default.'
@@ -471,6 +475,16 @@ tblout <- lazy_dt(tblout) %>% semi_join(lazy_dt(accessions) %>% distinct(accno),
 # 5. domtblout
 domtblout <- lazy_dt(domtblout) %>% semi_join(lazy_dt(accessions) %>% distinct(accno), by = 'accno') %>% as.data.table()
 
+# Sequences in fasta file?
+if ( opt$options$seqfaa != '' ) {
+  logmsg(sprintf('Reading %s', opt$options$seqfaa))
+  s <- Biostrings::readAAStringSet(opt$options$seqfaa)
+  sequences <- data.table(accno = str_remove(names(s), ' .*'), sequence = as.character(s)) %>%
+    lazy_dt() %>% distinct() %>% 
+    semi_join(lazy_dt(accessions), by = 'accno') %>% 
+    as.data.table()
+}
+
 # If we were called with the singletable option, prepare data suitable for that
 if ( opt$options$singletable > '' ) {
   logmsg("Writing single table format")
@@ -522,6 +536,34 @@ if ( opt$options$singletable > '' ) {
   }
 }
 
+if ( ! gtdb ) {
+  # The accto field in accession should be turned into a list for each
+  # combination of accno, db and taxon to ensure organisms do not show up as
+  # having more than one exactly identical sequence, which they do with the new
+  # redundant RefSeq entries (WP_ accessions).
+  logmsg('Copying to "accessions", creating indices')
+  # I'm converting to tibble here, as I don't know how to to the separate_rows in
+  # data.table and it's not in dtplyr.
+  accessions <- as_tibble(accessions) %>%
+    arrange(db, taxon, accno, accto) %>%
+    group_by(db, taxon, accno) %>%
+    summarise(accto = paste(accto, collapse = ','), .groups = 'drop_last') %>%
+    ungroup() %>%
+    separate_rows(accto, sep = ',') %>%
+    distinct()
+}
+if ( gtdb ) {
+  taxa <- union(
+    as_tibble(gtdbtaxonomy) %>% semi_join(as_tibble(accessions), by = c('accno0' = 'genome_accno')) %>% 
+      select(-accno1) %>% rename(genome_accno = accno0),
+    as_tibble(gtdbtaxonomy) %>% anti_join(as_tibble(accessions), by = c('accno0' = 'genome_accno')) %>% 
+      mutate(genome_accno = ifelse(accno1 == 'none', accno0, accno1)) %>%
+      select(-accno0, -accno1)
+  )
+} else {
+  taxa <- lazy_dt(taxflat) %>% semi_join(lazy_dt(accessions) %>% distinct(taxon), by='taxon') %>% as.data.table()
+}
+
 # If the user specified a filename for a SQLite database, write that here
 if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length(opt$options$sqlitedb) > 0 ) {
   logmsg(sprintf("Creating/opening SQLite database %s", opt$options$sqlitedb))
@@ -531,23 +573,6 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
     tibble(source = dbsource[1], name = dbsource[2], version = dbsource[3]), 
     'dbsources', temporary = FALSE, overwrite = TRUE
   )
-
-  if ( ! gtdb ) {
-    # The accto field in accession should be turned into a list for each
-    # combination of accno, db and taxon to ensure organisms do not show up as
-    # having more than one exactly identical sequence, which they do with the new
-    # redundant RefSeq entries (WP_ accessions).
-    logmsg('Copying to "accessions", creating indices')
-    # I'm converting to tibble here, as I don't know how to to the separate_rows in
-    # data.table and it's not in dtplyr.
-    accessions <- as_tibble(accessions) %>%
-      arrange(db, taxon, accno, accto) %>%
-      group_by(db, taxon, accno) %>%
-      summarise(accto = paste(accto, collapse = ','), .groups = 'drop_last') %>%
-      ungroup() %>%
-      separate_rows(accto, sep = ',') %>%
-      distinct()
-  }
   
   con %>% copy_to(accessions, 'accessions', temporary = FALSE, overwrite = TRUE)
   con %>% DBI::dbExecute('CREATE INDEX "accessions.i00" ON "accessions"("accno");')
@@ -574,27 +599,10 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
   con %>% DBI::dbExecute('CREATE UNIQUE INDEX "hmm_profiles.i00" ON "hmm_profiles"("profile");')
 
   logmsg('Copying to "taxa", creating indices')
+  con %>% copy_to(taxa, 'taxa', temporary = FALSE, overwrite = TRUE)
   if ( gtdb ) {
-    con %>% copy_to(
-      union(
-        as_tibble(gtdbtaxonomy) %>% semi_join(as_tibble(accessions), by = c('accno0' = 'genome_accno')) %>% 
-          select(-accno1) %>% rename(genome_accno = accno0),
-        as_tibble(gtdbtaxonomy) %>% anti_join(as_tibble(accessions), by = c('accno0' = 'genome_accno')) %>% 
-          mutate(genome_accno = ifelse(accno1 == 'none', accno0, accno1)) %>%
-          select(-accno0, -accno1)
-      ), 
-      'taxa', temporary = FALSE, overwrite = TRUE
-    )
-    
     con %>% DBI::dbExecute('CREATE UNIQUE INDEX "taxa.i00" ON "taxa"("genome_accno");')
   } else {
-    # If we have a taxflat NCBI taxonomy, read and join
-    logmsg(sprintf("Adding NCBI taxon ids from taxflat"))
-    con %>% copy_to(
-      lazy_dt(taxflat) %>% semi_join(lazy_dt(accessions) %>% distinct(taxon), by='taxon') %>% as.data.table(),
-      'taxa', temporary = FALSE, overwrite = TRUE
-    )
-
     con %>% DBI::dbExecute('CREATE UNIQUE INDEX "taxa.i00" ON "taxa"("taxon", "trank");')
     con %>% DBI::dbExecute('CREATE UNIQUE INDEX "taxa.i01" ON "taxa"("ncbi_taxon_id");')
   }
@@ -621,13 +629,8 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
   }
 
   if ( opt$options$seqfaa != '' ) {
-    logmsg(sprintf('Reading %s and saving sequences table', opt$options$seqfaa))
-    s <- Biostrings::readAAStringSet(opt$options$seqfaa)
-    s <- data.table(accno = str_remove(names(s), ' .*'), sequence = as.character(s)) %>%
-      lazy_dt() %>% distinct() %>% as.data.table()
-    con %>% copy_to(
-      lazy_dt(s) %>% semi_join(lazy_dt(accessions), by = 'accno') %>% as.data.table(),
-      'sequences',
+    logmsg(sprintf('Saving sequences table', opt$options$seqfaa))
+    con %>% copy_to(sequences, 'sequences',
       temporary = FALSE, overwrite = TRUE
     )
     con %>% DBI::dbExecute('CREATE UNIQUE INDEX "sequences.i00" ON "sequences"("accno");')
@@ -635,6 +638,40 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
 
   logmsg('Disconnecting from sqlite3 db')
   con %>% DBI::dbDisconnect()
+}
+
+if ( length(grep('featherprefix', names(opt$options), value = TRUE)) > 0 & str_length(opt$options$featherprefix) > 0 ) {
+  logmsg("Writing dbsources to feather file")
+  write_feather(
+    tibble(source = dbsource[1], name = dbsource[2], version = dbsource[3]),
+    sprintf("%s.dbsources.feather", opt$options$featherprefix)
+  )
+
+  logmsg("Writing accessions to feather file")
+  write_feather(accessions, sprintf("%s.accessions.feather", opt$options$featherprefix))
+
+  logmsg("Writing proteins to feather file")
+  write_feather(proteins, sprintf("%s.proteins.feather", opt$options$featherprefix))
+
+  logmsg("Writing domains to feather file")
+  write_feather(domains, sprintf("%s.domains.feather", opt$options$featherprefix))
+
+  logmsg("Writing hmm_profiles to feather file")
+  write_feather(hmm_profiles, sprintf("%s.hmm_profiles.feather", opt$options$featherprefix))
+
+  logmsg("Writing taxa to feather file")
+  write_feather(taxa, sprintf("%s.taxa.feather", opt$options$featherprefix))
+
+  logmsg("Writing tblout to feather file")
+  write_feather(tblout, sprintf("%s.tblout.feather", opt$options$featherprefix))
+
+  logmsg("Writing domtblout to feather file")
+  write_feather(domtblout, sprintf("%s.domtblout.feather", opt$options$featherprefix))
+
+  if ( opt$options$seqfaa != '' ) {
+    logmsg("Writing sequences to feather file")
+    write_feather(sequences, sprintf("%s.sequences.feather", opt$options$featherprefix))
+  }
 }
 
 logmsg("Done")

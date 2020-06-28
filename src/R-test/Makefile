@@ -17,9 +17,11 @@ clean:
 
 all.sqlite: pf-classify.02 pf-classify.03 pf-classify.04
 
-pf-classify.gtdb: pf-classify.gtdb.00 pf-classify.gtdb.01 pf-classify.gtdb.02 pf-classify.gtdb.03
+pf-classify.gtdb: pf-classify.gtdb.00 pf-classify.gtdb.01 pf-classify.gtdb.02 pf-classify.gtdb.03 pf-classify.gtdb.04
 
-pf-classify: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06 pf-classify.07 pf-classify.08 pf-classify.09 pf-classify.gtdb
+pf-classify.ncbi: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06 pf-classify.07 pf-classify.08 pf-classify.09 
+
+pf-classify: pf-classify.ncbi pf-classify.gtdb
 
 pf-db2feather.gtdb: pf-db2feather.gtdb.00 pf-db2feather.gtdb.01
 
@@ -54,6 +56,11 @@ pf-classify.gtdb.03:
 	../R/pf-classify.r --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --sqlitedb=$@.sqlite3 --gtdbmetadata=$@.d/gtdb_metadata.tsv --seqfaa=$@.d/genomes.faa $@.d/*.tblout $@.d/*.domtblout
 	@$(SQLITE_SELECT_GTDB_CLASSIFICATION)
 	@$(SQLITE_SELECT_CLASSIFY_SEQUENCES)
+	@$(CHECK)
+
+pf-classify.gtdb.04:
+	../R/pf-classify.r --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --featherprefix=$@ --gtdbmetadata=$@.d/gtdb_metadata.tsv --seqfaa=$@.d/genomes.faa $@.d/*.tblout $@.d/*.domtblout
+	@$(DB2FEATHER_OUT)
 	@$(CHECK)
 
 pf-classify.00:
