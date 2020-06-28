@@ -531,7 +531,9 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
     # having more than one exactly identical sequence, which they do with the new
     # redundant RefSeq entries (WP_ accessions).
     logmsg('Copying to "accessions", creating indices')
-    accessions <- accessions %>%
+    # I'm converting to tibble here, as I don't know how to to the separate_rows in
+    # data.table and it's not in dtplyr.
+    accessions <- as_tibble(accessions) %>%
       arrange(db, taxon, accno, accto) %>%
       group_by(db, taxon, accno) %>%
       summarise(accto = paste(accto, collapse = ','), .groups = 'drop_last') %>%
@@ -568,12 +570,12 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
   if ( gtdb ) {
     con %>% copy_to(
       union(
-        gtdbtaxonomy %>% semi_join(accessions, by = c('accno0' = 'genome_accno')) %>% 
+        lazy_dt(gtdbtaxonomy) %>% semi_join(lazy_dt(accessions), by = c('accno0' = 'genome_accno')) %>% 
           select(-accno1) %>% rename(genome_accno = accno0),
-        gtdbtaxonomy %>% anti_join(accessions, by = c('accno0' = 'genome_accno')) %>% 
+        lazy_dt(gtdbtaxonomy) %>% anti_join(lazy_dt(accessions), by = c('accno0' = 'genome_accno')) %>% 
           mutate(genome_accno = ifelse(accno1 == 'none', accno0, accno1)) %>%
           select(-accno0, -accno1)
-      ),
+      ) %>% as.data.table(),
       'taxa', temporary = FALSE, overwrite = TRUE
     )
     
@@ -582,7 +584,7 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
     # If we have a taxflat NCBI taxonomy, read and join
     logmsg(sprintf("Adding NCBI taxon ids from taxflat"))
     con %>% copy_to(
-      taxflat %>% semi_join(accessions %>% distinct(taxon), by='taxon'),
+      lazy_dt(taxflat) %>% semi_join(lazy_dt(accessions) %>% distinct(taxon), by='taxon') %>% as.data.table(),
       'taxa', temporary = FALSE, overwrite = TRUE
     )
 
@@ -596,7 +598,7 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
 
   if ( ! gtdb ) {
   logmsg(sprintf('Creating dupfree_proteins, using %d as fuzzy factor', opt$options$fuzzy_factor))
-    dp <- proteins %>% inner_join(accessions %>% transmute(accno = accto, db, taxon), by = 'accno') %>%
+    dp <- as_tibble(proteins) %>% inner_join(as_tibble(accessions) %>% transmute(accno = accto, db, taxon), by = 'accno') %>%
       mutate(
         alilen = as.integer(round(round(alilen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor)),
         envlen = as.integer(round(round(envlen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor)),
@@ -614,10 +616,10 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
   if ( opt$options$seqfaa != '' ) {
     logmsg(sprintf('Reading %s and saving sequences table', opt$options$seqfaa))
     s <- Biostrings::readAAStringSet(opt$options$seqfaa)
-    s <- tibble(accno = str_remove(names(s), ' .*'), sequence = as.character(s)) %>%
-      distinct()
+    s <- data.table(accno = str_remove(names(s), ' .*'), sequence = as.character(s)) %>%
+      lazy_dt() %>% distinct() %>% as.data.table()
     con %>% copy_to(
-      s %>% semi_join(accessions, by = 'accno'),
+      lazy_dt(s) %>% semi_join(lazy_dt(accessions), by = 'accno') %>% as.data.table(),
       'sequences',
       temporary = FALSE, overwrite = TRUE
     )
