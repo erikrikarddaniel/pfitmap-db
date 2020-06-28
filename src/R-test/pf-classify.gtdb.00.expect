@@ -17,7 +17,7 @@ gtdb	EHLAHJNJ_00132	32.7	7.7e-8	NrdA	NrdGRE	NrdAJ	NrdA			UBA10033	Archaea	Nanoar
 gtdb	EHLAHJNJ_00470	10.2	0.49	NrdA	NrdGRE	NrdAJ	NrdA			UBA10033	Archaea	Nanoarchaeota	Nanoarchaeia	Woesearchaeales	GW2011-AR9	GW2011-AR9	GW2011-AR9 sp10194u	154	550	56	55	84
 gtdb	EMCIJKJB_00526	168.5	5.5e-49	NrdA	NrdGRE	NrdAJ	NrdA			UBA10011	Archaea	Iainarchaeota	Iainarchaeia	Iainarchaeales	GW2011-AR10	GW2011-AR10	GW2011-AR10 sp000830275	1346	550	482	454	547
 gtdb	FHFECEBA_01657	527.9	7e-158	NrdA	NrdGRE	NrdAJ	NrdA			GCA_000003135	Bacteria	Actinobacteriota	Actinobacteria	Actinomycetales	Bifidobacteriaceae	Bifidobacterium	Bifidobacterium longum	731	550	540	543	566
-gtdb	FLKIJBGC_00806	299.7	1e-88	NrdA	NrdGRE	NrdAJ	NrdA			UBA10089								473	550	470	510	471
+gtdb	FLKIJBGC_00806	299.7	1e-88	NrdA	NrdGRE	NrdAJ	NrdA			UBA10089	NA	NA	NA	NA	NA	NA	NA	473	550	470	510	471
 gtdb	FMKMPEEB_01884	172	4.9e-50	NrdA	NrdGRE	NrdAJ	NrdA			GCA_000006155	Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae_G	Bacillus_A	Bacillus_A anthracis	255	550	129	128	210
 gtdb	FMKMPEEB_01886	393.5	3.9e-117	NrdA	NrdGRE	NrdAJ	NrdA			GCA_000006155	Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae_G	Bacillus_A	Bacillus_A anthracis	440	550	430	421	440
 gtdb	JELDNKDN_00258	305.2	2.2e-90	NrdA	NrdGRE	NrdAJ	NrdA			UBA10107	Archaea	Nanoarchaeota	Nanoarchaeia	Woesearchaeales	UBA10107	UBA10107	UBA10107 sp10107u	825	550	505	528	545

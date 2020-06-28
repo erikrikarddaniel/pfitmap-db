@@ -119,8 +119,11 @@ if ( nrow(hmm_profiles) != nrow(unique(hmm_profiles[, .(profile)])) ) {
 # Read the taxonomy file, in GTDB or NCBI format
 if ( gtdb ) {
   logmsg(sprintf('Reading GTDB metadata from %s', opt$options$gtdbmetadata))
-  gtdbmetadata <- fread(opt$options$gtdbmetadata) %>%
-    lazy_dt() %>%
+  # Don't know how to separate() with data.table, read as tibble then convert
+  gtdbmetadata <- read_tsv(
+    opt$options$gtdbmetadata,
+    col_types = cols(.default = col_character())
+  ) %>%
     mutate(
       thier = str_remove_all(gtdb_taxonomy, '[a-z]__'), 
     ) %>%
