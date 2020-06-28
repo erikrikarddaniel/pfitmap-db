@@ -573,12 +573,12 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
   if ( gtdb ) {
     con %>% copy_to(
       union(
-        lazy_dt(gtdbtaxonomy) %>% semi_join(lazy_dt(accessions), by = c('accno0' = 'genome_accno')) %>% 
+        as_tibble(gtdbtaxonomy) %>% semi_join(as_tibble(accessions), by = c('accno0' = 'genome_accno')) %>% 
           select(-accno1) %>% rename(genome_accno = accno0),
-        lazy_dt(gtdbtaxonomy) %>% anti_join(lazy_dt(accessions), by = c('accno0' = 'genome_accno')) %>% 
+        as_tibble(gtdbtaxonomy) %>% anti_join(as_tibble(accessions), by = c('accno0' = 'genome_accno')) %>% 
           mutate(genome_accno = ifelse(accno1 == 'none', accno0, accno1)) %>%
           select(-accno0, -accno1)
-      ) %>% as.data.table(),
+      ), 
       'taxa', temporary = FALSE, overwrite = TRUE
     )
     
