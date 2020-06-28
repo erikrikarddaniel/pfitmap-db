@@ -400,26 +400,24 @@ logmsg("Inferred databases, calculating best scoring profile for each accession"
 # Calculate best scoring profile for each accession
 proteins <- lazy_dt(tblout) %>% 
   anti_join(lazy_dt(hmm_profiles) %>% filter(prank == 'domain'), by = 'profile') %>%
-  #group_by(accno) %>% top_n(1, score) %>% ungroup() %>%
+  group_by(accno) %>% filter(score == max(score)) %>% ungroup() %>%
   select(accno, profile, score, evalue) %>%
   as.data.table()
-proteins <- setorder(setDT(proteins, score))[, head(.SD, 1), keyby = accno]
+proteins <- setorder(setDT(proteins), -score)[, head(.SD, 1), keyby = accno]
 
 logmsg("Calculated best scoring profiles, creating domains")
 
 # Create table of domains as those that match domains specified in hmm_profiles
-domains <- domtblout %>%
+domains <- lazy_dt(domtblout) %>%
   transmute(
-    accno, profile, i, n,
-    dom_c_evalue, dom_i_evalue, dom_score,
-    hmm_from, hmm_to,
-    ali_from, ali_to,
-    env_from, env_to
-  ) 
+    accno, profile, i, n, dom_c_evalue, dom_i_evalue, dom_score,
+    hmm_from, hmm_to, ali_from, ali_to, env_from, env_to
+  ) %>%
+  as.data.table()
 
 # Join in lengths
 logmsg(sprintf("Joining in lengths from domtblout, nrows before: %d", proteins %>% nrow()))
-proteins <- proteins %>% inner_join(align_lengths, by = c('accno', 'profile'))
+proteins <- lazy_dt(proteins) %>% inner_join(align_lengths, by = c('accno', 'profile')) %>% as.data.table()
 
 logmsg("Joined in lengths, writing data")
 
@@ -428,57 +426,64 @@ logmsg(sprintf("Subsetting output to proteins and domains covering at least %f o
 
 # 1. proteins table
 #logmsg(sprintf("proteins before: %d", proteins %>% nrow()), 'DEBUG')
-p <- proteins %>% 
-  inner_join(hmm_profiles %>% select(profile, plen), by = 'profile') %>%
+p <- lazy_dt(proteins) %>% 
+  inner_join(lazy_dt(hmm_profiles) %>% select(profile, plen), by = 'profile') %>%
   filter(hmmlen/plen >= opt$options$hmm_mincov) %>%
-  select(-plen)
+  select(-plen) %>%
+  as.data.table()
 #logmsg(sprintf("proteins after: %d", proteins %>% nrow()), 'DEBUG')
-p <- p %>%
+p <- lazy_dt(p) %>%
   union(
-    proteins %>% anti_join(p, by = 'accno') %>%
-      semi_join(accessions %>% filter(db == 'pdb'), by = c('accno' = 'accno'))
-  )
+    lazy_dt(proteins) %>% anti_join(lazy_dt(p), by = 'accno') %>%
+      semi_join(lazy_dt(accessions) %>% filter(db == 'pdb'), by = c('accno' = 'accno'))
+  ) %>%
+  as.data.table()
 proteins <- p
 rm(p)
 
 # 1.b add pdb entries that are not present due to not passing the hmm_mincov criterion
 
 # 2. domains
-domains <- domains %>%
-  inner_join(hmm_profiles %>% select(profile, plen), by = 'profile') %>%
+domains <- lazy_dt(domains) %>%
+  inner_join(lazy_dt(hmm_profiles) %>% select(profile, plen), by = 'profile') %>%
   filter((hmm_to - hmm_from + 1)/plen >= opt$options$hmm_mincov) %>%
-  select(-plen)
+  select(-plen) %>%
+  as.data.table()
 
 # 3. accessions
-accessions <- accessions %>% 
+accessions <- lazy_dt(accessions) %>% 
   semi_join(
-    union(proteins %>% select(accno), domains %>% select(accno)) %>% distinct(accno), 
+    union(lazy_dt(proteins) %>% select(accno), lazy_dt(domains) %>% select(accno)) %>% distinct(accno), 
     by = 'accno'
-  )
+  ) %>%
+  as.data.table()
 
 # 4. tblout
-tblout <- tblout %>% semi_join(accessions %>% distinct(accno), by = 'accno')
+tblout <- lazy_dt(tblout) %>% semi_join(lazy_dt(accessions) %>% distinct(accno), by = 'accno') %>% as.data.table()
 
 # 5. domtblout
-domtblout <- domtblout %>% semi_join(accessions %>% distinct(accno), by = 'accno')
+domtblout <- lazy_dt(domtblout) %>% semi_join(lazy_dt(accessions) %>% distinct(accno), by = 'accno') %>% as.data.table()
 
 # If we were called with the singletable option, prepare data suitable for that
 if ( opt$options$singletable > '' ) {
   logmsg("Writing single table format")
 
   # Join proteins with accessions and drop profile to get a single table output
-  logmsg(sprintf("Joining in all accession numbers and dropping profile column, nrows before: %d", proteins %>% nrow()))
-  singletable <- proteins %>% 
-    left_join(hmm_profiles, by='profile') %>%
-    inner_join(accessions, by='accno') 
+  logmsg(sprintf("Joining in all accession numbers, nrows before: %d", proteins %>% nrow()))
+  singletable <- as_tibble(proteins) %>% 
+    left_join(as_tibble(hmm_profiles), by='profile') %>% # Why is this a *left* join?
+    inner_join(as_tibble(accessions), by='accno')
   
   if ( ! gtdb ) singletable <- singletable %>% mutate(accno = accto) 
 
   # Join in taxonomies, either GTDB or taxflat
   if ( gtdb ) {
     singletable <- union(
-      singletable %>% inner_join(gtdbtaxonomy, by = c('genome_accno' = 'accno0')) %>% select(-accno1),
-      singletable %>% anti_join(gtdbtaxonomy,  by = c('genome_accno' = 'accno0')) %>% left_join(gtdbtaxonomy, by = c('genome_accno' = 'accno1')) %>% select(-accno0)
+      singletable %>% 
+        inner_join(as_tibble(gtdbtaxonomy), by = c('genome_accno' = 'accno0')) %>% select(-accno1),
+      singletable %>% 
+        anti_join(as_tibble(gtdbtaxonomy),  by = c('genome_accno' = 'accno0')) %>% 
+        left_join(as_tibble(gtdbtaxonomy), by = c('genome_accno' = 'accno1')) %>% select(-accno0)
     )
     if ( singletable %>% filter(is.na(tspecies)) %>% nrow() > 0 ) {
       logmsg(
@@ -497,7 +502,7 @@ if ( opt$options$singletable > '' ) {
     logmsg(sprintf("Adding NCBI taxon ids from taxflat, nrows before: %d", singletable %>% nrow()))
     singletable <- singletable %>% 
       left_join(
-        taxflat %>% select(taxon, ncbi_taxon_id),
+        as_tibble(taxflat) %>% select(taxon, ncbi_taxon_id),
         by='taxon'
       )
     logmsg(sprintf("Writing single table %s, nrows: %d", opt$options$singletable, singletable %>% nrow()))
