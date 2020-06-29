@@ -17,7 +17,7 @@ clean:
 
 all.sqlite: pf-classify.02 pf-classify.03 pf-classify.04
 
-pf-classify.gtdb: pf-classify.gtdb.00 pf-classify.gtdb.01 pf-classify.gtdb.02 pf-classify.gtdb.03 pf-classify.gtdb.04
+pf-classify.gtdb: pf-classify.gtdb.00 pf-classify.gtdb.01 pf-classify.gtdb.02 pf-classify.gtdb.03 pf-classify.gtdb.04 pf-classify.gtdb.05
 
 pf-classify.ncbi: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06 pf-classify.07 pf-classify.08 pf-classify.09 
 
@@ -59,7 +59,14 @@ pf-classify.gtdb.03:
 	@$(CHECK)
 
 pf-classify.gtdb.04:
+	@rm -f $@.*.feather
 	../R/pf-classify.r --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --featherprefix=$@ --gtdbmetadata=$@.d/gtdb_metadata.tsv --seqfaa=$@.d/genomes.faa $@.d/*.tblout $@.d/*.domtblout
+	@$(DB2FEATHER_OUT)
+	@$(CHECK)
+
+pf-classify.gtdb.05:
+	@rm -f $@.*.feather
+	../R/pf-classify.r --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --featherprefix=$@ --gtdbmetadata=$@.d/gtdb_metadata.tsv --seqfaa=$@.d/genomes.faa.gz $@.d/*.tblout $@.d/*.domtblout
 	@$(DB2FEATHER_OUT)
 	@$(CHECK)
 
