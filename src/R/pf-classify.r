@@ -96,6 +96,7 @@ logmsg    = function(msg, llevel='INFO') {
   }
 }
 logmsg(sprintf("pf-classify.r version %s: Starting classification", SCRIPT_VERSION))
+if ( length(grep('featherprefix', names(opt$options), value = TRUE)) > 0 & str_length(opt$options$featherprefix) > 0 ) logmsg(sprintf("Will write feather files prefixed with %s", opt$options$featherprefix))
 
 # Make sure the dbsource parameter is given and in the proper format
 if ( opt$options[['dbsource']] != '' ) {
@@ -286,7 +287,9 @@ for ( fs in list(
 
   # 1. Set from and to to current pair, delete shorter rows with the same start and 
   # calculate i (rownumber) and n (total domains) for each combination of accno and profile
+  logmsg("Creating domt table")
   domt <- domtblout[, .(accno = accno, profile = profile, from = get(fs[1]), to = get(fs[2]))]
+  logmsg("Joining with itself, calculating row numbers and more")
   domt <- lazy_dt(domt) %>% distinct() %>%
     semi_join(
       lazy_dt(domt) %>% group_by(accno, profile, from) %>% filter(to == max(to)) %>% ungroup(),
@@ -295,6 +298,7 @@ for ( fs in list(
     arrange(accno, profile, from, to) %>%
     group_by(accno, profile) %>% mutate(i = row_number(from), n = n()) %>% ungroup() %>%
     as.data.table()
+  logmsg("domt done")
 
   # This is where non-overlapping rows will be stored
   nooverlaps <- data.table(
@@ -478,11 +482,18 @@ domtblout <- lazy_dt(domtblout) %>% semi_join(lazy_dt(accessions) %>% distinct(a
 # Sequences in fasta file?
 if ( opt$options$seqfaa != '' ) {
   logmsg(sprintf('Reading %s', opt$options$seqfaa))
-  s <- Biostrings::readAAStringSet(opt$options$seqfaa)
-  sequences <- data.table(accno = str_remove(names(s), ' .*'), sequence = as.character(s)) %>%
-    lazy_dt() %>% distinct() %>% 
+  cmd <- c(
+    sprintf("%s %s", ifelse(grepl('\\.gz$', opt$options$seqfaa), 'zcat', 'cat'), opt$options$seqfaa),
+    "sed '/^>/s/ .*//'",
+    "awk '/^>/ { printf(\"\\n%s\\n\",$$0); next; } { printf(\"%s\",$$0);} END { printf(\"\\n\");}'",
+    "grep -v '^$'", 
+    "sed 's/^>//'", 
+    "paste - -"
+  )
+  sequences <- fread(cmd = paste(cmd, collapse = '|'), col.names = c('accno', 'sequence'), header = FALSE) %>% lazy_dt() %>%
     semi_join(lazy_dt(accessions), by = 'accno') %>% 
     as.data.table()
+  logmsg(sprintf("Read %d sequences", nrow(sequences)))
 }
 
 # If we were called with the singletable option, prepare data suitable for that
