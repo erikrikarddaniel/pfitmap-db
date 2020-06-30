@@ -14,6 +14,7 @@ suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(feather))
 
 SCRIPT_VERSION = "1.9.6"
+ROWS_PER_SEQUENCE_TSV = 1e7
 
 options(warn = 1)
 
@@ -287,10 +288,10 @@ for ( fs in list(
 
   # 1. Set from and to to current pair, delete shorter rows with the same start and 
   # calculate i (rownumber) and n (total domains) for each combination of accno and profile
-  logmsg("Creating domt table")
+  logmsg("\tCreating domt table")
   domt <- domtblout[, .(accno = accno, profile = profile, from = get(fs[1]), to = get(fs[2]))] %>%
     lazy_dt() %>% distinct()
-  logmsg("Joining with itself")
+  logmsg("\tJoining with itself")
   domt <- lazy_dt(domt) %>% #distinct() %>%
     semi_join(
       lazy_dt(domt) %>% group_by(accno, profile, from) %>% filter(to == max(to)) %>% ungroup(),
@@ -298,11 +299,11 @@ for ( fs in list(
     ) %>% 
     arrange(accno, profile, from, to) %>%
     as.data.table()
-  logmsg("Creating row numbers")
+  logmsg("\tCreating row numbers")
   domt <- lazy_dt(domt) %>%
     group_by(accno, profile) %>% mutate(i = row_number(from), n = n()) %>% ungroup() %>%
     as.data.table()
-  logmsg("domt done")
+  logmsg(sprintf("\tdomt done, %d rows", nrow(domt)))
 
   # This is where non-overlapping rows will be stored
   nooverlaps <- data.table(
@@ -485,18 +486,32 @@ domtblout <- lazy_dt(domtblout) %>% semi_join(lazy_dt(accessions) %>% distinct(a
 
 # Sequences in fasta file?
 if ( opt$options$seqfaa != '' ) {
-  logmsg(sprintf('Reading %s', opt$options$seqfaa))
+  logmsg(sprintf('Reading %s, splitting into %d sequences per batch', opt$options$seqfaa, ROWS_PER_SEQUENCE_TSV))
   cmd <- c(
     sprintf("%s %s", ifelse(grepl('\\.gz$', opt$options$seqfaa), 'zcat', 'cat'), opt$options$seqfaa),
     "sed '/^>/s/ .*//'",
     "awk '/^>/ { printf(\"\\n%s\\n\",$$0); next; } { printf(\"%s\",$$0);} END { printf(\"\\n\");}'",
     "grep -v '^$'", 
     "sed 's/^>//'", 
-    "paste - -"
+    "paste - -",
+    sprintf("split -a 3 --additional-suffix=.tsv -l %d - %s/sequences.", ROWS_PER_SEQUENCE_TSV, tempdir())
   )
-  sequences <- fread(cmd = paste(cmd, collapse = '|'), col.names = c('accno', 'sequence'), header = FALSE) %>% lazy_dt() %>%
-    semi_join(lazy_dt(accessions), by = 'accno') %>% 
-    as.data.table()
+  logmsg("Creating multiple tsv files with sequences")
+  system(paste(cmd, collapse = '|'))
+
+  sequences <- data.table(accno = character(), sequence = character())
+
+  for ( f in Sys.glob(sprintf("%s/sequences.*.tsv", tempdir())) ) {
+    logmsg(sprintf("Reading %s", f))
+    sequences <- lazy_dt(sequences) %>%
+      union(
+        fread(f, col.names = c('accno', 'sequence'), header = FALSE) %>%
+          lazy_dt() %>%
+          semi_join(lazy_dt(accessions), by = 'accno')
+      ) %>%
+        as.data.table()
+    logmsg(sprintf("\tCurrently %d sequences", nrow(sequences)))
+  }
   logmsg(sprintf("Read %d sequences", nrow(sequences)))
 }
 
