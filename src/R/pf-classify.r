@@ -13,7 +13,7 @@ suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "1.9.6"
+SCRIPT_VERSION = "1.9.7"
 ROWS_PER_SEQUENCE_TSV = 1e7
 
 options(warn = 1)
