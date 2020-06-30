@@ -288,14 +288,18 @@ for ( fs in list(
   # 1. Set from and to to current pair, delete shorter rows with the same start and 
   # calculate i (rownumber) and n (total domains) for each combination of accno and profile
   logmsg("Creating domt table")
-  domt <- domtblout[, .(accno = accno, profile = profile, from = get(fs[1]), to = get(fs[2]))]
-  logmsg("Joining with itself, calculating row numbers and more")
-  domt <- lazy_dt(domt) %>% distinct() %>%
+  domt <- domtblout[, .(accno = accno, profile = profile, from = get(fs[1]), to = get(fs[2]))] %>%
+    lazy_dt() %>% distinct()
+  logmsg("Joining with itself")
+  domt <- lazy_dt(domt) %>% #distinct() %>%
     semi_join(
       lazy_dt(domt) %>% group_by(accno, profile, from) %>% filter(to == max(to)) %>% ungroup(),
       by = c('accno', 'profile', 'from', 'to')
     ) %>% 
     arrange(accno, profile, from, to) %>%
+    as.data.table()
+  logmsg("Creating row numbers")
+  domt <- lazy_dt(domt) %>%
     group_by(accno, profile) %>% mutate(i = row_number(from), n = n()) %>% ungroup() %>%
     as.data.table()
   logmsg("domt done")
