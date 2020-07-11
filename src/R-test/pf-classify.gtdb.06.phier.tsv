@@ -1,0 +1,39 @@
+profile	psuperfamily	pfamily	pclass	psubclass	pgroup	prank	version	plen
+NrdA	NrdGRE	NrdAJ	NrdA			pclass	0.1	467
+NrdAe	NrdGRE	NrdAJ	NrdA	NrdAe		psubclass	0.1	684
+NrdAg	NrdGRE	NrdAJ	NrdA	NrdAg		psubclass	0.1	652
+NrdAh	NrdGRE	NrdAJ	NrdA	NrdAh		psubclass	0.1	660
+NrdAi	NrdGRE	NrdAJ	NrdA	NrdAi		psubclass	0.1	545
+NrdAk	NrdGRE	NrdAJ	NrdA	NrdAk		psubclass	0.1	578
+NrdAm	NrdGRE	NrdAJ	NrdA	NrdAm		psubclass	0.1	739
+NrdAn	NrdGRE	NrdAJ	NrdA	NrdAn		psubclass	0.1	682
+NrdAq	NrdGRE	NrdAJ	NrdA	NrdAq		psubclass	0.1	650
+NrdAz	NrdGRE	NrdAJ	NrdA	NrdAz		psubclass	0.1	707
+NrdAz3	NrdGRE	NrdAJ	NrdA	NrdAz	NrdAz3	pgroup	0.1	750
+NrdAz4	NrdGRE	NrdAJ	NrdA	NrdAz	NrdAz4	pgroup	0.1	750
+NrdB	Ferritin-like	NrdBR2lox	NrdB			pclass	0.1	261
+NrdF	Ferritin-like	NrdBR2lox	NrdB	NrdF		psubclass	0.1	303
+NrdDa	subclass	NrdGRE	GRE	NrdD	NrdDa		0.5	 683
+NrdDb	subclass	NrdGRE	GRE	NrdD	NrdDb		0.5	 741
+NrdDc	subclass	NrdGRE	GRE	NrdD	NrdDc		0.5	 519
+NrdDd	subclass	NrdGRE	GRE	NrdD	NrdDd		0.5	 565
+NrdDf	subclass	NrdGRE	GRE	NrdD	NrdDf		0.5	 667
+NrdDg	subclass	NrdGRE	GRE	NrdD	NrdDg		0.5	 635
+NrdDh	subclass	NrdGRE	GRE	NrdD	NrdDh		0.5	 568
+NrdDi	subclass	NrdGRE	GRE	NrdD	NrdDi		0.5	 593
+NrdD	class	NrdGRE	GRE	NrdD			0.5	 498
+ATP-cone						domain	0.1	86
+Glutaredoxin						domain	0.1	60
+Thioredoxin						domain	0.1	104
+Peptidase_M27						domain	0.1	419
+NrdJ	NrdGRE	NrdAJ	NrdJ			pclass	0.1	407
+NrdJa+b	NrdGRE	NrdAJ	NrdJ	NrdJa+b		psubclass	0.1	695
+NrdJg	NrdGRE	NrdAJ	NrdJ	NrdJg		psubclass	0.1	930
+NrdJh	NrdGRE	NrdAJ	NrdJ	NrdJh		psubclass	0.1	576
+NrdJk	NrdGRE	NrdAJ	NrdJ	NrdJk		psubclass	0.1	668
+NrdJo	NrdGRE	NrdAJ	NrdJ	NrdJo		psubclass	0.1	720
+NrdJp	NrdGRE	NrdAJ	NrdJ	NrdJp		psubclass	0.1	621
+NrdJuc00	NrdGRE	NrdAJ	NrdJ	NrdJuc00		psubclass	0.1	490
+NrdJuc01	NrdGRE	NrdAJ	NrdJ	NrdJuc01		psubclass	0.1	543
+NrdJuc02	NrdGRE	NrdAJ	NrdJ	NrdJuc02		psubclass	0.1	712
+NrdJCterm						domain	0.1	144
