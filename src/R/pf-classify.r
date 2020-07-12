@@ -290,7 +290,8 @@ for ( fs in list(
   # calculate i (rownumber) and n (total domains) for each combination of accno and profile
   logmsg("\tCreating domt table")
   domt <- domtblout[, .(accno = accno, profile = profile, from = get(fs[1]), to = get(fs[2]))] %>%
-    lazy_dt() %>% distinct()
+    lazy_dt() %>% distinct() %>%
+    as.data.table()
   logmsg("\tJoining with itself")
   domt <- lazy_dt(domt) %>% #distinct() %>%
     semi_join(
