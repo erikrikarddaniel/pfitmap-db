@@ -16,7 +16,7 @@ suppressPackageStartupMessages(library(readr))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(tidyr))
 
-SCRIPT_VERSION = "1.9.7"
+SCRIPT_VERSION = "1.9.8"
 
 # Testing arguments: opt <- list('options' = list('featherprefix' = 'pf-fasta-unique-taxon-protein.01', 'prank' = 'psubclass', 'trank' = 'tspecies'), args = c('pf-fasta-unique-taxon-protein.01.faa'))
 # Get arguments

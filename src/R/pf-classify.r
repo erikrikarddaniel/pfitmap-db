@@ -13,7 +13,7 @@ suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "1.9.7"
+SCRIPT_VERSION = "1.9.8"
 ROWS_PER_SEQUENCE_TSV = 1e7
 
 options(warn = 1)
@@ -144,7 +144,12 @@ if ( gtdb ) {
       trank  = 'species',
       ncbi_taxon_id = ncbi_species_taxid
     ) %>%
-    select(accno0, accno1, tdomain:tspecies, trank, ncbi_taxon_id) %>%
+    select(
+      accno0, accno1, tdomain:tspecies, trank, ncbi_taxon_id, checkm_completeness, checkm_contamination, checkm_strain_heterogeneity,
+      contig_count, genome_size, gtdb_genome_representative, gtdb_representative, l50_contigs, l50_scaffolds, longest_contig,
+      longest_scaffold, mean_contig_length, mean_scaffold_length, n50_contigs, n50_scaffolds, ncbi_bioproject, ncbi_biosample,
+      ncbi_genbank_assembly_accession, protein_count, scaffold_count
+    ) %>%
     as.data.table()
 } else {
   logmsg(sprintf("Reading NCBI taxonomy from %s", opt$options$taxflat))
