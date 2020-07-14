@@ -1,9 +1,490 @@
-[1] "pf-classify.gtdb.05.accessions.feather: 33 rows"
-[1] "pf-classify.gtdb.05.dbsources.feather: 1 rows"
-[1] "pf-classify.gtdb.05.domains.feather: 362 rows"
-[1] "pf-classify.gtdb.05.domtblout.feather: 362 rows"
-[1] "pf-classify.gtdb.05.hmm_profiles.feather: 27 rows"
-[1] "pf-classify.gtdb.05.proteins.feather: 33 rows"
-[1] "pf-classify.gtdb.05.sequences.feather: 33 rows"
-[1] "pf-classify.gtdb.05.taxa.feather: 24 rows"
-[1] "pf-classify.gtdb.05.tblout.feather: 159 rows"
+--> pf-classify.gtdb.05.accessions.feather <--
+# A tibble: 33 x 3
+   db    genome_accno  accno         
+   <chr> <chr>         <chr>         
+ 1 gtdb  UBA9950       AAJJOOCP_01555
+ 2 gtdb  UBA9902       BFHDIKLF_01381
+ 3 gtdb  GCA_000007785 BHDKMOOB_00467
+ 4 gtdb  GCA_000009125 EBMHHDFG_00198
+ 5 gtdb  UBA9945       FBOAFKLH_00488
+ 6 gtdb  UBA9997       FHGKEOLE_01260
+ 7 gtdb  GCA_000009185 JBKLNOKJ_02087
+ 8 gtdb  UBA9998       KEOFIFCG_00085
+ 9 gtdb  UBA9998       KEOFIFCG_00615
+10 gtdb  UBA9966       MGLECCPO_00316
+11 gtdb  UBA9966       MGLECCPO_00637
+12 gtdb  GCA_001545115 CKODLGHM_02542
+13 gtdb  GCA_000009105 FHGMODCP_01397
+14 gtdb  GCA_000007725 GILLGKDK_00168
+15 gtdb  UBA9998       KEOFIFCG_00901
+16 gtdb  GCA_000007745 NHJCJKCG_00931
+17 gtdb  GCA_000009165 NGOGMLFJ_04158
+18 gtdb  GCA_001244405 PAPHBKOD_02415
+19 gtdb  UBA9902       BFHDIKLF_00402
+20 gtdb  UBA9997       FHGKEOLE_00871
+21 gtdb  GCA_000009125 EBMHHDFG_02854
+22 gtdb  GCA_000009145 OJPPLLDI_02543
+23 gtdb  GCA_001244405 PAPHBKOD_02214
+24 gtdb  GCA_000007785 BHDKMOOB_00466
+25 gtdb  GCA_001545115 CKODLGHM_02541
+26 gtdb  GCA_000009125 EBMHHDFG_02853
+27 gtdb  GCA_000009105 FHGMODCP_01394
+28 gtdb  GCA_000007725 GILLGKDK_00167
+29 gtdb  GCA_000007725 GILLGKDK_00248
+30 gtdb  GCA_000009165 NGOGMLFJ_04157
+31 gtdb  GCA_000007745 NHJCJKCG_00906
+32 gtdb  GCA_000009145 OJPPLLDI_02542
+33 gtdb  GCA_001244405 PAPHBKOD_02414
+--> pf-classify.gtdb.05.dbsources.feather <--
+# A tibble: 1 x 3
+  source name  version
+  <chr>  <chr> <chr>  
+1 GTDB   GTDB  RS89   
+--> pf-classify.gtdb.05.domains.feather <--
+# A tibble: 362 x 13
+    accno          profile     i     n dom_c_evalue dom_i_evalue dom_score hmm_from hmm_to ali_from ali_to env_from env_to
+    <chr>          <chr>   <int> <int>        <dbl>        <dbl>     <dbl>    <int>  <int>    <int>  <int>    <int>  <int>
+  1 CKODLGHM_02542 NrdA        1     1    1.00e-235    2.30e-232     774.         2    542      185    745      184    747
+  2 OJPPLLDI_02543 NrdA        1     1    5.80e-230    1.30e-226     755.         2    542      338    911      337    917
+  3 EBMHHDFG_02854 NrdA        1     1    5.00e-227    1.10e-223     745.         2    542      338    916      337    922
+  4 PAPHBKOD_02415 NrdA        1     2    5.30e- 98    1.20e- 94     319          2    247      285    545      284    547
+  5 PAPHBKOD_02415 NrdA        2     2    8.60e- 97    1.90e- 93     315        240    549      561    843      559    844
+  6 NGOGMLFJ_04158 NrdA        1     2    1.10e- 92    2.30e- 89     302.         4    249      265    530      262    536
+  7 NGOGMLFJ_04158 NrdA        2     2    2.40e- 83    5.50e- 80     271.       240    549      540    831      537    832
+  8 BHDKMOOB_00467 NrdA        1     1    1.20e-158    2.70e-155     519.         3    548      139    717      137    719
+  9 NHJCJKCG_00931 NrdA        1     1    4.60e-156    1.00e-152     511.         3    543      193    740      191    744
+ 10 FHGMODCP_01397 NrdA        1     1    1.00e-152    2.20e-149     500.         2    543      194    742      193    746
+ 11 GILLGKDK_00168 NrdA        1     1    1.30e-151    3.00e-148     496.         2    543      192    740      191    744
+ 12 KEOFIFCG_00615 NrdA        1     1    1.70e-118    3.90e-115     387.        10    531        1    516        1    525
+ 13 AAJJOOCP_01555 NrdA        1     1    3.70e-117    8.20e-114     382.         3    528       77    570       76    572
+ 14 KEOFIFCG_00085 NrdA        1     1    1.00e-104    2.20e-101     341.         2    532       91    590       90    601
+ 15 BFHDIKLF_01381 NrdA        1     1    1.40e-103    3.10e-100     337.         3    531       91    577       89    587
+ 16 FBOAFKLH_00488 NrdA        1     1    7.70e-101    1.70e- 97     328.         2    549       42    529       41    530
+ 17 FHGKEOLE_01260 NrdA        1     1    2.90e-100    6.40e- 97     326.         4    531      121    640      118    652
+ 18 MGLECCPO_00316 NrdA        1     1    2.00e- 91    4.40e- 88     297.         3    532       96    608       94    618
+ 19 EBMHHDFG_00198 NrdA        1     1    1.80e- 64    3.90e- 61     208.        21    532       85    590       68    601
+ 20 JBKLNOKJ_02087 NrdA        1     4    5.70e- 12    1.30e-  8      35          3     57      145    199      143    203
+ 21 JBKLNOKJ_02087 NrdA        2     4    7.90e- 16    1.80e- 12      47.7       59    133      609    683      593    702
+ 22 JBKLNOKJ_02087 NrdA        3     4    2.70e- 30    5.90e- 27      95.5      140    418      732   1053      724   1062
+ 23 JBKLNOKJ_02087 NrdA        4     4    1.00e-  6    2.20e-  3      17.7      403    531     1474   1614     1471   1628
+ 24 MGLECCPO_00637 NrdA        1     1    7.20e-  5    1.60e-  1      11.5      121    163       50     92       42    121
+ 25 CKODLGHM_02542 NrdAe       1     1    0.           0.           1240          1    673       93    767       93    791
+ 26 EBMHHDFG_02854 NrdAe       1     1    4.60e-205    1.10e-201     673         37    665      279    930      262    941
+ 27 OJPPLLDI_02543 NrdAe       1     1    2.30e-203    5.50e-200     667.        37    670      279    930      270    945
+ 28 PAPHBKOD_02415 NrdAe       1     3    6.70e- 73    1.60e- 69     236.        41    345      228    543      210    548
+ 29 PAPHBKOD_02415 NrdAe       2     3    1.90e- 42    4.50e- 39     136.       339    530      560    746      556    759
+ 30 PAPHBKOD_02415 NrdAe       3     3    9.10e-  9    2.10e-  5      24.3      585    648      770    833      750    838
+ 31 NGOGMLFJ_04158 NrdAe       1     2    2.20e-111    5.30e-108     363.        39    531      197    734      171    739
+ 32 NGOGMLFJ_04158 NrdAe       2     2    5.00e-  9    1.20e-  5      25.1      586    647      759    820      755    825
+ 33 FHGMODCP_01397 NrdAe       1     2    2.30e- 90    5.50e- 87     294.        29    526      123    641      102    658
+ 34 FHGMODCP_01397 NrdAe       2     2    6.80e-  3    1.60e+  1       4.9      569    657      652    747      643    753
+ 35 NHJCJKCG_00931 NrdAe       1     2    7.60e- 89    1.80e- 85     289         30    532      122    645      102    657
+ 36 NHJCJKCG_00931 NrdAe       2     2    7.60e-  2    1.80e+  2       1.4      577    654      658    742      645    750
+ 37 GILLGKDK_00168 NrdAe       1     2    8.30e- 87    2.00e- 83     282.        37    527      129    640      101    656
+ 38 GILLGKDK_00168 NrdAe       2     2    2.20e-  4    5.20e-  1       9.8      568    651      649    739      641    760
+ 39 AAJJOOCP_01555 NrdAe       1     3    1.90e- 38    4.50e- 35     122.        55    263       28    240       17    244
+ 40 AAJJOOCP_01555 NrdAe       2     3    9.50e- 33    2.20e- 29     104.       289    467      244    422      239    427
+ 41 AAJJOOCP_01555 NrdAe       3     3    1.20e- 15    2.70e- 12      47.1      496    633      429    567      424    571
+ 42 KEOFIFCG_00615 NrdAe       1     2    1.90e- 24    4.50e- 21      76.1      101    261        1    155        1    159
+ 43 KEOFIFCG_00615 NrdAe       2     2    8.30e- 58    2.00e- 54     186.       285    638      157    515      139    546
+ 44 FBOAFKLH_00488 NrdAe       1     4    1.40e- 31    3.40e- 28      99.7       73    228       24    175       11    182
+ 45 FBOAFKLH_00488 NrdAe       2     4    1.10e- 34    2.70e- 31     110.       285    467      205    383      197    386
+ 46 FBOAFKLH_00488 NrdAe       3     4    2.10e-  4    5.10e-  1       9.8      497    553      387    442      383    450
+ 47 FBOAFKLH_00488 NrdAe       4     4    3.20e-  3    7.70e+  0       5.9      583    648      450    517      441    522
+ 48 BFHDIKLF_01381 NrdAe       1     3    7.30e- 33    1.70e- 29     104.        53    228       42    223       31    254
+ 49 BFHDIKLF_01381 NrdAe       2     3    5.20e- 27    1.20e- 23      84.6      285    468      254    431      249    437
+ 50 BFHDIKLF_01381 NrdAe       3     3    1.80e- 12    4.20e-  9      36.6      493    639      431    577      427    588
+ 51 FHGKEOLE_01260 NrdAe       1     2    1.80e- 32    4.30e- 29     103.        96    263      122    283      112    289
+ 52 FHGKEOLE_01260 NrdAe       2     2    3.20e- 35    7.60e- 32     112.       291    643      289    644      283    666
+ 53 KEOFIFCG_00085 NrdAe       1     3    2.20e-  1    5.20e+  2      -0.1       56     87       14     46        7     54
+ 54 KEOFIFCG_00085 NrdAe       2     3    2.00e- 25    4.60e- 22      79.4       90    223       88    218       63    226
+ 55 KEOFIFCG_00085 NrdAe       3     3    7.50e- 42    1.80e- 38     134.       283    639      252    589      223    613
+ 56 BHDKMOOB_00467 NrdAe       1     2    3.20e- 61    7.40e- 58     198.        23    534       70    606       39    628
+ 57 BHDKMOOB_00467 NrdAe       2     2    1.20e-  5    2.70e-  2      14        584    647      626    702      617    709
+ 58 MGLECCPO_00316 NrdAe       1     4    3.50e- 29    8.30e- 26      91.8       96    264       98    260       88    265
+ 59 MGLECCPO_00316 NrdAe       2     4    1.60e- 23    3.80e- 20      73.1      286    467      260    438      258    444
+ 60 MGLECCPO_00316 NrdAe       3     4    1.20e-  4    2.90e-  1      10.7      497    642      447    609      441    622
+ 61 MGLECCPO_00316 NrdAe       4     4    5.60e-  1    1.30e+  3      -1.4      181    200      744    763      735    769
+ 62 EBMHHDFG_00198 NrdAe       1     2    1.70e- 42    3.90e- 39     136.        75    535       44    501       39    508
+ 63 EBMHHDFG_00198 NrdAe       2     2    3.20e-  2    7.50e+  1       2.7      587    651      536    600      527    607
+ 64 JBKLNOKJ_02087 NrdAe       1     5    3.40e-  8    8.10e-  5      22.4       91    150      141    200      136    211
+ 65 JBKLNOKJ_02087 NrdAe       2     5    4.70e-  8    1.10e-  4      21.9      148    224      606    681      590    689
+ 66 JBKLNOKJ_02087 NrdAe       3     5    9.60e-  7    2.30e-  3      17.6      239    397      738    898      729    908
+ 67 JBKLNOKJ_02087 NrdAe       4     5    1.40e- 15    3.30e- 12      46.8      369    479      898   1008      888   1025
+ 68 JBKLNOKJ_02087 NrdAe       5     5    6.20e-  2    1.50e+  2       1.7      508    651     1471   1626     1459   1654
+ 69 NHJCJKCG_00931 NrdAg       1     1    0.           0.           1051          1    649       93    751       93    756
+ 70 FHGMODCP_01397 NrdAg       1     1    0.           0.           1044.         1    651       95    753       95    759
+ 71 GILLGKDK_00168 NrdAg       1     1    0.           0.           1014.         1    645       93    745       93    760
+ 72 OJPPLLDI_02543 NrdAg       1     2    1.00e-106    2.30e-103     348.        10    556      256    803      247    828
+ 73 OJPPLLDI_02543 NrdAg       2     2    2.70e-  5    6.00e-  2      12.7      551    634      830    906      820    918
+ 74 PAPHBKOD_02415 NrdAg       1     1    5.60e-110    1.20e-106     359.         5    650      192    842      188    844
+ 75 NGOGMLFJ_04158 NrdAg       1     1    2.30e-109    5.00e-106     357.        10    638      168    823      159    831
+ 76 EBMHHDFG_02854 NrdAg       1     2    8.00e-101    1.80e- 97     328.        10    556      256    808      250    832
+ 77 EBMHHDFG_02854 NrdAg       2     2    3.20e-  5    7.20e-  2      12.5      561    636      845    913      833    923
+ 78 CKODLGHM_02542 NrdAg       1     2    1.50e- 92    3.40e- 89     301         32    553      124    633       99    661
+ 79 CKODLGHM_02542 NrdAg       2     2    5.20e-  6    1.20e-  2      15.1      561    639      673    745      660    750
+ 80 BHDKMOOB_00467 NrdAg       1     1    8.20e- 82    1.80e- 78     266.        13    652       56    719       47    719
+ 81 KEOFIFCG_00615 NrdAg       1     3    1.10e- 13    2.50e- 10      40.4      117    268       10    157        2    165
+ 82 KEOFIFCG_00615 NrdAg       2     3    1.80e- 36    4.00e- 33     116.       299    564      162    426      148    434
+ 83 KEOFIFCG_00615 NrdAg       3     3    2.40e-  4    5.40e-  1       9.6      544    627      437    515      429    523
+ 84 AAJJOOCP_01555 NrdAg       1     4    1.50e- 22    3.30e- 19      69.8       54    269       27    241       19    244
+ 85 AAJJOOCP_01555 NrdAg       2     4    2.60e- 19    5.80e- 16      59        300    475      246    424      242    431
+ 86 AAJJOOCP_01555 NrdAg       3     4    2.50e-  4    5.70e-  1       9.5      509    558      428    478      424    491
+ 87 AAJJOOCP_01555 NrdAg       4     4    3.00e-  3    6.80e+  0       6        544    606      495    556      490    571
+ 88 FHGKEOLE_01260 NrdAg       1     3    3.70e- 19    8.30e- 16      58.5       89    268      107    283       75    287
+ 89 FHGKEOLE_01260 NrdAg       2     3    1.00e- 20    2.30e- 17      63.7      301    476      290    468      287    482
+ 90 FHGKEOLE_01260 NrdAg       3     3    2.50e-  2    5.50e+  1       3        542    612      559    629      545    668
+ 91 FBOAFKLH_00488 NrdAg       1     3    1.10e- 15    2.50e- 12      47        102    235       44    177       40    208
+ 92 FBOAFKLH_00488 NrdAg       2     3    4.20e- 18    9.30e- 15      55.1      299    470      210    380      196    386
+ 93 FBOAFKLH_00488 NrdAg       3     3    1.10e-  7    2.50e-  4      20.6      506    600      382    485      376    529
+ 94 BFHDIKLF_01381 NrdAg       1     4    1.90e- 18    4.20e- 15      56.2       57    266       46    252       33    256
+ 95 BFHDIKLF_01381 NrdAg       2     4    9.60e- 18    2.10e- 14      53.9      298    472      258    429      249    433
+ 96 BFHDIKLF_01381 NrdAg       3     4    8.30e-  4    1.90e+  0       7.8      506    544      430    468      425    494
+ 97 BFHDIKLF_01381 NrdAg       4     4    3.70e-  2    8.20e+  1       2.4      561    602      516    557      492    588
+ 98 KEOFIFCG_00085 NrdAg       1     4    1.60e- 16    3.70e- 13      49.8       99    268       90    254       74    259
+ 99 KEOFIFCG_00085 NrdAg       2     4    4.30e- 17    9.70e- 14      51.7      302    475      262    434      236    437
+100 KEOFIFCG_00085 NrdAg       3     4    3.40e-  2    7.60e+  1       2.5      512    553      447    488      441    498
+# … with 262 more rows
+--> pf-classify.gtdb.05.domtblout.feather <--
+# A tibble: 362 x 16
+    accno           tlen profile  qlen     i     n dom_c_evalue dom_i_evalue dom_score dom_bias hmm_from hmm_to ali_from ali_to env_from env_to
+    <chr>          <int> <chr>   <int> <int> <int>        <dbl>        <dbl>     <dbl>    <dbl>    <int>  <int>    <int>  <int>    <int>  <int>
+  1 AAJJOOCP_01555   572 NrdA      550     1     1    3.70e-117    8.20e-114     382.       0          3    528       77    570       76    572
+  2 AAJJOOCP_01555   572 NrdAe     684     1     3    1.90e- 38    4.50e- 35     122.       0         55    263       28    240       17    244
+  3 AAJJOOCP_01555   572 NrdAe     684     2     3    9.50e- 33    2.20e- 29     104.       0        289    467      244    422      239    427
+  4 AAJJOOCP_01555   572 NrdAe     684     3     3    1.20e- 15    2.70e- 12      47.1      0.1      496    633      429    567      424    571
+  5 AAJJOOCP_01555   572 NrdAg     652     1     4    1.50e- 22    3.30e- 19      69.8      0         54    269       27    241       19    244
+  6 AAJJOOCP_01555   572 NrdAg     652     2     4    2.60e- 19    5.80e- 16      59        0        300    475      246    424      242    431
+  7 AAJJOOCP_01555   572 NrdAg     652     3     4    2.50e-  4    5.70e-  1       9.5      0.1      509    558      428    478      424    491
+  8 AAJJOOCP_01555   572 NrdAg     652     4     4    3.00e-  3    6.80e+  0       6        0.1      544    606      495    556      490    571
+  9 AAJJOOCP_01555   572 NrdAh     652     1     5    5.80e- 36    1.40e- 32     114.       0         49    262       27    239       17    245
+ 10 AAJJOOCP_01555   572 NrdAh     652     2     5    3.70e-  6    8.60e-  3      15.3      0        272    345      219    294      216    296
+ 11 AAJJOOCP_01555   572 NrdAh     652     3     5    4.10e- 23    9.60e- 20      71.3      0        380    495      302    424      299    429
+ 12 AAJJOOCP_01555   572 NrdAh     652     4     5    9.10e-  8    2.10e-  4      20.6      0.2      516    557      425    466      420    505
+ 13 AAJJOOCP_01555   572 NrdAh     652     5     5    3.20e-  5    7.60e-  2      12.2      0.1      574    630      514    570      489    572
+ 14 AAJJOOCP_01555   572 NrdAi     545     1     1    2.70e- 76    6.10e- 73     247.       0         37    516       68    569       21    571
+ 15 AAJJOOCP_01555   572 NrdAk     578     1     1    1.90e- 74    4.30e- 71     241.       0         12    548       24    570       14    572
+ 16 AAJJOOCP_01555   572 NrdAn     682     1     2    5.00e- 39    1.20e- 35     124.       0         57    262       31    240       19    245
+ 17 AAJJOOCP_01555   572 NrdAn     682     2     2    1.50e- 40    3.60e- 37     129.       0        290    639      246    570      241    572
+ 18 AAJJOOCP_01555   572 NrdAz     707     1     3    9.30e- 40    2.10e- 36     126.       0         57    273       20    239        5    244
+ 19 AAJJOOCP_01555   572 NrdAz     707     2     3    1.80e- 37    4.00e- 34     119.       0        307    486      246    427      240    431
+ 20 AAJJOOCP_01555   572 NrdAz     707     3     3    2.10e- 25    4.80e- 22      79        0        524    664      429    570      423    572
+ 21 BFHDIKLF_01381   634 NrdA      550     1     1    1.40e-103    3.10e-100     337.       0          3    531       91    577       89    587
+ 22 BFHDIKLF_01381   634 NrdAe     684     1     3    7.30e- 33    1.70e- 29     104.       0         53    228       42    223       31    254
+ 23 BFHDIKLF_01381   634 NrdAe     684     2     3    5.20e- 27    1.20e- 23      84.6      0        285    468      254    431      249    437
+ 24 BFHDIKLF_01381   634 NrdAe     684     3     3    1.80e- 12    4.20e-  9      36.6      0        493    639      431    577      427    588
+ 25 BFHDIKLF_01381   634 NrdAg     652     1     4    1.90e- 18    4.20e- 15      56.2      0         57    266       46    252       33    256
+ 26 BFHDIKLF_01381   634 NrdAg     652     2     4    9.60e- 18    2.10e- 14      53.9      0        298    472      258    429      249    433
+ 27 BFHDIKLF_01381   634 NrdAg     652     3     4    8.30e-  4    1.90e+  0       7.8      0.1      506    544      430    468      425    494
+ 28 BFHDIKLF_01381   634 NrdAg     652     4     4    3.70e-  2    8.20e+  1       2.4      0        561    602      516    557      492    588
+ 29 BFHDIKLF_01381   634 NrdAh     652     1     5    2.30e- 32    5.50e- 29     102.       0         52    222       46    219       36    228
+ 30 BFHDIKLF_01381   634 NrdAh     652     2     5    1.50e-  1    3.60e+  2       0        0        295    345      258    306      248    308
+ 31 BFHDIKLF_01381   634 NrdAh     652     3     5    2.20e- 22    5.30e- 19      68.9      0        380    494      314    431      311    434
+ 32 BFHDIKLF_01381   634 NrdAh     652     4     5    5.40e-  9    1.30e-  5      24.7      0.1      516    555      430    469      428    488
+ 33 BFHDIKLF_01381   634 NrdAh     652     5     5    9.30e-  4    2.20e+  0       7.3      0        579    637      523    581      514    593
+ 34 BFHDIKLF_01381   634 NrdAi     545     1     1    2.10e- 73    4.70e- 70     238.       0         22    521       62    578       44    586
+ 35 BFHDIKLF_01381   634 NrdAk     578     1     1    3.50e- 64    7.80e- 61     208.       0         13    554       41    580       34    591
+ 36 BFHDIKLF_01381   634 NrdAn     682     1     3    7.40e- 34    1.70e- 30     107        0         51    262       41    254        3    292
+ 37 BFHDIKLF_01381   634 NrdAn     682     2     3    2.50e- 27    5.90e- 24      85.4      0        352    467      314    429      311    432
+ 38 BFHDIKLF_01381   634 NrdAn     682     3     3    3.60e- 14    8.50e- 11      41.9      0        496    642      431    577      427    587
+ 39 BFHDIKLF_01381   634 NrdAz     707     1     3    7.70e- 34    1.70e- 30     107.       0         67    238       46    222       33    254
+ 40 BFHDIKLF_01381   634 NrdAz     707     2     3    8.50e- 36    1.90e- 32     113.       0        305    481      258    429      251    432
+ 41 BFHDIKLF_01381   634 NrdAz     707     3     3    1.20e- 20    2.70e- 17      63.3      0        520    667      430    577      425    588
+ 42 BHDKMOOB_00467   719 NrdA      550     1     1    1.20e-158    2.70e-155     519.       3.3        3    548      139    717      137    719
+ 43 BHDKMOOB_00467   719 NrdAe     684     1     2    3.20e- 61    7.40e- 58     198.       1.6       23    534       70    606       39    628
+ 44 BHDKMOOB_00467   719 NrdAe     684     2     2    1.20e-  5    2.70e-  2      14        0.3      584    647      626    702      617    709
+ 45 BHDKMOOB_00467   719 NrdAg     652     1     1    8.20e- 82    1.80e- 78     266.       4.3       13    652       56    719       47    719
+ 46 BHDKMOOB_00467   719 NrdAh     652     1     1    4.10e-106    9.60e-103     346.       7.3        4    650       52    717       49    719
+ 47 BHDKMOOB_00467   719 NrdAi     545     1     4    3.90e- 29    8.70e- 26      91.6      0         31    222      123    320       97    348
+ 48 BHDKMOOB_00467   719 NrdAi     545     2     4    5.80e- 13    1.30e-  9      38.3      0.1      196    365      337    509      321    514
+ 49 BHDKMOOB_00467   719 NrdAi     545     3     4    1.30e-  2    2.90e+  1       4.1      0        346    426      545    619      539    623
+ 50 BHDKMOOB_00467   719 NrdAi     545     4     4    5.20e-  8    1.20e-  4      21.9      0.1      466    543      628    717      617    719
+ 51 BHDKMOOB_00467   719 NrdAk     578     1     4    4.10e- 29    9.10e- 26      91.8      0         29    217      118    308      107    316
+ 52 BHDKMOOB_00467   719 NrdAk     578     2     4    5.90e- 13    1.30e-  9      38.4      0        205    397      321    512      315    522
+ 53 BHDKMOOB_00467   719 NrdAk     578     3     4    1.30e-  3    2.90e+  0       7.6      0        377    437      540    598      535    609
+ 54 BHDKMOOB_00467   719 NrdAk     578     4     4    3.50e-  9    7.90e-  6      26        0        490    575      621    718      615    719
+ 55 BHDKMOOB_00467   719 NrdAn     682     1     2    2.70e- 59    6.30e- 56     191.       0.1        9    529       52    598       44    624
+ 56 BHDKMOOB_00467   719 NrdAn     682     2     2    4.00e-  7    9.30e-  4      18.7      0.1      584    648      623    701      601    714
+ 57 BHDKMOOB_00467   719 NrdAz     707     1     2    1.90e- 74    4.30e- 71     241.       0.1       22    554       51    598       31    603
+ 58 BHDKMOOB_00467   719 NrdAz     707     2     2    1.50e-  7    3.20e-  4      20.1      0.1      612    678      626    706      616    717
+ 59 EBMHHDFG_00198   617 NrdA      550     1     1    1.80e- 64    3.90e- 61     208.       0         21    532       85    590       68    601
+ 60 EBMHHDFG_00198   617 NrdAe     684     1     2    1.70e- 42    3.90e- 39     136.       0         75    535       44    501       39    508
+ 61 EBMHHDFG_00198   617 NrdAe     684     2     2    3.20e-  2    7.50e+  1       2.7      0        587    651      536    600      527    607
+ 62 EBMHHDFG_00198   617 NrdAg     652     1     2    1.50e- 17    3.30e- 14      53.2      0        149    469      122    434       42    441
+ 63 EBMHHDFG_00198   617 NrdAg     652     2     2    4.10e-  5    9.20e-  2      12.1      0        503    595      453    562      451    568
+ 64 EBMHHDFG_00198   617 NrdAh     652     1     2    8.90e- 11    2.10e-  7      30.6      0         70    259       43    233       27    309
+ 65 EBMHHDFG_00198   617 NrdAh     652     2     2    5.90e- 22    1.40e- 18      67.5      0        400    638      345    594      334    601
+ 66 EBMHHDFG_00198   617 NrdAi     545     1     3    1.10e- 16    2.50e- 13      50.5      0         11    213       29    244       21    250
+ 67 EBMHHDFG_00198   617 NrdAi     545     2     3    2.90e- 13    6.40e- 10      39.3      0        200    413      262    499      257    512
+ 68 EBMHHDFG_00198   617 NrdAi     545     3     3    8.30e-  5    1.80e-  1      11.3      0        465    521      534    590      526    602
+ 69 EBMHHDFG_00198   617 NrdAk     578     1     2    1.20e- 27    2.60e- 24      87        0         11    441       23    496       18    503
+ 70 EBMHHDFG_00198   617 NrdAk     578     2     2    3.40e-  3    7.50e+  0       6.2      0        495    556      533    594      520    599
+ 71 EBMHHDFG_00198   617 NrdAn     682     1     2    5.70e- 39    1.30e- 35     124.       0         75    535       43    498       31    503
+ 72 EBMHHDFG_00198   617 NrdAn     682     2     2    1.90e-  3    4.40e+  0       6.5      0        587    652      533    599      516    611
+ 73 EBMHHDFG_00198   617 NrdAz     707     1     3    4.50e- 36    1.00e- 32     114.       0         67    480       30    436       18    449
+ 74 EBMHHDFG_00198   617 NrdAz     707     2     3    3.30e-  7    7.50e-  4      18.9      0        516    558      452    496      448    500
+ 75 EBMHHDFG_00198   617 NrdAz     707     3     3    1.20e-  2    2.60e+  1       3.9      0        611    674      532    596      522    607
+ 76 FBOAFKLH_00488   532 NrdA      550     1     1    7.70e-101    1.70e- 97     328.       0          2    549       42    529       41    530
+ 77 FBOAFKLH_00488   532 NrdAe     684     1     4    1.40e- 31    3.40e- 28      99.7      0         73    228       24    175       11    182
+ 78 FBOAFKLH_00488   532 NrdAe     684     2     4    1.10e- 34    2.70e- 31     110.       0        285    467      205    383      197    386
+ 79 FBOAFKLH_00488   532 NrdAe     684     3     4    2.10e-  4    5.10e-  1       9.8      0        497    553      387    442      383    450
+ 80 FBOAFKLH_00488   532 NrdAe     684     4     4    3.20e-  3    7.70e+  0       5.9      0        583    648      450    517      441    522
+ 81 FBOAFKLH_00488   532 NrdAg     652     1     3    1.10e- 15    2.50e- 12      47        0        102    235       44    177       40    208
+ 82 FBOAFKLH_00488   532 NrdAg     652     2     3    4.20e- 18    9.30e- 15      55.1      0        299    470      210    380      196    386
+ 83 FBOAFKLH_00488   532 NrdAg     652     3     3    1.10e-  7    2.50e-  4      20.6      0        506    600      382    485      376    529
+ 84 FBOAFKLH_00488   532 NrdAh     652     1     4    5.50e- 27    1.30e- 23      84.1      0         94    224       43    173       38    181
+ 85 FBOAFKLH_00488   532 NrdAh     652     2     4    6.40e-  7    1.50e-  3      17.8      0        296    345      210    259      193    262
+ 86 FBOAFKLH_00488   532 NrdAh     652     3     4    4.50e- 24    1.10e- 20      74.5      0        380    494      267    384      264    387
+ 87 FBOAFKLH_00488   532 NrdAh     652     4     4    1.30e- 16    3.10e- 13      49.8      0        520    650      386    528      382    530
+ 88 FBOAFKLH_00488   532 NrdAi     545     1     2    1.90e- 57    4.20e- 54     185.       0          7    428        8    438        4    442
+ 89 FBOAFKLH_00488   532 NrdAi     545     2     2    7.90e-  9    1.80e-  5      24.6      0        457    525      444    514      441    529
+ 90 FBOAFKLH_00488   532 NrdAk     578     1     2    3.70e- 64    8.20e- 61     208.       0         10    442        5    421        1    440
+ 91 FBOAFKLH_00488   532 NrdAk     578     2     2    3.90e-  3    8.60e+  0       6        0        489    559      445    515      437    529
+ 92 FBOAFKLH_00488   532 NrdAn     682     1     4    1.50e- 37    3.50e- 34     119.       0         74    262       24    205       11    210
+ 93 FBOAFKLH_00488   532 NrdAn     682     2     4    3.70e- 27    8.80e- 24      84.9      0        284    465      205    380      204    383
+ 94 FBOAFKLH_00488   532 NrdAn     682     3     4    1.30e-  5    3.00e-  2      13.7      0        499    556      386    442      380    449
+ 95 FBOAFKLH_00488   532 NrdAn     682     4     4    1.70e-  5    4.00e-  2      13.3      0        586    651      450    518      442    525
+ 96 FBOAFKLH_00488   532 NrdAz     707     1     4    1.30e- 33    2.90e- 30     106.       0        104    238       40    174       23    207
+ 97 FBOAFKLH_00488   532 NrdAz     707     2     4    1.90e- 40    4.30e- 37     129.       0        304    483      208    384      198    387
+ 98 FBOAFKLH_00488   532 NrdAz     707     3     4    4.20e-  7    9.30e-  4      18.6      0.1      524    577      386    438      382    449
+ 99 FBOAFKLH_00488   532 NrdAz     707     4     4    1.70e-  6    3.90e-  3      16.5      0        611    673      450    515      442    521
+100 FHGKEOLE_01260   827 NrdA      550     1     1    2.90e-100    6.40e- 97     326.       0          4    531      121    640      118    652
+# … with 262 more rows
+--> pf-classify.gtdb.05.hmm_profiles.feather <--
+# A tibble: 27 x 9
+   profile       psuperfamily    pfamily     pclass psubclass pgroup   prank       version  plen
+   <chr>         <chr>           <chr>       <chr>  <chr>     <chr>    <chr>         <dbl> <int>
+ 1 NrdA          "NrdGRE"        "NrdAJ"     "NrdA" ""        ""       "pclass"        0.1   467
+ 2 NrdAe         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAe"   ""       "psubclass"     0.1   684
+ 3 NrdAg         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAg"   ""       "psubclass"     0.1   652
+ 4 NrdAh         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAh"   ""       "psubclass"     0.1   660
+ 5 NrdAi         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAi"   ""       "psubclass"     0.1   545
+ 6 NrdAk         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAk"   ""       "psubclass"     0.1   578
+ 7 NrdAm         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAm"   ""       "psubclass"     0.1   739
+ 8 NrdAn         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAn"   ""       "psubclass"     0.1   682
+ 9 NrdAq         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAq"   ""       "psubclass"     0.1   650
+10 NrdAz         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAz"   ""       "psubclass"     0.1   707
+11 NrdAz3        "NrdGRE"        "NrdAJ"     "NrdA" "NrdAz"   "NrdAz3" "pgroup"        0.1   750
+12 NrdAz4        "NrdGRE"        "NrdAJ"     "NrdA" "NrdAz"   "NrdAz4" "pgroup"        0.1   750
+13 NrdB          "Ferritin-like" "NrdBR2lox" "NrdB" ""        ""       "pclass"        0.1   261
+14 NrdF          "Ferritin-like" "NrdBR2lox" "NrdB" "NrdF"    ""       "psubclass"     0.1   303
+15 NrdDa         "subclass"      "NrdGRE"    "GRE"  "NrdD"    "NrdDa"  ""              0.5   683
+16 NrdDb         "subclass"      "NrdGRE"    "GRE"  "NrdD"    "NrdDb"  ""              0.5   741
+17 NrdDc         "subclass"      "NrdGRE"    "GRE"  "NrdD"    "NrdDc"  ""              0.5   519
+18 NrdDd         "subclass"      "NrdGRE"    "GRE"  "NrdD"    "NrdDd"  ""              0.5   565
+19 NrdDf         "subclass"      "NrdGRE"    "GRE"  "NrdD"    "NrdDf"  ""              0.5   667
+20 NrdDg         "subclass"      "NrdGRE"    "GRE"  "NrdD"    "NrdDg"  ""              0.5   635
+21 NrdDh         "subclass"      "NrdGRE"    "GRE"  "NrdD"    "NrdDh"  ""              0.5   568
+22 NrdDi         "subclass"      "NrdGRE"    "GRE"  "NrdD"    "NrdDi"  ""              0.5   593
+23 NrdD          "class"         "NrdGRE"    "GRE"  "NrdD"    ""       ""              0.5   498
+24 ATP-cone      ""              ""          ""     ""        ""       "domain"        0.1    86
+25 Glutaredoxin  ""              ""          ""     ""        ""       "domain"        0.1    60
+26 Thioredoxin   ""              ""          ""     ""        ""       "domain"        0.1   104
+27 Peptidase_M27 ""              ""          ""     ""        ""       "domain"        0.1   419
+--> pf-classify.gtdb.05.proteins.feather <--
+# A tibble: 33 x 15
+   accno          profile  score    evalue  tlen  qlen ali_from ali_to alilen env_from env_to envlen hmm_from hmm_to hmmlen
+   <chr>          <chr>    <dbl>     <dbl> <int> <int>    <dbl>  <dbl>  <dbl>    <dbl>  <dbl>  <dbl>    <dbl>  <dbl>  <dbl>
+ 1 AAJJOOCP_01555 NrdA     383.  3.60e-114   572   550       77    570    494       76    572    497        3    528    526
+ 2 BFHDIKLF_01381 NrdA     340   5.00e-101   634   550       91    577    487       89    587    499        3    531    529
+ 3 BHDKMOOB_00467 NrdA     529.  2.30e-158   719   550      139    717    579      137    719    583        3    548    546
+ 4 EBMHHDFG_00198 NrdA     210.  1.10e- 61   617   550       85    590    506       68    601    534       21    532    512
+ 5 FBOAFKLH_00488 NrdA     332.  1.10e- 98   532   550       42    529    488       41    530    490        2    549    548
+ 6 FHGKEOLE_01260 NrdA     328.  2.00e- 97   827   550      121    640    520      118    652    535        4    531    528
+ 7 JBKLNOKJ_02087 NrdA     206.  1.80e- 60  1909   550      145   1614    593      143   1628    668        3    531    522
+ 8 KEOFIFCG_00085 NrdA     342.  1.50e-101   619   550       91    590    500       90    601    512        2    532    531
+ 9 KEOFIFCG_00615 NrdA     387   2.90e-115   606   550        1    516    516        1    525    525       10    531    522
+10 MGLECCPO_00316 NrdA     299.  1.10e- 88   813   550       96    608    513       94    618    525        3    532    530
+11 MGLECCPO_00637 NrdA      11.7 1.50e-  1   124   550       50     92     43       42    121     80      121    163     43
+12 CKODLGHM_02542 NrdAe   1240.  0.          792   684       93    767    675       93    791    699        1    673    673
+13 FHGMODCP_01397 NrdAg   1044.  0.          759   652       95    753    659       95    759    665        1    651    651
+14 GILLGKDK_00168 NrdAg   1015.  0.          761   652       93    745    653       93    760    668        1    645    645
+15 KEOFIFCG_00901 NrdAg     12.9 5.50e-  2   160   652       84    139     56       73    158     86      102    157     56
+16 NHJCJKCG_00931 NrdAg   1051.  0.          756   652       93    751    659       93    756    664        1    649    649
+17 NGOGMLFJ_04158 NrdAh    854.  8.60e-257   832   652      166    832    667      164    832    669        3    652    650
+18 PAPHBKOD_02415 NrdAh   1211.  0.          844   652      194    844    651      193    844    652        2    652    651
+19 BFHDIKLF_00402 NrdAi     10.7 2.80e-  1   374   545       63    120     58       34    152    119      120    178     59
+20 FHGKEOLE_00871 NrdAk     12.2 1.20e-  1   336   578      115    168     54      104    196     93      317    366     50
+21 EBMHHDFG_02854 NrdAz   1293   0.          987   707      234    932    699      233    940    708        2    694    693
+22 OJPPLLDI_02543 NrdAz   1297.  0.          955   707      234    955    722      233    955    723        2    707    706
+23 PAPHBKOD_02214 NrdAz     11.3 1.40e-  1   139   707       79    135     57       66    138     73      347    404     58
+24 BHDKMOOB_00466 NrdF     468.  2.90e-140   321   303        7    315    309        7    315    309        1    303    303
+25 CKODLGHM_02541 NrdF      89.8 3.70e- 25   323   303       27    313    287       20    316    297       14    300    287
+26 EBMHHDFG_02853 NrdF      85.3 8.80e- 24   400   303       98    392    247       80    398    315       20    291    238
+27 FHGMODCP_01394 NrdF     106.  5.90e- 30   384   303       39    334    264       34    360    319        7    264    258
+28 GILLGKDK_00167 NrdF     103.  3.00e- 29   376   303       32    370    312       27    371    342        7    302    296
+29 GILLGKDK_00248 NrdF      11.6 2.40e-  1   215   303       38    114     77       34    122     89      129    205     77
+30 NGOGMLFJ_04157 NrdF     156.  3.70e- 45   347   303       32    341    310       31    346    316        2    296    295
+31 NHJCJKCG_00906 NrdF     100   2.90e- 28   376   303       34    328    276       27    342    312        9    265    257
+32 OJPPLLDI_02542 NrdF      83   4.20e- 23   382   303       76    374    248       66    381    288       16    291    239
+33 PAPHBKOD_02414 NrdF     111.  1.60e- 31   347   303       34    339    306       32    346    315        4    292    289
+--> pf-classify.gtdb.05.sequences.feather <--
+# A tibble: 33 x 2
+   accno          sequence                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+   <chr>          <chr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+ 1 AAJJOOCP_01555 MAVSEGYNYDKGGNTDYAEEPLNLSDNAIKVLERRYLKKDHEGNVIETPNDLFLRVSKSIAIADLLYNENADVDLLTKEFYEMMTNFEFLPNSPTLMNAGRELGQLSACFVLPVEDSIDSIFDAIKYTALIHKSGGGTGFSFSRLRPKNDVVLTTKGISSGPVSFMTVFDTATETIKQGGTRRGANMAILRVDHPDILEFIKCKEENTKLNNFNISVAITDKFIEAFENGKDYELLNPRTRKVDGKLSAKEVFNLIVHMAWKNGEPGIVFIDRLNRGNPTPAIGEIESTNPCGEQPLLPYESCNLGSINLSKFLKKNNKGYEIDFDHLRDVVKKSVHFLDNVIDVNRYPLAQIEDMTKGNRKIGLGVMGFADMLLKLGVPYNSEDAVDLAKIVMKFVKEEATEASRELASNRGSFPNFENSVFHDRREMPIRNATITTIAPTGTISLIAGSSSGIEPIFAISYIRNVMDKDELLEINPVFAEISNERGFYNQELMKRIAKEGTLKNIEEIPEDIKKIFVTAHDITPEWHIRIQAAFQEYTDNAVSKTINFPKSATEKDVMQAYLLAYRSGXS                            
+ 2 BFHDIKLF_01381 MEGMEEVGQVKDHETMRVDKVGDERRSALEEPGHDLAPTLGLFAPELLRKRYLRRDELGNVSETPEEMFSRVARHVAQAEGRFGGDRGAVASKFRDVMSQGLFLPNSPTLMNAGLSLGQLSACFVLPVEDSMDGIFGALKEMAKIHQSGGGTGFSFSSLRPKGDPVRATGGIASGPVSFMEVFDAATEVIKQGGRRRGANMAVLRADHPDILEFVRAKETPGRLQNFNLSVGITDDQMAKARSGGGIDLVNPRSGLVTETIDASGLLREIATHAWHRGDPGVLFLDRINERHPLSGTIEATNPCGEQPLLPYESCNLGSINLSRFVEGGEVEWDRLSETARLAVRFLDDVIEVNRFPLRKIRDATLRSRKIGLGVMGFAEMLIELGISYNSEEAIRLAEETMKSIAETARDESQKLGEERGSFPLLEESSLKYNAMRNATVTTVAPTGSISIIAGTSPGIEPLFGLSFSRDLIGDEMVVTSPLFERITKERGVYSETLMREVARRGTLSGVGGVPNDLRDLFVTAMEVPPAQHVKIQAAFQRYTDNGVSKTVNLPQEATVEDVLGIFTLAFELGCKGITVYRYGCRDQLLYLGEGGRKEK
+ 3 BHDKMOOB_00467 MSLKEIKDVSYFKLNNEINRPVDGQIPLNKDKEALAAFFKENVEPNTRKFSSAEEKINFLMKEDFIETEFIEKYSMDFIEKLYAFLDEQHFQFKSFMAAYKFYSQYALKNNAGTEYLETYEDRVAFNALYFADGDEELALTLADEMIHQRYQPATPSFLNAGRKRRGELVSCFLVQVTDDMNSIGRSINSALQLSRIGGGVGITLSNLREAGAPIKGYDGAASGVVPVMKLFEDSFSYSNQLGQRQGAGVVYLNVFHPDIEMFLSAKKENADEKIRVKTLSLGVIVPDKFYELTRNNEDMYLFSPYSVEREYGVPYSYVDITKEYDNLVANPNIRKRKIKARDLENEISKLQQESGYPYIINIDTANKNNPIDGKIIMSNLCSEILQVQTPSVINGKQEYEVLGTDISCNLGSTNIVNLMESPDFGKSVRAMTRALTFVTDASEIDVVPTIQNGNRLSHTIGLGAMGLHTFFAKNHMEYGSEESLDFTDIYFMLLNYWTLMESNQIAKERNQVFHNFEKSDYASGAYFDKYIEGNFTPKFDKVKEIFKDIQIPTAEDWAALRDAVKKDGLYHQNRLAVAPNGSISYINDTSASIHPITRM
+ 4 EBMHHDFG_00198 MRRRLRGTPGMWMQAGMLTEPEELSPVCAAVLADRYLAPGETTPEQVFRRVAHALAAAEAPDRRTHFARLFYVNMLHGAIGAGRIMANAGVDRQATMVNCFVHPIVGPGAQVAGAADIDRALKQAQVTLRMGGGVGYDFSAVAPMDALQTGEDGGTGSVCEVIERFDHTCAALALANTRGGAQMAVLRCNHPDLAAFVAAKRGRKRWTTFNVSVAVTDAFMQAVADDAQWRLQHRAEPSAQRRAAGAHLLDNGHWCYATVPARQLWDMLVEAAHHSAEPGLLFIDTINAANDLAELETIAATNPCGEQPLPAWGSCVLGPINLSRWIQHPFGVGGQPMFDFVSFGRAVHIQVRMLDNAIDITRWPLIEHMREAHAKRRIGVGVTGLADALTMMGLPYQAPEARNLAVQIGRCLRDNAYAASAALAQERSPYPLFRAERSLAPGHFVATLPGAVRETIARHGLRNSHLLSLAPTGSVSLAFGGNCSSGIEPAFDWAYQRRVRIHHGQPQLYRIENHAYRCFQAMHGEHAVLPSYFVTANQVDGDDHLKMVAALQPFIDASISKTILISGGVSPAQVGALLFRAWQLRLKGITIFRPDPASD
+ 5 FBOAFKLH_00488 MKGNMELTPAARLLLERRYLLPGESPEGLFWRAASAVGGTERSREFFSLLSDLLFLPNSPTLMNAGTPGGQLSACFVLPVEDSIEGIFTTLTHMALIHQSGGGTGFSFSRLRPRGDIVNGVRGAATGPVSFMRVFDAATAAVRQGGRRRGANMGVLAASHPDIEEFVTCKREGGLTNFNISVGVDEQFLRSLEGGLDYDLVNPRDGSVWKSINARSLWRIIAESAWISGEPGVIFLDEINRRNTTPHLGLIEATNPCGEQPLYPYESCNLGSINLARCIRKSEIDDDLLVRVVRCGVEFLDSVIDVNHFPLPQIREKTLATRKIGLGVMGFAEALIRLDIPYESEEALRFAENLMEKVQTTARERSEELGMEKGSFPAIEGSVFHGDMRNATVTTIAPTGSIHLIAGTTSGIEPVFSFAYERTIDGQPVRIVSSLITEFLXLPLDDHTLGLFKTALEITPEHHVRMQAAFQKYVDNAVSKTVNLPERATVGEISQIYSLAHELRCKGITVYRYRSRPDQVLSLGCDVCQIDG                                                                    
+ 6 FHGKEOLE_01260 METALKLEKIELTENQLKVIKDKYFRGVNSPEELFYTVAENIALAELLYLSTIPREQIFKDVSYDILTNPEKAEYKQSELIILHKNKHMKAERANNFKIFINNLYALARSGKFKRFNDVKNKFYGLLSRFEFLPNSPTLMNAGRPLQQLSGCYVLPVGDSIEEIYDSVKNMALIHQSGGGTGFSFSKLRMKNDAVMTTKGISSGPVTFMQIFDKSTDVVKQGGTRRGANMGIMRYDHPDIMDFINAKKTPGMLENFNISVTVDEKFMNAVKNNQDFDLINPHGNTVIGKLNAADVWNTLVKSAWETGDPGIIFIDRINNSDSNPTPDQGMIESTNPCGEQPLLPYEPCNLGSINLAKFIDMKKRDFDWAKLKECVFDATHFLDNVIDVNNYPLPQIEVMAKGNRRIGLGVMGWAEALAMMRLAYDSEEALEKAEQVMKFINDNCLVASENLAIERGAFFNFKNSIYDKNGKYYRGIEAYPRNSARTTIAPTGTIGIAAGLQGAGIEPFFAIVYTRYNAAGIDALKAGKTPEQKDTFYEINPLFKKLAESYNYFELPPEMLWDKISKNHNSLVGIKEIPTDIQKLFLTSHDLTPINHIKMQ
+ 7 JBKLNOKJ_02087 MDTHDVDADELELPIKRTTGETIEQRLTDNAYHNILPARYLRKDAKGDLAESQEEIFERVAQNVALAEAVFEADKQDTEITVTPDQLKPDHPRRDELAEEVFGAGADAADTVTTTLSVYNVNKFAYETIVPELPDEVQHHVKSVADEFEDLMSRLSFMPNSPTLMNAGDELQQLSACFVDSPSDDISDIHQTAKEAAEVFQCLTADSTVMLKEKGMVSVSEVETGDQIAQRSDTGFQYKPVEETHAYENAETLTVTLTNGCSIRGTPNHRLMVDDEWTRIDEIQPDQEVHYTLGWLRETNQSPPKLHSQSHTTVNQTADSISPDSSEPIELSESENADTGNRHNSAVAVKQSRTQTQLISDEVVSRPEHTRRPDQLSEELAELLGLWIDTGLWHQSGVQFNVERENIAEYIDQLSQQLFDTPAAISDTDGTYTVDITDHKLKEWWKANFGGKPDGTQSSYVPQMIKEAPTNVIEAFLRGCFTAEGGLRKDMRPRLCTSSEDSIDDIAVLMMGLGYPVEKSVIRNADGEPYYSVMPATDDGLSAFLHDVGFIDERREIGLSNIESSDSRALNNTHKIEVESIVESPPATVYDITVADNHEY
+ 8 KEOFIFCG_00085 MAKKPALRLTRNALSILEKRYLRKDGRGKPAERPEGLFRRVAENIALAEAKYLFPGETERLQKKHRKEFWAIGQMQDFKTLVKSSKKARQTADEFYELLTSLDFLPNSPTLLNAGGKLQQLSACFVLPIGDTIDSIFKTLYHAALVHKTGAGTGFNFSRLRPRGDVIESSGFTTGPVSFMKVYDAATNEIKLGGVLRGANMGILEAWHPDIREFISVKGKGDALTNFNISVGIRKAFIDAYTHDKSYQLENPRTKKAVGKESARGLVRLMAEEAWATGDPGVVFLDRMERDNPTPALGRLESTDSCGEQPLLPYESCILGSINLSHMVKGRKVDYAKLKKRTHQAVHFLDNAIDMCRYPLPENREMVEQTRKIGVGVMGLSDMLIMLNIPYDSGKALEVAGKMMAFIQREADAASENLARERGAFPAWEKSIYNRKSPHFRGKHKLLRNATRTTIAPTGTISIIAGCSGGIEPLFALSYARTTAEGAILYYFNERLSKALEARKLFTEEMKENIAEEGSVQRLPGIPSSIKKLFVTANDISPEYHVRMQAAFQKHVDNGISKTVTLPRSATPQDIEKVYLQAYELGCKGISVYRSGSREG
+ 9 KEOFIFCG_00615 MVEKHFMPNTPAIANFGNALGMGSACFVLDVEDSIEGIMETLKNTAIVFKAGGGMGYNFSKLRPEGSFVSTTGGSASGPISFMRLFDTMTEVIKQGGIRRGANMGILNSNHPDIERFITAKHGNKALRNFNISVLIMPDFWGHYEANTPYPLVDPKSKEVVKHVNPRELFDKIVYQAWESAEPGVIFYDRVNDTNPFYKHLGPIVTTNPCGEVLLYPNEPCNLGSINVWAFAKYDAEGKVFFDWEHLKETVMSTTRFLDNVIEVNKFPLKQIEEMSLATRKVGLGVMGVGDLLYELRLPFNTDEGRAFMEKLMQFISYWSKVESVRLARERGNLPFYDKSFYPEGRMPFTGFDHPEAWEMDWKGLSEDVRKHGIRNGYTTIIAPTGSISMIAGCSSGMEPVYSLVFQKNVKVGSFFYVDPAFERAMKREGLYSDRLMEKISNNGGRIQGIEEVPEHLQRVFVTAMDTTPEDHIRALASFQKWVDSSISKTNNFPANATVEDMRESYLLAYGLGCKDVTVFRDGSIKDQVLVAPKRKEEEKTITSIKPEHVPAVETHLGGSALMMERNEPQKAKSPKQWTDCPECKTKLEKKEGCVLCPSC
+10 MGLECCPO_00316 MAKYTGGLEDSLDLPPASITVLESRYLNKDPEFLKKDPETKIIGETAEQMYRRVAKDIAAADGLYLEGLKDKANRDTPTEKLYEIVSDDPRIKAKEEQFFDLMTQGYFLPNSPTLMNAGNGLQQLAGCFVLPVEDDMRGIFNAIRDGALVHKSGGGTGYSFSRLRPRNSAVGSTGKVASGPLSFASVFDAATETIKQGGKRRGANMGTLRVDHPDILEFIDAKKNSNKFNNFNFSVGATDEFMNAVKEERNYDLINPKTKEAVGQLNAKEVYNRIMQNVWENGEPGVLFLDTANKYNPTPQLGEYETTNPCGEQWLLPNESCNLGAINMGKMVTPEGKLDKETLEKTVRSCVRYLDNVIDRCEYPLEEITKMVLGNRKIGLGIMGGHDYLIQRGILYGSPEGREAAKEFMSFIHEISQDESRILAEERGVFLNWEKSIYGPNGKNIKLRNAALTTIAPTGTTAIINRNASSGCEPLFDFVYTRKVEDTIGTNLIEINNLFKKWLIENHPEGEKIIERIYAKEFVDDKEMMSSKYIPMSEDLRKKMKLDGFERAEEISARDHVLMQATLQKNGVDSSISKTINAPNSATVEDLANLYMLAW
+11 MGLECCPO_00637 MMADIFDNTILCKNCGIKMQKGKLVKNGFLLRAMICPKCSEQIIHPVDLQDFNKFISLKNKEFKVKMRLVGNSYAVSIPKEIVSFMQEQEKMFDDMVRLCFEESGRLSLNFDNSLNRRRKQNER                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+12 CKODLGHM_02542 MFVIKRDGRKEPIKFDKITARIQKLCYGLDPAHINPIQLALKVIEGIYDGVTTSELDNLAAEVAATLTATHPDYALLASRIAISNLQKNTHKSFSRTIYDLYHYTDPKTQRRAPLIAQDVYDIVQQHAELLDSTLIYDRDFGFDYFGFKTLEKSYLLKMHGKVAERPQHMLMRVAIGIHKSDIHSAIETYHLMSERWFTHATPTLFNAGTPHPQMSSCFLLQMQDDSIEGIFDTLKQCAKISQSAGGIGLSIHGIRATGSYIRGTGGVSNGIIPMLRVFNDTARYVDQGGGKRKGSFAIYLEPWHADIVEFLELRKNHGKEEVRARDLFTALWIPDLFMKRVEANAHWSLFCPNEAPGLHLCWGEEFEALYTRYEEEGRARKTLKAQEVWFKILESQIETGNPYLVYKDACNGKSNQQNLGTIQSSNLCTEIIEYTAPDEIAVCNLASLALPRFVKEGQFDHRKLFEVTQAVTKNLNRIIDHNDYPVEEARRSNLRHRPIGIGVQGLADTFILLRLPFESAQARQLNRDIFETIYYGALTDSNQLAQIEGPYETYAGSPASKGILQYDMWEAQPGPRWDWEALKQNIALHGLRNSLLIAP
+13 FHGMODCP_01397 MNTPTDLKVTKRDGRLEAIDLDKIHRVVTWAADGLENVSVSQVELKSHIQFYNGIRTDDIHETIIKAAADLISEDTPDYQYLAARLAIFHLRKIAYGEYEPPHLYDHVKKLTDAAKYDRHILEDYSREEFDELNAYIDHERDMSFSYAAVKQLEGKYLVQNRVTRQIYETPQFLYVLVAMCLFSKYPKETRLDYVKRFYDAVSTFKVSLPTPIMSGVRTPTRQFSSCVLIECDDSLDSINATTSAIVKYVSQRAGIGINAGRIRGLDSEIRGGEARHTGCIPFFKMFQAAVKSCSQGGVRGGAATLFYPLWHIEAESLLVLKNNRGVEDNRIRQLDYGVQINRLLYTRLIKGGNITLFSPNEVPGLYEAFFADQDEFERLYTKYEQDPDIRKRIIPAADLFSTLMQERAGTGRIYIQNVDHCNTHSPFDPRVAPVHQSNLCMEIALPTKPLDNINDPNGEIALCTLSAFNLGALNSLDELEGLADLTVRALDALLDYQGYPVEAARTSTMGRRSLGIGVINYAYYLAKNGVRYSDGSALGLTHRTFEAIQYYLLKASANLAKEYGACTLFNQTVYSQGKLPIDTYKKDLDAVCNEPLHYD
+14 GILLGKDK_00168 MNQMLFVTKRNGKIELINLDKIHRVLNWAAKGLENISISQVALKSRIQFYNNIKTTIIHETIIKAAADLISENSPDYQYMAARLTIFHLRKKAFGQFNPPNLYDHVKNMIKLEKYDQHLLNDYPKQDFLIMNSFIKHRRDMNFSYAAVKQLEGKYLIQNRVTKKIYESAQFLYILISACLFSKYPNETRMKYIKNFYDAISTFKISLPTPIMAGLRTPTRQFSSCVLIESEDNLNSINATTSAIVKYVSQRAGIGINAGRIRALGSPIRNGDTLHTGCIPFYKHFQSAVKSCSQGGVRGGAATIFYPIWHFEIESLLVLKNNRGIEENRVRHMDYSVQLNKLMYQRLILGEHITLFSPSDVPNLYDSFFNNQEKFERLYIKYENDKTIRKKKVKASYLFSLMMQERTSTGRIYIQNVDHCNSHSAFNPKIAPIRQSNLCLEITLPTKALQDVHDKNGEISLCTLSAINLGSLNNLNDLSKLSNLIVRALDSVLDYQEYPILSAKKSALSRRTLGIGVINFAYYLAKNGVRYSDGSANNLTHRTFEAIQYHLLNASCVLAQEKGACHWFSHTNYYKGILPIDTYKKNVDEICNEPLHLDWE
+15 KEOFIFCG_00901 MALQPRLALASGFAGDGNGTSRQRGEQASHLYLVGYNGNPSIIRLEGLARAAVKDSYKMTLHISGFPFQRDAAKSLCPELVGASEFYLAVIRAELQGETPLLAVGDSPLRCQSSGLAYSRDDELQSIKDKANRIMKTFYESSAKTYPGIGYGKLELQALS                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+16 NHJCJKCG_00931 MNKALMVTKRDGQVEPLDLDKIHRVITWAAEGLENVSVSQVELRSHIQFYEGIRTSDIHETIIKAAADLISKDAPDYQYLAARLAIFHLRKKAYGHFDPPRLYEHVKKLVRLGKYDESLLSDFSREEWDEMDNFLDHSRDMTFSYAAVKQLEGKYLVQNRVTGEIYESAQFLYILVAASLFSKYPAETRLDYIHRFYDAISTFKISLPTPIMSGVRTPTRQFSSCVLIECDDSLDSINATSSAIIKYVSQRAGIGINAGAIRALGSPIRDGEAFHTGCIPFYKHFQTAVKSCSQGGVRGGAATVYFPMWHLEVESLVVLKNNRGVEENRARHMDYGVQINRTMYQRLIKGGDITLFSPSDVPGLYEAFFADQAKFEELYVKYEQDPTIRKRTVKAVDLFSLLMQERASTGRIYVQNVDHCNTHSPFDPAVAPVRQSNLCLEIALPTKPLNNINDEDGEIALCTLSAFNLGKIDDLDELENLADLAVRSLDALLDYQDYPVPAAKRSSLGRRALGIGVINYAYYLAKNGVRYSDGSANNLTHRTFEAIQYYLLKASMNLAKELGACEYFNETTYAKGILPIDTYKKDVDNLTSEPLHYDWE
+17 NGOGMLFJ_04158 MTTNDTLSAIAAGTATPTSVPASVAAPACGAPELTDPSDIVPPPRQAIAMHAQTIEEQNVSTWITKEAGNRKIPFEPERLNRAIDQIHAEFPQLDVADYKRSVFGFVERKDSVNADDLVDHLIREAEARVDLTTPEWEHFAARLYLRRLYKRASRNRFYDASQKYGSFVGLQESLADRNVYSNDILRRYSKDELIEAGKMIEPERDKLFAYNGLYLLATRYLATDSSRGVFELPQERWLTIALYLMQDEIGTGKGSRERRMQLVGEAYWALSNLYMTVATPTLANAGKVGGQLSSCFIDTVDDSLQGIYDSNTDVARVSKHGGGVGAYLGYVRSSGSAIRGVSNSSGGVVPWIKQLNNTAVSVDQLGQRKGAIAVYLDIFHRDIEAFLDLRLNNGDQRLRAHDVFTSVCIPDLFMEAVERRGDWYLFDPHEVKRIKGWYLQDFYDEKKGDANGSFRRKYEEVVADERITRKTVKAIEIFKRIMVSQLETGNPFMFYRDEVNRKNPNKHEGMVYSSNLCTEILQNMSPTRMMQEIISGNQIVTTKKAGDFVVCNLSSINLGRAITVQADQADLLGADVLERLIPIQVRMLDNVIDLNQLPV
+18 PAPHBKOD_02415 MKIYKRDAALAVYDPEKIKNAIGRAFSSVGSSIEESESNRLLNRIESKFPVDVNAGERPISVEEIQDFVERTLMEENYYRELKSYILYREGRARRRISRQRIAAELESIPGVTGVLAGIQKEFIQEEYELEQLNARFQALLSPGLTDLEKLAVLVKACAELTTQEAPKWEMIAARIRMLSFDLQLDRQMQAFHIHSFYEKICWLTEQGLYGKYILENYSQEEIGEFETWLCKKRNDLFTFSSLELLLGRYTICSRTGEPLEAPQEMFMGIAMHLAMKEKKDRSIWVRRFYDMLSTLKVTMATPTLSNARKPYHQLSSCFIDTVPDSLDGIYRSIDNFAKVSKYGGGMGMYFGKVRASGSSIRGFEGAAGGVIRWIRLANDTAVAVDQLGVRQGAVAVYLDVWHRDLPEFLNLRTNNGDERMKAHDVFPAVCYPDYFWKQVRDHIDSDWYLMCPHEILTIKGYALEDAFGEEWEEKYLDCVRDERIRKRVIPIKDVLRLIIRSAVETGTPFAFNRDTVNRANPNRHKGMIYCSNLCTEIAQNMSAIELEEQRTEEVDGETVVVTVTKPGEFVVCNLASLSLGHIQVENYEELSYITESAVR
+19 BFHDIKLF_00402 MKEKWLMASEGPWEEMKPKITTALESGFDCVVTRQEDVEKVRTLGEIKVASFGTEREIEDILIIGRGGEGDGSVPLPEEFGASLDISLARATEGTVAGYVEIRSKRYEEFAVELGKNVDYLVVVGADWKVIPLENMIAGLQGESVKIISGVKTAEEAEVDLATLEKGADGILLDASDLSEIKRVQKLVEKAGMARLDLDIAEITEVKPVGMGDRVCVDTCTMMRPGEGMLVGSQSKAAFLVHSESEESSYVAARPFRVNAGAVHAYVKVGEKTRYLSELKAGDEVTIVDKEGGMKTAVVGRVKIEKRPLMLIEAEVDGERISTLLQNAETIKLVSEDGTAKSVTDLKVGDKVLVHFEGKARHFGMSIEESILER                                                                                                                                                                                                                                  
+20 FHGKEOLE_00871 MQKLFYARPVSKEFEDLLKHYQKQFSAIKFEMSKAIVGQQEIINSLIEALLCNGHVLVEGVPGIAKTLTVRTLSQITGGVFSRIQFTPDLLPTDIIGITTYEEGRGFYSVKGPIFANFVLADEINRAPPKVQSALLEAMQERQVTIGKESFALPSPFFVMATQNPIESLGTYKLPEAQIDRFMFKLKMDYPNVEDELKILHTNSTLRKFEEFKLSQAMTPDTIIRAQQDVKKIYLDKKVEKYIVRLVEATRYAQKYNLETGKYIEYGTSPRSSIALFIASKAHALVKGKSFVTPMDVKEVAHNVLRHRIILNYEGQADEISTDTIIDELLKKVHID                                                                                                                                                                                                                                                                        
+21 EBMHHDFG_02854 MQTAQTEIHSGTANPTAFSQPAEGTAVASGAGYADYKIIRRNGAVVGFEPSKIAVAMTKAFLAVNGGQGAASARVRELVEGLTQNVVRALLRSRPNGGTFHIEDVQDQVELALMRSGEHDVARAYVLYRERRSQERAQAGETQQQPAFIGLNVTDGGITRPLDMAALRNLIVSACAGLGESVDPEPILKETVKNLYEGVPMSQVYDSAILAARTLIEKDPAYSQATARILLHTIRREILGEEVTQAEMAGRYADYFPQFIKRGINAGLLDDTLAQFDLAKLGAALDASRDLQFNYLGLQTLYDRYFLHISDKRIEMPQAFFMRVAMGLSLNEIDREARAIEFYQLLSSFDFMSSTPTLFNSGTCRSQLSSCYLTTVSDDLDGIYEALKENALLSKFAGGLGNDWTNVRALGSHIKGTNGKSQGVVPFLKVVNDTAVAVNQGGKRKGAVCAYLETWHLDIEEFLELRKNTGDDRRRTHDMNTANWIPDLFMKRVMEGGEWTLFSPSTCPDLHDKVGKAFEAAYLGYEDKVARGEIKLFKKMPALQLWRKMLGMLFETGHPWITFKDPCNIRSPQQHVGVVHSSNLCTEITLNTNDSEIAVC
+22 OJPPLLDI_02543 MQLATDLPSSSPVQQKNFLEEMTDLPATRQNYSQYKIIRRNGAVVAFEPGKISIALTKAFIAVRGGQSAASSSMREIVAQLTGEVVHALTRRRPEGGTFHIEDIQDQVELALMRSGDHDIARAYVLYREERARERARQQSAQPASGQVAVLHVVENGQKIPLDPAQLMARIESACQNLGNTVDAALIVKSMLKDLYDGVPAEEVRKSAILSARALIEKEPAYSFVTARLLLDNIRYEVLGEEVAHEAMQSRYAEYFPEFVRKGIEAGLLDERLGQFDLARLSEALAADRDLQFGYLGLQTLYDRYFLHVSERRIELPQIFFMRVAMGLALNEIDREARAIEFYHLLSKFDFMSSTPTLFNSGTRRSQLSSCYLSTVPDSLDGIYEAIKENALLSKFAGGLGNDWTPVRAMGARIKGTNGKSQGVVPFLKVVSDTAVAVNQGGKRKGAVCAYLETWHLDIEEFLELRKNTGDDRRRTHDMNTAVWVPDLFMKRMQEDQEWTLFSPSDTPDLHDKFGRAFEEAYIAYEEQAAQGRLTLFKRIPARQLWRKMLTMLFETGHPWITFKDPCNIRSPQNHVGVVHSSNLCTEITLNTSEKEIAVC
+23 PAPHBKOD_02214 MEKKTEMQEQELNVTSGPHKHQHRHHNGTPCEQAHTHGNGETHTHGEGHRHVHSEAEKKAVINRLSKAIGHMEAVKRMVERDEDCSEVLIQLAAVRSAINNTGKVVLKNHIDHCIVEAVEENDQEAIRKLNQAIDKFIK                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+24 BHDKMOOB_00466 MATYYEAINWNAIEDVIDKSTWEKLTEQFWLDTRIPLSNDLDDWRTLSDLEKTTVGYVFGGLTLLDTVQSESGMDQLRNDVRTPHEEAVLNNIQFMESVHAKSYSSIFSTLNTKKEIDDIFEWTNTNKHLQYKAERINEIYKNGTPLEKKIASVFLETFLFYSGFYTPLYYLGNNKLANVAEIIKLIIRDESVHGTYIGYKFQLGFNELPEDEQDKLKDWMYNLLYELYENEERYTEELYDDLGWTEEVKTFLRYNANKALMNLGMDPLFADTANDVNPIVMNGISTGTSNHDFFSQVGNGYLLGTVEAMKDDDYLYGLDK                                                                                                                                                                                                                                                                                       
+25 CKODLGHM_02541 MECVEPLLQENKDRFVLFPIKHPAIWSMYKKAEASFWTAEEIDLSADIQDWEHKLNADEKHFIKHVLAFFAASDGIVNENLAINFMNEVQYPEARCFYGFQIMSENIHSETYSLLIDTYIKDQKEKKYLFHALETVPCVSKKGHWALRWISQGGFAERLVAFAAVEGIFFSGSFCSIFWLKKRGLMPGLSFANELISRDEGLHCDFACLLYSQLVHPLPEEVVQNIISHAVEIEKEFVVDALPVKLIGMNADLMCQYIEFVADRLLVALGCSKIYQASNPFDFMELISLQGKTNFFERRVSEYQKSGVLAHKDTHVFTLSEDF                                                                                                                                                                                                                                                                                     
+26 EBMHHDFG_02853 MLSWDDDVKPAAQPQAAPQPAYQPQPPLQSFTPDQGGALPPSATQAAGILGNNPNAAAAQSSRRVNAADKRVINGATDVNQLVPFKYKWAWEKYLAGCANHWMPQEINMSRDIALWKDPNGLTEDERRIIKRNLGFFVTADSLAANNIVLGTYRQITAPECRQYLLRQAFEEAIHTHAYQYIVESLGLNEAEIFNAYHEVQSIRDKDEFLIPFIDTLTDPSFKTGTPENDQKLLKSLIVFACIMEGLFFYVGFTQILAMGRQNKMTGAAEQYQYILRDESLHCNFGIDLINQIKLENPHLWTAEFKAEITELFKKAVDLEYRYAEDTMPRGVLGLNAPMFKGYLRFICNRRCQQIGLDALFPNEDNPFPWMSEMIDLKKERNFFETRVIEYQTGGALSWD                                                                                                                                                                                                        
+27 FHGMODCP_01394 MSCEHLTMSYSTFPKTKNDALNEPMFFGQPVNVARYDQQKYEVFEKLIEKQLSFFWRPEEIDVSRDRIDYANLPEHEKHIFISNLKYQTLLDSIQGRSPNVALLPLVSIPELETWIETWSFSETIHSRSYTHIIRNIVNDPSVVFDDIVENEYITARAEDIACYYDDLIEYTQYYNLLGEGVHNVGGKPITVSLRGLKKKLYLCLMCVNVLEAIRFYVSFACSFAFAERELMEGNAKIIKLIARDEALHLTGTQHMLNLMRSGVDDSEMAEIAAELQDECFQLFKKAAEQEKEWAAYLFKDGSMIGLNKEILSQYVEYITNLRMQAVGLPAGFEGANQNPIPWINAWLSSDNVQVAPQEVEISSYLIGQIDSEVNTDDLGDFEL                                                                                                                                                                                                                        
+28 GILLGKDK_00167 MTYTTFSKNKNNQLYEPMFFGQSVNISRYDQQKYEIFEKLIEKQLSFFWRPEEVDLSRDYIDFQNLPQHEKHIFVSNLKYQTLLDSIQGRSPNIALLPIVSLPELETWIETWSFSETIHSRSYTHIIRNIINTPSLIFDDIIDNKNIANRAKDIAKYYDDLIELTSYWHLFGEGKHTINGKKIKIDLHELKKKLYLCLISVNALEAIRFYVSFACSFAFAEREKMEGNAKIIRLIARDEALHLTSTQHILNILHNDKNNEGMSDISKECYEECYHLFIRVSDQEKIWAKYLFQNGSMLGLNQEILSQYIEYITNIRMKAIGLPSPFKILSNPIPWINSWLISDNVQVAPQEISVSSYLIGQINSEINDSDFEKFKL                                                                                                                                                                                                                                
+29 GILLGKDK_00248 MNVEMFDFSIYISFFFSLFALVNPIGMIPIFTSMTNHQSIVERNKTNLIANFSVAIILSISLIFGSFILNLFGISINSFRISGGILVMIIAISMINGNFINNINNQKNGKLDKDIARNISIVPLAMPLIAGPGAISSTIVWSTHYSSVENIFGCMVTIMLFSCFCWTLFKVSPIIVDILGRTGINIMTRIMGLLLMSLGIEFILAGLKASCSNYF                                                                                                                                                                                                                                                                                                                                                                                                 
+30 NGOGMLFJ_04157 MSATPLDRIKILEPRNPNRSTGIINGQTSGILNWNDIPYPSFYRAYKELSTNFWIPDEVDMKGDARQYNELSAREKNAYDSIIGLLATLDSPQTRFIYNVAEYITDPAAHANAAIIGQQEVIHNESYSYVLASITGLADQNRVFEIARTHPTIIKRNAPIMGAYEDFMREKTAETLIRSLIQSSILEGINFYSGFAYFYNLVRQNRMTGTGKIISFINRDELAHTKFISELIRAIIGENQALQGDELTDYVHKAFEHAIDLETQWTAEVLDGIDGIDVDEMIRYVKYRANKMAGMLGIEKLYEGANDNVMPWIKAYADNFTETKTDFFEMRNASYKKTNSDNGFDDL                                                                                                                                                                                                                                                             
+31 NHJCJKCG_00906 MAYTTFSQNKNDQLKEPMFFGQNVNVSRYDQQKYETFEKLIEKQLSFFWRPEEVDVAQDRIDYAALPEHEKHIFISNLKYQTLLDSIQGRSPNVALLPLVSIPELETWIETWTFSETIHSRSYTHIIRNIVNDPSVVFDDIVTNEEIIKRAKDISAYYDDLIRDSQLYNLFGEGTYKVEGKECKVTLRNLKKQLYLCLMSVNALEAIRFYVSFACSFAFAERQLMEGNAKIIKFIARDEALHLTGTQHILNIMAAGQDDPEMAEIAEECKQEAYDLFLAAAEQEKAWADYLFKDGSMIGLNKDILVQYVEYITNIRMQAVGLPLPFQARSNPIPWINAWLVSDNVQVAPQEVEISSYLIGQIDSKVDTSDFGDFDL                                                                                                                                                                                                                                
+32 OJPPLLDI_02542 MLTFEDEVFQPGNILAGTSAQAGMANKMIAERQVLDEEIPAEDHRRVSVEDKRIINCKADVNQLVPFKYKWAWEKYLSACANHWMPQEINMTRDIALWKDPNGLTEDERRIVKRNLGFFVTADSLAANNIVLGTYRHITNPECRQYLLRQAFEEAIHTHAYQYIVESIGLDEGEIFNAYHEIGSIRDKDEFLIPFIDTLTDPSFRTGTLETDQQLLKSLIVFACIMEGLFFYVGFVQILALGRQNKMTGAAEQYQYILRDESMHCNFGIDVINQIKLENPHLWTREFREEISALMRKAVELEYRYAEDTMPRGVLGLNAPMFKEYLRFIINRRSHQIGLDPLFPEAGNPFPWMSEMIDLKKEKNFFETRVIEYQTGGVLSWD                                                                                                                                                                                                                          
+33 PAPHBKOD_02414 MSELVKKPLFNPEGDIEVTKRKMIGGNTTNLNDFNHMKYNWVSDWYRQAMNNFWVPEEINLSVDIKDYKMLPAAERRAYDKILSFLIFLDSIQTANLPNIGEYITANEVNLCLSIQTFQEAVHSQSYSYMLDTICEPQERNAVLYQWKEDRHLLERNEFIGKLYNAFQEEKSPEMLACTLIANYILEGVYFYSGFMFFYNLGRNRRMPGSVQEIRYINRDENTHLWLFRSILMELKKEEPLLFTPERTKIYRSMIQEGCEQEIRWGHYVIGDDIQGLNRDMITDYIQYLGNLRCRGLELDPIYEGHEKEPQSMAWVSQFSNANMIKTDFFEARSTAYAKSSALVDDL                                                                                                                                                                                                                                                             
+--> pf-classify.gtdb.05.taxa.feather <--
+# A tibble: 24 x 10
+   genome_accno  tdomain  tphylum             tclass              torder               tfamily               tgenus             tspecies                     trank   ncbi_taxon_id
+   <chr>         <chr>    <chr>               <chr>               <chr>                <chr>                 <chr>              <chr>                        <chr>   <chr>        
+ 1 UBA9950       Archaea  Euryarchaeota       Thermococci         Methanofastidiosales Methanofastidiosaceae Methanofastidiosum Methanofastidiosum sp9950u   species none         
+ 2 UBA9966       Archaea  Nanoarchaeota       Nanoarchaeia        Pacearchaeales       GW2011-AR1            GW2011-AR13        GW2011-AR13 sp9966u          species none         
+ 3 UBA9997       Archaea  Nanoarchaeota       Nanoarchaeia        Woesearchaeales      UBA9642               UBA9642            UBA9642 sp12459u             species none         
+ 4 UBA9998       Archaea  Nanoarchaeota       Nanoarchaeia        Woesearchaeales      GW2011-AR4            GW2011-AR11        GW2011-AR11 sp12027u         species none         
+ 5 GCA_002499905 Archaea  Halobacterota       Methanomicrobia     Methanomicrobiales   Methanoregulaceae     UBA9949            UBA9949 sp002499905          species 1915520      
+ 6 UBA10516      Archaea  Halobacterota       Methanomicrobia     Methanomicrobiales   Methanoregulaceae     UBA9949            UBA9949 sp10516u             species none         
+ 7 GCA_002497785 Archaea  Halobacterota       Methanomicrobia     Methanomicrobiales   Methanoregulaceae     UBA9949            UBA9949 sp002499905          species 1915515      
+ 8 UBA10127      Archaea  Nanoarchaeota       Nanoarchaeia        Pacearchaeales       GW2011-AR1            GW2011-AR13        GW2011-AR13 sp9966u          species none         
+ 9 UBA12081      Archaea  Nanoarchaeota       Nanoarchaeia        Pacearchaeales       GW2011-AR1            GW2011-AR13        GW2011-AR13 sp9966u          species none         
+10 GCA_000805965 Archaea  Nanoarchaeota       Nanoarchaeia        Pacearchaeales       GW2011-AR1            GW2011-AR13        GW2011-AR13 sp9966u          species 1579372      
+11 GCA_000007725 Bacteria Proteobacteria      Gammaproteobacteria Enterobacterales     Enterobacteriaceae    Buchnera           Buchnera aphidicola_H        species 9            
+12 GCA_000007745 Bacteria Proteobacteria      Gammaproteobacteria Enterobacterales     Pasteurellaceae       Basfia             Basfia succiniciproducens    species 157673       
+13 GCA_000007785 Bacteria Firmicutes          Bacilli             Lactobacillales      Enterococcaceae       Enterococcus       Enterococcus faecalis        species 1351         
+14 GCA_000009105 Bacteria Proteobacteria      Gammaproteobacteria Burkholderiales      Neisseriaceae         Neisseria          Neisseria meningitidis_B     species 487          
+15 GCA_000009125 Bacteria Proteobacteria      Gammaproteobacteria Burkholderiales      Burkholderiaceae      Ralstonia          Ralstonia pseudosolanacearum species 305          
+16 GCA_000009145 Bacteria Proteobacteria      Gammaproteobacteria Burkholderiales      Nitrosomonadaceae     Nitrosomonas       Nitrosomonas europaea        species 915          
+17 GCA_000009165 Bacteria Proteobacteria      Gammaproteobacteria Xanthomonadales      Xanthomonadaceae      Xanthomonas        Xanthomonas perforans        species 456327       
+18 GCA_001244405 Bacteria Firmicutes_A        Clostridia          Lachnospirales       Lachnospiraceae       Faecalicatena      Faecalicatena contorta_B     species 1658112      
+19 GCA_001545115 Bacteria Verrucomicrobiota_A Chlamydiia          Parachlamydiales     Parachlamydiaceae     Protochlamydia     Protochlamydia sp001545115   species 1414722      
+20 GCA_000978535 Bacteria Thermotogota        Thermotogae         Thermotogales        Thermotogaceae        Thermotoga         Thermotoga maritima          species 2336         
+21 GCA_000784795 Bacteria Thermotogota        Thermotogae         Thermotogales        Thermotogaceae        Thermotoga         Thermotoga petrophila        species 1263836      
+22 GCA_002421545 Bacteria Thermotogota        Thermotogae         Thermotogales        Fervidobacteriaceae   Fervidobacterium   Fervidobacterium pennivorans species 1946525      
+23 GCA_000230655 Bacteria Thermotogota        Thermotogae         Thermotogales        Thermotogaceae        Thermotoga         Thermotoga maritima          species 2336         
+24 GCA_002417795 Bacteria Thermotogota        Thermotogae         Thermotogales        Fervidobacteriaceae   Fervidobacterium   Fervidobacterium sp002432805 species 1946523      
+--> pf-classify.gtdb.05.tblout.feather <--
+# A tibble: 159 x 5
+    accno          profile    evalue  score  bias
+    <chr>          <chr>       <dbl>  <dbl> <dbl>
+  1 AAJJOOCP_01555 NrdA    3.60e-114  383.    0  
+  2 AAJJOOCP_01555 NrdAe   1.40e- 81  276.    0  
+  3 AAJJOOCP_01555 NrdAg   3.50e- 43  149     0  
+  4 AAJJOOCP_01555 NrdAh   7.10e- 69  234.    2.4
+  5 AAJJOOCP_01555 NrdAi   2.40e- 73  249.    0  
+  6 AAJJOOCP_01555 NrdAk   3.50e- 71  242.    0  
+  7 AAJJOOCP_01555 NrdAn   2.70e- 79  268.    0  
+  8 AAJJOOCP_01555 NrdAz   5.20e- 97  327.    0  
+  9 BFHDIKLF_01381 NrdA    5.00e-101  340     0  
+ 10 BFHDIKLF_01381 NrdAe   7.80e- 67  227.    0  
+ 11 BFHDIKLF_01381 NrdAg   9.20e- 36  124.    0  
+ 12 BFHDIKLF_01381 NrdAh   2.10e- 61  209     0  
+ 13 BFHDIKLF_01381 NrdAi   1.40e- 70  240.    0  
+ 14 BFHDIKLF_01381 NrdAk   3.90e- 61  208.    0  
+ 15 BFHDIKLF_01381 NrdAn   6.00e- 70  237.    0  
+ 16 BFHDIKLF_01381 NrdAz   8.10e- 85  286.    0  
+ 17 BHDKMOOB_00467 NrdA    2.30e-158  529.    3.3
+ 18 BHDKMOOB_00467 NrdAe   1.00e- 61  210.    6.4
+ 19 BHDKMOOB_00467 NrdAg   1.40e- 78  266     4.3
+ 20 BHDKMOOB_00467 NrdAh   5.20e-104  350.    7.3
+ 21 BHDKMOOB_00467 NrdAi   2.30e- 46  160.    1  
+ 22 BHDKMOOB_00467 NrdAk   4.40e- 49  169.    0.6
+ 23 BHDKMOOB_00467 NrdAn   4.40e- 62  211.    1  
+ 24 BHDKMOOB_00467 NrdAz   1.20e- 77  263.    0.7
+ 25 EBMHHDFG_00198 NrdA    1.10e- 61  210.    0  
+ 26 EBMHHDFG_00198 NrdAe   1.20e- 40  141.    0  
+ 27 EBMHHDFG_00198 NrdAg   1.70e- 19   70.7   0  
+ 28 EBMHHDFG_00198 NrdAh   2.20e- 29  103.    0  
+ 29 EBMHHDFG_00198 NrdAi   2.60e- 32  113.    0  
+ 30 EBMHHDFG_00198 NrdAk   4.60e- 29  103.    0  
+ 31 EBMHHDFG_00198 NrdAn   2.80e- 38  133.    0  
+ 32 EBMHHDFG_00198 NrdAz   6.40e- 41  141.    0  
+ 33 FBOAFKLH_00488 NrdA    1.10e- 98  332.    0  
+ 34 FBOAFKLH_00488 NrdAe   1.40e- 67  230.    0  
+ 35 FBOAFKLH_00488 NrdAg   5.90e- 36  125.    0  
+ 36 FBOAFKLH_00488 NrdAh   5.70e- 68  231.    0  
+ 37 FBOAFKLH_00488 NrdAi   2.40e- 62  212.    0  
+ 38 FBOAFKLH_00488 NrdAk   2.90e- 63  216.    0  
+ 39 FBOAFKLH_00488 NrdAn   3.60e- 69  235.    0  
+ 40 FBOAFKLH_00488 NrdAz   5.10e- 81  274.    0  
+ 41 FHGKEOLE_01260 NrdA    2.00e- 97  328.    0  
+ 42 FHGKEOLE_01260 NrdAe   2.30e- 65  222.    0.2
+ 43 FHGKEOLE_01260 NrdAg   3.60e- 37  129.    0.2
+ 44 FHGKEOLE_01260 NrdAh   1.30e- 60  206.    3.4
+ 45 FHGKEOLE_01260 NrdAi   7.20e- 57  194.    0  
+ 46 FHGKEOLE_01260 NrdAk   2.60e- 54  186     0  
+ 47 FHGKEOLE_01260 NrdAn   1.00e- 61  210.    0  
+ 48 FHGKEOLE_01260 NrdAz   6.10e- 79  267.    0.1
+ 49 JBKLNOKJ_02087 NrdA    1.80e- 60  206.    1.5
+ 50 JBKLNOKJ_02087 NrdAe   2.90e- 33  116.    1.1
+ 51 JBKLNOKJ_02087 NrdAg   1.20e- 20   74.5   1.5
+ 52 JBKLNOKJ_02087 NrdAh   5.50e- 34  118.    4  
+ 53 JBKLNOKJ_02087 NrdAi   7.70e- 26   91.8   5.7
+ 54 JBKLNOKJ_02087 NrdAk   5.40e- 27   95.8   0.1
+ 55 JBKLNOKJ_02087 NrdAn   2.90e- 37  129.    0.8
+ 56 JBKLNOKJ_02087 NrdAz   1.60e- 43  150     5.7
+ 57 KEOFIFCG_00085 NrdA    1.50e-101  342.    0  
+ 58 KEOFIFCG_00085 NrdAe   4.60e- 65  222.    0  
+ 59 KEOFIFCG_00085 NrdAg   4.80e- 32  112.    0  
+ 60 KEOFIFCG_00085 NrdAh   1.10e- 53  183.    0  
+ 61 KEOFIFCG_00085 NrdAi   2.30e- 59  202.    0  
+ 62 KEOFIFCG_00085 NrdAk   3.00e- 58  199     0  
+ 63 KEOFIFCG_00085 NrdAn   3.00e- 71  242.    0  
+ 64 KEOFIFCG_00085 NrdAz   5.90e- 84  284.    0  
+ 65 KEOFIFCG_00615 NrdA    2.90e-115  387     0  
+ 66 KEOFIFCG_00615 NrdAe   7.90e- 78  264.    0  
+ 67 KEOFIFCG_00615 NrdAg   4.20e- 49  168.    0  
+ 68 KEOFIFCG_00615 NrdAh   1.40e- 56  193     0  
+ 69 KEOFIFCG_00615 NrdAi   2.00e- 63  216.    0  
+ 70 KEOFIFCG_00615 NrdAk   3.90e- 63  215.    0  
+ 71 KEOFIFCG_00615 NrdAn   1.70e- 77  262.    0  
+ 72 KEOFIFCG_00615 NrdAz   2.20e- 86  292.    0  
+ 73 MGLECCPO_00316 NrdA    1.10e- 88  299.    0  
+ 74 MGLECCPO_00316 NrdAe   2.60e- 52  179.    0  
+ 75 MGLECCPO_00316 NrdAg   9.20e- 27   94.7   0  
+ 76 MGLECCPO_00316 NrdAh   4.80e- 51  175.    0.1
+ 77 MGLECCPO_00316 NrdAi   6.30e- 55  188.    0  
+ 78 MGLECCPO_00316 NrdAk   1.10e- 55  191.    0  
+ 79 MGLECCPO_00316 NrdAn   2.90e- 55  189.    0  
+ 80 MGLECCPO_00316 NrdAz   2.00e- 65  222.    0  
+ 81 MGLECCPO_00637 NrdA    1.50e-  1   11.7   0.1
+ 82 CKODLGHM_02542 NrdA    1.70e-232  774.    0  
+ 83 CKODLGHM_02542 NrdAe   0.        1240.    0  
+ 84 CKODLGHM_02542 NrdAg   1.90e- 94  318.    0  
+ 85 CKODLGHM_02542 NrdAh   5.90e-122  409     0  
+ 86 CKODLGHM_02542 NrdAi   4.30e- 84  284.    0  
+ 87 CKODLGHM_02542 NrdAk   2.80e- 99  334.    0  
+ 88 CKODLGHM_02542 NrdAn   1.10e-223  746.    0.1
+ 89 CKODLGHM_02542 NrdAz   3.80e-199  664.    0  
+ 90 FHGMODCP_01397 NrdA    2.90e-150  502.    0  
+ 91 FHGMODCP_01397 NrdAe   5.60e- 89  300.    0  
+ 92 FHGMODCP_01397 NrdAg   0.        1044.    0  
+ 93 FHGMODCP_01397 NrdAh   8.50e-107  359.    0  
+ 94 FHGMODCP_01397 NrdAi   6.30e- 38  132.    0  
+ 95 FHGMODCP_01397 NrdAk   5.50e- 40  139.    0  
+ 96 FHGMODCP_01397 NrdAn   7.40e- 82  277.    0  
+ 97 FHGMODCP_01397 NrdAz   8.00e- 93  313     0  
+ 98 GILLGKDK_00168 NrdA    5.40e-149  498.    0.7
+ 99 GILLGKDK_00168 NrdAe   1.50e- 85  289.    6.4
+100 GILLGKDK_00168 NrdAg   0.        1015.    4.6
+# … with 59 more rows
