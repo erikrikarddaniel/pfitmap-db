@@ -1,40 +1,41 @@
 --> pf-classify.gtdb.06.accessions.feather <--
-# A tibble: 26 x 3
-   db    genome_accno  accno         
-   <chr> <chr>         <chr>         
- 1 gtdb  UBA9950       AAJJOOCP_01555
- 2 gtdb  UBA9902       BFHDIKLF_01381
- 3 gtdb  GCA_000007785 BHDKMOOB_00467
- 4 gtdb  GCA_000009125 EBMHHDFG_00198
- 5 gtdb  UBA9945       FBOAFKLH_00488
- 6 gtdb  UBA9997       FHGKEOLE_01260
- 7 gtdb  GCA_000009185 JBKLNOKJ_02087
- 8 gtdb  UBA9998       KEOFIFCG_00085
- 9 gtdb  UBA9998       KEOFIFCG_00615
-10 gtdb  UBA9966       MGLECCPO_00316
-11 gtdb  GCA_001545115 CKODLGHM_02542
-12 gtdb  GCA_000009105 FHGMODCP_01397
-13 gtdb  GCA_000007725 GILLGKDK_00168
-14 gtdb  GCA_000007745 NHJCJKCG_00931
-15 gtdb  GCA_000009165 NGOGMLFJ_04158
-16 gtdb  GCA_001244405 PAPHBKOD_02415
-17 gtdb  GCA_000009125 EBMHHDFG_02854
-18 gtdb  GCA_000009145 OJPPLLDI_02543
-19 gtdb  GCA_000007785 BHDKMOOB_00466
-20 gtdb  GCA_001545115 CKODLGHM_02541
-21 gtdb  GCA_000009105 FHGMODCP_01394
-22 gtdb  GCA_000007725 GILLGKDK_00167
-23 gtdb  GCA_000009165 NGOGMLFJ_04157
-24 gtdb  GCA_000007745 NHJCJKCG_00906
-25 gtdb  GCA_001244405 PAPHBKOD_02414
-26 gtdb  GCA_000008545 PCMIPHHC_00112
+# A tibble: 27 x 3
+   db    genome_accno     accno         
+   <chr> <chr>            <chr>         
+ 1 gtdb  UBA9950          AAJJOOCP_01555
+ 2 gtdb  UBA9902          BFHDIKLF_01381
+ 3 gtdb  GCA_000007785    BHDKMOOB_00467
+ 4 gtdb  GCA_000009125    EBMHHDFG_00198
+ 5 gtdb  UBA9945          FBOAFKLH_00488
+ 6 gtdb  UBA9997          FHGKEOLE_01260
+ 7 gtdb  GCA_000009185    JBKLNOKJ_02087
+ 8 gtdb  UBA9998          KEOFIFCG_00085
+ 9 gtdb  UBA9998          KEOFIFCG_00615
+10 gtdb  UBA9966          MGLECCPO_00316
+11 gtdb  GCA_001545115    CKODLGHM_02542
+12 gtdb  GCA_000009105    FHGMODCP_01397
+13 gtdb  GCA_000007725    GILLGKDK_00168
+14 gtdb  GCA_000007745    NHJCJKCG_00931
+15 gtdb  GCA_000009165    NGOGMLFJ_04158
+16 gtdb  GCA_001244405    PAPHBKOD_02415
+17 gtdb  GCA_000009125    EBMHHDFG_02854
+18 gtdb  GCA_000009145    OJPPLLDI_02543
+19 gtdb  GCA_000007785    BHDKMOOB_00466
+20 gtdb  GCA_001545115    CKODLGHM_02541
+21 gtdb  GCA_000009105    FHGMODCP_01394
+22 gtdb  GCA_000007725    GILLGKDK_00167
+23 gtdb  GCA_000009165    NGOGMLFJ_04157
+24 gtdb  GCA_000007745    NHJCJKCG_00906
+25 gtdb  GCA_001244405    PAPHBKOD_02414
+26 gtdb  GCA_000008545    PCMIPHHC_00112
+27 gtdb  RS_GCF_900078535 AAMDIMMI_01555
 --> pf-classify.gtdb.06.dbsources.feather <--
 # A tibble: 1 x 3
   source name  version
   <chr>  <chr> <chr>  
 1 GTDB   GTDB  RS89   
 --> pf-classify.gtdb.06.domains.feather <--
-# A tibble: 57 x 13
+# A tibble: 58 x 13
    accno          profile       i     n dom_c_evalue dom_i_evalue dom_score hmm_from hmm_to ali_from ali_to env_from env_to
    <chr>          <chr>     <int> <int>        <dbl>        <dbl>     <dbl>    <int>  <int>    <int>  <int>    <int>  <int>
  1 CKODLGHM_02542 NrdA          1     1    1.00e-235    2.30e-232     774.         2    542      185    745      184    747
@@ -94,6 +95,7 @@
 55 PCMIPHHC_00112 NrdJCterm     1     1    7.80e- 24    1.20e- 19      85.4        2    144      669    827      668    827
 56 PCMIPHHC_00112 NrdJh         1     1    1.40e- 77    3.70e- 74     265.        75    570      133    639      124    644
 57 PCMIPHHC_00112 NrdJk         1     2    5.30e-125    1.30e-121     421.        64    630      129    738      121    752
+58 AAMDIMMI_01555 NrdR          1     1    4.90e- 62    1.50e- 58     212.         1    152        1    152        1    154
 --> pf-classify.gtdb.06.domtblout.feather <--
 # A tibble: 380 x 16
     accno           tlen profile  qlen     i     n dom_c_evalue dom_i_evalue dom_score dom_bias hmm_from hmm_to ali_from ali_to env_from env_to
@@ -200,49 +202,50 @@
 100 FHGKEOLE_01260   827 NrdA      550     1     1    2.90e-100    6.40e- 97     326.       0          4    531      121    640      118    652
 # … with 280 more rows
 --> pf-classify.gtdb.06.hmm_profiles.feather <--
-# A tibble: 38 x 9
-   profile       psuperfamily    pfamily     pclass psubclass  pgroup   prank       version  plen
-   <chr>         <chr>           <chr>       <chr>  <chr>      <chr>    <chr>         <dbl> <int>
- 1 NrdA          "NrdGRE"        "NrdAJ"     "NrdA" ""         ""       "pclass"        0.1   467
- 2 NrdAe         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAe"    ""       "psubclass"     0.1   684
- 3 NrdAg         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAg"    ""       "psubclass"     0.1   652
- 4 NrdAh         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAh"    ""       "psubclass"     0.1   660
- 5 NrdAi         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAi"    ""       "psubclass"     0.1   545
- 6 NrdAk         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAk"    ""       "psubclass"     0.1   578
- 7 NrdAm         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAm"    ""       "psubclass"     0.1   739
- 8 NrdAn         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAn"    ""       "psubclass"     0.1   682
- 9 NrdAq         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAq"    ""       "psubclass"     0.1   650
-10 NrdAz         "NrdGRE"        "NrdAJ"     "NrdA" "NrdAz"    ""       "psubclass"     0.1   707
-11 NrdAz3        "NrdGRE"        "NrdAJ"     "NrdA" "NrdAz"    "NrdAz3" "pgroup"        0.1   750
-12 NrdAz4        "NrdGRE"        "NrdAJ"     "NrdA" "NrdAz"    "NrdAz4" "pgroup"        0.1   750
-13 NrdB          "Ferritin-like" "NrdBR2lox" "NrdB" ""         ""       "pclass"        0.1   261
-14 NrdF          "Ferritin-like" "NrdBR2lox" "NrdB" "NrdF"     ""       "psubclass"     0.1   303
-15 NrdDa         "subclass"      "NrdGRE"    "GRE"  "NrdD"     "NrdDa"  ""              0.5   683
-16 NrdDb         "subclass"      "NrdGRE"    "GRE"  "NrdD"     "NrdDb"  ""              0.5   741
-17 NrdDc         "subclass"      "NrdGRE"    "GRE"  "NrdD"     "NrdDc"  ""              0.5   519
-18 NrdDd         "subclass"      "NrdGRE"    "GRE"  "NrdD"     "NrdDd"  ""              0.5   565
-19 NrdDf         "subclass"      "NrdGRE"    "GRE"  "NrdD"     "NrdDf"  ""              0.5   667
-20 NrdDg         "subclass"      "NrdGRE"    "GRE"  "NrdD"     "NrdDg"  ""              0.5   635
-21 NrdDh         "subclass"      "NrdGRE"    "GRE"  "NrdD"     "NrdDh"  ""              0.5   568
-22 NrdDi         "subclass"      "NrdGRE"    "GRE"  "NrdD"     "NrdDi"  ""              0.5   593
-23 NrdD          "class"         "NrdGRE"    "GRE"  "NrdD"     ""       ""              0.5   498
-24 ATP-cone      ""              ""          ""     ""         ""       "domain"        0.1    86
-25 Glutaredoxin  ""              ""          ""     ""         ""       "domain"        0.1    60
-26 Thioredoxin   ""              ""          ""     ""         ""       "domain"        0.1   104
-27 Peptidase_M27 ""              ""          ""     ""         ""       "domain"        0.1   419
-28 NrdJ          "NrdGRE"        "NrdAJ"     "NrdJ" ""         ""       "pclass"        0.1   407
-29 NrdJa+b       "NrdGRE"        "NrdAJ"     "NrdJ" "NrdJa+b"  ""       "psubclass"     0.1   695
-30 NrdJg         "NrdGRE"        "NrdAJ"     "NrdJ" "NrdJg"    ""       "psubclass"     0.1   930
-31 NrdJh         "NrdGRE"        "NrdAJ"     "NrdJ" "NrdJh"    ""       "psubclass"     0.1   576
-32 NrdJk         "NrdGRE"        "NrdAJ"     "NrdJ" "NrdJk"    ""       "psubclass"     0.1   668
-33 NrdJo         "NrdGRE"        "NrdAJ"     "NrdJ" "NrdJo"    ""       "psubclass"     0.1   720
-34 NrdJp         "NrdGRE"        "NrdAJ"     "NrdJ" "NrdJp"    ""       "psubclass"     0.1   621
-35 NrdJuc00      "NrdGRE"        "NrdAJ"     "NrdJ" "NrdJuc00" ""       "psubclass"     0.1   490
-36 NrdJuc01      "NrdGRE"        "NrdAJ"     "NrdJ" "NrdJuc01" ""       "psubclass"     0.1   543
-37 NrdJuc02      "NrdGRE"        "NrdAJ"     "NrdJ" "NrdJuc02" ""       "psubclass"     0.1   712
-38 NrdJCterm     ""              ""          ""     ""         ""       "domain"        0.1   144
+# A tibble: 39 x 9
+   profile       psuperfamily       pfamily       pclass psubclass  pgroup   prank       version  plen
+   <chr>         <chr>              <chr>         <chr>  <chr>      <chr>    <chr>         <dbl> <int>
+ 1 NrdA          "NrdGRE"           "NrdAJ"       "NrdA" ""         ""       "pclass"        0.1   467
+ 2 NrdAe         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAe"    ""       "psubclass"     0.1   684
+ 3 NrdAg         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAg"    ""       "psubclass"     0.1   652
+ 4 NrdAh         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAh"    ""       "psubclass"     0.1   660
+ 5 NrdAi         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAi"    ""       "psubclass"     0.1   545
+ 6 NrdAk         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAk"    ""       "psubclass"     0.1   578
+ 7 NrdAm         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAm"    ""       "psubclass"     0.1   739
+ 8 NrdAn         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAn"    ""       "psubclass"     0.1   682
+ 9 NrdAq         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAq"    ""       "psubclass"     0.1   650
+10 NrdAz         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAz"    ""       "psubclass"     0.1   707
+11 NrdAz3        "NrdGRE"           "NrdAJ"       "NrdA" "NrdAz"    "NrdAz3" "pgroup"        0.1   750
+12 NrdAz4        "NrdGRE"           "NrdAJ"       "NrdA" "NrdAz"    "NrdAz4" "pgroup"        0.1   750
+13 NrdB          "Ferritin-like"    "NrdBR2lox"   "NrdB" ""         ""       "pclass"        0.1   261
+14 NrdF          "Ferritin-like"    "NrdBR2lox"   "NrdB" "NrdF"     ""       "psubclass"     0.1   303
+15 NrdDa         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDa"  ""              0.5   683
+16 NrdDb         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDb"  ""              0.5   741
+17 NrdDc         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDc"  ""              0.5   519
+18 NrdDd         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDd"  ""              0.5   565
+19 NrdDf         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDf"  ""              0.5   667
+20 NrdDg         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDg"  ""              0.5   635
+21 NrdDh         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDh"  ""              0.5   568
+22 NrdDi         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDi"  ""              0.5   593
+23 NrdD          "class"            "NrdGRE"      "GRE"  "NrdD"     ""       ""              0.5   498
+24 ATP-cone      ""                 ""            ""     ""         ""       "domain"        0.1    86
+25 Glutaredoxin  ""                 ""            ""     ""         ""       "domain"        0.1    60
+26 Thioredoxin   ""                 ""            ""     ""         ""       "domain"        0.1   104
+27 Peptidase_M27 ""                 ""            ""     ""         ""       "domain"        0.1   419
+28 NrdJ          "NrdGRE"           "NrdAJ"       "NrdJ" ""         ""       "pclass"        0.1   407
+29 NrdJa+b       "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJa+b"  ""       "psubclass"     0.1   695
+30 NrdJg         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJg"    ""       "psubclass"     0.1   930
+31 NrdJh         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJh"    ""       "psubclass"     0.1   576
+32 NrdJk         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJk"    ""       "psubclass"     0.1   668
+33 NrdJo         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJo"    ""       "psubclass"     0.1   720
+34 NrdJp         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJp"    ""       "psubclass"     0.1   621
+35 NrdJuc00      "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJuc00" ""       "psubclass"     0.1   490
+36 NrdJuc01      "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJuc01" ""       "psubclass"     0.1   543
+37 NrdJuc02      "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJuc02" ""       "psubclass"     0.1   712
+38 NrdJCterm     ""                 ""            ""     ""         ""       "domain"        0.1   144
+39 NrdR          "NrdR-superfamily" "NrdR-family" "NrdR" ""         ""       "class"         0.5   157
 --> pf-classify.gtdb.06.proteins.feather <--
-# A tibble: 26 x 15
+# A tibble: 27 x 15
    accno          profile   score    evalue  tlen  qlen ali_from ali_to alilen env_from env_to envlen hmm_from hmm_to hmmlen
    <chr>          <chr>     <dbl>     <dbl> <int> <int>    <dbl>  <dbl>  <dbl>    <dbl>  <dbl>  <dbl>    <dbl>  <dbl>  <dbl>
  1 AAJJOOCP_01555 NrdA      383.  3.60e-114   572   550       77    570    494       76    572    497        3    528    526
@@ -271,6 +274,7 @@
 24 NHJCJKCG_00906 NrdF      100   2.90e- 28   376   303       34    328    276       27    342    312        9    265    257
 25 PAPHBKOD_02414 NrdF      111.  1.60e- 31   347   303       34    339    306       32    346    315        4    292    289
 26 PCMIPHHC_00112 NrdJuc02  681.  4.70e-200   827   712       11    672    636        2    822    805      107    679    573
+27 AAMDIMMI_01555 NrdR      212.  1.40e- 58   154   157        1    152    152        1    154    154        1    152    152
 --> pf-classify.gtdb.06.sequences.feather <--
 # A tibble: 26 x 2
    accno          sequence                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
