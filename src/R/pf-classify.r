@@ -78,7 +78,8 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
 
 # Args list for testing:
 # NCBI: opt = list(args = Sys.glob('pf-classify.00.d/*tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
-# GTDB: opt = list(args = Sys.glob('pf-classify.gtdb.02.d/*tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.02.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbannotindex='pf-classify.gtdb.02.d/gtdb_prokka_index.tsv.gz', gtdbmetadata='pf-classify.gtdb.02.d/gtdb_metadata.tsv', gtdbtaxonomy='pf-classify.gtdb.02.d/gtdb_taxonomy.tsv', seqfaa='pf-classify.gtdb.03.d/genomes.faa'))
+# GTDB: opt = list(args = Sys.glob('pf-classify.gtdb.02.d/*tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.02.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbmetadata='pf-classify.gtdb.02.d/gtdb_metadata.tsv', seqfaa='pf-classify.gtdb.03.d/genomes.faa'))
+# GTDB 06: opt = list(args = Sys.glob('pf-classify.gtdb.06.d/*tblout'), options=list(verbose=T, featherprefix='/tmp/pf-classify-testing', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.06.phier.tsv', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbmetadata='pf-classify.gtdb.06.d/gtdb_metadata.tsv', seqfaa='pf-classify.gtdb.06.d/genomes.faa'))
 DEBUG   = 0
 INFO    = 1
 WARNING = 2
