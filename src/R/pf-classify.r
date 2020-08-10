@@ -137,7 +137,7 @@ if ( gtdb ) {
     ) %>%
     separate(thier, c('tdomain', 'tphylum', 'tclass', 'torder', 'tfamily', 'tgenus', 'tspecies'), sep = ';') %>%
     as.data.table()
-  print(gtdbmetadata %>% lazy_dt() %>% transmute(accno0 = str_remove(accession, '^RS_') %>% str_remove('^GB_') %>% str_remove('\\.[0-9]'), accession) %>% as.data.table())
+  #print(gtdbmetadata %>% lazy_dt() %>% transmute(accno0 = str_remove(accession, '^RS_') %>% str_remove('^GB_') %>% str_remove('\\.[0-9]'), accession) %>% as.data.table())
   gtdbtaxonomy <- lazy_dt(gtdbmetadata) %>%
     mutate(
       accno0 = str_remove(accession, '^RS_') %>% str_remove('^GB_') %>% str_remove('\\.[0-9]'), 
