@@ -482,50 +482,165 @@
 380 PCMIPHHC_00112   827 NrdJuc02    712     2     2    8.00e-187    1.40e-183     627.       0        188    679      126    672      121    822
 381 IDNBBGKL_01005   295 RecA        263     1     1    6.40e-129    1.40e-125     433.       3          3    263       15    275       13    275
 --> pf-classify.gtdb.06.hmm_profiles.feather <--
-# A tibble: 41 x 9
-   profile       psuperfamily       pfamily       pclass psubclass  pgroup   prank          version  plen
-   <chr>         <chr>              <chr>         <chr>  <chr>      <chr>    <chr>            <dbl> <int>
- 1 NrdA          "NrdGRE"           "NrdAJ"       "NrdA" ""         ""       "pclass"           0.1   467
- 2 NrdAe         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAe"    ""       "psubclass"        0.1   684
- 3 NrdAg         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAg"    ""       "psubclass"        0.1   652
- 4 NrdAh         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAh"    ""       "psubclass"        0.1   660
- 5 NrdAi         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAi"    ""       "psubclass"        0.1   545
- 6 NrdAk         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAk"    ""       "psubclass"        0.1   578
- 7 NrdAm         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAm"    ""       "psubclass"        0.1   739
- 8 NrdAn         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAn"    ""       "psubclass"        0.1   682
- 9 NrdAq         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAq"    ""       "psubclass"        0.1   650
-10 NrdAz         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAz"    ""       "psubclass"        0.1   707
-11 NrdAz3        "NrdGRE"           "NrdAJ"       "NrdA" "NrdAz"    "NrdAz3" "pgroup"           0.1   750
-12 NrdAz4        "NrdGRE"           "NrdAJ"       "NrdA" "NrdAz"    "NrdAz4" "pgroup"           0.1   750
-13 NrdB          "Ferritin-like"    "NrdBR2lox"   "NrdB" ""         ""       "pclass"           0.1   261
-14 NrdF          "Ferritin-like"    "NrdBR2lox"   "NrdB" "NrdF"     ""       "psubclass"        0.1   303
-15 NrdDa         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDa"  ""                 0.5   683
-16 NrdDb         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDb"  ""                 0.5   741
-17 NrdDc         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDc"  ""                 0.5   519
-18 NrdDd         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDd"  ""                 0.5   565
-19 NrdDf         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDf"  ""                 0.5   667
-20 NrdDg         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDg"  ""                 0.5   635
-21 NrdDh         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDh"  ""                 0.5   568
-22 NrdDi         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDi"  ""                 0.5   593
-23 NrdD          "class"            "NrdGRE"      "GRE"  "NrdD"     ""       ""                 0.5   498
-24 ATP-cone      ""                 ""            ""     ""         ""       "domain"           0.1    86
-25 Glutaredoxin  ""                 ""            ""     ""         ""       "domain"           0.1    60
-26 Thioredoxin   ""                 ""            ""     ""         ""       "domain"           0.1   104
-27 Peptidase_M27 ""                 ""            ""     ""         ""       "domain"           0.1   419
-28 NrdJ          "NrdGRE"           "NrdAJ"       "NrdJ" ""         ""       "pclass"           0.1   407
-29 NrdJa+b       "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJa+b"  ""       "psubclass"        0.1   695
-30 NrdJg         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJg"    ""       "psubclass"        0.1   930
-31 NrdJh         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJh"    ""       "psubclass"        0.1   576
-32 NrdJk         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJk"    ""       "psubclass"        0.1   668
-33 NrdJo         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJo"    ""       "psubclass"        0.1   720
-34 NrdJp         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJp"    ""       "psubclass"        0.1   621
-35 NrdJuc00      "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJuc00" ""       "psubclass"        0.1   490
-36 NrdJuc01      "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJuc01" ""       "psubclass"        0.1   543
-37 NrdJuc02      "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJuc02" ""       "psubclass"        0.1   712
-38 NrdJCterm     ""                 ""            ""     ""         ""       "domain"           0.1   144
-39 NrdR          "NrdR-superfamily" "NrdR-family" "NrdR" ""         ""       "class"            0.5   157
-40 RecA NTPase   "RecA NTPase"      ""            ""     ""         ""       "psuperfamily"     1      NA
-41 RecA          "RecA NTPase"      "RecA"        ""     ""         ""       "pfamily"          1     263
+# A tibble: 156 x 10
+    profile                  prank         psuperfamily               pfamily         pclass            psubclass  pgroup   psubgroup version  plen
+    <chr>                    <chr>         <chr>                      <chr>           <chr>             <chr>      <chr>    <chr>     <chr>   <int>
+  1 7tm_1                    "domain"      ""                         ""              ""                ""         ""       ""        1.0       268
+  2 ADH_synthase             "family"      "DeoC/FbaB/ lacD aldolase" "ADH_synthase"  ""                ""         ""       ""        0.5       255
+  3 ATP-cone                 "domain"      ""                         ""              ""                ""         ""       ""        1.0        86
+  4 BoNT_A                   "class"       "BoNT_Tetanus"             "BoNT"          "BoNT_A"          ""         ""       ""        0.5      1296
+  5 BoNT_B                   "class"       "BoNT_Tetanus"             "BoNT"          "BoNT_B"          ""         ""       ""        0.5      1291
+  6 BoNT_CDa                 "subclass"    "BoNT_Tetanus"             "BoNT"          "BoNT_CD"         "BoNT_CDa" ""       ""        0.5      1285
+  7 BoNT_CDb                 "subclass"    "BoNT_Tetanus"             "BoNT"          "BoNT_CD"         "BoNT_CDb" ""       ""        0.5      1276
+  8 BoNT_CD                  "class"       "BoNT_Tetanus"             "BoNT"          "BoNT_CD"         ""         ""       ""        0.5      1280
+  9 BoNT_CDc                 "subclass"    "BoNT_Tetanus"             "BoNT"          "BoNT_CD"         "BoNT_CDc" ""       ""        0.5      1280
+ 10 BoNT_CDd                 "subclass"    "BoNT_Tetanus"             "BoNT"          "BoNT_CD"         "BoNT_CDd" ""       ""        0.5      1291
+ 11 BoNT_Cmp                 "class"       "BoNT_Tetanus"             "BoNT"          "BoNT_Cmp"        ""         ""       ""        0.5      1260
+ 12 BoNT_E                   "class"       "BoNT_Tetanus"             "BoNT"          "BoNT_E"          ""         ""       ""        0.5      1252
+ 13 BoNT                     "family"      "BoNT_Tetanus"             "BoNT"          ""                ""         ""       ""        0.5      1270
+ 14 BoNT_F                   "class"       "BoNT_Tetanus"             "BoNT"          "BoNT_F"          ""         ""       ""        0.5      1280
+ 15 BoNT_G                   "class"       "BoNT_Tetanus"             "BoNT"          "BoNT_G"          ""         ""       ""        0.5      1297
+ 16 BoNT_H                   "class"       "BoNT_Tetanus"             "BoNT"          "BoNT_H"          ""         ""       ""        0.5      1288
+ 17 BoNT_Tetanus             "superfamily" "BoNT_Tetanus"             ""              ""                ""         ""       ""        0.5      1270
+ 18 BoNT_Wo                  "family"      "BoNT_Tetanus"             "BoNT_Wo"       ""                ""         ""       ""        0.5      1336
+ 19 BoNT_X                   "class"       "BoNT_Tetanus"             "BoNT"          "BoNT_X"          ""         ""       ""        0.5      1306
+ 20 BoNT_XY                  ""            "BoNT_Tetanus"             "BoNT"          ""                ""         ""       ""        0.5      1306
+ 21 BoNT_Y                   "class"       "BoNT_Tetanus"             "BoNT"          "BoNT_Y"          ""         ""       ""        0.5      1279
+ 22 DeoC/FbaB/ lacD aldolase "superfamily" "DeoC/FbaB/ lacD aldolase" ""              ""                ""         ""       ""        0.5        NA
+ 23 DERA                     "family"      "DeoC/FbaB/ lacD aldolase" "DERA"          ""                ""         ""       ""        0.5       211
+ 24 Ferritin                 "class"       "Ferritin-like"            "Ferritins"     "Ferritin"        ""         ""       ""        0.5       142
+ 25 Ferritin-like-enzymes    ""            "Ferritin-like"            ""              ""                ""         ""       ""        0.5        NA
+ 26 Ferritin-like            "superfamily" "Ferritin-like"            ""              ""                ""         ""       ""        0.5        NA
+ 27 Ferritins                "family"      "Ferritin-like"            "Ferritins"     ""                ""         ""       ""        0.5        NA
+ 28 Flavodoxin_1             "class"       "Flavodoxin superfamily"   "Flavodoxins"   "Flavodoxin_1"    ""         ""       ""        0.5       143
+ 29 Flavodoxin_2             "class"       "Flavodoxin superfamily"   "Flavodoxins"   "Flavodoxin_2"    ""         ""       ""        0.5       199
+ 30 Flavodoxin_3             "class"       "Flavodoxin superfamily"   "Flavodoxins"   "Flavodoxin_3"    ""         ""       ""        0.5       160
+ 31 Flavodoxin_4             "class"       "Flavodoxin superfamily"   "Flavodoxins"   "Flavodoxin_4"    ""         ""       ""        0.5       156
+ 32 Flavodoxin_5             "class"       "Flavodoxin superfamily"   "Flavodoxins"   "Flavodoxin_5"    ""         ""       ""        0.5       143
+ 33 Flavodoxin_NrdI          "class"       "Flavodoxin superfamily"   "Flavodoxins"   "Flavodoxin_NdrI" ""         ""       ""        0.5       122
+ 34 Flavodoxins              "family"      "Flavodoxin superfamily"   "Flavodoxins"   ""                ""         ""       ""        0.5        NA
+ 35 Flavodoxin superfamily   "superfamily" "Flavodoxin superfamily"   ""              ""                ""         ""       ""        0.5        NA
+ 36 FMN_red                  "class"       "Flavodoxin superfamily"   "Flavodoxins"   "FMN_red"         ""         ""       ""        0.5       152
+ 37 Glutaredoxin             "domain"      ""                         ""              ""                ""         ""       ""        1.0        60
+ 38 GRE                      "family"      "NrdGRE"                   "GRE"           ""                ""         ""       ""        0.5       648
+ 39 lacD_aldolase            "family"      "DeoC/FbaB/ lacD aldolase" "lacD_aldolase" ""                ""         ""       ""        0.5       325
+ 40 MnCatalase               "family"      "Ferritin-like"            "MnCatalase"    ""                ""         ""       ""        1.0       284
+ 41 MRhodopsin               "family"      "Opsin"                    "MRhodopsin"    ""                ""         ""       ""        0.5       222
+ 42 MRhoIa                   "subclass"    "Opsin"                    "MRhodopsin"    "MRhoI"           "MRhoIa"   ""       ""        0.5       232
+ 43 MRhoI                    "class"       "Opsin"                    "MRhodopsin"    "MRhoI"           ""         ""       ""        0.5       243
+ 44 MRhoIIa                  "subclass"    "Opsin"                    "MRhodopsin"    "MRhoII"          "MRhoIIa"  ""       ""        0.5       222
+ 45 MRhoIIb                  "subclass"    "Opsin"                    "MRhodopsin"    "MRhoII"          "MRhoIIb"  ""       ""        0.5       226
+ 46 MRhoII                   "class"       "Opsin"                    "MRhodopsin"    "MRhoII"          ""         ""       ""        0.5       217
+ 47 MRhoIII                  "class"       "Opsin"                    "MRhodopsin"    "MRhoIII"         ""         ""       ""        0.5       215
+ 48 NrdA                     "class"       "NrdGRE"                   "NrdJA"         "NrdA"            ""         ""       ""        0.5       467
+ 49 NrdAe                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAe"    ""       ""        0.5       684
+ 50 NrdAg                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAg"    ""       ""        0.5       652
+ 51 NrdAh1                   "group"       "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAh"    "NrdAh1" ""        0.6       685
+ 52 NrdAh2                   "group"       "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAh"    "NrdAh2" ""        0.5       722
+ 53 NrdAh                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAh"    ""       ""        0.5       660
+ 54 NrdAi                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAi"    ""       ""        0.5       545
+ 55 NrdAk                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAk"    ""       ""        0.5       578
+ 56 NrdAn                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAn"    ""       ""        0.5       682
+ 57 NrdAq                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAq"    ""       ""        0.5       704
+ 58 NrdAr                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAr"    ""       ""        0.5       422
+ 59 NrdAz1                   "group"       "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAz"    "NrdAz1" ""        0.5       700
+ 60 NrdAz3                   "group"       "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAz"    "NrdAz3" ""        0.5       700
+ 61 NrdAz4                   "group"       "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAz"    "NrdAz4" ""        0.5       690
+ 62 NrdAz                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdA"            "NrdAz"    ""       ""        0.5       707
+ 63 NrdB                     "class"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            ""         ""       ""        0.6       261
+ 64 NrdBe1                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBe"    "NrdBe1" ""        0.6       299
+ 65 NrdBe2                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBe"    "NrdBe2" ""        0.6       328
+ 66 NrdBe3                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBe"    "NrdBe3" ""        0.6       318
+ 67 NrdBe4                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBe"    "NrdBe4" ""        0.6       297
+ 68 NrdBe                    "subclass"    "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBe"    ""       ""        0.6       301
+ 69 NrdBg                    "subclass"    "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBg"    ""       ""        0.6       345
+ 70 NrdBh1                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBh"    "NrdBh1" ""        0.6       347
+ 71 NrdBh2                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBh"    "NrdBh2" ""        0.7       330
+ 72 NrdBh3                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBh"    "NrdBh3" ""        0.7       338
+ 73 NrdBh4                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBh"    "NrdBh4" ""        0.7       307
+ 74 NrdBh                    "subclass"    "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBh"    ""       ""        0.6       337
+ 75 NrdBi1                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBi"    "NrdBi1" ""        0.6       323
+ 76 NrdBi2                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBi"    "NrdBi2" ""        0.6       318
+ 77 NrdBi3                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBi"    "NrdBi3" ""        0.6       322
+ 78 NrdBi4                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBi"    "NrdBi4" ""        0.6       317
+ 79 NrdBi                    "subclass"    "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBi"    ""       ""        0.6.1     298
+ 80 NrdBk1                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBk"    "NrdBk1" ""        0.6       313
+ 81 NrdBk2                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBk"    "NrdBk2" ""        0.6       312
+ 82 NrdBk                    "subclass"    "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBk"    ""       ""        0.6       312
+ 83 NrdBn                    "subclass"    "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBn"    ""       ""        0.6       332
+ 84 NrdBR2lox                "family"      "Ferritin-like"            "NrdBR2lox"     ""                ""         ""       ""        0.6        NA
+ 85 NrdBq                    "subclass"    "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBq"    ""       ""        0.6       298
+ 86 NrdBr                    "subclass"    "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBr"    ""       ""        0.5       229
+ 87 NrdBuc                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBuc"   ""       ""        0.5       345
+ 88 NrdBz1                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBz"    "NrdBz1" ""        0.6       317
+ 89 NrdBz2                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBz"    "NrdBz2" ""        0.6       341
+ 90 NrdBz3                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBz"    "NrdBz3" ""        0.6       358
+ 91 NrdBz4                   "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBz"    "NrdBz4" ""        0.6       328
+ 92 NrdBz                    "subclass"    "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdBz"    ""       ""        0.6       336
+ 93 NrdD                     "class"       "NrdGRE"                   "GRE"           "NrdD"            ""         ""       ""        0.6       498
+ 94 NrdDc                    "subclass"    "NrdGRE"                   "GRE"           "NrdD"            "NrdDc"    ""       ""        0.6       519
+ 95 NrdDd                    "subclass"    "NrdGRE"                   "GRE"           "NrdD"            "NrdDd"    ""       ""        0.6       565
+ 96 NrdDh                    "subclass"    "NrdGRE"                   "GRE"           "NrdD"            "NrdDh"    ""       ""        0.6       568
+ 97 NrdDh1                   "group"       "NrdGRE"                   "GRE"           "NrdD"            "NrdDh1"   ""       ""        0.5       571
+ 98 NrdDh2                   "group"       "NrdGRE"                   "GRE"           "NrdD"            "NrdDh2"   ""       ""        0.5       626
+ 99 NrdDh3                   "group"       "NrdGRE"                   "GRE"           "NrdD"            "NrdDh3"   ""       ""        0.5       615
+100 NrdDuc00                 "subclass"    "NrdGRE"                   "GRE"           "NrdD"            "NrdDuc00" ""       ""        0.6       698
+101 NrdDuc01                 "subclass"    "NrdGRE"                   "GRE"           "NrdD"            "NrdDuc01" ""       ""        0.5       593
+102 NrdDf                    "subclass"    "NrdGRE"                   "GRE"           "NrdD"            "NrdDf"    ""       ""        0.5       665
+103 NrdE1                    "group"       "NrdGRE"                   "NrdJA"         "NrdA"            "NrdE"     "NrdE1"  ""        0.5       717
+104 nrde_a-site              "domain"      ""                         ""              ""                ""         ""       ""        0.5        35
+105 NrdE                     "subclass"    "NrdGRE"                   "NrdJA"         "NrdA"            "NrdE"     ""       ""        0.5       675
+106 NrdF1                    "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdF"     "NrdF1"  ""        0.6       310
+107 NrdF2                    "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdF"     "NrdF2"  ""        0.6       315
+108 NrdF2q                   "subgroup"    "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdF"     "NrdF2"  "NrdF2q"  0.6       314
+109 NrdF2v                   "subgroup"    "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdF"     "NrdF2"  "NrdF2v"  0.6       330
+110 NrdF3                    "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdF"     "NrdF3"  ""        0.6       310
+111 NrdF4                    "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdF"     "NrdF4"  ""        0.6       315
+112 NrdF5                    "group"       "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdF"     "NrdF5"  ""        0.6       312
+113 NrdF                     "subclass"    "Ferritin-like"            "NrdBR2lox"     "NrdB"            "NrdF"     ""       ""        0.5       303
+114 NrdGRE                   "superfamily" "NrdGRE"                   ""              ""                ""         ""       ""        0.5        NA
+115 NrdJa+b                  "subclass"    "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJa+b"  ""       ""        0.5       695
+116 NrdJA                    "family"      "NrdGRE"                   "NrdJA"         ""                ""         ""       ""        0.5        NA
+117 NrdJ                     "class"       "NrdGRE"                   "NrdJA"         "NrdJ"            ""         ""       ""        0.5       407
+118 NrdJCterm                "domain"      ""                         ""              ""                ""         ""       ""        0.5       144
+119 NrdJd1                   "group"       "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJd"    "NrdJd1" ""        0.5       963
+120 NrdJd2                   "group"       "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJd"    "NrdJd2" ""        0.5       846
+121 NrdJd3                   "group"       "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJd"    "NrdJd3" ""        0.5      1102
+122 NrdJd                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJd"    ""       ""        0.5       681
+123 NrdJh                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJh"    ""       ""        0.5       576
+124 NrdJk                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJk"    ""       ""        0.5       668
+125 NrdJm1                   "group"       "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJm"    "NrdJm1" ""        0.5       767
+126 NrdJm2e                  "subgroup"    "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJm"    "NrdJm2" "NrdJm2e" 0.5       727
+127 NrdJm2                   "group"       "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJm"    "NrdJm2" ""        0.5       690
+128 NrdJm3                   "group"       "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJm"    "NrdJm3" ""        0.5       638
+129 NrdJm4                   "group"       "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJm"    "NrdJm4" ""        0.5       662
+130 NrdJm5                   "group"       "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJm"    "NrdJm5" ""        0.5       651
+131 NrdJm6                   "group"       "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJm"    "NrdJm6" ""        0.5       647
+132 NrdJm                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJm"    ""       ""        0.5       546
+133 NrdJo                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJo"    ""       ""        0.5       720
+134 NrdJp                    "subclass"    "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJp"    ""       ""        0.6       621
+135 NrdJuc00                 "subclass"    "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJuc00" ""       ""        0.6       490
+136 NrdJuc01                 "subclass"    "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJuc01" ""       ""        0.5       543
+137 NrdJuc02                 "subclass"    "NrdGRE"                   "NrdJA"         "NrdJ"            "NrdJuc02" ""       ""        0.5       712
+138 NrdR                     "class"       "NrdR-superfamily"         "NrdR-family"   "NrdR"            ""         ""       ""        0.5       157
+139 NTNH                     "family"      "BoNT_Tetanus"             "NTNH"          ""                ""         ""       ""        0.5      1197
+140 NTNH_X                   "class"       "BoNT_Tetanus"             "NTNH"          "NTNH_X"          ""         ""       ""        0.5      1174
+141 NTNH_XY                  ""            "BoNT_Tetanus"             "NTNH"          ""                ""         ""       ""        0.5      1191
+142 NTNH_Y                   "class"       "BoNT_Tetanus"             "NTNH"          "NTNH_Y"          ""         ""       ""        0.5      1191
+143 Opsin                    "superfamily" "Opsin"                    ""              ""                ""         ""       ""        0.5        NA
+144 Peptidase_M27            "domain"      ""                         ""              ""                ""         ""       ""        1.0       419
+145 RecA                     "family"      "RecA P-loop NTPase"       "RecA"          ""                ""         ""       ""        22        263
+146 Rad51                    "family"      "Rec-A P-loop NTPase"      "RadA"          ""                ""         ""       ""        12        255
+147 EF_TS                    "family"      "UBA-like"                 "EF_TS"         ""                ""         ""       ""        20        208
+148 Fibrillarin              "family"      "NADP"                     "Fibrillarin"   ""                ""         ""       ""        18        226
+149 R2loxA                   "subclass"    "Ferritin-like"            "NrdBR2lox"     "R2lox"           "R2loxA"   ""       ""        0.5       307
+150 R2loxB                   "subclass"    "Ferritin-like"            "NrdBR2lox"     "R2lox"           "R2loxB"   ""       ""        0.5       290
+151 R2lox                    "class"       "Ferritin-like"            "NrdBR2lox"     "R2lox"           ""         ""       ""        0.5       282
+152 R2loxC                   "subclass"    "Ferritin-like"            "NrdBR2lox"     "R2lox"           "R2loxC"   ""       ""        0.5       300
+153 R2loxE                   "subclass"    "Ferritin-like"            "NrdBR2lox"     "R2lox"           "R2loxE"   ""       ""        0.5       282
+154 SFP_aldolase             "family"      "DeoC/FbaB/ lacD aldolase" "SFP_aldolase"  ""                ""         ""       ""        0.5       291
+155 Tetanus                  "family"      "BoNT_Tetanus"             "Tetanus"       ""                ""         ""       ""        0.5      1315
+156 Thioredoxin              "domain"      ""                         ""              ""                ""         ""       ""        1.0       104
 --> pf-classify.gtdb.06.proteins.feather <--
 # A tibble: 27 x 15
    accno          profile   score    evalue  tlen  qlen ali_from ali_to alilen env_from env_to envlen hmm_from hmm_to hmmlen
