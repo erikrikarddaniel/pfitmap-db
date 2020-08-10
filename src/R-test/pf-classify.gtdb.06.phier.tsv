@@ -38,3 +38,5 @@ NrdJuc01	NrdGRE	NrdAJ	NrdJ	NrdJuc01		psubclass	0.1	543
 NrdJuc02	NrdGRE	NrdAJ	NrdJ	NrdJuc02		psubclass	0.1	712
 NrdJCterm						domain	0.1	144
 NrdR	NrdR-superfamily	NrdR-family	NrdR			class	0.5	157
+RecA NTPase	RecA NTPase					psuperfamily	1.0	
+RecA	RecA NTPase	RecA				pfamily	1.0	263

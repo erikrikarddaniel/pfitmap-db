@@ -1,36 +1,34 @@
 --> pf-classify.gtdb.06.accessions.feather <--
-# A tibble: 29 x 3
-   db    genome_accno     accno         
-   <chr> <chr>            <chr>         
- 1 gtdb  UBA9950          AAJJOOCP_01555
- 2 gtdb  UBA9902          BFHDIKLF_01381
- 3 gtdb  GCA_000007785    BHDKMOOB_00467
- 4 gtdb  GCA_000009125    EBMHHDFG_00198
- 5 gtdb  UBA9945          FBOAFKLH_00488
- 6 gtdb  UBA9997          FHGKEOLE_01260
- 7 gtdb  GCA_000009185    JBKLNOKJ_02087
- 8 gtdb  UBA9998          KEOFIFCG_00085
- 9 gtdb  UBA9998          KEOFIFCG_00615
-10 gtdb  UBA9966          MGLECCPO_00316
-11 gtdb  GCA_001545115    CKODLGHM_02542
-12 gtdb  GCA_000009105    FHGMODCP_01397
-13 gtdb  GCA_000007725    GILLGKDK_00168
-14 gtdb  GCA_000007745    NHJCJKCG_00931
-15 gtdb  GCA_000009165    NGOGMLFJ_04158
-16 gtdb  GCA_001244405    PAPHBKOD_02415
-17 gtdb  GCA_000009125    EBMHHDFG_02854
-18 gtdb  GCA_000009145    OJPPLLDI_02543
-19 gtdb  GCA_000007785    BHDKMOOB_00466
-20 gtdb  GCA_001545115    CKODLGHM_02541
-21 gtdb  GCA_000009105    FHGMODCP_01394
-22 gtdb  GCA_000007725    GILLGKDK_00167
-23 gtdb  GCA_000009165    NGOGMLFJ_04157
-24 gtdb  GCA_000007745    NHJCJKCG_00906
-25 gtdb  GCA_001244405    PAPHBKOD_02414
-26 gtdb  GCF_001308105    JHKEFHEL_00641
-27 gtdb  GCF_001308105    JHKEFHEL_03929
-28 gtdb  GCA_000008545    PCMIPHHC_00112
-29 gtdb  GCF_900078535    AAMDIMMI_01555
+# A tibble: 27 x 3
+   db    genome_accno  accno         
+   <chr> <chr>         <chr>         
+ 1 gtdb  UBA9950       AAJJOOCP_01555
+ 2 gtdb  UBA9902       BFHDIKLF_01381
+ 3 gtdb  GCA_000007785 BHDKMOOB_00467
+ 4 gtdb  GCA_000009125 EBMHHDFG_00198
+ 5 gtdb  UBA9945       FBOAFKLH_00488
+ 6 gtdb  UBA9997       FHGKEOLE_01260
+ 7 gtdb  GCA_000009185 JBKLNOKJ_02087
+ 8 gtdb  UBA9998       KEOFIFCG_00085
+ 9 gtdb  UBA9998       KEOFIFCG_00615
+10 gtdb  UBA9966       MGLECCPO_00316
+11 gtdb  GCA_001545115 CKODLGHM_02542
+12 gtdb  GCA_000009105 FHGMODCP_01397
+13 gtdb  GCA_000007725 GILLGKDK_00168
+14 gtdb  GCA_000007745 NHJCJKCG_00931
+15 gtdb  GCA_000009165 NGOGMLFJ_04158
+16 gtdb  GCA_001244405 PAPHBKOD_02415
+17 gtdb  GCA_000009125 EBMHHDFG_02854
+18 gtdb  GCA_000009145 OJPPLLDI_02543
+19 gtdb  GCA_000007785 BHDKMOOB_00466
+20 gtdb  GCA_001545115 CKODLGHM_02541
+21 gtdb  GCA_000009105 FHGMODCP_01394
+22 gtdb  GCA_000007725 GILLGKDK_00167
+23 gtdb  GCA_000009165 NGOGMLFJ_04157
+24 gtdb  GCA_000007745 NHJCJKCG_00906
+25 gtdb  GCA_001244405 PAPHBKOD_02414
+26 gtdb  GCA_000008545 PCMIPHHC_00112
+27 gtdb  GCA_001930175 IDNBBGKL_01005
 --> pf-classify.gtdb.06.dbsources.feather <--
 # A tibble: 1 x 3
   source name  version
@@ -97,9 +95,9 @@
 55 PCMIPHHC_00112 NrdJCterm     1     1    7.80e- 24    1.20e- 19      85.4        2    144      669    827      668    827
 56 PCMIPHHC_00112 NrdJh         1     1    1.40e- 77    3.70e- 74     265.        75    570      133    639      124    644
 57 PCMIPHHC_00112 NrdJk         1     2    5.30e-125    1.30e-121     421.        64    630      129    738      121    752
-58 AAMDIMMI_01555 NrdR          1     1    4.90e- 62    1.50e- 58     212.         1    152        1    152        1    154
+58 IDNBBGKL_01005 RecA          1     1    6.40e-129    1.40e-125     433.         3    263       15    275       13    275
 --> pf-classify.gtdb.06.domtblout.feather <--
-# A tibble: 386 x 16
+# A tibble: 381 x 16
     accno           tlen profile  qlen     i     n dom_c_evalue dom_i_evalue dom_score dom_bias hmm_from hmm_to ali_from ali_to env_from env_to
     <chr>          <int> <chr>   <int> <int> <int>        <dbl>        <dbl>     <dbl>    <dbl>    <int>  <int>    <int>  <int>    <int>  <int>
   1 AAJJOOCP_01555   572 NrdA      550     1     1    3.70e-117    8.20e-114     382.       0          3    528       77    570       76    572
@@ -202,52 +200,54 @@
  98 FBOAFKLH_00488   532 NrdAz     707     3     4    4.20e-  7    9.30e-  4      18.6      0.1      524    577      386    438      382    449
  99 FBOAFKLH_00488   532 NrdAz     707     4     4    1.70e-  6    3.90e-  3      16.5      0        611    673      450    515      442    521
 100 FHGKEOLE_01260   827 NrdA      550     1     1    2.90e-100    6.40e- 97     326.       0          4    531      121    640      118    652
-# … with 286 more rows
+# … with 281 more rows
 --> pf-classify.gtdb.06.hmm_profiles.feather <--
-# A tibble: 39 x 9
-   profile       psuperfamily       pfamily       pclass psubclass  pgroup   prank       version  plen
-   <chr>         <chr>              <chr>         <chr>  <chr>      <chr>    <chr>         <dbl> <int>
- 1 NrdA          "NrdGRE"           "NrdAJ"       "NrdA" ""         ""       "pclass"        0.1   467
- 2 NrdAe         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAe"    ""       "psubclass"     0.1   684
- 3 NrdAg         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAg"    ""       "psubclass"     0.1   652
- 4 NrdAh         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAh"    ""       "psubclass"     0.1   660
- 5 NrdAi         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAi"    ""       "psubclass"     0.1   545
- 6 NrdAk         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAk"    ""       "psubclass"     0.1   578
- 7 NrdAm         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAm"    ""       "psubclass"     0.1   739
- 8 NrdAn         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAn"    ""       "psubclass"     0.1   682
- 9 NrdAq         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAq"    ""       "psubclass"     0.1   650
-10 NrdAz         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAz"    ""       "psubclass"     0.1   707
-11 NrdAz3        "NrdGRE"           "NrdAJ"       "NrdA" "NrdAz"    "NrdAz3" "pgroup"        0.1   750
-12 NrdAz4        "NrdGRE"           "NrdAJ"       "NrdA" "NrdAz"    "NrdAz4" "pgroup"        0.1   750
-13 NrdB          "Ferritin-like"    "NrdBR2lox"   "NrdB" ""         ""       "pclass"        0.1   261
-14 NrdF          "Ferritin-like"    "NrdBR2lox"   "NrdB" "NrdF"     ""       "psubclass"     0.1   303
-15 NrdDa         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDa"  ""              0.5   683
-16 NrdDb         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDb"  ""              0.5   741
-17 NrdDc         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDc"  ""              0.5   519
-18 NrdDd         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDd"  ""              0.5   565
-19 NrdDf         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDf"  ""              0.5   667
-20 NrdDg         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDg"  ""              0.5   635
-21 NrdDh         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDh"  ""              0.5   568
-22 NrdDi         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDi"  ""              0.5   593
-23 NrdD          "class"            "NrdGRE"      "GRE"  "NrdD"     ""       ""              0.5   498
-24 ATP-cone      ""                 ""            ""     ""         ""       "domain"        0.1    86
-25 Glutaredoxin  ""                 ""            ""     ""         ""       "domain"        0.1    60
-26 Thioredoxin   ""                 ""            ""     ""         ""       "domain"        0.1   104
-27 Peptidase_M27 ""                 ""            ""     ""         ""       "domain"        0.1   419
-28 NrdJ          "NrdGRE"           "NrdAJ"       "NrdJ" ""         ""       "pclass"        0.1   407
-29 NrdJa+b       "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJa+b"  ""       "psubclass"     0.1   695
-30 NrdJg         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJg"    ""       "psubclass"     0.1   930
-31 NrdJh         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJh"    ""       "psubclass"     0.1   576
-32 NrdJk         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJk"    ""       "psubclass"     0.1   668
-33 NrdJo         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJo"    ""       "psubclass"     0.1   720
-34 NrdJp         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJp"    ""       "psubclass"     0.1   621
-35 NrdJuc00      "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJuc00" ""       "psubclass"     0.1   490
-36 NrdJuc01      "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJuc01" ""       "psubclass"     0.1   543
-37 NrdJuc02      "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJuc02" ""       "psubclass"     0.1   712
-38 NrdJCterm     ""                 ""            ""     ""         ""       "domain"        0.1   144
-39 NrdR          "NrdR-superfamily" "NrdR-family" "NrdR" ""         ""       "class"         0.5   157
+# A tibble: 41 x 9
+   profile       psuperfamily       pfamily       pclass psubclass  pgroup   prank          version  plen
+   <chr>         <chr>              <chr>         <chr>  <chr>      <chr>    <chr>            <dbl> <int>
+ 1 NrdA          "NrdGRE"           "NrdAJ"       "NrdA" ""         ""       "pclass"           0.1   467
+ 2 NrdAe         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAe"    ""       "psubclass"        0.1   684
+ 3 NrdAg         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAg"    ""       "psubclass"        0.1   652
+ 4 NrdAh         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAh"    ""       "psubclass"        0.1   660
+ 5 NrdAi         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAi"    ""       "psubclass"        0.1   545
+ 6 NrdAk         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAk"    ""       "psubclass"        0.1   578
+ 7 NrdAm         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAm"    ""       "psubclass"        0.1   739
+ 8 NrdAn         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAn"    ""       "psubclass"        0.1   682
+ 9 NrdAq         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAq"    ""       "psubclass"        0.1   650
+10 NrdAz         "NrdGRE"           "NrdAJ"       "NrdA" "NrdAz"    ""       "psubclass"        0.1   707
+11 NrdAz3        "NrdGRE"           "NrdAJ"       "NrdA" "NrdAz"    "NrdAz3" "pgroup"           0.1   750
+12 NrdAz4        "NrdGRE"           "NrdAJ"       "NrdA" "NrdAz"    "NrdAz4" "pgroup"           0.1   750
+13 NrdB          "Ferritin-like"    "NrdBR2lox"   "NrdB" ""         ""       "pclass"           0.1   261
+14 NrdF          "Ferritin-like"    "NrdBR2lox"   "NrdB" "NrdF"     ""       "psubclass"        0.1   303
+15 NrdDa         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDa"  ""                 0.5   683
+16 NrdDb         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDb"  ""                 0.5   741
+17 NrdDc         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDc"  ""                 0.5   519
+18 NrdDd         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDd"  ""                 0.5   565
+19 NrdDf         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDf"  ""                 0.5   667
+20 NrdDg         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDg"  ""                 0.5   635
+21 NrdDh         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDh"  ""                 0.5   568
+22 NrdDi         "subclass"         "NrdGRE"      "GRE"  "NrdD"     "NrdDi"  ""                 0.5   593
+23 NrdD          "class"            "NrdGRE"      "GRE"  "NrdD"     ""       ""                 0.5   498
+24 ATP-cone      ""                 ""            ""     ""         ""       "domain"           0.1    86
+25 Glutaredoxin  ""                 ""            ""     ""         ""       "domain"           0.1    60
+26 Thioredoxin   ""                 ""            ""     ""         ""       "domain"           0.1   104
+27 Peptidase_M27 ""                 ""            ""     ""         ""       "domain"           0.1   419
+28 NrdJ          "NrdGRE"           "NrdAJ"       "NrdJ" ""         ""       "pclass"           0.1   407
+29 NrdJa+b       "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJa+b"  ""       "psubclass"        0.1   695
+30 NrdJg         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJg"    ""       "psubclass"        0.1   930
+31 NrdJh         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJh"    ""       "psubclass"        0.1   576
+32 NrdJk         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJk"    ""       "psubclass"        0.1   668
+33 NrdJo         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJo"    ""       "psubclass"        0.1   720
+34 NrdJp         "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJp"    ""       "psubclass"        0.1   621
+35 NrdJuc00      "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJuc00" ""       "psubclass"        0.1   490
+36 NrdJuc01      "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJuc01" ""       "psubclass"        0.1   543
+37 NrdJuc02      "NrdGRE"           "NrdAJ"       "NrdJ" "NrdJuc02" ""       "psubclass"        0.1   712
+38 NrdJCterm     ""                 ""            ""     ""         ""       "domain"           0.1   144
+39 NrdR          "NrdR-superfamily" "NrdR-family" "NrdR" ""         ""       "class"            0.5   157
+40 RecA NTPase   "RecA NTPase"      ""            ""     ""         ""       "psuperfamily"     1      NA
+41 RecA          "RecA NTPase"      "RecA"        ""     ""         ""       "pfamily"          1     263
 --> pf-classify.gtdb.06.proteins.feather <--
-# A tibble: 29 x 15
+# A tibble: 27 x 15
    accno          profile   score    evalue  tlen  qlen ali_from ali_to alilen env_from env_to envlen hmm_from hmm_to hmmlen
    <chr>          <chr>     <dbl>     <dbl> <int> <int>    <dbl>  <dbl>  <dbl>    <dbl>  <dbl>  <dbl>    <dbl>  <dbl>  <dbl>
  1 AAJJOOCP_01555 NrdA      383.  3.60e-114   572   550       77    570    494       76    572    497        3    528    526
@@ -275,10 +275,8 @@
 23 NGOGMLFJ_04157 NrdF      156.  3.70e- 45   347   303       32    341    310       31    346    316        2    296    295
 24 NHJCJKCG_00906 NrdF      100   2.90e- 28   376   303       34    328    276       27    342    312        9    265    257
 25 PAPHBKOD_02414 NrdF      111.  1.60e- 31   347   303       34    339    306       32    346    315        4    292    289
-26 JHKEFHEL_00641 NrdJ      193.  1.60e- 52   757   407      296    701    332      279    715    668       62    395    333
-27 JHKEFHEL_03929 NrdJ      141.  1.40e- 36   558   407       54    547    442       31    551    489       15    403    389
-28 PCMIPHHC_00112 NrdJuc02  681.  4.70e-200   827   712       11    672    636        2    822    805      107    679    573
-29 AAMDIMMI_01555 NrdR      212.  1.40e- 58   154   157        1    152    152        1    154    154        1    152    152
+26 PCMIPHHC_00112 NrdJuc02  681.  4.70e-200   827   712       11    672    636        2    822    805      107    679    573
+27 IDNBBGKL_01005 RecA      433.  1.20e-125   295   263       15    275    261       13    275    263        3    263    261
 --> pf-classify.gtdb.06.sequences.feather <--
 # A tibble: 27 x 2
    accno          sequence                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
@@ -309,9 +307,9 @@
 24 NHJCJKCG_00906 MAYTTFSQNKNDQLKEPMFFGQNVNVSRYDQQKYETFEKLIEKQLSFFWRPEEVDVAQDRIDYAALPEHEKHIFISNLKYQTLLDSIQGRSPNVALLPLVSIPELETWIETWTFSETIHSRSYTHIIRNIVNDPSVVFDDIVTNEEIIKRAKDISAYYDDLIRDSQLYNLFGEGTYKVEGKECKVTLRNLKKQLYLCLMSVNALEAIRFYVSFACSFAFAERQLMEGNAKIIKFIARDEALHLTGTQHILNIMAAGQDDPEMAEIAEECKQEAYDLFLAAAEQEKAWADYLFKDGSMIGLNKDILVQYVEYITNIRMQAVGLPLPFQARSNPIPWINAWLVSDNVQVAPQEVEISSYLIGQIDSKVDTSDFGDFDL                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 25 PAPHBKOD_02414 MSELVKKPLFNPEGDIEVTKRKMIGGNTTNLNDFNHMKYNWVSDWYRQAMNNFWVPEEINLSVDIKDYKMLPAAERRAYDKILSFLIFLDSIQTANLPNIGEYITANEVNLCLSIQTFQEAVHSQSYSYMLDTICEPQERNAVLYQWKEDRHLLERNEFIGKLYNAFQEEKSPEMLACTLIANYILEGVYFYSGFMFFYNLGRNRRMPGSVQEIRYINRDENTHLWLFRSILMELKKEEPLLFTPERTKIYRSMIQEGCEQEIRWGHYVIGDDIQGLNRDMITDYIQYLGNLRCRGLELDPIYEGHEKEPQSMAWVSQFSNANMIKTDFFEARSTAYAKSSALVDDL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 26 PCMIPHHC_00112 MKLSDLISRWIDVEPSKNAQIILRDRYFMKDLDGNYLETKWEDVARRVARVVATAELLNPSYKKNEKLDRIKEWEDIFFRVLKARLFIPNSPTLFNAGLGVKHDLLWKPIDQMTLEDYEEIYRSRNHLHMLSACFVVPVGDSIEEIFEAVKEYALITKVGGGVGSNFSELRPKGSFVAGTHGKASGPVSFMHVFNSAISVVKQGYRRRGALMGILNINHPDIEEFIDAKKENTGEAVLNFFNLSVGFPMDKKEILKLYEEDGELELSHPRSTIRKKVKIRELFRKIATNAWKSGDPGLAFLGEMNKYYPLYPHRKINSTNPCGEIGLSDYEACNLGSIDVAKFYNNGFVDLEALQELVQIAVRFLDNVIDVNVFPIDKITKAVKESRRLGLGIMGFADLLYKLEIPYNSQEARDFAANLMAFIALHAHRTSYELGKEKGNFPLLEISRYRTEDNFVPFAMGMSNYDDEIREVMKMTKEFRRNVALLTIAPTGSISNIADTSSGLEPNFLLAYTRFVTKEDGTKEPLLYVNQVLREKLNPEILKRIEKELIEKGSLKDIPDVPEKIKKVFVVALDIDPMDHLLMQDAFQRYVDNNISKTINMPQSATVDDVLNVYLEALRTNVRGITVYRDGSLQTQVLTKALKTPEAPKVQFFVVDEKLKLHPRPRKDTLRSVTRKYKRPDGTTYITISFDDTGEAVEIFISNGSEMAEAIGRLSSIALRAGVSIDEIVEQLSKVKGEYCKGLAEEIKKALEDFAKLWLRTGEEAPESEEEPIEREKFIVAHNLRWQSGYYVDDEGNVYCPVCLSKNSLIKQEGCVSCKNCGWSKCE
-27 AAMDIMMI_01555 MKCPFCDELEDKVVDSRMAKEGEVIRRRRECIGCRRRYTTYERVEEILPVVVKKDGRRESFDRAKILSGIKKACEKRPISTATIEDAADRIEKRIQEMGESEIKSRVVGEEVMKELHQLDQVAYVRFASVYREFKDIDQFMDELKVLAQQRRER                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+27 IDNBBGKL_01005 MKTENNENNAQMNLIKSTLNEITRKFGAEAIMMFNQDTIDEKVEVFSSGSYLLNNALGIGGYPKGRIVEIYGPESSGKTTLCLHAIAEAQKQGGIAAFIDAEHAIDPLYARNLGIDLNTLILSQPDSGEQAMEIVDILAKSGAVDLIVVDSVAALVPIAELEGEMRDMQVGVQARLMSKALRKITGSLHKNKTTVIFVNQIREKIGVMFGNPETTTGGRALKFYASIRLEVRKTTSITEGKDITGNEIKIKVVKNKLSAPYKTFTTEILFSKGIDSTGELIDLACEKGVFDKKGA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 --> pf-classify.gtdb.06.taxa.feather <--
-# A tibble: 28 x 30
+# A tibble: 25 x 30
    genome_accno  tdomain  tphylum             tclass              torder               tfamily               tgenus             tspecies                     trank   ncbi_taxon_id checkm_completeness checkm_contamination checkm_strain_heterogeneity contig_count genome_size gtdb_genome_representative gtdb_representative l50_contigs l50_scaffolds longest_contig longest_scaffold mean_contig_length mean_scaffold_length n50_contigs n50_scaffolds ncbi_bioproject ncbi_biosample ncbi_genbank_assembly_accession protein_count scaffold_count
    <chr>         <chr>    <chr>               <chr>               <chr>                <chr>                 <chr>              <chr>                        <chr>   <chr>         <chr>               <chr>                <chr>                       <chr>        <chr>       <chr>                      <chr>               <chr>       <chr>         <chr>          <chr>            <chr>              <chr>                <chr>       <chr>         <chr>           <chr>          <chr>                           <chr>         <chr>         
  1 UBA9950       Archaea  Euryarchaeota       Thermococci         Methanofastidiosales Methanofastidiosaceae Methanofastidiosum Methanofastidiosum sp9950u   species none          74.56               3.96                 33.33                       300          1566181     UBA9950                    t                   70          66            23048          23050            5208               6340                 7490        7649          none            none           none                            2049          247           
@@ -338,12 +336,9 @@
 22 GCA_002421545 Bacteria Thermotogota        Thermotogae         Thermotogales        Fervidobacteriaceae   Fervidobacterium   Fervidobacterium pennivorans species 1946525       81.71               0                    0                           197          1627967     RS_GCF_000235405.2         f                   29          24            75554          92238            8237               11882                14375       17654         PRJNA348753     SAMN06450701   GCA_002421545.1                 1637          137           
 23 GCA_000230655 Bacteria Thermotogota        Thermotogae         Thermotogales        Thermotogaceae        Thermotoga         Thermotoga maritima          species 2336          100                 1.79                 100                         1            1869644     RS_GCF_000008545.1         f                   1           1             1869644        1869644          1869644            1869644              1869644     1869644       PRJNA224116     SAMN02261406   GCA_000230655.3                 1850          1             
 24 GCA_002417795 Bacteria Thermotogota        Thermotogae         Thermotogales        Fervidobacteriaceae   Fervidobacterium   Fervidobacterium sp002432805 species 1946523       92.98               0                    0                           77           1867689     GB_GCA_002432805.1         f                   9           6             273265         297704           24233              56596                60872       120479        PRJNA348753     SAMN06451432   GCA_002417795.1                 1765          33            
-25 GCA_900078535 Bacteria Nitrospirota        Nitrospiria         Nitrospirales        Nitrospiraceae        Nitrospira         Nitrospira sp900078535       species 96242         95.85               3.69                 0                           71           3659024     RS_GCF_900078535.2         t                   14          13            328734         328734           51530              58079                75749       89465         PRJNA224116     SAMEA3909873   GCA_900078535.2                 3803          63            
-26 GCA_002083405 Bacteria Nitrospirota        Nitrospiria         Nitrospirales        Nitrospiraceae        Nitrospira         Nitrospira sp900078535       species 1827377       95.85               3.69                 0                           71           3659024     RS_GCF_900078535.2         f                   14          13            328734         328734           51530              58079                75749       89465         PRJNA315256     SAMN04592277   GCA_002083405.1                 3805          63            
-27 GCA_001308105 Bacteria Bacteroidota        Bacteroidia         Cytophagales         Cyclobacteriaceae     Persicobacter      Persicobacter sp001308105    species 1085624       99.26               2.68                 0                           17           8251744     RS_GCF_001308105.1         t                   2           2             3776595        3776595          485396             485396               1575724     1575724       PRJNA224116     SAMN04120646   GCA_001308105.1                 6519          17            
-28 GCA_001274635 Bacteria Bacteroidota        Bacteroidia         Cytophagales         Cyclobacteriaceae     Persicobacter      Persicobacter sp001308105    species 1561025       98.66               1.19                 0                           2            3874627     RS_GCF_001308105.1         f                   1           1             3843563        3843563          1937313            1937313              3843563     3843563       PRJNA224116     SAMN03103716   GCA_001274635.1                 3365          2             
+25 GCA_001930175 Bacteria Firmicutes          Bacilli             Mycoplasmatales      Metamycoplasmataceae  Mycoplasmopsis     Mycoplasmopsis bovis         species 28903         100                 0                    0                           75           946134      RS_GCF_000183385.1         f                   13          13            62938          62938            12615              12615                27834       27834         PRJNA224116     SAMN04366513   GCA_001930175.1                 820           75            
 --> pf-classify.gtdb.06.tblout.feather <--
-# A tibble: 165 x 5
+# A tibble: 163 x 5
     accno          profile    evalue  score  bias
     <chr>          <chr>       <dbl>  <dbl> <dbl>
   1 AAJJOOCP_01555 NrdA    3.60e-114  383.    0  
@@ -446,4 +441,4 @@
  98 GILLGKDK_00168 NrdAe   1.50e- 85  289.    6.4
  99 GILLGKDK_00168 NrdAg   0.        1015.    4.6
 100 GILLGKDK_00168 NrdAh   7.80e- 97  326     4.7
-# … with 65 more rows
+# … with 63 more rows
