@@ -13,7 +13,7 @@ suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "1.9.8"
+SCRIPT_VERSION = "1.9.9"
 ROWS_PER_SEQUENCE_TSV = 1e7
 
 options(warn = 1)
@@ -36,7 +36,10 @@ option_list <- list(
     c('--hmm_mincov'), type = 'double', default = 0.0, action = 'store', help = 'Minimum coverage of hmm profile to include in output, default %default.'
   ),
   make_option(
-  c('--profilehierarchies'), default='', help='A tsv file with profile hiearchies, including a header. Required fields: profile and plen, recommended psuperfamily, pfamily pclass, psubclass, pgroup, prank and version.'
+    c('--missing'), default='', help='Name of file to write missing genome information to, default not set. Only works in GTDB mode!'
+  ),
+  make_option(
+    c('--profilehierarchies'), default='', help='A tsv file with profile hiearchies, including a header. Required fields: profile and plen, recommended psuperfamily, pfamily pclass, psubclass, pgroup, prank and version.'
   ),
   make_option(
     c('--seqfaa'), default='', help='Fasta file with amino acid sequences, same as the one used as database when hmmsearching. Will populate a sequence table if --sqlitedb is set.',
@@ -581,7 +584,7 @@ if ( ! gtdb ) {
   # having more than one exactly identical sequence, which they do with the new
   # redundant RefSeq entries (WP_ accessions).
   logmsg('Copying to "accessions", creating indices')
-  # I'm converting to tibble here, as I don't know how to to the separate_rows in
+  # I'm converting to tibble here, as I don't know how to do the separate_rows in
   # data.table and it's not in dtplyr.
   accessions <- as_tibble(accessions) %>%
     arrange(db, taxon, accno, accto) %>%
@@ -598,9 +601,22 @@ if ( gtdb ) {
     as_tibble(gtdbtaxonomy) %>% anti_join(as_tibble(accessions), by = c('accno0' = 'genome_accno')) %>% 
       mutate(genome_accno = ifelse(accno1 == 'none', accno0, accno1)) %>%
       select(-accno0, -accno1)
-  )
+  ) %>%
+  as.data.table()
 } else {
   taxa <- lazy_dt(taxflat) %>% semi_join(lazy_dt(accessions) %>% distinct(taxon), by='taxon') %>% as.data.table()
+}
+
+# Write information about missing genomes, if asked for
+if ( length(grep('missing', names(opt$options), value = TRUE)) > 0 & str_length(opt$options$missing) > 0 ) {
+  logmsg(sprintf("Writing information about missing genomes to '%s'", opt$options$missing))
+  write(
+    sprintf(
+      "Genomes missing from GTDB metadata:\n%s",
+      paste(accessions[!genome_accno %in% unique(taxa$genome_accno)]$genome_accno, collapse = '\n')
+    ),
+    opt$options$missing
+  )
 }
 
 # If the user specified a filename for a SQLite database, write that here

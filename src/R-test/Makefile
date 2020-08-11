@@ -77,6 +77,14 @@ pf-classify.gtdb.06:
 	@$(DB2FEATHER_CONTENT)
 	@$(CHECK)
 
+# File output with missing genomes
+pf-classify.gtdb.07:
+	@rm -f $@.*.feather
+	../R/pf-classify.r --hmm_mincov=0.8 --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --featherprefix=$@ --gtdbmetadata=$@.d/gtdb_metadata.tsv --seqfaa=$@.d/genomes.faa --missing=$@.missing $@.d/*.tblout $@.d/*.domtblout
+	@$(DB2FEATHER_CONTENT)
+	@cat $@.missing >> $@.out
+	@$(CHECK)
+
 pf-classify.00:
 	../R/pf-classify.r --dbsource NCBI:NR:20180109 --profilehierarchies=$@.phier.tsv --singletable=$@.out --taxflat=pf-classify.taxflat.tsv $@.d/*.tblout $@.d/*.domtblout
 	@$(CHECK)

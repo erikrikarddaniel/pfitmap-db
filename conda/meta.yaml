@@ -1,4 +1,4 @@
-{% set version = "1.9.8" %}
+{% set version = "1.9.9" %}
 
 package:
   name: pfitmap-db
