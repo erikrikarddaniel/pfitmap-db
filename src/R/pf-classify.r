@@ -93,7 +93,7 @@ LOG_LEVELS = list(
   ERROR   = list(n = 3, msg = 'ERROR')
 )
 logmsg    = function(msg, llevel='INFO') {
-  if ( opt$options$verbose | LOG_LEVELS[[llevel]][["n"]] >= LOG_LEVELS[["WARNING"]][["n"]] ) {
+  if ( opt$options$verbose | LOG_LEVELS[[llevel]][["n"]] >= LOG_LEVELS[["INFO"]][["n"]] ) {
     write(
       sprintf("%s: %s: %s", llevel, format(Sys.time(), "%Y-%m-%d %H:%M:%S"), msg),
       stderr()
@@ -101,7 +101,6 @@ logmsg    = function(msg, llevel='INFO') {
   }
 }
 logmsg(sprintf("pf-classify.r version %s: Starting classification", SCRIPT_VERSION))
-if ( length(grep('featherprefix', names(opt$options), value = TRUE)) > 0 & str_length(opt$options$featherprefix) > 0 ) logmsg(sprintf("Will write feather files prefixed with %s", opt$options$featherprefix))
 
 # Make sure the dbsource parameter is given and in the proper format
 if ( opt$options[['dbsource']] != '' ) {
@@ -119,7 +118,7 @@ if ( length(dbsource) != 3 ) {
 # Check if the GTDB metadata parameter is given
 gtdb <- ifelse(opt$options$gtdbmetadata > '', TRUE, FALSE)
 
-logmsg(sprintf("Reading profile hierarchies from %s", opt$options$profilehierarchies))
+logmsg(sprintf("Reading profile hierarchies from %s", opt$options$profilehierarchies), 'DEBUG')
 hmm_profiles <- fread(opt$options$profilehierarchies)
 
 # Check that it's unique on profile
@@ -130,7 +129,7 @@ if ( nrow(hmm_profiles) != nrow(unique(hmm_profiles[, .(profile)])) ) {
 
 # Read the taxonomy file, in GTDB or NCBI format
 if ( gtdb ) {
-  logmsg(sprintf('Reading GTDB metadata from %s', opt$options$gtdbmetadata))
+  logmsg(sprintf('Reading GTDB metadata from %s', opt$options$gtdbmetadata), 'DEBUG')
   # Don't know how to separate() with data.table, read as tibble then convert
   gtdbmetadata <- read_tsv(
     opt$options$gtdbmetadata,
@@ -157,7 +156,7 @@ if ( gtdb ) {
     ) %>%
     as.data.table()
 } else {
-  logmsg(sprintf("Reading NCBI taxonomy from %s", opt$options$taxflat))
+  logmsg(sprintf("Reading NCBI taxonomy from %s", opt$options$taxflat), 'DEBUG')
   taxflat <- fread(opt$options$taxflat) %>%
     lazy_dt() %>%
     transmute(
@@ -188,7 +187,7 @@ accessions <- data.table(accno = character(), accto = character())
 
 # Read all the tblout files
 for ( tbloutfile in grep('\\.tblout', opt$args, value=TRUE) ) {
-  logmsg(sprintf("Reading %s", tbloutfile))
+  logmsg(sprintf("Reading %s", tbloutfile), 'DEBUG')
   t =  read_fwf(
     tbloutfile, fwf_cols(content = c(1, NA)), 
     col_types = cols(content = col_character()), 
@@ -231,7 +230,7 @@ domtblout <- data.table(
 
 # Read all the domtblout files
 for ( domtbloutfile in grep('\\.domtblout', opt$args, value=TRUE) ) {
-  logmsg(sprintf("Reading %s", domtbloutfile))
+  logmsg(sprintf("Reading %s", domtbloutfile), 'DEBUG')
   t <- read_fwf(
     domtbloutfile, fwf_cols(content = c(1, NA)), 
     col_types = cols(content = col_character()), 
@@ -288,21 +287,22 @@ do_nextjoin <- function(dt) {
   return(t)
 }
 
+logmsg("Calculating lengths -- this takes a long time!")
 # FOR EACH FROM-TO PAIR:
 for ( fs in list(
   c('hmm_from', 'hmm_to', 'hmmlen'),
   c('ali_from', 'ali_to', 'alilen'),
   c('env_from', 'env_to', 'envlen')
 )) {
-  logmsg(sprintf("Calculating %s", fs[3]))
+  logmsg(sprintf("Calculating %s", fs[3]), 'DEBUG')
 
   # 1. Set from and to to current pair, delete shorter rows with the same start and 
   # calculate i (rownumber) and n (total domains) for each combination of accno and profile
-  logmsg("\tCreating domt table")
+  logmsg("\tCreating domt table", 'DEBUG')
   domt <- domtblout[, .(accno = accno, profile = profile, from = get(fs[1]), to = get(fs[2]))] %>%
     lazy_dt() %>% distinct() %>%
     as.data.table()
-  logmsg("\tJoining with itself")
+  logmsg("\tJoining with itself", 'DEBUG')
   domt <- lazy_dt(domt) %>% #distinct() %>%
     semi_join(
       lazy_dt(domt) %>% group_by(accno, profile, from) %>% filter(to == max(to)) %>% ungroup(),
@@ -310,11 +310,11 @@ for ( fs in list(
     ) %>% 
     arrange(accno, profile, from, to) %>%
     as.data.table()
-  logmsg("\tCreating row numbers")
+  logmsg("\tCreating row numbers", 'DEBUG')
   domt <- lazy_dt(domt) %>%
     group_by(accno, profile) %>% mutate(i = row_number(from), n = n()) %>% ungroup() %>%
     as.data.table()
-  logmsg(sprintf("\tdomt done, %d rows", nrow(domt)))
+  logmsg(sprintf("\tdomt done, %d rows", nrow(domt)), 'DEBUG')
 
   # This is where non-overlapping rows will be stored
   nooverlaps <- data.table(
@@ -323,7 +323,7 @@ for ( fs in list(
   )
 
   while ( nrow(domt) > 0 ) {
-    logmsg(sprintf("Working on overlaps, nrow: %d", domt %>% nrow()))
+    logmsg(sprintf("Working on overlaps, nrow: %d", domt %>% nrow()), 'DEBUG')
     
     # 2. Move rows with n == 1 to nooverlaps
     nooverlaps <- funion(nooverlaps, domt[n == 1, .(accno, profile, from, to)])
@@ -403,7 +403,7 @@ align_lengths <- lazy_dt(domtblout) %>%
   inner_join(as_tibble(lengths) %>% spread(type, val, fill = 0), by = c('accno', 'profile')) %>% as.data.table() %>% lazy_dt() %>%
   as.data.table()
 
-logmsg("Calculated lengths, inferring source databases from accession numbers")
+logmsg("Calculated lengths, inferring source databases from accession numbers", 'DEBUG')
 
 if ( gtdb ) {
   accessions$db <- 'gtdb'
@@ -425,7 +425,7 @@ if ( gtdb ) {
     as.data.table()
 }
 
-logmsg("Inferred databases, calculating best scoring profile for each accession")
+logmsg("Inferred databases, calculating best scoring profile for each accession", 'DEBUG')
 
 # Create proteins with entries from tblout not matching hmm_profile entries with rank == 'domain'.
 # Calculate best scoring profile for each accession
@@ -436,7 +436,7 @@ proteins <- lazy_dt(tblout) %>%
   as.data.table()
 proteins <- setorder(setDT(proteins), -score)[, head(.SD, 1), keyby = accno]
 
-logmsg("Calculated best scoring profiles, creating domains")
+logmsg("Calculated best scoring profiles, creating domains", 'DEBUG')
 
 # Create table of domains as those that match domains specified in hmm_profiles
 domains <- lazy_dt(domtblout) %>%
@@ -447,13 +447,13 @@ domains <- lazy_dt(domtblout) %>%
   as.data.table()
 
 # Join in lengths
-logmsg(sprintf("Joining in lengths from domtblout, nrows before: %d", proteins %>% nrow()))
+logmsg(sprintf("Joining in lengths from domtblout, nrows before: %d", proteins %>% nrow()), 'DEBUG')
 proteins <- lazy_dt(proteins) %>% inner_join(align_lengths, by = c('accno', 'profile')) %>% as.data.table()
 
-logmsg("Joined in lengths, writing data")
+logmsg("Joined in lengths, writing data", 'DEBUG')
 
 # Subset data with hmm_mincov parameter
-logmsg(sprintf("Subsetting output to proteins and domains covering at least %f of the hmm profile", opt$options$hmm_mincov))
+logmsg(sprintf("Subsetting output to proteins and domains covering at least %f of the hmm profile", opt$options$hmm_mincov), 'DEBUG')
 
 # 1. proteins table
 #logmsg(sprintf("proteins before: %d", proteins %>% nrow()), 'DEBUG')
@@ -508,13 +508,13 @@ if ( opt$options$seqfaa != '' ) {
     "paste - -",
     sprintf("split -a 3 --additional-suffix=.tsv -l %d - %s/sequences.", ROWS_PER_SEQUENCE_TSV, tempdir())
   )
-  logmsg("Creating multiple tsv files with sequences")
+  logmsg("Creating multiple tsv files with sequences", 'DEBUG')
   system(paste(cmd, collapse = '|'))
 
   sequences <- data.table(accno = character(), sequence = character())
 
   for ( f in Sys.glob(sprintf("%s/sequences.*.tsv", tempdir())) ) {
-    logmsg(sprintf("Reading %s", f))
+    logmsg(sprintf("Reading %s", f), 'DEBUG')
     sequences <- lazy_dt(sequences) %>%
       union(
         fread(f, col.names = c('accno', 'sequence'), header = FALSE) %>%
@@ -522,17 +522,17 @@ if ( opt$options$seqfaa != '' ) {
           semi_join(lazy_dt(accessions), by = 'accno')
       ) %>%
         as.data.table()
-    logmsg(sprintf("\tCurrently %d sequences", nrow(sequences)))
+    logmsg(sprintf("\tCurrently %d sequences", nrow(sequences)), 'DEBUG')
   }
-  logmsg(sprintf("Read %d sequences", nrow(sequences)))
+  logmsg(sprintf("Read %d sequences", nrow(sequences)), 'DEBUG')
 }
 
 # If we were called with the singletable option, prepare data suitable for that
 if ( opt$options$singletable > '' ) {
-  logmsg("Writing single table format")
+  logmsg(sprintf("Writing single table format to %s", opt$options$singletable))
 
   # Join proteins with accessions and drop profile to get a single table output
-  logmsg(sprintf("Joining in all accession numbers, nrows before: %d", proteins %>% nrow()))
+  logmsg(sprintf("Joining in all accession numbers, nrows before: %d", proteins %>% nrow()), 'DEBUG')
   singletable <- as_tibble(proteins) %>% 
     left_join(as_tibble(hmm_profiles), by='profile') %>% # Why is this a *left* join?
     inner_join(as_tibble(accessions), by='accno')
@@ -554,7 +554,7 @@ if ( opt$options$singletable > '' ) {
         "WARNING"
       )
     }
-    logmsg(sprintf("Writing single table %s, nrows: %d", opt$options$singletable, singletable %>% nrow()))
+    logmsg(sprintf("Writing single table %s, nrows: %d", opt$options$singletable, singletable %>% nrow()), 'DEBUG')
     write_tsv(
       singletable %>% 
         select(db, accno, score, evalue, profile, psuperfamily:pgroup, genome_accno, tdomain:tspecies, tlen, qlen, alilen, hmmlen,envlen) %>%
@@ -562,13 +562,13 @@ if ( opt$options$singletable > '' ) {
       opt$options$singletable
       )
   } else {
-    logmsg(sprintf("Adding NCBI taxon ids from taxflat, nrows before: %d", singletable %>% nrow()))
+    logmsg(sprintf("Adding NCBI taxon ids from taxflat, nrows before: %d", singletable %>% nrow()), 'DEBUG')
     singletable <- singletable %>% 
       left_join(
         as_tibble(taxflat) %>% select(taxon, ncbi_taxon_id),
         by='taxon'
       )
-    logmsg(sprintf("Writing single table %s, nrows: %d", opt$options$singletable, singletable %>% nrow()))
+    logmsg(sprintf("Writing single table %s, nrows: %d", opt$options$singletable, singletable %>% nrow()), 'DEBUG')
     write_tsv(
       singletable %>% 
         select(db, accno, taxon, score, evalue, profile, psuperfamily:pgroup, ncbi_taxon_id, tlen, qlen, alilen, hmmlen,envlen) %>%
@@ -583,7 +583,7 @@ if ( ! gtdb ) {
   # combination of accno, db and taxon to ensure organisms do not show up as
   # having more than one exactly identical sequence, which they do with the new
   # redundant RefSeq entries (WP_ accessions).
-  logmsg('Copying to "accessions", creating indices')
+  logmsg('Copying to "accessions", creating indices', 'DEBUG')
   # I'm converting to tibble here, as I don't know how to do the separate_rows in
   # data.table and it's not in dtplyr.
   accessions <- as_tibble(accessions) %>%
@@ -609,7 +609,7 @@ if ( gtdb ) {
 
 # Write information about missing genomes, if asked for
 if ( length(grep('missing', names(opt$options), value = TRUE)) > 0 & str_length(opt$options$missing) > 0 ) {
-  logmsg(sprintf("Writing information about missing genomes to '%s'", opt$options$missing))
+  logmsg(sprintf("Writing information about missing genomes to '%s'", opt$options$missing), 'DEBUG')
   write(
     sprintf(
       "Genomes missing from GTDB metadata:\n%s",
@@ -639,21 +639,21 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
     con %>% DBI::dbExecute('CREATE INDEX "accessions.i02" ON "accessions"("taxon");')
   }
   
-  logmsg('Copying to "proteins", creating indices')
+  logmsg('Copying to "proteins", creating indices', 'DEBUG')
   con %>% copy_to(proteins, 'proteins', temporary = FALSE, overwrite = TRUE)
   con %>% DBI::dbExecute('CREATE INDEX "proteins.i00" ON "proteins"("accno");')
   con %>% DBI::dbExecute('CREATE INDEX "proteins.i01" ON "proteins"("profile");')
 
-  logmsg('Copying to "domains", creating indices')
+  logmsg('Copying to "domains", creating indices', 'DEBUG')
   con %>% copy_to(domains, 'domains', temporary = FALSE, overwrite = TRUE)
   con %>% DBI::dbExecute('CREATE INDEX "domains.i00" ON "domains"("accno");')
   con %>% DBI::dbExecute('CREATE INDEX "domains.i01" ON "domains"("profile");')
 
-  logmsg('Copying to "hmm_profiles", creating indices')
+  logmsg('Copying to "hmm_profiles", creating indices', 'DEBUG')
   con %>% copy_to(hmm_profiles, 'hmm_profiles', temporary = FALSE, overwrite = TRUE)
   con %>% DBI::dbExecute('CREATE UNIQUE INDEX "hmm_profiles.i00" ON "hmm_profiles"("profile");')
 
-  logmsg('Copying to "taxa", creating indices')
+  logmsg('Copying to "taxa", creating indices', 'DEBUG')
   con %>% copy_to(taxa, 'taxa', temporary = FALSE, overwrite = TRUE)
   if ( gtdb ) {
     con %>% DBI::dbExecute('CREATE UNIQUE INDEX "taxa.i00" ON "taxa"("genome_accno");')
@@ -662,12 +662,12 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
     con %>% DBI::dbExecute('CREATE UNIQUE INDEX "taxa.i01" ON "taxa"("ncbi_taxon_id");')
   }
 
-  logmsg('Saving tblout and domtblout to database')
+  logmsg('Saving tblout and domtblout to database', 'DEBUG')
   con %>% copy_to(tblout    %>% arrange(accno, profile),    'tblout',    temporary = FALSE, overwrite = TRUE)
   con %>% copy_to(domtblout %>% arrange(accno, profile, i), 'domtblout', temporary = FALSE, overwrite = TRUE)
 
   if ( ! gtdb ) {
-  logmsg(sprintf('Creating dupfree_proteins, using %d as fuzzy factor', opt$options$fuzzy_factor))
+  logmsg(sprintf('Creating dupfree_proteins, using %d as fuzzy factor', opt$options$fuzzy_factor), 'DEBUG')
     dp <- as_tibble(proteins) %>% inner_join(as_tibble(accessions) %>% transmute(accno = accto, db, taxon), by = 'accno') %>%
       mutate(
         alilen = as.integer(round(round(alilen / opt$options$fuzzy_factor) * opt$options$fuzzy_factor)),
@@ -684,47 +684,48 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 & str_length
   }
 
   if ( opt$options$seqfaa != '' ) {
-    logmsg(sprintf('Saving sequences table', opt$options$seqfaa))
+    logmsg(sprintf('Saving sequences table', opt$options$seqfaa), 'DEBUG')
     con %>% copy_to(sequences, 'sequences',
       temporary = FALSE, overwrite = TRUE
     )
     con %>% DBI::dbExecute('CREATE UNIQUE INDEX "sequences.i00" ON "sequences"("accno");')
   }
 
-  logmsg('Disconnecting from sqlite3 db')
+  logmsg('Disconnecting from sqlite3 db', 'DEBUG')
   con %>% DBI::dbDisconnect()
 }
 
 if ( length(grep('featherprefix', names(opt$options), value = TRUE)) > 0 & str_length(opt$options$featherprefix) > 0 ) {
-  logmsg("Writing dbsources to feather file")
+  logmsg(sprintf("Writing data to feather tables prefixed with %s", opt$options$featherprefix))
+  logmsg("Writing dbsources to feather file", 'DEBUG')
   write_feather(
     tibble(source = dbsource[1], name = dbsource[2], version = dbsource[3]),
     sprintf("%s.dbsources.feather", opt$options$featherprefix)
   )
 
-  logmsg("Writing accessions to feather file")
+  logmsg("Writing accessions to feather file", 'DEBUG')
   write_feather(accessions, sprintf("%s.accessions.feather", opt$options$featherprefix))
 
-  logmsg("Writing proteins to feather file")
+  logmsg("Writing proteins to feather file", 'DEBUG')
   write_feather(proteins, sprintf("%s.proteins.feather", opt$options$featherprefix))
 
-  logmsg("Writing domains to feather file")
+  logmsg("Writing domains to feather file", 'DEBUG')
   write_feather(domains, sprintf("%s.domains.feather", opt$options$featherprefix))
 
-  logmsg("Writing hmm_profiles to feather file")
+  logmsg("Writing hmm_profiles to feather file", 'DEBUG')
   write_feather(hmm_profiles, sprintf("%s.hmm_profiles.feather", opt$options$featherprefix))
 
-  logmsg("Writing taxa to feather file")
+  logmsg("Writing taxa to feather file", 'DEBUG')
   write_feather(taxa, sprintf("%s.taxa.feather", opt$options$featherprefix))
 
-  logmsg("Writing tblout to feather file")
+  logmsg("Writing tblout to feather file", 'DEBUG')
   write_feather(tblout, sprintf("%s.tblout.feather", opt$options$featherprefix))
 
-  logmsg("Writing domtblout to feather file")
+  logmsg("Writing domtblout to feather file", 'DEBUG')
   write_feather(domtblout, sprintf("%s.domtblout.feather", opt$options$featherprefix))
 
   if ( opt$options$seqfaa != '' ) {
-    logmsg("Writing sequences to feather file")
+    logmsg("Writing sequences to feather file", 'DEBUG')
     write_feather(sequences, sprintf("%s.sequences.feather", opt$options$featherprefix))
   }
 }
