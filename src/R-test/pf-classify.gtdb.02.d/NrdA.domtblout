@@ -35,3 +35,7 @@ MGLECCPO_00637       -            124 NrdA                 -            550     
 # Current dir:     /home/dl/dev/pfitmap-nextflow/work/71/9d33495cc9466d25748ff1ce45644c
 # Date:            Thu Apr 23 17:13:49 2020
 # [ok]
+MADOIAMF_02838       -            619 NrdA                 -            550    9e-161  550.7   0.0   1   1  2.4e-162  6.1e-159  544.7   0.0     2   544    59   575    58   580 0.94 Vitamin B12-dependent ribonucleoside-diphosphate reductase [GCA_900230255]
+EBGBNNFE_00283       -           1137 NrdA                 -            550    9e-161  550.7   0.2   1   2   1.2e-75   3.2e-72  258.4   0.0     2   238   180   428   179   429 0.96 hypothetical protein [GCA_002878035]
+EBGBNNFE_00283       -           1137 NrdA                 -            550    9e-161  550.7   0.2   2   2   3.8e-84   9.6e-81  286.6   0.1   237   540   774  1063   766  1068 0.95 hypothetical protein [GCA_002878035]
+EPCDNPBJ_00773       -            872 NrdA                 -            550    9e-161  550.7   0.0   1   1    6e-163  1.5e-159  546.7   0.0     3   541   229   798   227   804 0.94 hypothetical protein [GCA_000421525]

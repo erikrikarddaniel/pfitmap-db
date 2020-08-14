@@ -30,3 +30,6 @@ PAPHBKOD_02214       -          NrdAz                -               0.14   11.3
 # Current dir:     /home/dl/dev/pfitmap-nextflow/work/56/bb98ff3260209babffa4cd7583e3b4
 # Date:            Thu Apr 23 17:13:49 2020
 # [ok]
+IKNPAILA_01033       -          NrdAz                -           2.3e-190  648.9   0.1  3.1e-190  648.5   0.1   1.1   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_002685435]
+EBGBNNFE_00283       -          NrdAz                -           2.4e-190  648.9   1.1  7.6e-108  376.1   0.1   3.1   2   1   1   3   3   3   3 hypothetical protein [GCA_002878035]
+AOJLHGBF_00751       -          NrdAz                -           2.5e-190  648.8   0.3  3.8e-190  648.2   0.3   1.1   1   0   0   1   1   1   1 Ribonucleoside-diphosphate reductase subunit alpha 2 [GCA_000334195]

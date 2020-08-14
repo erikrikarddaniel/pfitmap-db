@@ -54,3 +54,7 @@ FHGKEOLE_00871       -            336 NrdAk                -            578     
 # Current dir:     /home/dl/dev/pfitmap-nextflow/work/3b/c7c11416717507bee6a116e72d9b38
 # Date:            Thu Apr 23 17:13:49 2020
 # [ok]
+AAHCILML_03508       -            764 NrdAk                -            578   2.1e-94  331.9   0.0   2   2   3.5e-33   9.1e-30  118.5   0.0   409   570   587   746   570   764 0.90 hypothetical protein [GCA_000518265]
+EBGBNNFE_00283       -           1137 NrdAk                -            578   2.1e-94  331.9   0.4   1   2   1.5e-41   3.9e-38  146.1   0.0     3   216   129   348   127   356 0.94 hypothetical protein [GCA_002878035]
+EBGBNNFE_00283       -           1137 NrdAk                -            578   2.1e-94  331.9   0.4   2   2   4.4e-50   1.1e-46  174.3   0.1   271   558   774  1061   748  1076 0.86 hypothetical protein [GCA_002878035]
+GDEKMBDB_04704       -            810 NrdAk                -            578   2.1e-94  331.9   0.0   1   2   1.5e-59   3.8e-56  205.6   0.0     4   403   166   588   163   594 0.87 hypothetical protein [GCA_000375225]

@@ -65,3 +65,7 @@ BFHDIKLF_00402       -            374 NrdAi                -            545     
 # Current dir:     /home/dl/dev/pfitmap-nextflow/work/a4/fa3c28ad4bc604a8caf00cf87c47d1
 # Date:            Thu Apr 23 17:13:49 2020
 # [ok]
+JJIIBODJ_02203       -            824 NrdAi                -            545   9.2e-81  286.6   0.0   3   3   4.1e-32   1.1e-28  114.8   0.0   375   535   633   791   627   799 0.94 Ribonucleoside-diphosphate reductase 1 subunit alpha [GCA_001429785]
+EBGBNNFE_00283       -           1137 NrdAi                -            545   9.3e-81  286.6   0.8   1   2   4.7e-23   1.2e-19   84.9   0.0    12   196   144   338   138   343 0.85 hypothetical protein [GCA_002878035]
+EBGBNNFE_00283       -           1137 NrdAi                -            545   9.3e-81  286.6   0.8   2   2   4.6e-55   1.2e-51  190.5   0.1   246   532   774  1066   754  1076 0.89 hypothetical protein [GCA_002878035]
+CKFFGBKJ_01748       -            862 NrdAi                -            545   9.3e-81  286.6   0.0   1   3   2.3e-24     6e-21   89.1   0.0    35   196   211   380   183   385 0.88 hypothetical protein [GCA_900187395]
