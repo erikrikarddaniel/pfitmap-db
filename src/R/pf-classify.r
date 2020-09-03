@@ -13,7 +13,7 @@ suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "1.9.9"
+SCRIPT_VERSION = "1.9.10"
 ROWS_PER_SEQUENCE_TSV = 1e7
 
 options(warn = 1)
@@ -439,16 +439,15 @@ proteins <- setorder(setDT(proteins), -score)[, head(.SD, 1), keyby = accno]
 logmsg("Calculated best scoring profiles, creating domains", 'DEBUG')
 
 # Create table of domains as those that match domains specified in hmm_profiles
-domains <- lazy_dt(domtblout) %>%
-  transmute(
-    accno, profile, i, n, dom_c_evalue, dom_i_evalue, dom_score,
-    hmm_from, hmm_to, ali_from, ali_to, env_from, env_to
-  ) %>%
+domains <- lazy_dt(tblout) %>%
+  semi_join(lazy_dt(hmm_profiles) %>% filter(prank == 'domain'), by = 'profile') %>%
+  select(accno, profile, score, evalue) %>%
   as.data.table()
 
 # Join in lengths
 logmsg(sprintf("Joining in lengths from domtblout, nrows before: %d", proteins %>% nrow()), 'DEBUG')
 proteins <- lazy_dt(proteins) %>% inner_join(align_lengths, by = c('accno', 'profile')) %>% as.data.table()
+domains  <- lazy_dt(domains) %>% inner_join(align_lengths, by = c('accno', 'profile')) %>% as.data.table()
 
 logmsg("Joined in lengths, writing data", 'DEBUG')
 
