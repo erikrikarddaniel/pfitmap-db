@@ -1,4 +1,4 @@
-{% set version = "1.9.10" %}
+{% set version = "1.9.11" %}
 
 package:
   name: pfitmap-db
@@ -25,3 +25,4 @@ requirements:
     - r-stringr
     - r-feather
     - bioconductor-biostrings
+    - gawk
