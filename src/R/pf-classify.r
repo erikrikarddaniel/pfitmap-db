@@ -13,7 +13,7 @@ suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "1.9.11"
+SCRIPT_VERSION = "1.9.12"
 ROWS_PER_SEQUENCE_TSV = 1e7
 
 options(warn = 1)
@@ -171,7 +171,7 @@ if ( gtdb ) {
   # Delete duplicate taxon, rank combinations belonging in Eukaryota
   taxflat <- lazy_dt(taxflat) %>%
     anti_join(
-      lazy_dt(taxflat) %>% group_by(taxon, trank) %>% summarise(n = n(), .groups = 'drop_last') %>% ungroup() %>% filter(n > 1) %>%
+      lazy_dt(taxflat) %>% group_by(taxon, trank) %>% summarise(n = n()) %>% ungroup() %>% filter(n > 1) %>%
         inner_join(lazy_dt(taxflat) %>% filter(tdomain == 'Eukaryota'), by = c('taxon', 'trank')),
       by = c('ncbi_taxon_id')
     ) %>%
@@ -366,7 +366,7 @@ for ( fs in list(
           lazy_dt(nextjoin) %>% select(accno, profile, from, to) %>% 
             inner_join(lazy_dt(nextjoin) %>% select(accno, profile, from, to), by = c('accno', 'profile', 'to')) %>% 
             filter(from.x != from.y) %>% 
-            group_by(accno, profile, to) %>% summarise(from = max(from.x), .groups = 'drop_last') %>% ungroup(),
+            group_by(accno, profile, to) %>% summarise(from = max(from.x)) %>% ungroup(),
           by = c('accno', 'profile', 'from', 'to')
         ) %>%
         as.data.table()
@@ -384,7 +384,7 @@ for ( fs in list(
   lengths <- as_tibble(lengths) %>%
     union(
       as_tibble(nooverlaps) %>% mutate(len = to - from + 1) %>%
-        group_by(accno, profile) %>% summarise(len = sum(len), from = min(from), to = max(to), .groups = 'drop_last') %>% ungroup() %>%
+        group_by(accno, profile) %>% summarise(len = sum(len), from = min(from), to = max(to)) %>% ungroup() %>%
         gather(type, val, len, from, to) %>% # Change to pivot_longer()!
         mutate(
           type = case_when(
@@ -588,7 +588,7 @@ if ( ! gtdb ) {
   accessions <- as_tibble(accessions) %>%
     arrange(db, taxon, accno, accto) %>%
     group_by(db, taxon, accno) %>%
-    summarise(accto = paste(accto, collapse = ','), .groups = 'drop_last') %>%
+    summarise(accto = paste(accto, collapse = ',')) %>%
     ungroup() %>%
     separate_rows(accto, sep = ',') %>%
     distinct()
