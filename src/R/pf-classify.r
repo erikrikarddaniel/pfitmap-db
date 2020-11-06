@@ -13,7 +13,7 @@ suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "1.9.11"
+SCRIPT_VERSION = "1.9.13"
 ROWS_PER_SEQUENCE_TSV = 1e7
 
 options(warn = 1)
@@ -187,25 +187,29 @@ accessions <- data.table(accno = character(), accto = character())
 
 # Read all the tblout files
 for ( tbloutfile in grep('\\.tblout', opt$args, value=TRUE) ) {
-  logmsg(sprintf("Reading %s", tbloutfile), 'DEBUG')
-  t =  read_fwf(
-    tbloutfile, fwf_cols(content = c(1, NA)), 
-    col_types = cols(content = col_character()), 
-    comment='#'
-  ) %>% 
-    separate(
-      content, 
-      c('accno', 't0', 'profile', 't1', 'evalue', 'score', 'bias', 'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10', 'rest'), 
-      '\\s+', 
-      extra='merge',
-      convert = T
-    ) %>%
-    as.data.table()
-  tblout <- funion(tblout, t[, .(accno, profile, evalue, score, bias)])
-  accessions <- funion(
-    accessions, 
-    t[, {  accno <- accno; accto <- sprintf("%s %s", accno, rest); .(accno = accno, accto = accto) }]
-  )
+  if ( file.info(tbloutfile)$size == 0 ) {
+    logmsg(sprintf("Skipping %s -- empty", tbloutfile), 'DEBUG')
+  } else {
+    logmsg(sprintf("Reading %s", tbloutfile), 'DEBUG')
+    t =  read_fwf(
+      tbloutfile, fwf_cols(content = c(1, NA)), 
+      col_types = cols(content = col_character()), 
+      comment='#'
+    ) %>% 
+      separate(
+        content, 
+        c('accno', 't0', 'profile', 't1', 'evalue', 'score', 'bias', 'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10', 'rest'), 
+        '\\s+', 
+        extra='merge',
+        convert = T
+      ) %>%
+      as.data.table()
+    tblout <- funion(tblout, t[, .(accno, profile, evalue, score, bias)])
+    accessions <- funion(
+      accessions, 
+      t[, {  accno <- accno; accto <- sprintf("%s %s", accno, rest); .(accno = accno, accto = accto) }]
+    )
+  }
 }
 
 # Split the accto field (data.table magic I don't understand, see https://stackoverflow.com/questions/13773770/split-comma-separated-strings-in-a-column-into-separate-rows/31514711#31514711)
@@ -230,32 +234,36 @@ domtblout <- data.table(
 
 # Read all the domtblout files
 for ( domtbloutfile in grep('\\.domtblout', opt$args, value=TRUE) ) {
-  logmsg(sprintf("Reading %s", domtbloutfile), 'DEBUG')
-  t <- read_fwf(
-    domtbloutfile, fwf_cols(content = c(1, NA)), 
-    col_types = cols(content = col_character()), 
-    comment='#'
-  ) %>% 
-    separate(
-      content, 
-      c(
-        'accno', 't0', 'tlen', 'profile', 't1', 'qlen',  'evalue', 'score', 'bias', 'i', 'n', 
-        'dom_c_evalue', 'dom_i_evalue', 'dom_score', 'dom_bias', 
-        'hmm_from', 'hmm_to', 'ali_from', 'ali_to', 'env_from', 'env_to', 'acc', 'rest'
-      ),
-      '\\s+', 
-      extra='merge',
-      convert = T
-    ) %>%
-    as.data.table()
-  
-  domtblout <- funion(
-    domtblout,
-    t[, .(
-      accno, tlen, profile, qlen, i, n, dom_c_evalue, dom_i_evalue, dom_score, dom_bias,
-      hmm_from, hmm_to, ali_from, ali_to, env_from, env_to
-    )]
-  )
+  if ( file.info(domtbloutfile)$size == 0 ) {
+    logmsg(sprintf("Skipping %s -- empty", domtbloutfile), 'DEBUG')
+  } else {
+    logmsg(sprintf("Reading %s", domtbloutfile), 'DEBUG')
+    t <- read_fwf(
+      domtbloutfile, fwf_cols(content = c(1, NA)), 
+      col_types = cols(content = col_character()), 
+      comment='#'
+    ) %>% 
+      separate(
+        content, 
+        c(
+          'accno', 't0', 'tlen', 'profile', 't1', 'qlen',  'evalue', 'score', 'bias', 'i', 'n', 
+          'dom_c_evalue', 'dom_i_evalue', 'dom_score', 'dom_bias', 
+          'hmm_from', 'hmm_to', 'ali_from', 'ali_to', 'env_from', 'env_to', 'acc', 'rest'
+        ),
+        '\\s+', 
+        extra='merge',
+        convert = T
+      ) %>%
+      as.data.table()
+    
+    domtblout <- funion(
+      domtblout,
+      t[, .(
+        accno, tlen, profile, qlen, i, n, dom_c_evalue, dom_i_evalue, dom_score, dom_bias,
+        hmm_from, hmm_to, ali_from, ali_to, env_from, env_to
+      )]
+    )
+  }
 }
 
 # Calculate lengths:
