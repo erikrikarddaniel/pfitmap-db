@@ -18,7 +18,7 @@ clean:
 
 all.sqlite: pf-classify.02 pf-classify.03 pf-classify.04
 
-pf-classify.gtdb: pf-classify.gtdb.00 pf-classify.gtdb.01 pf-classify.gtdb.02 pf-classify.gtdb.03 pf-classify.gtdb.04 pf-classify.gtdb.05 pf-classify.gtdb.06
+pf-classify.gtdb: pf-classify.gtdb.00 pf-classify.gtdb.01 pf-classify.gtdb.02 pf-classify.gtdb.03 pf-classify.gtdb.04 pf-classify.gtdb.05 pf-classify.gtdb.06 pf-classify.gtdb.07 pf-classify.gtdb.08
 
 pf-classify.ncbi: pf-classify.00 pf-classify.01 pf-classify.02 pf-classify.03 pf-classify.04 pf-classify.05 pf-classify.06 pf-classify.07 pf-classify.08 pf-classify.09 
 
@@ -83,6 +83,13 @@ pf-classify.gtdb.07:
 	../R/pf-classify.r --hmm_mincov=0.8 --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --featherprefix=$@ --gtdbmetadata=$@.d/gtdb_metadata.tsv --seqfaa=$@.d/genomes.faa --missing=$@.missing $@.d/*.tblout $@.d/*.domtblout
 	@$(DB2FEATHER_CONTENT)
 	@cat $@.missing >> $@.out
+	@$(CHECK)
+
+# Short and other problematic proteins
+pf-classify.gtdb.08:
+	@rm -f $@.*.feather
+	../R/pf-classify.r --hmm_mincov=0.1 --dbsource GTDB:GTDB:RS89 --profilehierarchies=$@.phier.tsv --featherprefix=$@ --gtdbmetadata=$@.d/gtdb_metadata.tsv $@.d/*.tblout $@.d/*.domtblout
+	@$(DB2FEATHER_CONTENT)
 	@$(CHECK)
 
 pf-classify.00:

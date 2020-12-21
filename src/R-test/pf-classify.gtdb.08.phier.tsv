@@ -1,0 +1,35 @@
+profile	prank	psuperfamily	pfamily	pclass	psubclass	pgroup	psubgroup	version	plen
+NrdJa+b	subclass	NrdGRE	NrdJA	NrdJ	NrdJa+b			0.5	695
+NrdJA	family	NrdGRE	NrdJA					0.5	
+NrdJ	class	NrdGRE	NrdJA	NrdJ				0.5	407
+NrdJCterm	domain							0.5	144
+NrdJd1	group	NrdGRE	NrdJA	NrdJ	NrdJd	NrdJd1		0.5	963
+NrdJd2	group	NrdGRE	NrdJA	NrdJ	NrdJd	NrdJd2		0.5	846
+NrdJd3	group	NrdGRE	NrdJA	NrdJ	NrdJd	NrdJd3		0.5	1102
+NrdJd	subclass	NrdGRE	NrdJA	NrdJ	NrdJd			0.5	681
+NrdJg	subclass	NrdGRE	NrdJA	NrdJ	NrdJg			0.5	930
+NrdJh	subclass	NrdGRE	NrdJA	NrdJ	NrdJh			0.5	576
+NrdJk	subclass	NrdGRE	NrdJA	NrdJ	NrdJk			0.5	668
+NrdJm1	group	NrdGRE	NrdJA	NrdJ	NrdJm	NrdJm1		0.5	767
+NrdJm2e	subgroup	NrdGRE	NrdJA	NrdJ	NrdJm	NrdJm2	NrdJm2e	0.5	727
+NrdJm2	group	NrdGRE	NrdJA	NrdJ	NrdJm	NrdJm2		0.5	690
+NrdJm3	group	NrdGRE	NrdJA	NrdJ	NrdJm	NrdJm3		0.5	638
+NrdJm4	group	NrdGRE	NrdJA	NrdJ	NrdJm	NrdJm4		0.5	662
+NrdJm5	group	NrdGRE	NrdJA	NrdJ	NrdJm	NrdJm5		0.5	651
+NrdJm6	group	NrdGRE	NrdJA	NrdJ	NrdJm	NrdJm6		0.5	647
+NrdJm	subclass	NrdGRE	NrdJA	NrdJ	NrdJm			0.5	546
+NrdJo	subclass	NrdGRE	NrdJA	NrdJ	NrdJo			0.5	720
+NrdJp	subclass	NrdGRE	NrdJA	NrdJ	NrdJp			0.6	621
+NrdJuc00	subclass	NrdGRE	NrdJA	NrdJ	NrdJuc00			0.6	490
+NrdJuc01	subclass	NrdGRE	NrdJA	NrdJ	NrdJuc01			0.5	543
+NrdJuc02	subclass	NrdGRE	NrdJA	NrdJ	NrdJuc02			0.5	712
+NrdD	class	NrdGRE	GRE	NrdD				0.6	498
+NrdDc	subclass	NrdGRE	GRE	NrdD	NrdDc			0.6	519
+NrdDd	subclass	NrdGRE	GRE	NrdD	NrdDd			0.6	565
+NrdDh	subclass	NrdGRE	GRE	NrdD	NrdDh			0.6	568
+NrdDh1	group	NrdGRE	GRE	NrdD	NrdDh1			0.5	571
+NrdDh2	group	NrdGRE	GRE	NrdD	NrdDh2			0.5	626
+NrdDh3	group	NrdGRE	GRE	NrdD	NrdDh3			0.5	615
+NrdDuc00	subclass	NrdGRE	GRE	NrdD	NrdDuc00			0.6	698
+NrdDuc01	subclass	NrdGRE	GRE	NrdD	NrdDuc01			0.5	593
+NrdDf	subclass	NrdGRE	GRE	NrdD	NrdDf			0.5	665

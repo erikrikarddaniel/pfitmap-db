@@ -13,7 +13,7 @@ suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "1.9.13"
+SCRIPT_VERSION = "1.9.13dev"
 ROWS_PER_SEQUENCE_TSV = 1e7
 
 options(warn = 1)
@@ -411,6 +411,12 @@ align_lengths <- lazy_dt(domtblout) %>%
   inner_join(as_tibble(lengths) %>% spread(type, val, fill = 0), by = c('accno', 'profile')) %>% as.data.table() %>% lazy_dt() %>%
   as.data.table()
 
+### dtfile <- "domtblout_after_calc_lens.feather"
+### alfile <- "align_lengths_after_cal_lens.feather"
+### logmsg(sprintf("Writing DEBUG tables: %s, %s", dtfile, alfile))
+### write_feather(domtblout, dtfile)
+### write_feather(align_lengths, alfile)
+
 logmsg("Calculated lengths, inferring source databases from accession numbers", 'DEBUG')
 
 if ( gtdb ) {
@@ -444,6 +450,8 @@ proteins <- lazy_dt(tblout) %>%
   as.data.table()
 proteins <- setorder(setDT(proteins), -score)[, head(.SD, 1), keyby = accno]
 
+write_feather(proteins, "proteins_1st.feather")
+
 logmsg("Calculated best scoring profiles, creating domains", 'DEBUG')
 
 # Create table of domains as those that match domains specified in hmm_profiles
@@ -452,10 +460,15 @@ domains <- lazy_dt(tblout) %>%
   select(accno, profile, score, evalue) %>%
   as.data.table()
 
+write_feather(domains, "domains_1st.feather")
+
 # Join in lengths
 logmsg(sprintf("Joining in lengths from domtblout, nrows before: %d", proteins %>% nrow()), 'DEBUG')
 proteins <- lazy_dt(proteins) %>% inner_join(align_lengths, by = c('accno', 'profile')) %>% as.data.table()
 domains  <- lazy_dt(domains) %>% inner_join(align_lengths, by = c('accno', 'profile')) %>% as.data.table()
+
+write_feather(proteins, "proteins_2nd.feather")
+write_feather(domains, "domains_2nd.feather")
 
 logmsg("Joined in lengths, writing data", 'DEBUG')
 
@@ -478,6 +491,8 @@ p <- lazy_dt(p) %>%
   as.data.table()
 proteins <- p
 rm(p)
+
+write_feather(proteins, "proteins_3rd.feather")
 
 # 1.b add pdb entries that are not present due to not passing the hmm_mincov criterion
 
