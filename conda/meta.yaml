@@ -1,4 +1,4 @@
-{% set version = "1.9.14" %}
+{% set version = "1.9.15" %}
 
 package:
   name: pfitmap-db
@@ -13,14 +13,14 @@ requirements:
     - setuptools
 
   run:
-    - r-dplyr >=1.0.0
-    - r-dbplyr
-    - r-rsqlite
-    - r-optparse
-    - r-tidyverse
-    - r-feather
-    - r-stringi
-    - r-stringr
-    - r-feather
-    - bioconductor-biostrings
+    - r-dplyr = 1.0.7
+    - r-dbplyr = 2.1.1
+    - r-data.table = 1.14.2
+    - r-rsqlite = 2.2.9
+    - r-optparse = 1.7.1
+    - r-purrr = 0.3.4
+    - r-feather = 0.3.5
+    - r-stringi = 1.7.6
+    - r-stringr = 1.4.0
+    - bioconductor-biostrings = 2.60.2
     - gawk
