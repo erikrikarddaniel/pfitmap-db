@@ -11,7 +11,7 @@ suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "1.9.14"
+SCRIPT_VERSION = "1.9.15"
 ROWS_PER_SEQUENCE_TSV = 1e7
 
 options(warn = 1)
@@ -184,18 +184,21 @@ for ( tbloutfile in grep('\\.tblout', opt$args, value=TRUE) ) {
     logmsg(sprintf("Skipping %s -- empty", tbloutfile), 'DEBUG')
   } else {
     logmsg(sprintf("Reading %s", tbloutfile), 'DEBUG')
-    t =  read_fwf(
-      tbloutfile, fwf_cols(content = c(1, NA)), 
-      col_types = cols(content = col_character()), 
-      comment='#'
-    ) %>% 
+    t <- data.table::fread(
+      cmd = sprintf("grep -v '#' %s", tbloutfile), 
+      sep = '\t', 
+      col.names = c('content'),
+      header = FALSE,
+      colClasses = c('character')
+    ) %>%
       separate(
         content, 
         c('accno', 't0', 'profile', 't1', 'evalue', 'score', 'bias', 'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10', 'rest'), 
         '\\s+', 
         extra='merge',
         convert = T
-      ) 
+      ) #%>%
+      #mutate(evalue = as.numeric(evalue), score = as.numeric(score), bias = as.numeric(bias))
     tblout <- union(tblout, t %>% select(accno, profile, evalue, score, bias))
     accessions <- union(
       accessions, 
@@ -229,11 +232,13 @@ for ( domtbloutfile in grep('\\.domtblout', opt$args, value=TRUE) ) {
     logmsg(sprintf("Skipping %s -- empty", domtbloutfile), 'DEBUG')
   } else {
     logmsg(sprintf("Reading %s", domtbloutfile), 'DEBUG')
-    t <- read_fwf(
-      domtbloutfile, fwf_cols(content = c(1, NA)), 
-      col_types = cols(content = col_character()), 
-      comment='#'
-    ) %>% 
+    t <- data.table::fread(
+      cmd = sprintf("grep -v '#' %s", domtbloutfile), 
+      sep = '\t', 
+      col.names = c('content'),
+      colClasses = c('character'),
+      header = FALSE
+    ) %>%
       separate(
         content, 
         c(
