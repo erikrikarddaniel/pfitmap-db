@@ -11,7 +11,7 @@ suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "1.9.15"
+SCRIPT_VERSION = "1.10"
 ROWS_PER_SEQUENCE_TSV = 1e7
 
 options(warn = 1)
@@ -31,7 +31,10 @@ option_list <- list(
     c('--gtdbmetadata'), default = '', help = 'A concatenation of the bacterial (bac120_metadata.tsv) and archaeal (ar122_metadata.tsv) metadata files from GTDB. Make sure there is *only one header* line.',
   ),
   make_option(
-    c('--hmm_mincov'), type = 'double', default = 0.0, action = 'store', help = 'Minimum coverage of hmm profile to include in output, default %default.'
+    c('--domain_hmm_mincov'), type = 'double', default = 0.7, action = 'store', help = 'Minimum coverage of a *domain* hmm profile to include in output, default %default.'
+  ),
+  make_option(
+    c('--protein_hmm_mincov'), type = 'double', default = 0.9, action = 'store', help = 'Minimum coverage of a *protein* hmm profile to include in output, default %default.'
   ),
   make_option(
     c('--missing'), default='', help='Name of file to write missing genome information to, default not set. Only works in GTDB mode!'
@@ -78,9 +81,9 @@ if ( length(grep('sqlitedb', names(opt$options), value = TRUE)) > 0 ) {
 }
 
 # Args list for testing:
-# NCBI: opt = list(args = Sys.glob('pf-classify.00.d/*tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
-# GTDB: opt = list(args = Sys.glob('pf-classify.gtdb.02.d/*tblout'), options=list(verbose=T, singletable='test.out.tsv', hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.02.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbmetadata='pf-classify.gtdb.02.d/gtdb_metadata.tsv', seqfaa='pf-classify.gtdb.03.d/genomes.faa'))
-# GTDB 06: opt = list(args = Sys.glob('pf-classify.gtdb.06.d/*tblout'), options=list(verbose=T, featherprefix='/tmp/pf-classify-testing', hmm_mincov=0.8, profilehierarchies='pf-classify.gtdb.06.phier.tsv', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbmetadata='pf-classify.gtdb.06.d/gtdb_metadata.tsv', seqfaa='pf-classify.gtdb.06.d/genomes.faa'))
+# NCBI: opt = list(args = Sys.glob('pf-classify.00.d/*tblout'), options=list(verbose=T, singletable='test.out.tsv', domain_hmm_mincov=0.7, protein_hmm_mincov=0.9, profilehierarchies='pf-classify.00.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='NCBI:NR:20180212', fuzzy_factor=30))
+# GTDB: opt = list(args = Sys.glob('pf-classify.gtdb.02.d/*tblout'), options=list(verbose=T, singletable='test.out.tsv', domain_hmm_mincov=0.7, protein_hmm_mincov=0.9, profilehierarchies='pf-classify.gtdb.02.phier.tsv', taxflat='pf-classify.taxflat.tsv', sqlitedb='testdb.sqlite3', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbmetadata='pf-classify.gtdb.02.d/gtdb_metadata.tsv', seqfaa='pf-classify.gtdb.03.d/genomes.faa'))
+# GTDB 06: opt = list(args = Sys.glob('pf-classify.gtdb.06.d/*tblout'), options=list(verbose=T, featherprefix='/tmp/pf-classify-testing', domain_hmm_mincov=0.7, protein_hmm_mincov=0.8, profilehierarchies='pf-classify.gtdb.06.phier.tsv', dbsource='GTDB:GTDB:r86', fuzzy_factor=30, gtdbmetadata='pf-classify.gtdb.06.d/gtdb_metadata.tsv', seqfaa='pf-classify.gtdb.06.d/genomes.faa'))
 DEBUG   = 0
 INFO    = 1
 WARNING = 2
@@ -454,14 +457,14 @@ write_feather(domains, "domains_2nd.feather")
 
 logmsg("Joined in lengths, writing data", 'DEBUG')
 
-# Subset data with hmm_mincov parameter
-logmsg(sprintf("Subsetting output to proteins and domains covering at least %f of the hmm profile", opt$options$hmm_mincov), 'DEBUG')
+# Subset data with hmm_mincov parameters
+logmsg(sprintf("Subsetting output to proteins and domains covering at least %f and %f respectively of the hmm profile", opt$options$protein_hmm_mincov, domain_hmm_mincov), 'DEBUG')
 
 # 1. proteins table
 #logmsg(sprintf("proteins before: %d", proteins %>% nrow()), 'DEBUG')
 p <- proteins %>% 
   inner_join(hmm_profiles %>% select(profile, plen), by = 'profile') %>%
-  filter(hmmlen/plen >= opt$options$hmm_mincov) %>%
+  filter(hmmlen/plen >= opt$options$protein_hmm_mincov) %>%
   select(-plen)
 #logmsg(sprintf("proteins after: %d", proteins %>% nrow()), 'DEBUG')
 p <- p %>%
@@ -479,7 +482,7 @@ write_feather(proteins, "proteins_3rd.feather")
 # 2. domains
 domains <- domains %>%
   inner_join(hmm_profiles %>% select(profile, plen), by = 'profile') %>%
-  filter((hmm_to - hmm_from + 1)/plen >= opt$options$hmm_mincov) %>%
+  filter((hmm_to - hmm_from + 1)/plen >= opt$options$domain_hmm_mincov) %>%
   select(-plen)
 
 # 3. accessions
