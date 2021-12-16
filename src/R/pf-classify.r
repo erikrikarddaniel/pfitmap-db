@@ -11,7 +11,7 @@ suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "1.10.1"
+SCRIPT_VERSION = "1.10.2"
 ROWS_PER_SEQUENCE_TSV = 1e7
 
 options(warn = 1)
