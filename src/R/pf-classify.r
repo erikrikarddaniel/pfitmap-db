@@ -11,7 +11,7 @@ suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(feather))
 
-SCRIPT_VERSION = "1.10"
+SCRIPT_VERSION = "1.10.1"
 ROWS_PER_SEQUENCE_TSV = 1e7
 
 options(warn = 1)
@@ -101,7 +101,7 @@ logmsg    = function(msg, llevel='INFO') {
     )
   }
 }
-logmsg(sprintf("pf-classify.r version %s: Starting classification", SCRIPT_VERSION))
+logmsg(sprintf("pf-classify.r version %s: Starting classification, domain_hmm_mincov: %0.2f, protein_hmm_mincov: %0.2f", SCRIPT_VERSION, opt$options$domain_hmm_mincov, opt$options$protein_hmm_mincov))
 
 # Make sure the dbsource parameter is given and in the proper format
 if ( opt$options[['dbsource']] != '' ) {
